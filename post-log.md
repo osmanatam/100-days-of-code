@@ -1,6 +1,375 @@
 # Post #100DaysOfCode Log - Dashiell Bark-Huss
 
 I completed my 365 days of code. But I'm going to continue to add to this log when I want to save notes.
+
+<h3 id="deeplearning-2"></h3>
+
+### Deep Learning
+6/6/20 - 6/8/20
+
+[3Brown1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) deep learning series -  [Neural networks](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi). Superb visuals. He had great content for when I was learning about (brainwave) signal processing as well.
+
+#### [Neural networks](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) by [3Brown1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw):
+
+1. [But what is a Neural Network? | Deep learning, chapter 1](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=1)
+
+2. [Gradient descent, how neural networks learn | Deep learning, chapter 2](https://www.youtube.com/watch?v=IHZwWFHWa-w&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=2)
+
+3. [What is backpropagation really doing? | Deep learning, chapter 3](https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=3)
+
+4. [Backpropagation calculus | Deep learning, chapter 4](https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=4)
+
+Video: [A Friendly Introduction to Generative Adversarial Networks (GANs)](https://www.youtube.com/watch?v=8L11aMN5KY8)
+*Tutorial with python follow along on GANs, the machine learning framework used in deepfakes.*
+
+
+[Repo for tutorial above](https://github.com/luisguiserrano/gans)
+
+
+Article: [GANs from Scratch 1: A deep introduction. With code in PyTorch and TensorFlow](https://medium.com/ai-society/gans-from-scratch-1-a-deep-introduction-with-code-in-pytorch-and-tensorflow-cb03cdcdba0f)
+
+ML vs AI
+>For those new to the field of Artificial Intelligence (AI), we can briefly describe Machine Learning (ML) as the sub-field of AI that uses data to “teach” a machine/program how to perform a new task. [*source*](https://medium.com/ai-society/gans-from-scratch-1-a-deep-introduction-with-code-in-pytorch-and-tensorflow-cb03cdcdba0f)
+
+[How Machines Learn](https://www.youtube.com/watch?v=R9OHn5ZF4Uo)
+
+[The Rise of the Machines – Why Automation is Different this Time](https://www.youtube.com/watch?v=WSKi8HfcxEk)
+
+[Lecture 13 | Generative Models](https://www.youtube.com/watch?v=5WoItGTWV54) - *only watched a little*
+
+
+#### Question:
+Are there libraries that help machines learn faster by feeding it what another machine already learned? 
+
+*For example,* let's say I have a collection of text messages. I wrote half of them and Shlomo, my bff/lover, wrote the other half. I want a machine to learn to detect which texts I wrote and which Shlomo wrote. In this situation, are there libraries of neural networks that have already taught a machine about the english language? Otherwise my machine with have to learn to recognize so much from scratch.
+
+Is a library like this a thing? Or do you always have to train a machine from scratch?
+
+I posted this question on [reddit](https://www.reddit.com/r/learnmachinelearning/comments/gzc1wp/does_machine_learning_always_start_from_scratch/). I wanted to find a slack or discord to post it on. But I haven't found a good slack or discord for beginners learning ML. 
+
+I got an answer
+>For NLP, your best best is probably scapy, as it comes with three English models ready to deploy. You will still need labels in your training data for who wrote what note, but tokenization, stemming, word vector generation, etc should be ready to go for preprocessing!
+>
+>Hint: in other **prebuilt models**, you can also add on to them using **transfer learning**
+
+Prebuilt models & [transfer learning](https://en.wikipedia.org/wiki/Transfer_learning#:~:text=Transfer%20learning%20(TL)%20is%20a,when%20trying%20to%20recognize%20trucks.) is what I'm talking about I guess!
+
+Not related to deep learing: **Tim Ferris/ Noah Kagan Article on business**- [How to Create a Million-Dollar Business This Weekend (Examples: AppSumo, Mint, Chihuahuas)](https://tim.blog/2011/09/24/how-to-create-a-million-dollar-business-this-weekend-examples-appsumo-mint-chihuahuas/)
+
+<h3 id="deeplearning-1"></h3>
+
+### Deep Learning
+6/4/20 - 6/6/20
+
+Watching this series- this is the first video- [How to Make a Prediction - Intro to Deep Learning #1](https://www.youtube.com/watch?v=vOppzHpvTiQ&list=PL2-dafEMk2A7YdKv4XfKpfbTH5z6rEEj3) 
+  - Machine learning vs Neural Network vs Deep Learning are all different things
+  - **Machine Learning:** Traditionally, programming is defining every step for a ccomputer to take to get to an outcome. Machine learning is backwards. You Show the computer the outcome and the computer learns how to get there.
+  - **Neural Networks:** There are a lot of mahcine learning models. One of them is called a Neural Network.
+  - **Deep Learning:** When we use a Neural Network that's not just one or two but many layers deep to make a prediction.
+
+Machine Learning 3 Styles:
+- Supervised
+- Unsupervised
+- Reinforcement
+
+Regression: a machine learning task.
+
+Pandas let's you read your data set.
+sklearn- machine learning librayr
+matplot lib- lets you visualize your model and data.
+
+Neural Network- a biologically inspired algorithm that learns to identify patterns in data.
+
+Backpropagation is a technique to train a Neural Net by updating weights via gradient descent.
+
+Deep learning= many layer neural net + big data + big compute
+
+<h3 id="avatarify-2"></h3>
+
+### More Deepfakes & Avatarify 
+6/3/20 - 6/4/20
+
+Avatarify keeps [freezing](#avatarify-freezing). It's hard for me to figure out why. Maybe it has something to do with Google Colab? I will try to understand mroe about Colab.
+
+From [Welcome To Colaboratory](https://colab.research.google.com/notebooks/intro.ipynb):
+>Colaboratory, or "Colab" for short, allows you to write and execute Python in your browser, with
+>
+>- Zero configuration required
+>- Free access to GPUs
+>- Easy sharing
+>
+>Whether you're a student, a data scientist or an AI researcher, Colab can make your work easier. 
+
+It reminds me of a Jupyter Notebooks. Oh I guess it is a Jupyter Notebook?
+
+>**What is the difference between Jupyter and Colab?**
+>
+>Jupyter is the open source project on which Colab is based. Colab allows you to use and share Jupyter notebooks with others without having to download, install, or run anything.
+
+*-from [Colaboratory FAQ](https://research.google.com/colaboratory/faq.html)*
+
+From [Welcome To Colaboratory](https://colab.research.google.com/notebooks/intro.ipynb):
+>Colab notebooks execute code on Google's cloud servers, meaning you can leverage the power of Google hardware, including GPUs and TPUs, regardless of the power of your machine. All you need is a browser.
+
+Could the problem be with Ngrok? What is Ngrok?
+
+>**What is ngrok?**
+>
+>ngrok exposes local servers behind NATs and firewalls to the public internet over secure tunnels.
+
+*-from [ngrok](https://ngrok.com/product)*
+
+[Network address translation (NAT)](https://en.wikipedia.org/wiki/Network_address_translation)
+
+Video: [NAT Explained - Network Address Translation](https://www.youtube.com/watch?v=FTUV0t6JaDA)
+
+Video: [What is ngrok?](https://www.youtube.com/watch?v=UaxqJUXqvro)
+  - It lets anyone access your local website.
+
+### Ali Replied On Slack
+I had posted on the avatarify slack:
+>My terminal was showing all this around the time it froze. Seemed to go from sending and receiving data to predict returned None  and  recv_queue is empty
+>```bash
+>[1591061619.742012] PACK 1.651 (1.518)		UNPACK 0.888 (1.153)		
+>[1591061620.019460] SEND 0.111 (0.116)		
+>[1591061620.803449] RECV 107.846 (44.370)		
+>[1591061620.805253] PACK 1.613 (1.520)		UNPACK 1.687 (1.158)		
+>[1591061621.087406] SEND 0.107 (0.116)		
+>[1591061621.356967] recv_queue is empty
+>[1591061621.357040] predict returned None
+>[1591061621.836266] RECV 99.935 (44.233)		
+>[1591061621.837547] PACK 1.561 (1.521)		UNPACK 1.189 (1.159)		
+>[1591061622.072949] recv_queue is empty
+>[1591061622.073058] predict returned None
+>[1591061622.088352] SEND 0.133 (0.116)		
+>[1591061622.188220] recv_queue is empty
+>[1591061622.188299] predict returned None
+>[1591061622.301631] recv_queue is empty
+>[1591061622.301709] predict returned None
+>[1591061622.414096] recv_queue is empty
+>[1591061622.414171] predict returned None
+>[1591061622.526833] recv_queue is empty
+>[1591061622.526892] predict returned None
+>[1591061622.638287] recv_queue is empty
+>[1591061622.638335] predict returned None
+>[1591061622.748865] recv_queue is empty
+>```
+
+I just checked the Avatarify Slack and Ali answered:
+
+>Looks like the server stopped, did you check that?
+
+Wait a minute, when did I run a server? I mean I knew I did. But I didn't really think about it. 
+
+>## Technical details
+>The client on your computer connects to the server via ngrok TCP tunnel or a reverse ssh tunnel.
+
+*-from the avatarify Colab file*
+
+
+[What is TCP/IP?](https://www.youtube.com/watch?v=PpsEaqJV_A0)
+
+Well I ran the preview again and I haven't had a problem again with freezing. I think it might just be that the internet over here sucks balls. I've had a lot of lagging but no freezing. My Google Colabs rendered avatar will sometimes lag a whole minute behind my computer preview.
+
+### Client Not Starting Again
+I'm getting the problem where the client isn't starting again. Maybe it's the internet at the house I'm at.
+
+I ran `./run_mac.sh --is-client --in-addr tcp://0.tcp.ngrok.io:<some #> --out-addr tcp://0.tcp.ngrok.io:<some #>` in my client.
+
+It got stuck again:
+```bash
+[1591295183.195187] Loading Predictor
+[1591295183.249625] Sending to tcp://0.tcp.ngrok.io:19494
+[1591295183.249688] Receiving from tcp://0.tcp.ngrok.io:18279
+[1591295183.251305] SEND 0.289 (0.289)	
+```
+
+So I opened a new terminal so I could keep the tcp tunnel open and cd'd into my avatarify directory and got the info from the logs:
+
+#### Client Logs
+
+```bash
+# cam_fomm.log
+$ cat ./var/log/cam_fomm.log | head -100
+
+[1591295183.195119] Loading Predictor
+
+# recv_worker.log
+$ cat ./var/log/recv_worker.log | tail -100
+
+[1591295183.249530] Receiving from tcp://0.tcp.ngrok.io:18279
+
+# predictor_remote.log
+$ cat ./var/log/predictor_remote.log | tail -100
+
+# send_worker.log
+$ cat ./var/log/send_worker.log | tail -100
+
+[1591295183.249461] Sending to tcp://0.tcp.ngrok.io:19494
+[1591295183.250705] SEND 0.289 (0.289)		
+```
+
+#### Logs from the **server(Google Colab)**
+
+```bash
+# cam_fomm.log
+!cat ./var/log/cam_fomm.log | head -100
+
+[1591295131.469881] Loading Predictor
+
+# recv_worker.log
+!cat ./var/log/recv_worker.log | tail -100
+
+[1591295136.497368] Receiving on port 5557
+[1591295137.498841] recv timeout
+[1591295138.500048] recv timeout
+[1591295139.501354] recv timeout
+[1591295140.502621] recv timeout
+[1591295141.503973] recv timeout
+[1591295142.505343] recv timeout
+[1591295143.506708] recv timeout
+[1591295144.508054] recv timeout
+[1591295145.509405] recv timeout
+[1591295146.510674] recv timeout
+[1591295147.512001] recv timeout
+[1591295148.513307] recv timeout
+[1591295149.514569] recv timeout
+[1591295150.515866] recv timeout
+[1591295151.517149] recv timeout
+[1591295152.518417] recv timeout
+[1591295153.519695] recv timeout
+[1591295154.520933] recv timeout
+[1591295155.521329] recv timeout
+[1591295156.522362] recv timeout
+[1591295157.523621] recv timeout
+[1591295158.524339] recv timeout
+[1591295159.525671] recv timeout
+[1591295160.526322] recv timeout
+[1591295161.527560] recv timeout
+[1591295162.528859] recv timeout
+[1591295163.530099] recv timeout
+[1591295164.531374] recv timeout
+[1591295165.532618] recv timeout
+[1591295166.533880] recv timeout
+[1591295167.535235] recv timeout
+[1591295168.536511] recv timeout
+[1591295169.537745] recv timeout
+[1591295170.538969] recv timeout
+[1591295171.540282] recv timeout
+[1591295172.541613] recv timeout
+[1591295173.542851] recv timeout
+[1591295174.543134] recv timeout
+[1591295175.544391] recv timeout
+[1591295176.545623] recv timeout
+[1591295177.546854] recv timeout
+[1591295178.548073] recv timeout
+[1591295179.549387] recv timeout
+[1591295180.550594] recv timeout
+[1591295181.551827] recv timeout
+[1591295182.553060] recv timeout
+[1591295183.553402] recv timeout
+[1591295184.037698] RECV 483.494 (483.494)		
+[1591295185.040406] recv timeout
+[1591295186.041745] recv timeout
+[1591295187.043012] recv timeout
+[1591295188.044255] recv timeout
+[1591295189.045485] recv timeout
+[1591295190.046714] recv timeout
+[1591295191.047975] recv timeout
+[1591295192.049220] recv timeout
+[1591295193.050551] recv timeout
+[1591295194.051841] recv timeout
+[1591295194.051943] recv_worker exit
+
+# predictor_worker.log
+!cat ./var/log/predictor_worker.log | tail -100
+
+[1591295184.038878] working on {'name': '__init__', 'critical': True, 'id': 0}
+[1591295193.297287] predictor_worker error
+[1591295193.300892] predictor_worker exit
+
+# send_worker.log
+!cat ./var/log/send_worker.log | tail -100
+
+[1591295136.503218] Sending on port 5558
+[1591295137.504635] send queue empty
+[1591295138.505828] send queue empty
+[1591295139.507043] send queue empty
+[1591295140.508257] send queue empty
+[1591295141.509450] send queue empty
+[1591295142.510346] send queue empty
+[1591295143.511650] send queue empty
+[1591295144.512894] send queue empty
+[1591295145.514138] send queue empty
+[1591295146.515354] send queue empty
+[1591295147.516279] send queue empty
+[1591295148.517272] send queue empty
+[1591295149.517987] send queue empty
+[1591295150.519198] send queue empty
+[1591295151.520380] send queue empty
+[1591295152.521587] send queue empty
+[1591295153.522778] send queue empty
+[1591295154.523971] send queue empty
+[1591295155.524925] send queue empty
+[1591295156.526128] send queue empty
+[1591295157.527365] send queue empty
+[1591295158.528545] send queue empty
+[1591295159.529786] send queue empty
+[1591295160.530956] send queue empty
+[1591295161.532146] send queue empty
+[1591295162.533465] send queue empty
+[1591295163.534664] send queue empty
+[1591295164.535904] send queue empty
+[1591295165.537098] send queue empty
+[1591295166.538343] send queue empty
+[1591295167.539559] send queue empty
+[1591295168.540751] send queue empty
+[1591295169.541870] send queue empty
+[1591295170.543054] send queue empty
+[1591295171.543232] send queue empty
+[1591295172.544419] send queue empty
+[1591295173.545583] send queue empty
+[1591295174.546774] send queue empty
+[1591295175.547964] send queue empty
+[1591295176.549147] send queue empty
+[1591295177.550433] send queue empty
+[1591295178.551604] send queue empty
+[1591295179.552792] send queue empty
+[1591295180.553991] send queue empty
+[1591295181.555143] send queue empty
+[1591295182.556268] send queue empty
+[1591295183.557460] send queue empty
+[1591295184.558509] send queue empty
+[1591295185.559216] send queue empty
+[1591295186.560523] send queue empty
+[1591295187.561821] send queue empty
+[1591295188.563108] send queue empty
+[1591295189.564446] send queue empty
+[1591295190.565701] send queue empty
+[1591295191.566970] send queue empty
+[1591295192.567348] send queue empty
+[1591295193.568681] send queue empty
+[1591295193.568788] send_worker exit
+
+```
+
+I think Google Colab is interesting, and might help me learn how to help other people use a remote GPU. However, I couldn't skip all of this hassle by getting an Nvidia GPU. I thought you could not use them with Apple products, but I think that's not entirely true if you have some coding skills. I also wonder how close Ali is to creating a non-Nvidia version of this project? How many other projects use only Nvidia?
+``` bash
+
+!ps
+
+    PID TTY          TIME CMD
+      1 ?        00:00:00 run.sh
+      9 ?        00:00:02 node
+     24 ?        00:00:03 jupyter-noteboo
+    116 ?        00:00:00 tail
+    124 ?        00:00:02 python3
+    256 ?        00:00:00 bash
+    261 ?        00:00:03 ngrok
+    337 ?        00:00:00 bash <defunct>
+    426 ?        00:00:00 ps
+```
+
 <h3 id="avatarify-1"></h3>
 
 ### Avatarify 
@@ -53,6 +422,8 @@ And nothing happens. A lot of things seem to cause this problem: another process
      3. <img src="log_imgs/avatarify_colab_6-2-20-10.png">
 
 3. On your computer, start a new terminal just in case.
+
+<h3 id="avatarify-freezing"></h3>
 
 ### Preview Freezing 
 When I do get the preview to appear after running
