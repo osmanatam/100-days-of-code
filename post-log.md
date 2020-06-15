@@ -7,7 +7,9 @@ I completed my 365 days of code. But I'm going to continue to add to this log wh
 ### Deep Learning
 6/9/20 - 6/15/20
 
-**[Jump To Summary](#sum-deeplearning-3)**
+**[Jump To Summary](#sum-deeplearning-3)** to see main resources used
+
+<hr>
 
 I still have so much to learn about deep learning. But I think today I will jump out of theory land and do some hands on learning through code.
 
