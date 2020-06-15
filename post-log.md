@@ -2,6 +2,97 @@
 
 I completed my 365 days of code. But I'm going to continue to add to this log when I want to save notes.
 
+<h3 id="deeplearning-3"></h3>
+
+### Deep Learning
+6/9/20 - 6/15/20
+
+**[Jump To Summary](#sum-deeplearning-3)**
+
+I still have so much to learn about deep learning. But I think today I will jump out of theory land and do some hands on learning through code.
+
+#### Reddits For Machine Learning Newbies
+- [r/learningmachinglearning](https://www.reddit.com/r/learnmachinelearning/) I found this reddit helpful yesterday when I had a question. 
+- [r/MLQuestions](https://www.reddit.com/r/MLQuestions/) This reddit looks good too for newbies.
+- [r/deeplearning](https://www.reddit.com/r/deeplearning/) Haven't checked out the newb scene here yet. 
+- For **deepfakes**:
+  - [r/deepdream](https://www.reddit.com/r/deepdream/) *dedicated to art produced via machine learning algorithms*
+  - [r/MediaSynthesis](https://www.reddit.com/r/MediaSynthesis/) *Synthetic media describes the use of artificial intelligence to generate and manipulate data, most often to automate the creation of entertainment.*
+
+I really want to get on the [MrDeepFakes](https://mrdeepfakes.com/forums/#) forum but the forum hasn't been working. Yes MrDeepFakes is a porn site, nonetheless the people on this site are active with deepfakes and know a lot. But the fact that the forum login hasn't worked for about 2 weeks makes me think it's not the best place to learn.
+
+#### Other Chats/Forums
+- [Artificial Intellegence Discord Server](https://discord.com/invite/BRSscg) *Not specifically deepfakees, but responsive*
+- [AdultDeepFakes](https://adultdeepfakes.com/forums/) *Not alot of content in the forum*
+- [Oneduality Fakes](https://onedualityfakes.com/) *did not receive verification email, will contact if I don't receive soon. Creator is active on reddit and responsive*
+- [MrDeepFakes](https://mrdeepfakes.com/forums/#) *Can't create an account. Contacted customer service.*
+
+Do I want to take this [udacity course on deep learning](https://www.udacity.com/course/deep-learning-nanodegree--nd101)? It's 12 hours for 4 months.
+
+Today, I'm going to get into some more hands on stuff: I'm doing the follow along for this tutorial 
+- [A Friendly Introduction to Generative Adversarial Networks (GANs)](https://www.youtube.com/watch?v=8L11aMN5KY8)
+- [Repo for tutorial above](https://github.com/luisguiserrano/gans)
+
+I'm copy coding this, going through each section and trying to understand what's going on. I'm using google colab to run Jupyter notebook file. *(Update: later I switch to Jupyterlab)*
+
+[W3Schools NumPy](https://www.w3schools.com/python/numpy_intro.asp)
+
+### [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU)
+
+I didn't understand what the `forward()` function was in the [GANs tutorial](https://www.youtube.com/watch?v=8L11aMN5KY8). I found [this video about forward propagation](https://www.youtube.com/watch?v=UJwK6jAStmg). I started watching the whole series it's from called [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU)
+
+
+> **Activation functions** are mathematical equations that determine the output of a neural network. The function is attached to each neuron in the network, and determines whether it should be activated (“fired”) or not, based on whether each neuron’s input is relevant for the model’s prediction.  Activation functions also help normalize the output of each neuron to a range between 1 and 0 or between -1 and 1.
+[source](https://missinglink.ai/guides/neural-network-concepts/7-types-neural-network-activation-functions-right/)
+
+Sigmoid and ReLU are examples of activation functions.
+
+### The Very Scary  Calculus-y [Part 4](https://www.youtube.com/watch?v=GlcnxUlrtek) Video
+ There's so much calculus in [part 4](https://www.youtube.com/watch?v=GlcnxUlrtek) of [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU). I need to refresh my calculus. Last year, I started taking calculus on Khan Academy to prepare for machine learning, so I'm glad I'm not totally foreign to these concepts. But I need to brush up.
+
+<h3 id="calculus-for-backprop"></h3>
+
+### Calculus concepts I reviewed to understand backpropagation:
+
+1. [Derivative as a concept](https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-1/v/derivative-as-a-concept)
+2. [The derivative & tangent line equations](https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-1/v/derivative-as-slope-of-tangent-line) - watched half
+3. [Formal definition of the derivative as a limit](https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/calculus-derivatives-1-new-hd-version)
+4. [Formal and alternate form of the derivative](https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-2/v/alternate-form-of-the-derivative)
+5. [Partial derivatives, introduction](https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivatives/v/partial-derivatives-introduction)
+6. [Differentiability and continuity](https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-4/v/differentiability)
+7. [Derivative notation review](https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-1/a/derivative-notation-review)
+8. [Chain rule](https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-1a/v/chain-rule-introduction)
+9. [Power rule](https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-5/v/power-rule)
+10. [The Chain Rule](http://faculty.wlc.edu/buelow/calc/nt3-5.html) *from wlc.edu I mostly just looked at the first image*
+11. [Intro to matrix multiplication](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:multiplying-matrices-by-matrices/v/matrix-multiplication-intro)
+    
+I figured out which calculus concepts to review because either the [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU) mentioned them. Or the Khan Academy videos themselves mentioned a concept I was unfamiliar with.
+
+It helped to watch [part 4](https://www.youtube.com/watch?v=GlcnxUlrtek) of [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU) on the companion Jupyter notebook file, because it had a chart of all the variable symbols and what they mean.
+
+I've spent several days trying to understand the math of the [8 minute](https://www.youtube.com/watch?v=GlcnxUlrtek) video on backpropagation. It's sunday and I started on Thursday.
+
+Rewatched [Backpropagation calculus](https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=4)
+
+
+I finished watching the 7 part series [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU).
+
+<h3 id="sum-deeplearning-3"></h3>
+
+### Summary of 6/9/20 - 6/15/20
+<hr>
+
+1. I followed this [GANs tutorial](https://www.youtube.com/watch?v=8L11aMN5KY8). But I stopped coding along when the tutorial got to the part about the `forward()` function.
+
+2. I didn't understand `forward()`. So I watched [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU) which covers forward propagation in depth. 
+
+3. [Part 4](https://www.youtube.com/watch?v=GlcnxUlrtek) of [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU) has a lot of calculus. I had to review [these calculus concepts](#calculus-for-backprop) before moving on.
+4. I rewatched [Backpropagation calculus](https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=4) from a [3Brown1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw).
+
+5. I finished watching the [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU) series but didn't finishing coding along.
+
+
+
 <h3 id="deeplearning-2"></h3>
 
 ### Deep Learning
@@ -12,11 +103,8 @@ I completed my 365 days of code. But I'm going to continue to add to this log wh
 #### [Neural networks](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) by [3Brown1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw):
 
 1. [But what is a Neural Network? | Deep learning, chapter 1](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=1)
-
 2. [Gradient descent, how neural networks learn | Deep learning, chapter 2](https://www.youtube.com/watch?v=IHZwWFHWa-w&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=2)
-
 3. [What is backpropagation really doing? | Deep learning, chapter 3](https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=3)
-
 4. [Backpropagation calculus | Deep learning, chapter 4](https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=4)
 
 Video: [A Friendly Introduction to Generative Adversarial Networks (GANs)](https://www.youtube.com/watch?v=8L11aMN5KY8)
