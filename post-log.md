@@ -2,6 +2,122 @@
 
 I completed my 365 days of code. But I'm going to continue to add to this log when I want to save notes.
 
+<h3 id="deeplearning-5"></h3>
+
+### Deep Learning
+6/18/20 - 6/21/20
+
+Messy notes and resources: 
+
+<hr>
+
+
+[Ian Goodfellow: Generative Adversarial Networks (NIPS 2016 tutorial)](https://www.youtube.com/watch?v=HGYYEUSm-0Q)
+
+Words
+- Density Estimation
+  ![](log_imgs/density_estimation_6-18-20.png)
+  In probability and statistics, density estimation is the construction of an estimate, based on observed data, of an unobservable underlying [probabilty density function](https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/random-variables-continuous/v/probability-density-functions_). ([source](https://en.wikipedia.org/wiki/Density_estimation))
+  - [Another video on pdf](https://www.youtube.com/watch?v=8QFpZ3FndBc)
+- agent
+  >A deep learning agent is any autonomous or semi-autonomous AI-driven system that uses deep learning to perform and improve at its tasks. ([source](https://www.google.com/search?q=what+us+an+agent+in+machine+learning&oq=what+us+an+agent+in+machine+learning&aqs=chrome..69i57j0.5366j1j9&sourceid=chrome&ie=UTF-8))
+
+[Artificial Intelligence Foundations: Machine Learning](https://www.linkedin.com/learning/artificial-intelligence-foundations-machine-learning) 
+
+What's the difference between transductive learning and inductive learning?
+
+Q-learning has been used for Go. But what about backgammon?
+
+[Artificial Intelligence Foundations: Neural Networks](https://www.linkedin.com/learning/artificial-intelligence-foundations-neural-networks)
+
+What is the code function in a GAN?
+
+Stochastic Gradient Descent.
+
+<h3 id="deeplearning-4"></h3>
+
+### Deep Learning
+6/15/20-6/17/20
+<hr>
+
+I pranked my sister by zooming her with a deepfake of herself. Watch the video:
+
+[![This is a link to a Youtube Video of Me Pranking My sister by calling her on zoom with a deepfake of herself](https://img.youtube.com/vi/d4rE30rFwEk/0.jpg)](https://www.youtube.com/watch?v=d4rE30rFwEk)
+
+### Notes 6/15/20-6/17/20
+I've spent a lot of time on the nitty gritty calculus of backpropagation. I think it's time to zoom out and do something more broad like run something on google colabs.
+
+### Multiple Versions of Python
+> Mac OS needs python
+>
+>**DO NOT** remove any versions of Python found in the following folders:
+>
+>- /usr/bin
+>- system/Library
+>
+>These versions of Python—which should be Python 2.7—are installed by Apple and used by Mac OS and other software to perform some functions. Deleting Python from these directories will break Mac OS and force you to reinstall it on your computer.
+>
+>### Other projects may need specific versions of python
+>
+>You may have a python project or you may use python packages that require particular versions of Python. Uninstalling those versions would prevent those projects or packages from working until that version of python is reinstalled. For example, Python 3 is a dependency of Numpy; if you uninstalled Python 3, then Numpy wouldn’t work until you reinstalled Python 3.
+
+ [source](https://www.ianmaddaus.com/post/manage-multiple-versions-python-mac/#mac-os-needs-python)
+
+### `source`
+> [`source`](https://ss64.com/bash/source.html) is a bash shell built-in command that executes the content of the file passed as argument, in the current shell. It has a synonym in `.` (period).
+>
+>Syntax
+>```bash
+>. filename [arguments]
+>
+>source filename [arguments]
+>```
+
+
+```bash
+Dashiells-MacBook-Pro:~ dashiellbarkhuss$ pip install pyyaml
+Requirement already satisfied: pyyaml in /opt/miniconda3/lib/python3.7/site-packages (5.1)
+```
+[source](https://superuser.com/questions/46139/what-does-source-do)
+
+## Yaml and different versions of python on my computer
+I had a problem with yaml saying it wasn't installed when I trying to run 
+
+```bash
+./run_mac.sh --is-client --in-addr tcp://0.tcp.ngrok.io:19547 --out-addr tcp://0.tcp.ngrok.io:15694
+```
+
+I'd get an error 
+```bash
+Traceback (most recent call last):
+  File "afy/cam_fomm.py", line 4, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+```
+
+`No module named 'yaml'` But if I installed 
+```bash
+pip install pyyaml
+```
+I'd get 
+```bash
+Requirement already satisfied: pyyaml in /opt/miniconda3/lib/python3.7/site-packages (5.1)
+```
+
+`which python` in the terminal gave me 
+```bash
+/opt/miniconda3/bin/python
+```
+
+But in the `run_mac.sh` file I ran `which python` and I got:
+```bash
+/opt/miniconda3/envs/avatarify/bin/python
+```
+So I realize it's the same python environment. So I added yaml to this `avatariy` environment by add `pip install pyyaml` to the `run_mac.sh` file after the environment is set and running it once.
+
+Now it's added but I also need to do the same thing for other packages
+
+
 <h3 id="deeplearning-3"></h3>
 
 ### Deep Learning
