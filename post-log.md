@@ -2,6 +2,187 @@
 
 I completed my 365 days of code. But I'm going to continue to add to this log when I want to save notes.
 
+<h3 id="deeplearning-9"></h3>
+
+### My First DeepFaceLab Deepfake
+6/30/20-7/6/20
+<hr>
+
+## Making A (Bad) Deepfake
+I made a (very undertrained) deepfake using DeepFaceLabs. 
+
+<img src="log_imgs/hillary_500_iter_7-4-20.gif"/>
+
+This is my first deepfake using an *autoencoder* model, the kind of model that [DeepFaceLab](https://github.com/iperov/DeepFaceLab) uses. Other deepfakes I've made with [Avatarify](https://github.com/alievk/avatarify) used First Order Motion Model.
+
+
+#### Why is this deepfake so bad?
+
+I trained this model on a small amount of data and iterations: 38 source images for 500 iterations. That's not enough to produce a quality deepfake. 
+
+It's common to train for 100k or more iterations. And use hundreds or thousands of source images.
+
+But my goal with this first deepfake was to get through the DeepFaceLab workflow, not make a great deepfake. Hopefully, this repo can help you get through it as well. 
+
+<img src="log_imgs/Hillary_SAEHD_preview_7-4-20.jpg" width="330">
+
+*The preview image for my model at 400 iterations.*
+
+Please consider [donating](https://github.com/iperov/DeepFaceLab#how-i-can-help-the-project) to DeepFaceLab. This project is open source and a lot of hard work went into it.
+
+### **Getting Started**
+I made a repo to help you get started: [DFL-Colab-Newbs](https://github.com/DashBarkHuss/DFL-Colab-Newbs)
+
+
+### **Deepfake Readings:**
+* **Tech Behind Deepfakes #1:** [link](https://www.alanzucconi.com/2018/03/14/an-introduction-to-autoencoders/)
+* **Tech Behind Deepfakes #2:** [link](https://www.alanzucconi.com/2018/03/14/understanding-the-technology-behind-deepfakes/)
+
+### **DeepFaceLab Guides:**
+* **DeepFaceLab 2.0 Guide:** [link](https://mrdeepfakes.com/forums/thread-guide-deepfacelab-2-0-explained-and-tutorials-recommended)
+* **Google Colab Guide:** [link](https://mrdeepfakes.com/forums/thread-guide-deepfacelab-google-colab-tutorial)
+  
+
+
+<h3 id="deeplearning-8"></h3>
+
+### Deep Learning
+6/27/20 - 6/29/20
+<hr>
+
+This was on the [MrDeepFakes](https://mrdeepfakes.com/forums/thread-guide-deepfacelab-google-colab-tutorial) tutorial for DeepFaceLab with google colab.
+
+<img src="log_imgs/theworkspacemrdeep_6-27-20.png">
+
+I was like what is "the workspace we have setup"? When did we set one up?
+
+>The workspace folder is the most important one to note. This is the folder where all the magic will happen. It contains three folders and two video files:
+>1. “data_dst”
+>- dst = destination: the folder where the original video files will live. When the project is complete, it will include two sub-folders: “aligned” and “merged”. We will talk about these later on.
+>2. “data_src”
+> - src = source: the folder where the face of the ‘fake’ will live. When the project is complete, it will include one sub-folder: “aligned”.
+>3. “model”
+>- model: this folder will contain the training model files used for the neural network.
+>4. “data_dst.mp4”
+>- This file is the destination video where we will swap the fake face with.
+>5. “data_src.mp4”
+>- This is the source video file where we will collect and gather the face image assets from to train our neural network.
+
+[source](https://mc.ai/creating-your-own-deepfake-using-iperovs-deepfacelab/)
+
+>DeepFaceLab 2.0 consists of selection of .bat files used to extract, train and merge (previously called convert) which are 3 main steps of creating a deepfake, they are located in the main folder along with two subfolders:
+>- _internal (that's where all the files necessary for DFLs to work are)
+>- workspace (this is where your models, videos, facesets (datasets) and final video outputs are
+
+- [MrDeepFakes DeepFaceLab tutorial](https://mrdeepfakes.com/forums/thread-guide-deepfacelab-2-0-explained-and-tutorials-recommended)
+
+
+Looks like I should read this [MrDeepFakes DeepFaceLab](https://mrdeepfakes.com/forums/thread-guide-deepfacelab-2-0-explained-and-tutorials-recommended) tutorial as well as the [colab](https://mrdeepfakes.com/forums/thread-guide-deepfacelab-google-colab-tutorial) one. A lot is left out in the colab tutorial.
+
+I continued to explore deep face lab without posting all of the links I've been looking at.
+
+
+
+<h3 id="deeplearning-7"></h3>
+
+### Deep Learning
+6/24/20 - 6/26/20
+<hr>
+I thought deepfakes used gans. But the seem to really use autoencoders.
+
+It depends on what it meant by deep fake. [thispersondoesnotexist](https://thispersondoesnotexist.com/) uses gans. But Deepfacelab uses autoencoders.
+
+[How to create a deepfake using GANs ?](https://www.reddit.com/r/SFWdeepfakes/comments/f9rojg/how_to_create_a_deepfake_using_gans/)
+
+[The Sparse Autoencoder (SAE) for Dummies](https://mc.ai/the-sparse-autoencoder-sae-for-dummies/)
+
+**Iteration**- 
+>Like any neural network, the autoencoders in Faceswap are trained using backpropagation. The training algorithm feeds a particular image into the neural network and figures out which pixels in the output don't match the input. It then calculates which neurons in the final layer were most responsible for the mistakes and slightly adjusts each neuron's parameters in a way that would have produced better results.
+>
+>Errors are then propagated backwards to the next-to-last layer, where each neuron's parameters are tweaked once again. Errors are propagated backwards in this fashion until every parameter of the neural network—in both the encoder and the decoder—has been adjusted.
+>
+>The training algorithm then feeds another image to the network and the whole process repeats once again. It can take hundreds of thousands of **iterations** of this process to produce an autoencoder that does a good job of reproducing its own input.
+[source](https://arstechnica.com/science/2019/12/how-i-created-a-deepfake-of-mark-zuckerberg-and-star-treks-data/)
+
+So an iteration must be when a network forward propagates and backpropagates through one input.
+
+[I created my own deepfake—it took two weeks and cost $552](https://arstechnica.com/science/2019/12/how-i-created-a-deepfake-of-mark-zuckerberg-and-star-treks-data/)
+
+What are convolutional neural networks?
+
+[Introducing convolutional neural networks (ML Zero to Hero - Part 3)](https://www.youtube.com/watch?v=x_VrgWTKkiM&vl)
+
+[Convolutional Neural Networks - The Math of Intelligence (Week 4)](https://www.youtube.com/watch?v=FTr3n7uBIuE)
+
+[Convolutional Neural Networks (CNNs) explained](https://www.youtube.com/watch?v=YRhxdVk_sIs)
+
+Dot Product? 
+
+>The Dot Product gives a scalar (ordinary number) answer, and is sometimes called the scalar product.
+
+[source](https://www.mathsisfun.com/algebra/vectors-dot-product.html)
+
+[Vector dot product and vector length](https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/dot-cross-products/v/vector-dot-product-and-vector-length)
+
+[Cross product introduction](https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/dot-cross-products/v/linear-algebra-cross-product-introduction)
+
+[Intro to matrix multiplication](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:multiplying-matrices-by-matrices/v/matrix-multiplication-intro)
+
+Whats the matr
+
+>### Epochs
+>One Epoch is when an ENTIRE dataset is passed forward and backward through the neural network only ONCE.
+[source](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
+
+>### Batch Size
+>Total number of training examples present in a single batch. [source](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
+
+>### Iterations
+>To get the iterations you just need to know multiplication tables or have a calculator. 😃
+>
+>Iterations is the number of batches needed to complete one epoch.
+>
+>Note: The number of batches is equal to number of iterations for one epoch.
+>
+>Let’s say we have 2000 training examples that we are going to use .
+>
+>We can divide the dataset of 2000 examples into batches of 500 then it will take 4 iterations to complete 1 epoch.[source](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
+
+[Epoch vs Batch Size vs Iterations](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
+
+
+
+
+<h3 id="deeplearning-6"></h3>
+
+### Deep Learning
+6/22/20 - 6/24/20
+<hr>
+
+[DeepLearning series Ep 1 : DeepFaceLab](https://www.youtube.com/watch?v=nboXZlXGFWM)
+
+
+[DeepFake with DeepFaceLab and Python by Radoslav Nedyalkov (Eng)](https://www.youtube.com/watch?v=fFDbTH7f67A) -not that great, not actually a tutorial
+
+src - a person who will be use for replacement
+
+dst - a person who will be replaced
+
+<img src="log_imgs/src_dst-6-23-20.png" />
+
+[Autoencoders Tutorial | Autoencoders In Deep Learning | Tensorflow Training | Edureka](https://www.youtube.com/watch?v=nTt_ajul8NY) *-too complicated in the beginning but parts were helpful*
+
+[An Introduction to Neural Networks and Autoencoders](https://www.alanzucconi.com/2018/03/14/an-introduction-to-autoencoders/) -*good article!*
+
+>The most effective architecture for image-based applications so far is convolutional neural network (CNN), and this is exactly what Deep Fakes is using.
+
+[Understanding the Technology Behind DeepFakes](https://www.alanzucconi.com/2018/03/14/understanding-the-technology-behind-deepfakes/) -*also good article!*
+
+>The diagram above shows an image (in this specific case, a face) being fed to an encoder. Its result is a lower dimensional representation of that very same face, which is sometimes referred to as base vector or latent face
+
+Lower dimensional representation? What does that mean? The image is still 2-D. So what di they mean lower dimension? What are examples of the dimensions? Does it have todo with the size of the vector?
+
+
 <h3 id="deeplearning-5"></h3>
 
 ### Deep Learning
