@@ -9,7 +9,7 @@ I completed my 365 days of code. But I'm going to continue to add to this log wh
 Since I last wrote in here, I made another deepfake model. I trained it to about 200k iterations but it started to get worse at one point. So I need to learn a bit more.
 
 ### Making an App
-But since then, I've put deepfakes aside to work on a business. I don't know if I want to talk about what is yet, so lets call it **Project WT**. Let's just say it's similar to a gift registry application but it's geared towards a certain untapped market.
+But since then, I've put deepfakes aside to work on a business. I don't want to talk about what is yet, so we'll call it **Project WT**. Let's just say it's similar to a gift registry application but it's geared towards a certain untapped market.
 
 I made a lot of the frontend of **Project WT** already. Today started the backend. I'm using a MERN stack to develop the app. 
 
