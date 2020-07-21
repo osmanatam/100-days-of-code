@@ -2,6 +2,55 @@
 
 I completed my 365 days of code. But I'm going to continue to add to this log when I want to save notes.
 
+<h3 id="update-7-20"></h3>
+
+### Update 
+7-20-20
+Since I last wrote in here, I made another deepfake model. I trained it to about 200k iterations but it started to get worse at one point. So I need to learn a bit more.
+
+### Making an App
+But since then, I've put deepfakes aside to work on a business. I don't know if I want to talk about what is yet, so lets call it **Project WT**. Let's just say it's similar to a gift registry application but it's geared towards a certain untapped market.
+
+I made a lot of the frontend of **Project WT** already. Today started the backend. I'm using a MERN stack to develop the app. 
+
+It kind of feels like I don't know what I'm doing, but I'm gonna do it anyways. I don't know the "right" way to do things.
+
+Did I structure my app the way I'm supposed to? Did I use this one library the way it's meant to be used? Not sure. But I can't spend all my time trying to figure out the accepted way of making an app.
+
+I'm just going to make an app- scrappily. For now, 'scrappy' suffices. Scrappy > right.
+
+My notes/resources I used:
+
+[Backend Mern tutorial](https://medium.com/codingthesmartway-com-blog/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-2-637f337e5d61)
+
+Installing Mongo and Starting the new way ***because the one in the tutorial didn't work***:
+```bash
+$ brew tap mongodb/brew
+$ brew install mongodb-community
+$ sudo mkdir -p /System/Volumes/Data/data/db
+$ sudo chown dashiellbarkhuss /usr/local/var/mongodb
+$ sudo chown dashiellbarkhuss /usr/local/var/log/mongodb
+$ sudo mongod --dbpath /System/Volumes/Data/data/db
+```
+[Catalina OS update- “mkdir: /data/db: Read-only file system” error](https://medium.com/@semmons245/arghhhh-thanks-to-the-catalina-os-update-this-now-needs-changing-987f416ebcbe)
+
+
+
+### Deepfakes
+7/7/20
+<h3 id="deeplearning-10"></h3>
+
+### Deepfakes
+7/7/20
+<hr>
+
+[An Introduction to DeepFakes and Face-Swap Technology](https://www.alanzucconi.com/2018/03/14/introduction-to-deepfakes/)
+
+[How To Create The Perfect DeepFakes](https://www.alanzucconi.com/?p=8331v)
+
+I kept training my deepfake. I'm surprised it got better even only on 38 source images for Hillary's face.
+<img src="log_imgs/hillary_iter_compare.gif">
+
 <h3 id="deeplearning-9"></h3>
 
 ### My First DeepFaceLab Deepfake
