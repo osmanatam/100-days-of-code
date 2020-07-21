@@ -6,20 +6,29 @@ I completed my 365 days of code. But I'm going to continue to add to this log wh
 
 ### Update 
 7-20-20
+
+### Deepfakes
 Since I last wrote in here, I made another deepfake model. I trained it to about 200k iterations but it started to get worse at one point. So I need to learn a bit more.
 
-### Making an App
-But since then, I've put deepfakes aside to work on a business. I don't want to talk about what is yet, so we'll call it **Project WT**. Let's just say it's similar to a gift registry application but it's geared towards a certain untapped market.
+### Secret Project WT
 
-I made a lot of the frontend of **Project WT** already. Today started the backend. I'm using a MERN stack to develop the app. 
+<img src = "log_imgs/wishtenderscreen-7-20-20.gif" />
 
-It kind of feels like I don't know what I'm doing, but I'm gonna do it anyways. I don't know the "right" way to do things.
+I've put deepfakes aside to work on a business idea. The business idea is somewhat adjecent to my interest in deepfakes. I don't want to talk about the idea yet. So we'll call it **Project WT**.
 
-Did I structure my app the way I'm supposed to? Did I use this one library the way it's meant to be used? Not sure. But I can't spend all my time trying to figure out the accepted way of making an app.
+I made a lot of the frontend of **Project WT** already. Today, I started the backend. I'm using a MERN stack to develop the app. 
 
-I'm just going to make an app- scrappily. For now, 'scrappy' suffices. Scrappy > right.
+It kind of feels like I don't know what I'm doing, but I'm gonna do it anyways. 
 
-My notes/resources I used:
+I don't know the "right" way to do things.
+
+***Did I structure my app the way I'm supposed to? Did I use this one library the way it's meant to be used?***
+
+Not sure. But I can't spend all my time trying to figure out the *accepted* way of making an app.
+
+I'm just going to make an app- scrappily. For now, 'scrappy' suffices. **Scrappy > right.**
+
+*My notes/resources to save:*
 
 [Backend Mern tutorial](https://medium.com/codingthesmartway-com-blog/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-2-637f337e5d61)
 
@@ -36,8 +45,7 @@ $ sudo mongod --dbpath /System/Volumes/Data/data/db
 
 
 
-### Deepfakes
-7/7/20
+
 <h3 id="deeplearning-10"></h3>
 
 ### Deepfakes
