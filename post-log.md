@@ -18,8 +18,9 @@ I've put deepfakes aside to work on a business idea. The business idea is somewh
 
 I made a lot of the frontend of **Project WT** already. Today, I started the backend. I'm using a MERN stack to develop the app. 
 
-It kind of feels like I don't know what I'm doing, but I'm gonna do it anyways. 
+It kind of feels like I don't know what I'm doing, but I'm going do it anyways. 
 
+### I Don't Know What I'm Doing
 I don't know the "right" way to do things.
 
 ***Did I structure my app the way I'm supposed to? Did I use this one library the way it's meant to be used?***
@@ -27,6 +28,12 @@ I don't know the "right" way to do things.
 Not sure. But I can't spend all my time trying to figure out the *accepted* way of making an app.
 
 I'm just going to make an app- scrappily. For now, 'scrappy' suffices. **Scrappy > right.**
+
+Also, I'm not entirely alone. My spouse is helping out with the idea where he can:
+  - setting up social media accounts
+  - researching logistics and payment processing
+  - discussing ideas on long walks
+  - kisses. sometimes you just need them to get through the day.
 
 *My notes/resources to save:*
 
