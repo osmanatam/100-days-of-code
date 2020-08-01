@@ -51,9 +51,9 @@ I was excited even only after getting back 2 responses to the survey. We learned
 
 So far my style as a team leader has been to make suggestions but not micromanage. I like to bring up my concerns or ideas, but ultimately let the group decide.
 
-I'm not an expert anyways- this is all new to me. The only reason I'm the leader is because I'm the one who can actually make the product and I'm spending the most time by far on it. But I'm new to business. So I'm open to what my spouse and sister suggest. We are all learning along the way. So sometimes I have to say let's make a decision and move on.
+I'm not an expert anyways- this is all new to me. The only reason I'm the leader is because I'm the one who can actually make the product and I'm spending the most time by far on it. But I'm new to business. So I'm open to what my spouse and sister suggest. We are all learning along the way.
 
-I also like to make sure the group stays focused. Sometimes we can get caught up in the details, me included. But I think the details will come to us as we learn. Very few decisions are so important that they need to be completely fleshed out a head of time.
+I also like to make sure the group stays focused. Sometimes we can get caught up in the details, me included. But I think the details will come to us as we learn. Very few decisions are so important that they need to be completely fleshed out a head of time. So sometimes I have to say let's make a decision and move on.
 
 I'm still learning how to communicate in a team setting. But I'm prioritizing learning about leadership just as much as coding.
 
@@ -1368,7 +1368,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
