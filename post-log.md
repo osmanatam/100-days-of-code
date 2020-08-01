@@ -2,12 +2,87 @@
 
 I completed my 365 days of code. But I'm going to continue to add to this log when I want to save notes.
 
+<h3 id="update-8-1-20"></h3>
+
+### Startup Update
+
+8-1-20
+
+<hr>
+
+My spouse and sister are both helping out with the startup (secret **Project WT**). It's really nice to not be doing all the work.
+
+We each found our places naturally:
+
+- I'm tech
+- my spouse is finance and credit card processing
+- my sister is marketing/market research
+
+<img src="log_imgs/wishtender_8-1-20.gif" width=200/>
+
+_It's blurry because it's still a secret!_
+
+### Market Research
+
+<hr>
+
+Whether or not the **Project WT** is successful, it's a great learning experience for any developer or entrepreneur to build a usable product.
+
+But, if I want a _successful_ product, I can't just build something _usable_. That's not going to cut it.
+
+Will people actually use **Project WT**? Will **Project WT** help someone? Market research is so important.
+
+The idea for **Project WT** came about from some accidental market research- My sister was perusing a subreddit for a certain occupation. Many of these professionals had the same problem. My sister told me about the problem. We came up with a solution.
+
+### Market Research Surveys
+
+As I build the app, we're continuing more market research. We're contacting individuals of this profession to take a survey.
+
+Asking strangers to help you with you're business is uncomfortable. These people are busy and I'm asking them to take a 5-minute survey. I tried to frame it in two ways: By taking the survey they are being 1. altruistic and 2. benefitting themselves. They are helping me out, but also, with their input, I can make a better product that can help them too.
+
+I was excited even only after getting back 2 responses to the survey. We learned two things:
+
+1. Our intuitions about the needs of our customer were correct.
+2. We learned other needs that we can address with additional features in our product.
+
+### Leading A Team
+
+<hr>
+
+So far my style as a team leader has been to make suggestions but not micromanage. I like to bring up my concerns or ideas, but ultimately let the group decide.
+
+I'm not an expert anyways- this is all new to me. The only reason I'm the leader is because I'm the one who can actually make the product and I'm spending the most time by far on it. But I'm new to business. So I'm open to what my spouse and sister suggest. We are all learning along the way.
+
+I also like to make sure the group stays focused. Sometimes we can get caught up in the details, me included. But I think the details will come to us as we learn. Very few decisions are so important that they need to be completely fleshed out a head of time.
+
+I'm still learning how to communicate in a team setting. But I'm prioritizing learning about leadership just as much as coding.
+
+<img src="log_imgs/meeting-7-31-20.jpg" width=90%/>
+
+_Team Meeting!_
+
+As the leader, I don't hold my spouse and sister to any obligation to continue. My sister's semester starts up in fall and I know she'll be really busy. But for now it's really nice to have the help. I'm appreciative of what they've done so far.
+
+We haven't fleshed out payment/equity yet, though I did bring it up before we started to work together. I'm not sure the right way to go about paying them back for their help.
+
+Working with them has given me added pressure to finish the app. I like having them rely on me. It's not too much pressure, but a good amount- like a nice massage.
+
+### Side Projects?
+
+<hr>
+
+I'm putting all my time into the site. I keep wondering if I should make time for other interests like continuing my lucid dreaming project or learning about AI and deep fakes.
+
+But I think it's ok to put them on the back burner for now. My focus is drawn to the startup project, anyways. When my focus starts to wane, I'll then go make time for my other projects.
+
 <h3 id="update-7-20"></h3>
 
-### Update 
+### Update
+
 7-20-20
 
 ### Deepfakes
+
 Since I last wrote in here, I made another deepfake model. I trained it to about 200k iterations but it started to get worse at one point. So I need to learn a bit more.
 
 ### Secret Project WT
@@ -16,30 +91,33 @@ Since I last wrote in here, I made another deepfake model. I trained it to about
 
 I've put deepfakes aside to work on a business idea. The business idea is somewhat adjecent to my interest in deepfakes. I don't want to talk about the idea yet. So we'll call it **Project WT**.
 
-I made a lot of the frontend of **Project WT** already. Today, I started the backend. I'm using a MERN stack to develop the app. 
+I made a lot of the frontend of **Project WT** already. Today, I started the backend. I'm using a MERN stack to develop the app.
 
-It kind of feels like I don't know what I'm doing, but I'm going do it anyways. 
+It kind of feels like I don't know what I'm doing, but I'm going do it anyways.
 
 ### I Don't Know What I'm Doing
+
 I don't know the "right" way to do things.
 
-***Did I structure my app the way I'm supposed to? Did I use this one library the way it's meant to be used?***
+**_Did I structure my app the way I'm supposed to? Did I use this one library the way it's meant to be used?_**
 
-Not sure. But I can't spend all my time trying to figure out the *accepted* way of making an app.
+Not sure. But I can't spend all my time trying to figure out the _accepted_ way of making an app.
 
 I'm just going to make an app- scrappily. For now, 'scrappy' suffices. **Scrappy > right.**
 
 Also, I'm not entirely alone. My spouse is helping out with the idea where he can:
-  - setting up social media accounts
-  - researching logistics and payment processing
-  - discussing ideas on long walks
-  - kisses. sometimes you just need them to get through the day.
 
-*My notes/resources to save:*
+- setting up social media accounts
+- researching logistics and payment processing
+- discussing ideas on long walks
+- kisses. sometimes you just need them to get through the day.
+
+_My notes/resources to save:_
 
 [Backend Mern tutorial](https://medium.com/codingthesmartway-com-blog/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-2-637f337e5d61)
 
-Installing Mongo and Starting the new way ***because the one in the tutorial didn't work***:
+Installing Mongo and Starting the new way **_because the one in the tutorial didn't work_**:
+
 ```bash
 $ brew tap mongodb/brew
 $ brew install mongodb-community
@@ -48,15 +126,15 @@ $ sudo chown dashiellbarkhuss /usr/local/var/mongodb
 $ sudo chown dashiellbarkhuss /usr/local/var/log/mongodb
 $ sudo mongod --dbpath /System/Volumes/Data/data/db
 ```
+
 [Catalina OS update- “mkdir: /data/db: Read-only file system” error](https://medium.com/@semmons245/arghhhh-thanks-to-the-catalina-os-update-this-now-needs-changing-987f416ebcbe)
-
-
-
 
 <h3 id="deeplearning-10"></h3>
 
 ### Deepfakes
+
 7/7/20
+
 <hr>
 
 [An Introduction to DeepFakes and Face-Swap Technology](https://www.alanzucconi.com/2018/03/14/introduction-to-deepfakes/)
@@ -69,49 +147,53 @@ I kept training my deepfake. I'm surprised it got better even only on 38 source 
 <h3 id="deeplearning-9"></h3>
 
 ### My First DeepFaceLab Deepfake
+
 6/30/20-7/6/20
+
 <hr>
 
 ## Making A (Bad) Deepfake
-I made a (very undertrained) deepfake using DeepFaceLabs. 
+
+I made a (very undertrained) deepfake using DeepFaceLabs.
 
 <img src="log_imgs/hillary_500_iter_7-6-20.gif" />
 
-This is my first deepfake using an *autoencoder* model, the kind of model that [DeepFaceLab](https://github.com/iperov/DeepFaceLab) uses. Other deepfakes I've made with [Avatarify](https://github.com/alievk/avatarify) used First Order Motion Model.
-
+This is my first deepfake using an _autoencoder_ model, the kind of model that [DeepFaceLab](https://github.com/iperov/DeepFaceLab) uses. Other deepfakes I've made with [Avatarify](https://github.com/alievk/avatarify) used First Order Motion Model.
 
 #### Why is this deepfake so bad?
 
-I trained this model on a small amount of data and iterations: 38 source images for 500 iterations. That's not enough to produce a quality deepfake. 
+I trained this model on a small amount of data and iterations: 38 source images for 500 iterations. That's not enough to produce a quality deepfake.
 
 It's common to train for 100k or more iterations. And use hundreds or thousands of source images.
 
-But my goal with this first deepfake was to get through the DeepFaceLab workflow, not make a great deepfake. Hopefully, this repo can help you get through it as well. 
+But my goal with this first deepfake was to get through the DeepFaceLab workflow, not make a great deepfake. Hopefully, this repo can help you get through it as well.
 
 <img src="log_imgs/Hillary_SAEHD_preview_7-4-20.jpg" width="330">
 
-*The preview image for my model at 400 iterations.*
+_The preview image for my model at 400 iterations._
 
 Please consider [donating](https://github.com/iperov/DeepFaceLab#how-i-can-help-the-project) to DeepFaceLab. This project is open source and a lot of hard work went into it.
 
 ### **Getting Started**
+
 I made a repo to help you get started: [DFL-Colab-Newbs](https://github.com/DashBarkHuss/DFL-Colab-Newbs)
 
-
 ### **Deepfake Readings:**
-* **Tech Behind Deepfakes #1:** [link](https://www.alanzucconi.com/2018/03/14/an-introduction-to-autoencoders/)
-* **Tech Behind Deepfakes #2:** [link](https://www.alanzucconi.com/2018/03/14/understanding-the-technology-behind-deepfakes/)
+
+- **Tech Behind Deepfakes #1:** [link](https://www.alanzucconi.com/2018/03/14/an-introduction-to-autoencoders/)
+- **Tech Behind Deepfakes #2:** [link](https://www.alanzucconi.com/2018/03/14/understanding-the-technology-behind-deepfakes/)
 
 ### **DeepFaceLab Guides:**
-* **DeepFaceLab 2.0 Guide:** [link](https://mrdeepfakes.com/forums/thread-guide-deepfacelab-2-0-explained-and-tutorials-recommended)
-* **Google Colab Guide:** [link](https://mrdeepfakes.com/forums/thread-guide-deepfacelab-google-colab-tutorial)
-  
 
+- **DeepFaceLab 2.0 Guide:** [link](https://mrdeepfakes.com/forums/thread-guide-deepfacelab-2-0-explained-and-tutorials-recommended)
+- **Google Colab Guide:** [link](https://mrdeepfakes.com/forums/thread-guide-deepfacelab-google-colab-tutorial)
 
 <h3 id="deeplearning-8"></h3>
 
 ### Deep Learning
+
 6/27/20 - 6/29/20
+
 <hr>
 
 This was on the [MrDeepFakes](https://mrdeepfakes.com/forums/thread-guide-deepfacelab-google-colab-tutorial) tutorial for DeepFaceLab with google colab.
@@ -120,37 +202,47 @@ This was on the [MrDeepFakes](https://mrdeepfakes.com/forums/thread-guide-deepfa
 
 I was like what is "the workspace we have setup"? When did we set one up?
 
->The workspace folder is the most important one to note. This is the folder where all the magic will happen. It contains three folders and two video files:
->1. “data_dst”
->- dst = destination: the folder where the original video files will live. When the project is complete, it will include two sub-folders: “aligned” and “merged”. We will talk about these later on.
->2. “data_src”
+> The workspace folder is the most important one to note. This is the folder where all the magic will happen. It contains three folders and two video files:
+>
+> 1.  “data_dst”
+>
+> - dst = destination: the folder where the original video files will live. When the project is complete, it will include two sub-folders: “aligned” and “merged”. We will talk about these later on.
+>
+> 2.  “data_src”
+>
 > - src = source: the folder where the face of the ‘fake’ will live. When the project is complete, it will include one sub-folder: “aligned”.
->3. “model”
->- model: this folder will contain the training model files used for the neural network.
->4. “data_dst.mp4”
->- This file is the destination video where we will swap the fake face with.
->5. “data_src.mp4”
->- This is the source video file where we will collect and gather the face image assets from to train our neural network.
+>
+> 3.  “model”
+>
+> - model: this folder will contain the training model files used for the neural network.
+>
+> 4.  “data_dst.mp4”
+>
+> - This file is the destination video where we will swap the fake face with.
+>
+> 5.  “data_src.mp4”
+>
+> - This is the source video file where we will collect and gather the face image assets from to train our neural network.
 
 [source](https://mc.ai/creating-your-own-deepfake-using-iperovs-deepfacelab/)
 
->DeepFaceLab 2.0 consists of selection of .bat files used to extract, train and merge (previously called convert) which are 3 main steps of creating a deepfake, they are located in the main folder along with two subfolders:
->- _internal (that's where all the files necessary for DFLs to work are)
->- workspace (this is where your models, videos, facesets (datasets) and final video outputs are
+> DeepFaceLab 2.0 consists of selection of .bat files used to extract, train and merge (previously called convert) which are 3 main steps of creating a deepfake, they are located in the main folder along with two subfolders:
+>
+> - \_internal (that's where all the files necessary for DFLs to work are)
+> - workspace (this is where your models, videos, facesets (datasets) and final video outputs are
 
 - [MrDeepFakes DeepFaceLab tutorial](https://mrdeepfakes.com/forums/thread-guide-deepfacelab-2-0-explained-and-tutorials-recommended)
-
 
 Looks like I should read this [MrDeepFakes DeepFaceLab](https://mrdeepfakes.com/forums/thread-guide-deepfacelab-2-0-explained-and-tutorials-recommended) tutorial as well as the [colab](https://mrdeepfakes.com/forums/thread-guide-deepfacelab-google-colab-tutorial) one. A lot is left out in the colab tutorial.
 
 I continued to explore deep face lab without posting all of the links I've been looking at.
 
-
-
 <h3 id="deeplearning-7"></h3>
 
 ### Deep Learning
+
 6/24/20 - 6/26/20
+
 <hr>
 I thought deepfakes used gans. But the seem to really use autoencoders.
 
@@ -160,17 +252,18 @@ It depends on what it meant by deep fake. [thispersondoesnotexist](https://thisp
 
 [The Sparse Autoencoder (SAE) for Dummies](https://mc.ai/the-sparse-autoencoder-sae-for-dummies/)
 
-**Iteration**- 
->Like any neural network, the autoencoders in Faceswap are trained using backpropagation. The training algorithm feeds a particular image into the neural network and figures out which pixels in the output don't match the input. It then calculates which neurons in the final layer were most responsible for the mistakes and slightly adjusts each neuron's parameters in a way that would have produced better results.
+**Iteration**-
+
+> Like any neural network, the autoencoders in Faceswap are trained using backpropagation. The training algorithm feeds a particular image into the neural network and figures out which pixels in the output don't match the input. It then calculates which neurons in the final layer were most responsible for the mistakes and slightly adjusts each neuron's parameters in a way that would have produced better results.
 >
->Errors are then propagated backwards to the next-to-last layer, where each neuron's parameters are tweaked once again. Errors are propagated backwards in this fashion until every parameter of the neural network—in both the encoder and the decoder—has been adjusted.
+> Errors are then propagated backwards to the next-to-last layer, where each neuron's parameters are tweaked once again. Errors are propagated backwards in this fashion until every parameter of the neural network—in both the encoder and the decoder—has been adjusted.
 >
->The training algorithm then feeds another image to the network and the whole process repeats once again. It can take hundreds of thousands of **iterations** of this process to produce an autoencoder that does a good job of reproducing its own input.
-[source](https://arstechnica.com/science/2019/12/how-i-created-a-deepfake-of-mark-zuckerberg-and-star-treks-data/)
+> The training algorithm then feeds another image to the network and the whole process repeats once again. It can take hundreds of thousands of **iterations** of this process to produce an autoencoder that does a good job of reproducing its own input.
+> [source](https://arstechnica.com/science/2019/12/how-i-created-a-deepfake-of-mark-zuckerberg-and-star-treks-data/)
 
 So an iteration must be when a network forward propagates and backpropagates through one input.
 
-[I created my own deepfake—it took two weeks and cost $552](https://arstechnica.com/science/2019/12/how-i-created-a-deepfake-of-mark-zuckerberg-and-star-treks-data/)
+[I created my own deepfake—it took two weeks and cost \$552](https://arstechnica.com/science/2019/12/how-i-created-a-deepfake-of-mark-zuckerberg-and-star-treks-data/)
 
 What are convolutional neural networks?
 
@@ -180,9 +273,9 @@ What are convolutional neural networks?
 
 [Convolutional Neural Networks (CNNs) explained](https://www.youtube.com/watch?v=YRhxdVk_sIs)
 
-Dot Product? 
+Dot Product?
 
->The Dot Product gives a scalar (ordinary number) answer, and is sometimes called the scalar product.
+> The Dot Product gives a scalar (ordinary number) answer, and is sometimes called the scalar product.
 
 [source](https://www.mathsisfun.com/algebra/vectors-dot-product.html)
 
@@ -194,37 +287,38 @@ Dot Product?
 
 Whats the matr
 
->### Epochs
->One Epoch is when an ENTIRE dataset is passed forward and backward through the neural network only ONCE.
-[source](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
+> ### Epochs
+>
+> One Epoch is when an ENTIRE dataset is passed forward and backward through the neural network only ONCE.
+> [source](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
 
->### Batch Size
->Total number of training examples present in a single batch. [source](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
+> ### Batch Size
+>
+> Total number of training examples present in a single batch. [source](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
 
->### Iterations
->To get the iterations you just need to know multiplication tables or have a calculator. 😃
+> ### Iterations
 >
->Iterations is the number of batches needed to complete one epoch.
+> To get the iterations you just need to know multiplication tables or have a calculator. 😃
 >
->Note: The number of batches is equal to number of iterations for one epoch.
+> Iterations is the number of batches needed to complete one epoch.
 >
->Let’s say we have 2000 training examples that we are going to use .
+> Note: The number of batches is equal to number of iterations for one epoch.
 >
->We can divide the dataset of 2000 examples into batches of 500 then it will take 4 iterations to complete 1 epoch.[source](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
+> Let’s say we have 2000 training examples that we are going to use .
+>
+> We can divide the dataset of 2000 examples into batches of 500 then it will take 4 iterations to complete 1 epoch.[source](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
 
 [Epoch vs Batch Size vs Iterations](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
-
-
-
 
 <h3 id="deeplearning-6"></h3>
 
 ### Deep Learning
+
 6/22/20 - 6/24/20
+
 <hr>
 
 [DeepLearning series Ep 1 : DeepFaceLab](https://www.youtube.com/watch?v=nboXZlXGFWM)
-
 
 [DeepFake with DeepFaceLab and Python by Radoslav Nedyalkov (Eng)](https://www.youtube.com/watch?v=fFDbTH7f67A) -not that great, not actually a tutorial
 
@@ -234,40 +328,40 @@ dst - a person who will be replaced
 
 <img src="log_imgs/src_dst-6-23-20.png" />
 
-[Autoencoders Tutorial | Autoencoders In Deep Learning | Tensorflow Training | Edureka](https://www.youtube.com/watch?v=nTt_ajul8NY) *-too complicated in the beginning but parts were helpful*
+[Autoencoders Tutorial | Autoencoders In Deep Learning | Tensorflow Training | Edureka](https://www.youtube.com/watch?v=nTt_ajul8NY) _-too complicated in the beginning but parts were helpful_
 
-[An Introduction to Neural Networks and Autoencoders](https://www.alanzucconi.com/2018/03/14/an-introduction-to-autoencoders/) -*good article!*
+[An Introduction to Neural Networks and Autoencoders](https://www.alanzucconi.com/2018/03/14/an-introduction-to-autoencoders/) -_good article!_
 
->The most effective architecture for image-based applications so far is convolutional neural network (CNN), and this is exactly what Deep Fakes is using.
+> The most effective architecture for image-based applications so far is convolutional neural network (CNN), and this is exactly what Deep Fakes is using.
 
-[Understanding the Technology Behind DeepFakes](https://www.alanzucconi.com/2018/03/14/understanding-the-technology-behind-deepfakes/) -*also good article!*
+[Understanding the Technology Behind DeepFakes](https://www.alanzucconi.com/2018/03/14/understanding-the-technology-behind-deepfakes/) -_also good article!_
 
->The diagram above shows an image (in this specific case, a face) being fed to an encoder. Its result is a lower dimensional representation of that very same face, which is sometimes referred to as base vector or latent face
+> The diagram above shows an image (in this specific case, a face) being fed to an encoder. Its result is a lower dimensional representation of that very same face, which is sometimes referred to as base vector or latent face
 
 Lower dimensional representation? What does that mean? The image is still 2-D. So what di they mean lower dimension? What are examples of the dimensions? Does it have todo with the size of the vector?
-
 
 <h3 id="deeplearning-5"></h3>
 
 ### Deep Learning
+
 6/18/20 - 6/21/20
 
-Messy notes and resources: 
+Messy notes and resources:
 
 <hr>
-
 
 [Ian Goodfellow: Generative Adversarial Networks (NIPS 2016 tutorial)](https://www.youtube.com/watch?v=HGYYEUSm-0Q)
 
 Words
+
 - Density Estimation
   ![](log_imgs/density_estimation_6-18-20.png)
   In probability and statistics, density estimation is the construction of an estimate, based on observed data, of an unobservable underlying [probabilty density function](https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/random-variables-continuous/v/probability-density-functions_). ([source](https://en.wikipedia.org/wiki/Density_estimation))
   - [Another video on pdf](https://www.youtube.com/watch?v=8QFpZ3FndBc)
 - agent
-  >A deep learning agent is any autonomous or semi-autonomous AI-driven system that uses deep learning to perform and improve at its tasks. ([source](https://www.google.com/search?q=what+us+an+agent+in+machine+learning&oq=what+us+an+agent+in+machine+learning&aqs=chrome..69i57j0.5366j1j9&sourceid=chrome&ie=UTF-8))
+  > A deep learning agent is any autonomous or semi-autonomous AI-driven system that uses deep learning to perform and improve at its tasks. ([source](https://www.google.com/search?q=what+us+an+agent+in+machine+learning&oq=what+us+an+agent+in+machine+learning&aqs=chrome..69i57j0.5366j1j9&sourceid=chrome&ie=UTF-8))
 
-[Artificial Intelligence Foundations: Machine Learning](https://www.linkedin.com/learning/artificial-intelligence-foundations-machine-learning) 
+[Artificial Intelligence Foundations: Machine Learning](https://www.linkedin.com/learning/artificial-intelligence-foundations-machine-learning)
 
 What's the difference between transductive learning and inductive learning?
 
@@ -282,7 +376,9 @@ Stochastic Gradient Descent.
 <h3 id="deeplearning-4"></h3>
 
 ### Deep Learning
+
 6/15/20-6/17/20
+
 <hr>
 
 I pranked my sister by zooming her with a deepfake of herself. Watch the video:
@@ -290,49 +386,55 @@ I pranked my sister by zooming her with a deepfake of herself. Watch the video:
 [![This is a link to a Youtube Video of Me Pranking My sister by calling her on zoom with a deepfake of herself](https://img.youtube.com/vi/d4rE30rFwEk/0.jpg)](https://www.youtube.com/watch?v=d4rE30rFwEk)
 
 ### Notes 6/15/20-6/17/20
+
 I've spent a lot of time on the nitty gritty calculus of backpropagation. I think it's time to zoom out and do something more broad like run something on google colabs.
 
 ### Multiple Versions of Python
+
 > Mac OS needs python
 >
->**DO NOT** remove any versions of Python found in the following folders:
+> **DO NOT** remove any versions of Python found in the following folders:
 >
->- /usr/bin
->- system/Library
+> - /usr/bin
+> - system/Library
 >
->These versions of Python—which should be Python 2.7—are installed by Apple and used by Mac OS and other software to perform some functions. Deleting Python from these directories will break Mac OS and force you to reinstall it on your computer.
+> These versions of Python—which should be Python 2.7—are installed by Apple and used by Mac OS and other software to perform some functions. Deleting Python from these directories will break Mac OS and force you to reinstall it on your computer.
 >
->### Other projects may need specific versions of python
+> ### Other projects may need specific versions of python
 >
->You may have a python project or you may use python packages that require particular versions of Python. Uninstalling those versions would prevent those projects or packages from working until that version of python is reinstalled. For example, Python 3 is a dependency of Numpy; if you uninstalled Python 3, then Numpy wouldn’t work until you reinstalled Python 3.
+> You may have a python project or you may use python packages that require particular versions of Python. Uninstalling those versions would prevent those projects or packages from working until that version of python is reinstalled. For example, Python 3 is a dependency of Numpy; if you uninstalled Python 3, then Numpy wouldn’t work until you reinstalled Python 3.
 
- [source](https://www.ianmaddaus.com/post/manage-multiple-versions-python-mac/#mac-os-needs-python)
+[source](https://www.ianmaddaus.com/post/manage-multiple-versions-python-mac/#mac-os-needs-python)
 
 ### `source`
+
 > [`source`](https://ss64.com/bash/source.html) is a bash shell built-in command that executes the content of the file passed as argument, in the current shell. It has a synonym in `.` (period).
 >
->Syntax
->```bash
->. filename [arguments]
+> Syntax
 >
->source filename [arguments]
->```
-
+> ```bash
+> . filename [arguments]
+>
+> source filename [arguments]
+> ```
 
 ```bash
 Dashiells-MacBook-Pro:~ dashiellbarkhuss$ pip install pyyaml
 Requirement already satisfied: pyyaml in /opt/miniconda3/lib/python3.7/site-packages (5.1)
 ```
+
 [source](https://superuser.com/questions/46139/what-does-source-do)
 
 ## Yaml and different versions of python on my computer
-I had a problem with yaml saying it wasn't installed when I trying to run 
+
+I had a problem with yaml saying it wasn't installed when I trying to run
 
 ```bash
 ./run_mac.sh --is-client --in-addr tcp://0.tcp.ngrok.io:19547 --out-addr tcp://0.tcp.ngrok.io:15694
 ```
 
-I'd get an error 
+I'd get an error
+
 ```bash
 Traceback (most recent call last):
   File "afy/cam_fomm.py", line 4, in <module>
@@ -340,32 +442,38 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'yaml'
 ```
 
-`No module named 'yaml'` But if I installed 
+`No module named 'yaml'` But if I installed
+
 ```bash
 pip install pyyaml
 ```
-I'd get 
+
+I'd get
+
 ```bash
 Requirement already satisfied: pyyaml in /opt/miniconda3/lib/python3.7/site-packages (5.1)
 ```
 
-`which python` in the terminal gave me 
+`which python` in the terminal gave me
+
 ```bash
 /opt/miniconda3/bin/python
 ```
 
 But in the `run_mac.sh` file I ran `which python` and I got:
+
 ```bash
 /opt/miniconda3/envs/avatarify/bin/python
 ```
+
 So I realize it's the same python environment. So I added yaml to this `avatariy` environment by add `pip install pyyaml` to the `run_mac.sh` file after the environment is set and running it once.
 
 Now it's added but I also need to do the same thing for other packages
 
-
 <h3 id="deeplearning-3"></h3>
 
 ### Deep Learning
+
 6/9/20 - 6/15/20
 
 **[Jump To Summary](#sum-deeplearning-3)** to see main resources used
@@ -375,28 +483,31 @@ Now it's added but I also need to do the same thing for other packages
 I still have so much to learn about deep learning. But I think today I will jump out of theory land and do some hands on learning through code.
 
 #### Reddits For Machine Learning Newbies
-- [r/learningmachinglearning](https://www.reddit.com/r/learnmachinelearning/) I found this reddit helpful yesterday when I had a question. 
+
+- [r/learningmachinglearning](https://www.reddit.com/r/learnmachinelearning/) I found this reddit helpful yesterday when I had a question.
 - [r/MLQuestions](https://www.reddit.com/r/MLQuestions/) This reddit looks good too for newbies.
-- [r/deeplearning](https://www.reddit.com/r/deeplearning/) Haven't checked out the newb scene here yet. 
+- [r/deeplearning](https://www.reddit.com/r/deeplearning/) Haven't checked out the newb scene here yet.
 - For **deepfakes**:
-  - [r/deepdream](https://www.reddit.com/r/deepdream/) *dedicated to art produced via machine learning algorithms*
-  - [r/MediaSynthesis](https://www.reddit.com/r/MediaSynthesis/) *Synthetic media describes the use of artificial intelligence to generate and manipulate data, most often to automate the creation of entertainment.*
+  - [r/deepdream](https://www.reddit.com/r/deepdream/) _dedicated to art produced via machine learning algorithms_
+  - [r/MediaSynthesis](https://www.reddit.com/r/MediaSynthesis/) _Synthetic media describes the use of artificial intelligence to generate and manipulate data, most often to automate the creation of entertainment._
 
 I really want to get on the [MrDeepFakes](https://mrdeepfakes.com/forums/#) forum but the forum hasn't been working. Yes MrDeepFakes is a porn site, nonetheless the people on this site are active with deepfakes and know a lot. But the fact that the forum login hasn't worked for about 2 weeks makes me think it's not the best place to learn.
 
 #### Other Chats/Forums
-- [Artificial Intellegence Discord Server](https://discord.com/invite/BRSscg) *Not specifically deepfakees, but responsive*
-- [AdultDeepFakes](https://adultdeepfakes.com/forums/) *Not alot of content in the forum*
-- [Oneduality Fakes](https://onedualityfakes.com/) *did not receive verification email, will contact if I don't receive soon. Creator is active on reddit and responsive*
-- [MrDeepFakes](https://mrdeepfakes.com/forums/#) *Can't create an account. Contacted customer service.*
+
+- [Artificial Intellegence Discord Server](https://discord.com/invite/BRSscg) _Not specifically deepfakees, but responsive_
+- [AdultDeepFakes](https://adultdeepfakes.com/forums/) _Not alot of content in the forum_
+- [Oneduality Fakes](https://onedualityfakes.com/) _did not receive verification email, will contact if I don't receive soon. Creator is active on reddit and responsive_
+- [MrDeepFakes](https://mrdeepfakes.com/forums/#) _Can't create an account. Contacted customer service._
 
 Do I want to take this [udacity course on deep learning](https://www.udacity.com/course/deep-learning-nanodegree--nd101)? It's 12 hours for 4 months.
 
-Today, I'm going to get into some more hands on stuff: I'm doing the follow along for this tutorial 
+Today, I'm going to get into some more hands on stuff: I'm doing the follow along for this tutorial
+
 - [A Friendly Introduction to Generative Adversarial Networks (GANs)](https://www.youtube.com/watch?v=8L11aMN5KY8)
 - [Repo for tutorial above](https://github.com/luisguiserrano/gans)
 
-I'm copy coding this, going through each section and trying to understand what's going on. I'm using google colab to run Jupyter notebook file. *(Update: later I switch to Jupyterlab)*
+I'm copy coding this, going through each section and trying to understand what's going on. I'm using google colab to run Jupyter notebook file. _(Update: later I switch to Jupyterlab)_
 
 [W3Schools NumPy](https://www.w3schools.com/python/numpy_intro.asp)
 
@@ -404,14 +515,14 @@ I'm copy coding this, going through each section and trying to understand what's
 
 I didn't understand what the `forward()` function was in the [GANs tutorial](https://www.youtube.com/watch?v=8L11aMN5KY8). I found [this video about forward propagation](https://www.youtube.com/watch?v=UJwK6jAStmg). I started watching the whole series it's from called [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU)
 
-
-> **Activation functions** are mathematical equations that determine the output of a neural network. The function is attached to each neuron in the network, and determines whether it should be activated (“fired”) or not, based on whether each neuron’s input is relevant for the model’s prediction.  Activation functions also help normalize the output of each neuron to a range between 1 and 0 or between -1 and 1.
-[source](https://missinglink.ai/guides/neural-network-concepts/7-types-neural-network-activation-functions-right/)
+> **Activation functions** are mathematical equations that determine the output of a neural network. The function is attached to each neuron in the network, and determines whether it should be activated (“fired”) or not, based on whether each neuron’s input is relevant for the model’s prediction. Activation functions also help normalize the output of each neuron to a range between 1 and 0 or between -1 and 1.
+> [source](https://missinglink.ai/guides/neural-network-concepts/7-types-neural-network-activation-functions-right/)
 
 Sigmoid and ReLU are examples of activation functions.
 
-### The Very Scary  Calculus-y [Part 4](https://www.youtube.com/watch?v=GlcnxUlrtek) Video
- There's so much calculus in [part 4](https://www.youtube.com/watch?v=GlcnxUlrtek) of [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU). I need to refresh my calculus. Last year, I started taking calculus on Khan Academy to prepare for machine learning, so I'm glad I'm not totally foreign to these concepts. But I need to brush up.
+### The Very Scary Calculus-y [Part 4](https://www.youtube.com/watch?v=GlcnxUlrtek) Video
+
+There's so much calculus in [part 4](https://www.youtube.com/watch?v=GlcnxUlrtek) of [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU). I need to refresh my calculus. Last year, I started taking calculus on Khan Academy to prepare for machine learning, so I'm glad I'm not totally foreign to these concepts. But I need to brush up.
 
 <h3 id="calculus-for-backprop"></h3>
 
@@ -426,9 +537,9 @@ Sigmoid and ReLU are examples of activation functions.
 7. [Derivative notation review](https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-1/a/derivative-notation-review)
 8. [Chain rule](https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-1a/v/chain-rule-introduction)
 9. [Power rule](https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new/ab-2-5/v/power-rule)
-10. [The Chain Rule](http://faculty.wlc.edu/buelow/calc/nt3-5.html) *from wlc.edu I mostly just looked at the first image*
+10. [The Chain Rule](http://faculty.wlc.edu/buelow/calc/nt3-5.html) _from wlc.edu I mostly just looked at the first image_
 11. [Intro to matrix multiplication](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:multiplying-matrices-by-matrices/v/matrix-multiplication-intro)
-    
+
 I figured out which calculus concepts to review because either the [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU) mentioned them. Or the Khan Academy videos themselves mentioned a concept I was unfamiliar with.
 
 It helped to watch [part 4](https://www.youtube.com/watch?v=GlcnxUlrtek) of [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU) on the companion Jupyter notebook file, because it had a chart of all the variable symbols and what they mean.
@@ -437,31 +548,30 @@ I've spent several days trying to understand the math of the [8 minute](https://
 
 Rewatched [Backpropagation calculus](https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=4)
 
-
 I finished watching the 7 part series [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU).
 
 <h3 id="sum-deeplearning-3"></h3>
 
 ### Summary of 6/9/20 - 6/15/20
+
 <hr>
 
 1. I followed this [GANs tutorial](https://www.youtube.com/watch?v=8L11aMN5KY8). But I stopped coding along when the tutorial got to the part about the `forward()` function.
 
-2. I didn't understand `forward()`. So I watched [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU) which covers forward propagation in depth. 
+2. I didn't understand `forward()`. So I watched [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU) which covers forward propagation in depth.
 
 3. [Part 4](https://www.youtube.com/watch?v=GlcnxUlrtek) of [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU) has a lot of calculus. I had to review [these calculus concepts](#calculus-for-backprop) before moving on.
 4. I rewatched [Backpropagation calculus](https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=4) from a [3Brown1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw).
 
 5. I finished watching the [Neural Networks Demystified](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU) series but didn't finishing coding along.
 
-
-
 <h3 id="deeplearning-2"></h3>
 
 ### Deep Learning
+
 6/6/20 - 6/8/20
 
-[3Brown1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) deep learning series -  [Neural networks](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi). Superb visuals. He had great content for when I was learning about (brainwave) signal processing as well.
+[3Brown1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) deep learning series - [Neural networks](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi). Superb visuals. He had great content for when I was learning about (brainwave) signal processing as well.
 
 #### [Neural networks](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) by [3Brown1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw):
 
@@ -471,54 +581,57 @@ I finished watching the 7 part series [Neural Networks Demystified](https://www.
 4. [Backpropagation calculus | Deep learning, chapter 4](https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=4)
 
 Video: [A Friendly Introduction to Generative Adversarial Networks (GANs)](https://www.youtube.com/watch?v=8L11aMN5KY8)
-*Tutorial with python follow along on GANs, the machine learning framework used in deepfakes.*
-
+_Tutorial with python follow along on GANs, the machine learning framework used in deepfakes._
 
 [Repo for tutorial above](https://github.com/luisguiserrano/gans)
-
 
 Article: [GANs from Scratch 1: A deep introduction. With code in PyTorch and TensorFlow](https://medium.com/ai-society/gans-from-scratch-1-a-deep-introduction-with-code-in-pytorch-and-tensorflow-cb03cdcdba0f)
 
 ML vs AI
->For those new to the field of Artificial Intelligence (AI), we can briefly describe Machine Learning (ML) as the sub-field of AI that uses data to “teach” a machine/program how to perform a new task. [*source*](https://medium.com/ai-society/gans-from-scratch-1-a-deep-introduction-with-code-in-pytorch-and-tensorflow-cb03cdcdba0f)
+
+> For those new to the field of Artificial Intelligence (AI), we can briefly describe Machine Learning (ML) as the sub-field of AI that uses data to “teach” a machine/program how to perform a new task. [_source_](https://medium.com/ai-society/gans-from-scratch-1-a-deep-introduction-with-code-in-pytorch-and-tensorflow-cb03cdcdba0f)
 
 [How Machines Learn](https://www.youtube.com/watch?v=R9OHn5ZF4Uo)
 
 [The Rise of the Machines – Why Automation is Different this Time](https://www.youtube.com/watch?v=WSKi8HfcxEk)
 
-[Lecture 13 | Generative Models](https://www.youtube.com/watch?v=5WoItGTWV54) - *only watched a little*
-
+[Lecture 13 | Generative Models](https://www.youtube.com/watch?v=5WoItGTWV54) - _only watched a little_
 
 #### Question:
-Are there libraries that help machines learn faster by feeding it what another machine already learned? 
 
-*For example,* let's say I have a collection of text messages. I wrote half of them and Shlomo, my bff/lover, wrote the other half. I want a machine to learn to detect which texts I wrote and which Shlomo wrote. In this situation, are there libraries of neural networks that have already taught a machine about the english language? Otherwise my machine with have to learn to recognize so much from scratch.
+Are there libraries that help machines learn faster by feeding it what another machine already learned?
+
+_For example,_ let's say I have a collection of text messages. I wrote half of them and Shlomo, my bff/lover, wrote the other half. I want a machine to learn to detect which texts I wrote and which Shlomo wrote. In this situation, are there libraries of neural networks that have already taught a machine about the english language? Otherwise my machine with have to learn to recognize so much from scratch.
 
 Is a library like this a thing? Or do you always have to train a machine from scratch?
 
-I posted this question on [reddit](https://www.reddit.com/r/learnmachinelearning/comments/gzc1wp/does_machine_learning_always_start_from_scratch/). I wanted to find a slack or discord to post it on. But I haven't found a good slack or discord for beginners learning ML. 
+I posted this question on [reddit](https://www.reddit.com/r/learnmachinelearning/comments/gzc1wp/does_machine_learning_always_start_from_scratch/). I wanted to find a slack or discord to post it on. But I haven't found a good slack or discord for beginners learning ML.
 
 I got an answer
->For NLP, your best best is probably scapy, as it comes with three English models ready to deploy. You will still need labels in your training data for who wrote what note, but tokenization, stemming, word vector generation, etc should be ready to go for preprocessing!
->
->Hint: in other **prebuilt models**, you can also add on to them using **transfer learning**
 
-Prebuilt models & [transfer learning](https://en.wikipedia.org/wiki/Transfer_learning#:~:text=Transfer%20learning%20(TL)%20is%20a,when%20trying%20to%20recognize%20trucks.) is what I'm talking about I guess!
+> For NLP, your best best is probably scapy, as it comes with three English models ready to deploy. You will still need labels in your training data for who wrote what note, but tokenization, stemming, word vector generation, etc should be ready to go for preprocessing!
+>
+> Hint: in other **prebuilt models**, you can also add on to them using **transfer learning**
+
+Prebuilt models & [transfer learning](<https://en.wikipedia.org/wiki/Transfer_learning#:~:text=Transfer%20learning%20(TL)%20is%20a,when%20trying%20to%20recognize%20trucks.>) is what I'm talking about I guess!
 
 Not related to deep learing: **Tim Ferris/ Noah Kagan Article on business**- [How to Create a Million-Dollar Business This Weekend (Examples: AppSumo, Mint, Chihuahuas)](https://tim.blog/2011/09/24/how-to-create-a-million-dollar-business-this-weekend-examples-appsumo-mint-chihuahuas/)
 
 <h3 id="deeplearning-1"></h3>
 
 ### Deep Learning
+
 6/4/20 - 6/6/20
 
-Watching this series- this is the first video- [How to Make a Prediction - Intro to Deep Learning #1](https://www.youtube.com/watch?v=vOppzHpvTiQ&list=PL2-dafEMk2A7YdKv4XfKpfbTH5z6rEEj3) 
-  - Machine learning vs Neural Network vs Deep Learning are all different things
-  - **Machine Learning:** Traditionally, programming is defining every step for a ccomputer to take to get to an outcome. Machine learning is backwards. You Show the computer the outcome and the computer learns how to get there.
-  - **Neural Networks:** There are a lot of mahcine learning models. One of them is called a Neural Network.
-  - **Deep Learning:** When we use a Neural Network that's not just one or two but many layers deep to make a prediction.
+Watching this series- this is the first video- [How to Make a Prediction - Intro to Deep Learning #1](https://www.youtube.com/watch?v=vOppzHpvTiQ&list=PL2-dafEMk2A7YdKv4XfKpfbTH5z6rEEj3)
+
+- Machine learning vs Neural Network vs Deep Learning are all different things
+- **Machine Learning:** Traditionally, programming is defining every step for a ccomputer to take to get to an outcome. Machine learning is backwards. You Show the computer the outcome and the computer learns how to get there.
+- **Neural Networks:** There are a lot of mahcine learning models. One of them is called a Neural Network.
+- **Deep Learning:** When we use a Neural Network that's not just one or two but many layers deep to make a prediction.
 
 Machine Learning 3 Styles:
+
 - Supervised
 - Unsupervised
 - Reinforcement
@@ -537,102 +650,111 @@ Deep learning= many layer neural net + big data + big compute
 
 <h3 id="avatarify-2"></h3>
 
-### More Deepfakes & Avatarify 
+### More Deepfakes & Avatarify
+
 6/3/20 - 6/4/20
 
 Avatarify keeps [freezing](#avatarify-freezing). It's hard for me to figure out why. Maybe it has something to do with Google Colab? I will try to understand mroe about Colab.
 
 From [Welcome To Colaboratory](https://colab.research.google.com/notebooks/intro.ipynb):
->Colaboratory, or "Colab" for short, allows you to write and execute Python in your browser, with
+
+> Colaboratory, or "Colab" for short, allows you to write and execute Python in your browser, with
 >
->- Zero configuration required
->- Free access to GPUs
->- Easy sharing
+> - Zero configuration required
+> - Free access to GPUs
+> - Easy sharing
 >
->Whether you're a student, a data scientist or an AI researcher, Colab can make your work easier. 
+> Whether you're a student, a data scientist or an AI researcher, Colab can make your work easier.
 
 It reminds me of a Jupyter Notebooks. Oh I guess it is a Jupyter Notebook?
 
->**What is the difference between Jupyter and Colab?**
+> **What is the difference between Jupyter and Colab?**
 >
->Jupyter is the open source project on which Colab is based. Colab allows you to use and share Jupyter notebooks with others without having to download, install, or run anything.
+> Jupyter is the open source project on which Colab is based. Colab allows you to use and share Jupyter notebooks with others without having to download, install, or run anything.
 
-*-from [Colaboratory FAQ](https://research.google.com/colaboratory/faq.html)*
+_-from [Colaboratory FAQ](https://research.google.com/colaboratory/faq.html)_
 
 From [Welcome To Colaboratory](https://colab.research.google.com/notebooks/intro.ipynb):
->Colab notebooks execute code on Google's cloud servers, meaning you can leverage the power of Google hardware, including GPUs and TPUs, regardless of the power of your machine. All you need is a browser.
+
+> Colab notebooks execute code on Google's cloud servers, meaning you can leverage the power of Google hardware, including GPUs and TPUs, regardless of the power of your machine. All you need is a browser.
 
 Could the problem be with Ngrok? What is Ngrok?
 
->**What is ngrok?**
+> **What is ngrok?**
 >
->ngrok exposes local servers behind NATs and firewalls to the public internet over secure tunnels.
+> ngrok exposes local servers behind NATs and firewalls to the public internet over secure tunnels.
 
-*-from [ngrok](https://ngrok.com/product)*
+_-from [ngrok](https://ngrok.com/product)_
 
 [Network address translation (NAT)](https://en.wikipedia.org/wiki/Network_address_translation)
 
 Video: [NAT Explained - Network Address Translation](https://www.youtube.com/watch?v=FTUV0t6JaDA)
 
 Video: [What is ngrok?](https://www.youtube.com/watch?v=UaxqJUXqvro)
-  - It lets anyone access your local website.
+
+- It lets anyone access your local website.
 
 ### Ali Replied On Slack
+
 I had posted on the avatarify slack:
->My terminal was showing all this around the time it froze. Seemed to go from sending and receiving data to predict returned None  and  recv_queue is empty
->```bash
->[1591061619.742012] PACK 1.651 (1.518)		UNPACK 0.888 (1.153)		
->[1591061620.019460] SEND 0.111 (0.116)		
->[1591061620.803449] RECV 107.846 (44.370)		
->[1591061620.805253] PACK 1.613 (1.520)		UNPACK 1.687 (1.158)		
->[1591061621.087406] SEND 0.107 (0.116)		
->[1591061621.356967] recv_queue is empty
->[1591061621.357040] predict returned None
->[1591061621.836266] RECV 99.935 (44.233)		
->[1591061621.837547] PACK 1.561 (1.521)		UNPACK 1.189 (1.159)		
->[1591061622.072949] recv_queue is empty
->[1591061622.073058] predict returned None
->[1591061622.088352] SEND 0.133 (0.116)		
->[1591061622.188220] recv_queue is empty
->[1591061622.188299] predict returned None
->[1591061622.301631] recv_queue is empty
->[1591061622.301709] predict returned None
->[1591061622.414096] recv_queue is empty
->[1591061622.414171] predict returned None
->[1591061622.526833] recv_queue is empty
->[1591061622.526892] predict returned None
->[1591061622.638287] recv_queue is empty
->[1591061622.638335] predict returned None
->[1591061622.748865] recv_queue is empty
->```
+
+> My terminal was showing all this around the time it froze. Seemed to go from sending and receiving data to predict returned None and recv_queue is empty
+>
+> ```bash
+> [1591061619.742012] PACK 1.651 (1.518)		UNPACK 0.888 (1.153)
+> [1591061620.019460] SEND 0.111 (0.116)
+> [1591061620.803449] RECV 107.846 (44.370)
+> [1591061620.805253] PACK 1.613 (1.520)		UNPACK 1.687 (1.158)
+> [1591061621.087406] SEND 0.107 (0.116)
+> [1591061621.356967] recv_queue is empty
+> [1591061621.357040] predict returned None
+> [1591061621.836266] RECV 99.935 (44.233)
+> [1591061621.837547] PACK 1.561 (1.521)		UNPACK 1.189 (1.159)
+> [1591061622.072949] recv_queue is empty
+> [1591061622.073058] predict returned None
+> [1591061622.088352] SEND 0.133 (0.116)
+> [1591061622.188220] recv_queue is empty
+> [1591061622.188299] predict returned None
+> [1591061622.301631] recv_queue is empty
+> [1591061622.301709] predict returned None
+> [1591061622.414096] recv_queue is empty
+> [1591061622.414171] predict returned None
+> [1591061622.526833] recv_queue is empty
+> [1591061622.526892] predict returned None
+> [1591061622.638287] recv_queue is empty
+> [1591061622.638335] predict returned None
+> [1591061622.748865] recv_queue is empty
+> ```
 
 I just checked the Avatarify Slack and Ali answered:
 
->Looks like the server stopped, did you check that?
+> Looks like the server stopped, did you check that?
 
-Wait a minute, when did I run a server? I mean I knew I did. But I didn't really think about it. 
+Wait a minute, when did I run a server? I mean I knew I did. But I didn't really think about it.
 
->## Technical details
->The client on your computer connects to the server via ngrok TCP tunnel or a reverse ssh tunnel.
+> ## Technical details
+>
+> The client on your computer connects to the server via ngrok TCP tunnel or a reverse ssh tunnel.
 
-*-from the avatarify Colab file*
-
+_-from the avatarify Colab file_
 
 [What is TCP/IP?](https://www.youtube.com/watch?v=PpsEaqJV_A0)
 
 Well I ran the preview again and I haven't had a problem again with freezing. I think it might just be that the internet over here sucks balls. I've had a lot of lagging but no freezing. My Google Colabs rendered avatar will sometimes lag a whole minute behind my computer preview.
 
 ### Client Not Starting Again
+
 I'm getting the problem where the client isn't starting again. Maybe it's the internet at the house I'm at.
 
 I ran `./run_mac.sh --is-client --in-addr tcp://0.tcp.ngrok.io:<some #> --out-addr tcp://0.tcp.ngrok.io:<some #>` in my client.
 
 It got stuck again:
+
 ```bash
 [1591295183.195187] Loading Predictor
 [1591295183.249625] Sending to tcp://0.tcp.ngrok.io:19494
 [1591295183.249688] Receiving from tcp://0.tcp.ngrok.io:18279
-[1591295183.251305] SEND 0.289 (0.289)	
+[1591295183.251305] SEND 0.289 (0.289)
 ```
 
 So I opened a new terminal so I could keep the tcp tunnel open and cd'd into my avatarify directory and got the info from the logs:
@@ -657,7 +779,7 @@ $ cat ./var/log/predictor_remote.log | tail -100
 $ cat ./var/log/send_worker.log | tail -100
 
 [1591295183.249461] Sending to tcp://0.tcp.ngrok.io:19494
-[1591295183.250705] SEND 0.289 (0.289)		
+[1591295183.250705] SEND 0.289 (0.289)
 ```
 
 #### Logs from the **server(Google Colab)**
@@ -719,7 +841,7 @@ $ cat ./var/log/send_worker.log | tail -100
 [1591295181.551827] recv timeout
 [1591295182.553060] recv timeout
 [1591295183.553402] recv timeout
-[1591295184.037698] RECV 483.494 (483.494)		
+[1591295184.037698] RECV 483.494 (483.494)
 [1591295185.040406] recv timeout
 [1591295186.041745] recv timeout
 [1591295187.043012] recv timeout
@@ -805,7 +927,8 @@ $ cat ./var/log/send_worker.log | tail -100
 ```
 
 I think Google Colab is interesting, and might help me learn how to help other people use a remote GPU. However, I couldn't skip all of this hassle by getting an Nvidia GPU. I thought you could not use them with Apple products, but I think that's not entirely true if you have some coding skills. I also wonder how close Ali is to creating a non-Nvidia version of this project? How many other projects use only Nvidia?
-``` bash
+
+```bash
 
 !ps
 
@@ -823,7 +946,8 @@ I think Google Colab is interesting, and might help me learn how to help other p
 
 <h3 id="avatarify-1"></h3>
 
-### Avatarify 
+### Avatarify
+
 6/1/20 - 6/2/20
 
 [avatarify](https://github.com/alievk/avatarify) is an open source "deepfake" program that you can use live on Zoom. For example, you can Zoom into your meeting as Einstein so people will take you seriously.
@@ -832,19 +956,21 @@ I followed the instructions for installing avatarify on my mac and then I follow
 
 #### Notes on following the [readme](https://github.com/alievk/avatarify) and Google Colab instructions:
 
-- Make sure you're doing the Colab in your own copy. I'm not sure how the Colab works, but I think it's sort of like Google docs- if you make changes to the document, you changed it for everyone. So before you even start playing with the Colab you should *copy to drive* and run your copy of the Colab.
-<img src="log_imgs/avatarify_colab_6-2-20-1.png">
+- Make sure you're doing the Colab in your own copy. I'm not sure how the Colab works, but I think it's sort of like Google docs- if you make changes to the document, you changed it for everyone. So before you even start playing with the Colab you should _copy to drive_ and run your copy of the Colab.
+  <img src="log_imgs/avatarify_colab_6-2-20-1.png">
 
 - Remember to restart the terminal after installing miniconda before running `bash scripts/install_mac.sh`. Otherwise you could get an error: `-bash: conda: command not found`.
 
 ### Freezing Up
+
 When I run avatarify in Google Colab, sometimes nothing happens when I try to start the client.
 
 I'll run the script in my terminal:
 
 `./run_mac.sh --is-client --in-addr tcp://0.tcp.ngrok.io:<# collab it gives you> --out-addr tcp://0.tcp.ngrok.io:< # collab gives you >`
 
-And I get back  something like this:
+And I get back something like this:
+
 ```bash
 [1590494901.630968] Loading Predictor
 [1590494901.735869] Receiving from tcp://0.tcp.ngrok.io:15702
@@ -856,60 +982,68 @@ And nothing happens. A lot of things seem to cause this problem: another process
 
 #### Here's how I refresh everything.
 
-1. **BEFORE YOU START:** First, make sure you're doing everything in your own version of the avatarify Colab. I'm not sure how Colab works, but I think it's sort of like Google docs- if you make changes to the document, you changed it for everyone. So before you even start playing with the Colab you should *copy to drive* and run the Colab on your copy.
-<img src="log_imgs/avatarify_colab_6-2-20-1.png"> 
+1. **BEFORE YOU START:** First, make sure you're doing everything in your own version of the avatarify Colab. I'm not sure how Colab works, but I think it's sort of like Google docs- if you make changes to the document, you changed it for everyone. So before you even start playing with the Colab you should _copy to drive_ and run the Colab on your copy.
+   <img src="log_imgs/avatarify_colab_6-2-20-1.png">
 
-1. When you run into a problem (like I did with the client not starting), revert to the original state: 
+1. When you run into a problem (like I did with the client not starting), revert to the original state:
+
    1. <img src="log_imgs/avatarify_colab_6-2-20-2.png">
    2. <img src="log_imgs/avatarify_colab_6-2-20-3.png">
    3. <img src="log_imgs/avatarify_colab_6-2-20-4.png" width="70%">
    4. <img src="log_imgs/avatarify_colab_6-2-20-5.png" width="70%">
    5. <img src="log_imgs/avatarify_colab_6-2-20-6.png" width="70%">
-   5. <img src="log_imgs/avatarify_colab_6-2-20-7.png">
-   
-2. And terminate any running sessions
-     1. <img src="log_imgs/avatarify_colab_6-2-20-8.png">
-     2. <img src="log_imgs/avatarify_colab_6-2-20-9.png">
-     3. <img src="log_imgs/avatarify_colab_6-2-20-10.png">
+   6. <img src="log_imgs/avatarify_colab_6-2-20-7.png">
 
-3. On your computer, start a new terminal just in case.
+1. And terminate any running sessions
+
+   1. <img src="log_imgs/avatarify_colab_6-2-20-8.png">
+   2. <img src="log_imgs/avatarify_colab_6-2-20-9.png">
+   3. <img src="log_imgs/avatarify_colab_6-2-20-10.png">
+
+1. On your computer, start a new terminal just in case.
 
 <h3 id="avatarify-freezing"></h3>
 
-### Preview Freezing 
+### Preview Freezing
+
 When I do get the preview to appear after running
 `./run_mac.sh --is-client....` it will start working and then freeze. As seen here:
 
   <img src="log_imgs/einstein_froze_6-2-20.gif">
 
-This is where I am stuck. 
+This is where I am stuck.
 
 Looking at this, I realize Einstein and I both have ample flyaways. Does this mean I'm a genius too?
 
 #### Next Steps
-The next steps are 
-   1. Getting the preview to stop freezing. 
-   2. Connecting the preview to Zoom.
+
+The next steps are
+
+1.  Getting the preview to stop freezing.
+2.  Connecting the preview to Zoom.
 
 ### Some More Avatars
+
 #### Nat Sharpe
+
 Friend and fellow coder and bad ass [Nat Sharpe](https://www.linkedin.com/in/nat-sharpe/):
 
-  - <img src="log_imgs/nat_avatar_6-2-20.gif">
+- <img src="log_imgs/nat_avatar_6-2-20.gif">
+
 #### Adam Stillman
+
 [Adam Stillman](https://www.linkedin.com/in/adamjstillman/), Cousin. With my swagger and his punim, we have the potential to be the next American heart throb:
 
-  - <img src="log_imgs/adam_avatar_6-2-20.gif">
+- <img src="log_imgs/adam_avatar_6-2-20.gif">
+
 #### Einstein
+
 My hairstyle twin!
 
-  - <img src="log_imgs/einstein_avatar_6-2-20.gif">
-
-
-
-
+- <img src="log_imgs/einstein_avatar_6-2-20.gif">
 
 ### Deep Learning
+
 5/29/20 - 6/1/20
 
 #### Messy Notes on Deep Learning
@@ -917,15 +1051,16 @@ My hairstyle twin!
 [CUDA Explained - Why Deep Learning uses GPUs](https://www.youtube.com/watch?v=6stDhEA0wFQ)
 
 What I learned from this^ video:
+
 - GPU's are different that CPU's because they have thousands of cores which means they can compute a lot in parallel.
 
->The main difference between CPU and GPU architecture is that a CPU is designed to handle a wide-range of tasks quickly (as measured by CPU clock speed), but are limited in the concurrency of tasks that can be running. A GPU is designed to quickly render high-resolution images and video concurrently.
+> The main difference between CPU and GPU architecture is that a CPU is designed to handle a wide-range of tasks quickly (as measured by CPU clock speed), but are limited in the concurrency of tasks that can be running. A GPU is designed to quickly render high-resolution images and video concurrently.
 
-*-from [CPU vs GPU | Definition and FAQs | OmniSci](https://www.omnisci.com/technical-glossary/cpu-vs-gpu)*
+_-from [CPU vs GPU | Definition and FAQs | OmniSci](https://www.omnisci.com/technical-glossary/cpu-vs-gpu)_
 
-This makes  GPU's ideal for deep learning because neural networks are embarrassingly parallel. I'm not being dramatic. [Embarrassingly parallel](https://en.wikipedia.org/wiki/Embarrassingly_parallel) is the actual term, and it means what it sounds like:
+This makes GPU's ideal for deep learning because neural networks are embarrassingly parallel. I'm not being dramatic. [Embarrassingly parallel](https://en.wikipedia.org/wiki/Embarrassingly_parallel) is the actual term, and it means what it sounds like:
 
->Parallel computing, a paradigm in computing which has multiple tasks running simultaneously, might contain what is known as an embarrassingly parallel workload or problem (also called perfectly parallel, delightfully parallel or pleasingly parallel). An embarrassingly parallel task can be considered a trivial case - little or no manipulation is needed to separate the problem into a number of parallel tasks.
+> Parallel computing, a paradigm in computing which has multiple tasks running simultaneously, might contain what is known as an embarrassingly parallel workload or problem (also called perfectly parallel, delightfully parallel or pleasingly parallel). An embarrassingly parallel task can be considered a trivial case - little or no manipulation is needed to separate the problem into a number of parallel tasks.
 
 Apple Vs. Nvidia
 [Why Apple Ditched Nvidia Graphics Cards](https://www.youtube.com/watch?v=hbk782qET5U)
@@ -934,58 +1069,61 @@ Apple Vs. Nvidia
 
 Since content creators use Macs(this is my assumption), and Nvidia doesn't work with Mac, what is the future of these hardwares? Who will win?
 
->It's like Apple launching the original Macintosh without support for DOS software, or iPod without any way to playback Windows Media Player files, an iPhone without Java, or iPad without Adobe Flash. It's boldly insane to pundits, but it's also exactly the kind of high stakes gamble that has regularly worked out well for Apple and its customer base.
+> It's like Apple launching the original Macintosh without support for DOS software, or iPod without any way to playback Windows Media Player files, an iPhone without Java, or iPad without Adobe Flash. It's boldly insane to pundits, but it's also exactly the kind of high stakes gamble that has regularly worked out well for Apple and its customer base.
 
-*-from [Editorial: Mac Pro puts the pedal to Metal in Apple's race with Nvidia](https://appleinsider.com/articles/19/10/18/editorial-mac-pro-puts-the-pedal-to-metal-in-apples-race-with-nvidia)*
+_-from [Editorial: Mac Pro puts the pedal to Metal in Apple's race with Nvidia](https://appleinsider.com/articles/19/10/18/editorial-mac-pro-puts-the-pedal-to-metal-in-apples-race-with-nvidia)_
 
 **GPGPU:**
 
->General-purpose computing on graphics processing units (GPGPU, rarely GPGP) is the use of a graphics processing unit (GPU), which typically handles computation only for computer graphics, to perform computation in applications traditionally handled by the central processing unit (CPU).
+> General-purpose computing on graphics processing units (GPGPU, rarely GPGP) is the use of a graphics processing unit (GPU), which typically handles computation only for computer graphics, to perform computation in applications traditionally handled by the central processing unit (CPU).
 
-*-from [General-purpose computing on graphics processing units](https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units)*
+_-from [General-purpose computing on graphics processing units](https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units)_
 
 > There isn't a clear answer if the issue is Nvidia refusing to support Apple's Metal, or Apple refusing to officially approve Nvidia's drivers. It appears to be both. Apple pretty clearly has a vested interest in expanding industry support for its Metal API, the same as Nvidia with its CUDA platform.
 
-*-from [Editorial: Mac Pro puts the pedal to Metal in Apple's race with Nvidia](https://appleinsider.com/articles/19/10/18/editorial-mac-pro-puts-the-pedal-to-metal-in-apples-race-with-nvidia)*
+_-from [Editorial: Mac Pro puts the pedal to Metal in Apple's race with Nvidia](https://appleinsider.com/articles/19/10/18/editorial-mac-pro-puts-the-pedal-to-metal-in-apples-race-with-nvidia)_
 
 CUDA vs OpenCl vs Metal?
 
->Nvidia GPU’s have built in hardware accelerated ray tracing and AND[sic AMD] does not.
+> Nvidia GPU’s have built in hardware accelerated ray tracing and AND[sic AMD] does not.
 
-*-My dad*
+_-My dad_
 
->AMD has detailed the next generation of Radeon graphics processing units codenamed "Navi 2X," with the RDNA 2 family anticipated to **include hardware ray tracing**
+> AMD has detailed the next generation of Radeon graphics processing units codenamed "Navi 2X," with the RDNA 2 family anticipated to **include hardware ray tracing**
 
-*-from [AMD Radeon 'Navi 2X' cards will offer ray tracing to future Macs](https://appleinsider.com/articles/20/03/09/amd-radeon-navi-2x-cards-will-offer-ray-tracing-to-future-macs)*
+_-from [AMD Radeon 'Navi 2X' cards will offer ray tracing to future Macs](https://appleinsider.com/articles/20/03/09/amd-radeon-navi-2x-cards-will-offer-ray-tracing-to-future-macs)_
 
-Although for deep learning and other general-purpose GPU  stuff I don’t know if ray tracing matters. It just a [graphics rendering technique](https://www.youtube.com/watch?v=0FMlPUEAZfs). 
+Although for deep learning and other general-purpose GPU stuff I don’t know if ray tracing matters. It just a [graphics rendering technique](https://www.youtube.com/watch?v=0FMlPUEAZfs).
 
 [First Order Motion Model for Image Animation](https://www.youtube.com/watch?v=lE-4w8q_5GU)
 
 [avatarify](https://github.com/alievk/avatarify)
 -remember to restart the terminal after installing miniconda before running `bash scripts/install_mac.sh`
 
-
 ### Making A Demo Page for A Digital Business Idea
+
 5/27/20-5/29/20
+
 <hr>
 Demos of your business idea can help get investors and collaborators on board. With a little bit of css, html, and Photoshop knowledge, you can make a professional looking visual demo MPV in a short time.
 
 ### 1. Pick A Template SIte
-I created a demo application of my business idea from an already existing site, which I used as a template. 
+
+I created a demo application of my business idea from an already existing site, which I used as a template.
 
 Find a website that is similar in structure to your idea. For example, if you were creating a site for renting out your pets to play with, you might use AirBnb's website as your template. You can easily replace the rental spaces with pets, so it's a good match.
 
 ### 2. Save The Page(s) as An HTML
+
 Use the chrome extension [Save Page WE](https://chrome.google.com/webstore/detail/save-page-we/dhhpefjklgkmgeafimnjhojgjamoafof) to save a complete web page (as currently displayed) as a single HTML file that can be opened in any browser.
 
 ### 3. Edit The Page
 
-Once you have the page(s) saved, open in VSC code and edit the css and html. Use DevTools to help figure out what to change. 
+Once you have the page(s) saved, open in VSC code and edit the css and html. Use DevTools to help figure out what to change.
 
-Your site will be unusable. But it will create a visual prototype. 
+Your site will be unusable. But it will create a visual prototype.
 
- Where applicable, replace the images on the site with images you saved from Google or Instagram. You don't have to pay for images because you're not publishing this website. 
+Where applicable, replace the images on the site with images you saved from Google or Instagram. You don't have to pay for images because you're not publishing this website.
 
 You can customize images further on Photoshop or another image editor.
 
@@ -995,47 +1133,55 @@ For my site, I used Fiverr as the template. Fiverr was a great template for my i
 
 <img src="log_imgs/template_site_5-29-20.png">
 
-As you can see, I copied some of Fiverr's design elements directly. But that's ok. The purpose of making this mock-up is to demonstrate my business idea to collaborators. The mock-up is not a template for the exact design and branding. 
+As you can see, I copied some of Fiverr's design elements directly. But that's ok. The purpose of making this mock-up is to demonstrate my business idea to collaborators. The mock-up is not a template for the exact design and branding.
 
 I blurred the text for this post, but collaborators will understand the business from the text and visuals.
 
-### Machine Learning 
+### Machine Learning
+
 05/22/20
+
 <hr>
 
 ### Getting Started
+
 [Your First Machine Learning Project in Python Step-By-Step](https://machinelearningmastery.com/machine-learning-in-python-step-by-step/)
 
 ### Install Python
->**Don’t Update** Python 2.x to Python 3.x, Just **Install** Python 3.x on the Mac
+
+> **Don’t Update** Python 2.x to Python 3.x, Just **Install** Python 3.x on the Mac
 
 -from [How to Install Updated Python 3 on Mac](https://osxdaily.com/2018/06/13/how-install-update-python-3x-mac/)
 
 Use the macOS 64-bit installer which you can [download here](https://www.python.org/downloads/release/python-383/)
 
->If you're using macOS go to Macintosh HD > Applications > Python3.6 folder (or whatever version of python you're using) > double click on "Install Certificates.command" file.
+> If you're using macOS go to Macintosh HD > Applications > Python3.6 folder (or whatever version of python you're using) > double click on "Install Certificates.command" file.
 
 -from [Stackoverflow](https://stackoverflow.com/questions/50236117/scraping-ssl-certificate-verify-failed-error-for-http-en-wikipedia-org)
 
 ### Install pip
+
 [Installating Pip](https://pip.pypa.io/en/stable/installing/):
 
 Run:
+
 ```bash
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
 ```
+
 Then `pip install`:
+
 - scipy
 - numpy
 - matplotlib
 - pandas
 - sklearn
 
+### Optimizing WordPress Speed With GoDaddy cPanel Shared Hosting
 
-
-### Optimizing WordPress Speed With GoDaddy cPanel Shared Hosting 
 05/10/20 - 05/20/20
+
 <hr>
 
 Jump to my [**Conclusion**](#wp-optimization-conclusion) to see what I did.
@@ -1043,17 +1189,18 @@ Jump to my [**Conclusion**](#wp-optimization-conclusion) to see what I did.
 <hr>
 
 #### Wordpress Speed Optimization resources
+
 - [GTmetrix](https://gtmetrix.com/)- Gives you speed metrics on your site
 - [Speed Up WordPress in 2019: How To Optimize Your Website & Make It Load Fast](https://www.youtube.com/watch?v=ATXACFtcyKs)
 - [Optimizing MP4 Video for Fast Streaming](https://rigor.com/blog/optimizing-mp4-video-for-fast-streaming)
-  - [HandBrake](https://handbrake.fr/) *Free software for optimizing mp4 videos*
+  - [HandBrake](https://handbrake.fr/) _Free software for optimizing mp4 videos_
 - [How to Read a Waterfall Chart for Beginners](https://gtmetrix.com/blog/how-to-read-a-waterfall-chart-for-beginners/)
 - [How To Fix GoDaddy’s Slow WordPress Hosting Using An Array Of Tools + Plugins (And How To Check If Your GoDaddy Server Is Slow)](https://onlinemediamasters.com/slow-wordpress-hosting-godaddy/)- Text companion of below
 - [How To Fix Slow WordPress Site On Godaddy](https://www.youtube.com/watch?v=vXgIVbcvGiw)- Video companion of above
   - [Steps 3-5: Configure WP Fastest Cache or W3 Total Cache Plugin](https://www.youtube.com/watch?v=vXgIVbcvGiw&t=560s)
   - [Step 6: Clean Up Database With WP-Optimize](https://www.youtube.com/watch?v=vXgIVbcvGiw&t=1099s)
   - [Step 7: Defer Parsing Of JavaScript](https://www.youtube.com/watch?v=vXgIVbcvGiw&t=1142s)
-    - This step didn't change anything. I still have a .js file parsing during initial page load: *wp-content/cache/wpfc-minified/a0uy3y/47yt4.js*
+    - This step didn't change anything. I still have a .js file parsing during initial page load: _wp-content/cache/wpfc-minified/a0uy3y/47yt4.js_
 - [Why is my page slow?](https://gtmetrix.com/why-is-my-page-slow.html)
   - [Page Caching](https://gtmetrix.com/why-is-my-page-slow.html#page-caching)
 - [Static site generators vs. caching](https://stitcher.io/blog/static_sites_vs_caching)
@@ -1066,20 +1213,21 @@ Jump to my [**Conclusion**](#wp-optimization-conclusion) to see what I did.
 ### Minimize Redirects
 
 If you're using GoDaddy cPanel hosting, you may have a weird redirect- "`https://img.secureserver.net......`" This is from the monitoring script that GoDaddy puts into your webpage. It helps GoDaddy collect data on how your site is working. But that data is just for them. You don't need it. The redirect slows down your site. So this is how to delete it.
-  - while logged in to GoDaddy, go to [your hosting](https://myh.godaddy.com/#/hosting/all)
-  - click on your **site name**
-  - At the top click **GoDaddy Analytics** *or* add `/godaddyAnalytics` to your current URL address
-  - Click "`No, I don't want to participate in the program.`" and **Confirm**.
-  
+
+- while logged in to GoDaddy, go to [your hosting](https://myh.godaddy.com/#/hosting/all)
+- click on your **site name**
+- At the top click **GoDaddy Analytics** _or_ add `/godaddyAnalytics` to your current URL address
+- Click "`No, I don't want to participate in the program.`" and **Confirm**.
+
 Keep in mind, GoDaddy is always changing their site. So you may have to navigate the site differently to find the opt-out.
 
 <h3 id="wpfc-settings"></h3>
 
 ### Wp-Fastest Cache Settings:
 
->If you plan on using neither *[Cloudflare nor StackPath]*, use the settings below. The only thing you would change is in the Preload tab (pages per minute). If you’re on shared hosting use 4-6, VPS should use 10-12.
+> If you plan on using neither _[Cloudflare nor StackPath]_, use the settings below. The only thing you would change is in the Preload tab (pages per minute). If you’re on shared hosting use 4-6, VPS should use 10-12.
 
-*from [Online Media Masters](https://onlinemediamasters.com/wp-fastest-cache-settings/)*
+_from [Online Media Masters](https://onlinemediamasters.com/wp-fastest-cache-settings/)_
 
 ![](https://v9n9s3j3.stackpathcdn.com/wp-content/uploads/2016/11/WP-Fastest-Cache-Settings-1.png)
 
@@ -1090,11 +1238,10 @@ Remember to clear your site data if you're getting a different waterfall in DevT
 #### Clear Cookies in Chrome:
 
 1. **Menu Bar** -> **Chrome** -> **Preferences**
-2. scroll to **Privacy and security** -> **Site Settings** -> **View permissions and data stored across sites** 
+2. scroll to **Privacy and security** -> **Site Settings** -> **View permissions and data stored across sites**
 3. In **Sort by** search your site name.
 4. Click on the three **vertical dots** across from your site name
 5. **Clear data**
-
 
 ## Stuck on Defer Parsing Javascript
 
@@ -1105,6 +1252,7 @@ Remember to clear your site data if you're getting a different waterfall in DevT
 I can't figure out how to defer parsing of javascript with the Primer theme. I'm able to defer parsing of javascript with other themes.
 
 I tried several methods:
+
 1. I’ve tried a few plugins
 2. I tried adding this to header.php:
 
@@ -1123,21 +1271,22 @@ I tried several methods:
    ```
 
 3. I tried adding this to functions.php and replacing with the correct URL.
-   ```html
+   ````html
    <script type="text/javascript">
-   function parseJSAtOnload() {
-   var element = document.createElement("script");
-   element.src = "somejavascriptfiles.js";
-   document.body.appendChild(element);
-   }
-   if (window.addEventListener)
-   window.addEventListener("load", parseJSAtOnload, false);
-   else if (window.attachEvent)
-   window.attachEvent("onload", parseJSAtOnload);
-   else window.onload = parseJSAtOnload;
+     function parseJSAtOnload() {
+       var element = document.createElement("script");
+       element.src = "somejavascriptfiles.js";
+       document.body.appendChild(element);
+     }
+     if (window.addEventListener)
+       window.addEventListener("load", parseJSAtOnload, false);
+     else if (window.attachEvent) window.attachEvent("onload", parseJSAtOnload);
+     else window.onload = parseJSAtOnload;
    </script>
-     ```
-I’m using Stout, a Primer child theme. But even with just Primer I get this issue. Though I did not try the plugin method with just Primer. The issue goes away when I change to the Twenty Twenty theme.
+   ``` I’m using Stout, a Primer child theme. But even with just Primer I get
+   this issue. Though I did not try the plugin method with just Primer. The
+   issue goes away when I change to the Twenty Twenty theme.
+   ````
 
 **Solution:** The theme wasn't the issue. WP Fastest Cache was the issue. See my [conclusion](#wp-optimization-conclusion) for solution.
 
@@ -1147,16 +1296,14 @@ I’m using Stout, a Primer child theme. But even with just Primer I get this is
 
 <hr>
 
-[*GTmetrix Scores*](https://gtmetrix.com/reports/dashiellbarkhuss.com/LQNxP4WT) **Before**:
+[_GTmetrix Scores_](https://gtmetrix.com/reports/dashiellbarkhuss.com/LQNxP4WT) **Before**:
 
 <img src="log_imgs/start-scores_5-19-20.png"/>
 
-
-  
-[*GTmetrix Scores*](https://gtmetrix.com/reports/dashiellbarkhuss.com/Cnasj9u9) **After**:
+[_GTmetrix Scores_](https://gtmetrix.com/reports/dashiellbarkhuss.com/Cnasj9u9) **After**:
 <img src="log_imgs/end-scores_5-20-20.png"/>
 
-*No money spent.*
+_No money spent._
 
 ### 1. Add These Free Plugins
 
@@ -1173,15 +1320,17 @@ I’m using Stout, a Primer child theme. But even with just Primer I get this is
    - Video: [Speed Up WordPress in 2019: Asset CleanUp section](https://youtu.be/ATXACFtcyKs?t=778)
 
 ### 2. Defer Parsing of Javascript
+
 <hr>
 
-*Article on **why** & **how**:* [How to Defer Parsing of JavaScript Properly](https://technumero.com/defer-parsing-of-javascript/)
+_Article on **why** & **how**:_ [How to Defer Parsing of JavaScript Properly](https://technumero.com/defer-parsing-of-javascript/)
 
-*Video on **how**:* [Step 7: Defer Parsing Of JavaScript](https://www.youtube.com/watch?v=vXgIVbcvGiw&t=1142s)
+_Video on **how**:_ [Step 7: Defer Parsing Of JavaScript](https://www.youtube.com/watch?v=vXgIVbcvGiw&t=1142s)
 
 **How:**
 
 Add this to the end of `functions.php`. I added it to my parent theme. But maybe it would also work if you add it to a child theme.
+
 ```php
 <?php //php tag added only for github markdown.
 function defer_parsing_of_js( $url ) {
@@ -1197,86 +1346,98 @@ add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
 
 If you have users on your site outside of admins, you might want to change the `is_user_logged_in()` code to one of the wordpress functions that tells if an admin is logged in.
 
-#### **A note on WP Fastest Cache\*\*
+#### \*\*A note on WP Fastest Cache\*\*
+
 <h3 id= "wpfc-defer"></h3>
 
-Using WP Fastest Cache with [these settings](#wpfc-settings), WP Fastest Cache creates a *combined js* file. To defer this file, you'll need to do ***extra coding***.
+Using WP Fastest Cache with [these settings](#wpfc-settings), WP Fastest Cache creates a _combined js_ file. To defer this file, you'll need to do **_extra coding_**.
 
-WP Fastest Cache bypasses the core WordPress hooks. So WP Fastest Cache ignores the above php code[(*source*)](https://wordpress.org/support/topic/how-to-defer-javascript-when-the-tag-of-enqueued-script-has-two-src-urls/#post-12857234).
+WP Fastest Cache bypasses the core WordPress hooks. So WP Fastest Cache ignores the above php code[(_source_)](https://wordpress.org/support/topic/how-to-defer-javascript-when-the-tag-of-enqueued-script-has-two-src-urls/#post-12857234).
 
 <h3 id ="wpfc-defer-update"></h3>
 
-***UPDATE/WARNING**: While the solution below worked to defer the file, it broke my site. After the first load, my site looked fine. But upon refreshing with browser-caching enable, my hero image and video looked strange. I deleted this tweak in my code. Still, the code might help you, so here it is.*
+**\*UPDATE/WARNING**: While the solution below worked to defer the file, it broke my site. After the first load, my site looked fine. But upon refreshing with browser-caching enable, my hero image and video looked strange. I deleted this tweak in my code. Still, the code might help you, so here it is.\*
 
 **Defer the WP Fastest Cache combined js script:** Add "`defer`" to the code that generates the script tag. Remember to change this whenever you update the plugin.
 
-*Line 240, wp-content/plugins/wp-fastest-cache/inc/js-ulilities.php*:
+_Line 240, wp-content/plugins/wp-fastest-cache/inc/js-ulilities.php_:
+
 ```php
 <?php //php tag added only for github markdown.
 $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascript\"></script>";
 ?>
 ```
-#### Premium Cache Plugin $$$
-If this workaround doesn't suite you, WP Fastest Cache *Premium* can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
+
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+
+If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
+
 > Is WP Fastest Cache Premium worth it?
 >
->If you're going to spend money on a premium cache plugin, most people use WP Rocket since it comes with more features than WP Fastest Cache Premium and will typically yield better results.
+> If you're going to spend money on a premium cache plugin, most people use WP Rocket since it comes with more features than WP Fastest Cache Premium and will typically yield better results.
 
 Of course, if you love quality, saving money, and have questionable morals you can try to get the torrent for the plugin. I don't judge! Especially because I tried to do that myself but had trouble getting the torrent to work.
 
-
-WP Fastest Cache Premium costs a one time payment of $49.99. The pricing for WP Rocket is more confusing- it seems like it would come out more expensive.
+WP Fastest Cache Premium costs a one time payment of \$49.99. The pricing for WP Rocket is more confusing- it seems like it would come out more expensive.
 
 ### 3. Optimize Images & Videos
+
 <hr>
 
 To **optimize images**:
-  - Video: [Speed Up WordPress in 2019: Optimizing & Compressing Images](https://www.youtube.com/watch?v=ATXACFtcyKs&t=1207s)
+
+- Video: [Speed Up WordPress in 2019: Optimizing & Compressing Images](https://www.youtube.com/watch?v=ATXACFtcyKs&t=1207s)
 
 **Another resource** I haven't watched. It covers- Serve Scaled images, Specify Image Dimensions, and Lossless Compression:
-  - Video: [WordPress Speed Optimization: Optimize Images](https://youtu.be/JZVaeJwp7Zs?t=1336)
 
-I **optimized my video** by using [HandBrake](https://handbrake.fr/)- *free software for optimizing mp4 videos.* More info:
+- Video: [WordPress Speed Optimization: Optimize Images](https://youtu.be/JZVaeJwp7Zs?t=1336)
 
-   - Article: [Optimizing MP4 Video for Fast Streaming](https://rigor.com/blog/optimizing-mp4-video-for-fast-streaming)
+I **optimized my video** by using [HandBrake](https://handbrake.fr/)- _free software for optimizing mp4 videos._ More info:
 
+- Article: [Optimizing MP4 Video for Fast Streaming](https://rigor.com/blog/optimizing-mp4-video-for-fast-streaming)
 
 ### 4. Remove GoDaddy Redirect
+
 <hr>
 
-If you're using GoDaddy cPanel hosting, you may have a weird redirect- "`https://img.secureserver.net......`" in your waterfall. 
+If you're using GoDaddy cPanel hosting, you may have a weird redirect- "`https://img.secureserver.net......`" in your waterfall.
 
 [Here's](#minimize-redirects) how to fix it.
 
-
 ### 5. What's left
+
 <hr>
 
 #### GTmetrix Recommendations:
+
 At the end, I had 3 recommendations on GTmetrix lower than 99%:
+
 1. Defer parsing of JavaScript **93%**
 2. Use a Content Delivery Network (CDN) **0%**
 3. Make fewer HTTP requests **84%**
 
 #### 1. Defer parsing of JavaScript
+
 This was addressed [here](#wpfc-defer-update).
 
 #### 2. Use a Content Delivery Network (CDN)
+
 This costs money so I'm skipping it.
 
 #### 3. Make fewer HTTP requests
 
-The free WP Fastest Cache [doesn't combine footer js files.](https://wordpress.org/support/topic/wp-fastest-cache-dont-combine-javascript-after-install-clearfry-and-deleting-it#post-11295205) That's left me with 7 external Javascript scripts. 
-
+The free WP Fastest Cache [doesn't combine footer js files.](https://wordpress.org/support/topic/wp-fastest-cache-dont-combine-javascript-after-install-clearfry-and-deleting-it#post-11295205) That's left me with 7 external Javascript scripts.
 
 ##### Possible solutions
+
 1. Try other plugins
 2. WP Fastest Cache Premium
 3. Edit WP Fastest Cache free
 
-If I were to edit WP Fastest Cache free, I would look at the code below. This code deals with javascript scripts in the header *(head? whats the difference?)*. But it could be modified to include the scripts in the footer.
+If I were to edit WP Fastest Cache free, I would look at the code below. This code deals with javascript scripts in the header _(head? whats the difference?)_. But it could be modified to include the scripts in the footer.
 
-*Line 736, wp-content/plugins/wp-fastest-cache/inc/cache.php*:
+_Line 736, wp-content/plugins/wp-fastest-cache/inc/cache.php_:
+
 ```php
 <?php //php tag added only for github markdown.
 if(isset($this->options->wpFastestCacheCombineJs)){
@@ -1302,61 +1463,69 @@ unset($head_new);
 }
 ?>
 ```
+
 I'm no WordPress/php expert. So it doesn't seem worth my time atm. Paying for premium is starting to sound good.
 
 #### Hosting:
+
 I'm using GoDaddy's cPanel shared hosting. Apparently, it's not known for speed. So I might switching to a different host. I've heard SiteGround is a good option.
 
-
 ### More Steps For You
+
 <hr>
 
 There may be more steps you need to take depending on your GTmetrix recommendations that are different than mine. Here are some good resources on optimizing your WordPress.
 
--  **Video**: [Speed Up WordPress in 2019: How To Optimize Your Website & Make It Load Fast](https://www.youtube.com/watch?v=ATXACFtcyKs) 
+- **Video**: [Speed Up WordPress in 2019: How To Optimize Your Website & Make It Load Fast](https://www.youtube.com/watch?v=ATXACFtcyKs)
 - **Text**: [How To Fix GoDaddy’s Slow WordPress Hosting Using An Array Of Tools + Plugins (And How To Check If Your GoDaddy Server Is Slow)](https://onlinemediamasters.com/slow-wordpress-hosting-godaddy/)
--  **Video**: [How To Fix Slow WordPress Site On Godaddy](https://www.youtube.com/watch?v=vXgIVbcvGiw)
-- **Video**: [WordPress Speed Optimization - How I Got 100% GTmetrix Scores](https://www.youtube.com/watch?v=JZVaeJwp7Zs) 
-  
+- **Video**: [How To Fix Slow WordPress Site On Godaddy](https://www.youtube.com/watch?v=vXgIVbcvGiw)
+- **Video**: [WordPress Speed Optimization - How I Got 100% GTmetrix Scores](https://www.youtube.com/watch?v=JZVaeJwp7Zs)
+
 - [More resources I used.](#wordpress-optimization-resources)
 
 ### 05/10/20
+
 #### LED Resource
+
 - [Ultimate Guide to Connecting LED Light Strips to Arduino](https://www.makeuseof.com/tag/connect-led-light-strips-arduino/)
-  
+
 ### 05/04/20
 
 ## Lucid Dream Home Lab Update
+
 I've been working on the [lab](#lab-explanation) and I have made a lot of progress. Today, I'm going to share just one part of the lab: **sending a text message with your eyes in morse code**.
 
 ## Texting With Eye Movements
+
   <img src="log_imgs/eyes_messaging_5-4-20.gif" width= 100%>
 
   <img src="log_imgs/mesage _sent_5-4-20.gif" width= 100%>
 
 ### Hardware:
 
- * [Heart and Brain SpikerShield Bundle](https://backyardbrains.com/products/heartandbrainspikershieldbundle) 
+- [Heart and Brain SpikerShield Bundle](https://backyardbrains.com/products/heartandbrainspikershieldbundle)
 
-    - *discontinued.* An alternative option might be a [Ganglion from OpenBCI](https://shop.openbci.com/collections/frontpage/products/ganglion-board?variant=13461804483) 
+  - _discontinued._ An alternative option might be a [Ganglion from OpenBCI](https://shop.openbci.com/collections/frontpage/products/ganglion-board?variant=13461804483)
 
 Since the [Heart and Brain SpikerShield Bundle](https://backyardbrains.com/products/heartandbrainspikershieldbundle) is discontinued I would like to redo this with [OpenBCI](https://www.openbci.com/) in the near future. But, if you are up for it, you can try to adapt this project using an OpenBCI product on your own.
 
 ### How It Works
-1. The subject wears electrodes connected to the hardware and signals in morse code. 
+
+1. The subject wears electrodes connected to the hardware and signals in morse code.
    - Looking left is akin to pressing down the telegraph button. Looking right is akin to releasing the button.
    - Holding your eyes left for 4 or more seconds and then looking right, means "send the message"
-   - Holding your eyes right for 4 or more seconds and then looking left, means "I f**ked up! Delete the message so far."
+   - Holding your eyes right for 4 or more seconds and then looking left, means "I f\*\*ked up! Delete the message so far."
 2. The electrodes send data to the arduino program
-3. The arduino program interprets the data. 
-   1. It figures out which data means the eye moved left or right. 
+3. The arduino program interprets the data.
+   1. It figures out which data means the eye moved left or right.
    2. It converts the eye movements to morse code.
-   3. It converts morse code to English. 
+   3. It converts morse code to English.
    4. It serial prints the message with the delimiter 'SND'.
 4. The node program watches the serial port for data from the arduino. Once it sees the delimeter 'SND' it recieves the message. It then executes a bash file with the message.
-5. The bash file takes the message and sends it to whomever is named "Mom" in your contacts. This only works if you have Messages app and a Mac I believe. 
+5. The bash file takes the message and sends it to whomever is named "Mom" in your contacts. This only works if you have Messages app and a Mac I believe.
 
 ### EOG
+
 The hardware uses [EOG](https://en.wikipedia.org/wiki/Electrooculography). EOG records eye movement. Electrodes are placed on the outer edges of the eyes. The back of your eye has more electrical activity than the front (Don't quote me). So when you look left, the backs of your eyes are closer to the right electrode. And further from the left electrode. So the electrodes can sense a change occurred.
 
 You get a bunch of data from the electrodes in the form of numbers from 1-1024 when you **analogRead()** the input stream in Arduino.
@@ -1365,9 +1534,9 @@ This is what the data looks like when mapped out visually over time.
 
 <img src="log_imgs/eye_vs_clench_-5-4-20.png" width="100%">
 
-Clenching also affects the data. So in the code we detect jaw clenching but ignore it.  
+Clenching also affects the data. So in the code we detect jaw clenching but ignore it.
 
-*One thing isn't clear from the graph:*
+_One thing isn't clear from the graph:_
 
 You might think that if you hold your eye to the left, the peak will stay up and span a wider distance in the graph. But no. It will drop back down to the middle range immediately, regardless of how long you look left. If we want to know how long the eye stayed looking left, we look for a dip downward. That means the eye has move right, away from the left position it just occupied.
 
@@ -1388,8 +1557,8 @@ const int highThreshold = 600;
 const int lowThreshold = 422;
 int readingsBuffer[bufferSize]; //last readings
 
-bool lastSignalWasLeft; //We must store that the last signal was left. 
-                        //multiple "lefts" will get processed unless we tell 
+bool lastSignalWasLeft; //We must store that the last signal was left.
+                        //multiple "lefts" will get processed unless we tell
                         //the sketch to ignore the signal once we know what it is
 bool lastSignalWasRight; //^same for right
 
@@ -1419,7 +1588,7 @@ enum morseState currentMorseState = NEW_INTRA_CHARACTER;
 
 unsigned long lastSignalChangeAt;
 bool lastSignal;
-unsigned long clearGapLength = morseBit*5 +wiggleRoom; //message variable 
+unsigned long clearGapLength = morseBit*5 +wiggleRoom; //message variable
 unsigned long sendBeepLength = morseBit*5 +wiggleRoom; //message variable
 
 
@@ -1440,32 +1609,32 @@ void loop() {
    updateReadingsBuffer(reading);
 
     //---------------determine if the last analogRead signals was an eye movement---------------------
- 
+
    String eog = determineEOGSignal(); //returns string "Left", "Right", "Jaw", "Normal"
    bool eyeMovementDetected = eog == "Right" || eog == "Left";
 
   //------------------------------Morse Code------------------------------
-    if (eyeMovementDetected){ 
+    if (eyeMovementDetected){
 
                 if (!subjectStartedSignaling) {
- 
-                    subjectStartedSignaling = true; 
+
+                    subjectStartedSignaling = true;
 
                 } else {
 
                   unsigned long signalLength = now-lastSignalChangeAt;
                   char morseIntraChar = signalToMorse(signalLength, lastSignal);
-           
+
 /////////////////////////////////////////////////////////////
-//         All of the Serial.print's need to be commented out 
-//         when you are actually sending this to node 
+//         All of the Serial.print's need to be commented out
+//         when you are actually sending this to node
 //         except for 'Serial.println(message +"SND");'
 //         However, they can be helpful for depugging.
 //         So I am leaving them in, commented out.
 //////////////////////////////////////////////////////////////
 
 //                Serial.print("subjectsMorseCode: '");Serial.print(subjectsMorseCode);Serial.println("'");
-            
+
                   if (morseIntraChar != 'g' && morseIntraChar != '*' && morseIntraChar != 'S'){
                     subjectsMorseCode.concat(morseIntraChar);
                   } else if (morseIntraChar == 'S'){
@@ -1474,16 +1643,16 @@ void loop() {
                     subjectsMorseCode ="";
                   } else if (morseIntraChar != '*' && morseIntraChar != 'S'){
                       if (currentMorseState == NEW_CHARACTER || currentMorseState == NEW_WORD){
-  
+
                           char engChar = morseToEnglishChar(subjectsMorseCode);
 //                          if (engChar=='*')Serial.print("error, wrong input: "+subjectsMorseCode);
 //                          Serial.print(" char: ");
 //                          Serial.println(engChar);
-                          
+
                           if (engChar!='*'){
                             if(currentMorseState == NEW_WORD) message.concat(" ");
-                            message.concat(engChar); 
-//  
+                            message.concat(engChar);
+//
 //                            Serial.print("message pending: ");
 //                            Serial.println(message);
                           }
@@ -1496,7 +1665,7 @@ void loop() {
                       }
                   }
                 }
-                          
+
           lastSignalChangeAt = now;
           lastSignal = eog == "Right" ? 0 : 1;
         }
@@ -1505,7 +1674,7 @@ void loop() {
 } //==========end void loop========
 
 //===============================Eye Movement Interpretation functions=========================
-void updateReadingsBuffer(int reading){    
+void updateReadingsBuffer(int reading){
   for(int i = 0; i < bufferSize-1; i++)
     {
       readingsBuffer[i] = readingsBuffer[i+1];
@@ -1534,7 +1703,7 @@ String determineEOGSignal(){
               lastSignalWasRight = true;
               lastSignalWasLeft = false;
               determinedSignal = "Right";
-              
+
             } else {
               determinedSignal = "Normal";
             }
@@ -1545,7 +1714,7 @@ String determineEOGSignal(){
     return determinedSignal;
 }
 
-bool isNormal(int reading){ if (reading > lowThreshold && reading < highThreshold) {return true;}else{return false;}; }; 
+bool isNormal(int reading){ if (reading > lowThreshold && reading < highThreshold) {return true;}else{return false;}; };
 
 bool isHigh(int reading){ if (reading > highThreshold) {return true;}else{return false;}; };
 bool isLow(int reading){ if (reading < lowThreshold) {return true;}else{return false;}; };
@@ -1568,7 +1737,7 @@ bool signalIsJawClench(int readings[bufferSize]){
         }
       }
     }
-      return false; 
+      return false;
 }
 
 bool signalIsEyeRight(int readings[bufferSize]){
@@ -1587,7 +1756,7 @@ bool signalIsEyeLeft(int readings[bufferSize]){
         }
     }
     return true;
-      
+
 }
 
 //=============================Morse Code Interpretation functions===================================
@@ -1606,11 +1775,11 @@ char signalToMorse(unsigned long signalLength, bool signalType ){
 
 char interpretBeep (unsigned long millisBeep){
   char meaningOfBeep;
-  if ( millisBeep >= 100 && millisBeep <= morseBit){ 
+  if ( millisBeep >= 100 && millisBeep <= morseBit){
     meaningOfBeep = '.';
-  }  else if ( millisBeep > morseBit && millisBeep < sendBeepLength){  
+  }  else if ( millisBeep > morseBit && millisBeep < sendBeepLength){
     meaningOfBeep = '-';
-  }else if ( millisBeep >= sendBeepLength){  
+  }else if ( millisBeep >= sendBeepLength){
     meaningOfBeep = 'S'; //means "SEND"
   } else {
     meaningOfBeep = '*'; //means noise- ignore
@@ -1619,16 +1788,16 @@ char interpretBeep (unsigned long millisBeep){
   return meaningOfBeep;
 }
 
-void manageMorseState (unsigned long millisGap){  
+void manageMorseState (unsigned long millisGap){
   if ( millisGap < 100 ){
       return; //noise
-  } else if ( millisGap >= 100 && millisGap <= morseBit){ 
+  } else if ( millisGap >= 100 && millisGap <= morseBit){
     currentMorseState = NEW_INTRA_CHARACTER;
-  }  else if ( millisGap >= morseBit && millisGap < morse3Bit){ 
+  }  else if ( millisGap >= morseBit && millisGap < morse3Bit){
     currentMorseState = NEW_CHARACTER;
-  } else if ( millisGap > morse3Bit && millisGap < clearGapLength ){ 
+  } else if ( millisGap > morse3Bit && millisGap < clearGapLength ){
       currentMorseState = NEW_WORD;
-  }  else if ( millisGap > clearGapLength ){ 
+  }  else if ( millisGap > clearGapLength ){
       currentMorseState = NEW_MESSAGE; //aka clear last message
   }
 }
@@ -1672,7 +1841,7 @@ char morseToEnglishChar(String morse)
       }
     }
 
-  return englishChar;                            
+  return englishChar;
 }
 ```
 
@@ -1681,25 +1850,30 @@ char morseToEnglishChar(String morse)
 More info [here](https://medium.com/@machadogj/arduino-and-node-js-via-serial-port-bcf9691fab6a)
 
 ```node
-const SerialPort = require('serialport');
-const Readline = require('@serialport/parser-readline');
-const shell = require('shelljs');
+const SerialPort = require("serialport");
+const Readline = require("@serialport/parser-readline");
+const shell = require("shelljs");
 
-const port = new SerialPort('/dev/cu.usbmodem14101', { baudRate: 115200 });
-const parser = port.pipe(new Readline({ delimiter: 'SND' }));
+const port = new SerialPort("/dev/cu.usbmodem14101", { baudRate: 115200 });
+const parser = port.pipe(new Readline({ delimiter: "SND" }));
 // Read the port data
 port.on("open", () => {
-  console.log('serial port open');
+  console.log("serial port open");
 });
-parser.on('data', data =>{
-  console.log('got word from arduino:', data);
+parser.on("data", (data) => {
+  console.log("got word from arduino:", data);
 
-  shell.exec('./message "'+data+'-this message was sent to you by eye movements" "Mom"');
+  shell.exec(
+    './message "' +
+      data +
+      '-this message was sent to you by eye movements" "Mom"'
+  );
 });
 ```
+
 You need to `npm install shelljs` and `npm install serialport`.
 
-## Bash File 
+## Bash File
 
 ```bash
 !#/bin/bash
@@ -1715,19 +1889,23 @@ You need change the permissions to allow the script to be executable for the use
 ## Wrap Up
 
 So that's a quick overview. I hope to do a more thorough tutorial in the future. But I wanted to push this out soon for those who are curious.
+
 ### 04/05/20
-I haven't been logging much. I'm trying to take a different approach. That being- *Don't talk about a project until it's complete.* It helps motivate me to finish the project. Also, logging slows me down. 
+
+I haven't been logging much. I'm trying to take a different approach. That being- _Don't talk about a project until it's complete._ It helps motivate me to finish the project. Also, logging slows me down.
 
 But I wanted to post some updates here.
 
 <h3 id="lab-explanation"></h3>
 
-## Lucid Dream Home Lab 
+## Lucid Dream Home Lab
+
 I'm currently building a lucid dream lab the will induce lucid dreams and enable a user to communicate from a lucid dream to the outside world. I started this project in 2012. But it's been an on and off adventure.
 
 After participating in a lucid dream study at Northwestern, I was inspired to revisit the project and add some features that Northwestern had.
 
 ## Alpha Detection
+
 Yesterday, I finished creating an alpha brain wave detector. This will be involved in detecting when a person is in REM from EEG data.
 
   <img src="log_imgs/alpha_4-5-20.gif" width= 100%>
@@ -1740,7 +1918,7 @@ The only relevant part is the section on the code. For hardware, I'm going a dif
 
 ## The Code
 
-Though the project in the Youtube video detects audio frequency, it's pretty much the same for brain waves but the sampling frequency is different. 
+Though the project in the Youtube video detects audio frequency, it's pretty much the same for brain waves but the sampling frequency is different.
 
 ```arduino
 #include "arduinoFFT.h"
@@ -1766,12 +1944,12 @@ void setup() {
 void loop() {
   for(int i=0; i<SAMPLES; i++){
     microSeconds= micros();
-    
+
     vReal[i] = analogRead(0);
     vImag[i] = 0;
 
     while(micros()< (microSeconds + samplingPeriod)){
-      
+
     }
   }
 
@@ -1780,21 +1958,22 @@ void loop() {
   FFT.ComplexToMagnitude(vReal, vImag, SAMPLES);
 
   double peak = FFT.MajorPeak(vReal, SAMPLES, SAMPLING_FREQUENCY);
-  
+
   if(peak<12 && peak >8){
-    Serial.println("You have alpha waves of "+String(peak)+"hz. Your eyes must be closed."); 
+    Serial.println("You have alpha waves of "+String(peak)+"hz. Your eyes must be closed.");
   } else {
     Serial.println(String(peak)+"hz");
   }
 }
 ```
+
 Watch the tutorial to get an explanation of the code.
 
-This project uses the library ardiunoFFT, which is a ***fast fourier transform*** library. Fourier transform is an algorithm that identifies frequencies from raw data. [Here's a great video explaining fourier transorm](https://www.youtube.com/watch?v=spUNpyF58BY).
+This project uses the library ardiunoFFT, which is a **_fast fourier transform_** library. Fourier transform is an algorithm that identifies frequencies from raw data. [Here's a great video explaining fourier transorm](https://www.youtube.com/watch?v=spUNpyF58BY).
 
-Raw data will look like a bunch of numbers that, when mapped over time, will represent the waves. 
+Raw data will look like a bunch of numbers that, when mapped over time, will represent the waves.
 
-In my case, the electrodes glued to my head will *detect voltages from my brain*(don't quote me on this). Those numbers will look like this: 
+In my case, the electrodes glued to my head will _detect voltages from my brain_(don't quote me on this). Those numbers will look like this:
 
 **Example data:**
 535
@@ -1820,7 +1999,6 @@ In my case, the electrodes glued to my head will *detect voltages from my brain*
 
 Each of these points of data occurred every 1 milliseconds. So you can map these numbers over time to get a visual idea of the waves:
 
-
   <img src="log_imgs/graph_eeg_4-5-20.png" width= 100%>
 
 **Fourier transform** takes these numbers, and figures out the frequencies.
@@ -1828,16 +2006,20 @@ Each of these points of data occurred every 1 milliseconds. So you can map these
 Let me know if you have any questions on Twitter [@DashBarkHuss](https://twitter.com/DashBarkHuss).
 
 ### 01/24/20
+
 - ## Nutrition Project
+
   Yesterday we looked at daily values. Today I want to go through [my RDA's](https://health.gov/dietaryguidelines/2015/guidelines/appendix-7/) for my gender and age.
 
   Female 19-30 RDA's:
 
   **General:**
+
   - Energy: 1800 kcal
   - Water: 1500 g ---no RDA information
 
   **Vitamins**
+
   - B1 (Thiamine): 1.1 mg
   - B12 (Cobalamin): 2.4 μg
   - B2 (Riboflavin): 1.1 mg
@@ -1852,8 +2034,9 @@ Let me know if you have any questions on Twitter [@DashBarkHuss](https://twitter
   - Vitamin D: 600 UI
   - Vitamin E: 15 mg
   - Vitamin K: 90 μg
-  
+
   **Minerals**
+
   - Calcium: 1000 mg
   - Chromium: 120 μg ---no RDA information
   - Copper: 900 mcg
@@ -1862,23 +2045,26 @@ Let me know if you have any questions on Twitter [@DashBarkHuss](https://twitter
   - Magnesium: 310 mg
   - Manganese: 1.8 mg
   - Molybdenum: 75 μg ---no RDA information, cronometer put 45
-  - Phosphorus: 700 mg 
+  - Phosphorus: 700 mg
   - Potassium: 4700 mg --cronometer put 2600
   - Selenium: 55 μg
   - Sodium: 2300 mg cronometer put 1500
   - Zinc: 8 mg
 
   **Carbohydrates**
+
   - Carbs: 130 g
   - Added Sugars: 10% of kcal
   - Fiber: 25.2 g
 
   **Lipids**
+
   - Fat: 20-35
   - Saturated Fat: 10% of kcal
-  - Cholesterol: 300 mg  ---no RDA information
+  - Cholesterol: 300 mg ---no RDA information
 
   **Protein**
+
   - Protein: 46 g
 
   ---no RDA information = number listed is cronometers DV's from yesterdays screenshots
@@ -1886,10 +2072,11 @@ Let me know if you have any questions on Twitter [@DashBarkHuss](https://twitter
   The macronutrients are of no importance to me. So let's disregard those.
 
   For my app, I'll just use what cronometer gave me for my micros.
-  
-  
+
 ### 01/23/20
+
 - ## Nutrition Project
+
   I want to make something that has to do with nutrition density optimization. Nutrition density refers to the amount of micro nutrients per calorie.
 
   **Micronutrients**/**Calories**
@@ -1898,20 +2085,23 @@ Let me know if you have any questions on Twitter [@DashBarkHuss](https://twitter
 
   Nutrient density isn't the "end all be all" to determining the best foods to eat, but it's a factor often over looked.
 
-  **Macronutrients** include nutrients that provide calories: *fats*, *carbs*, and *protein*. **Micronutrients** are the vitamins and minerals.
+  **Macronutrients** include nutrients that provide calories: _fats_, _carbs_, and _protein_. **Micronutrients** are the vitamins and minerals.
 
   ## Daily Values
+
   I'll want to take note of the Daily Values for the USDA.
 
   Here are the **Daily Values** for a 2000 calorie diet according to the USDA, taken from Cronometer:
 
   **General:**
+
   - Energy: 2000 kcal
   - Water: 1500 g
 
   **Vitamins**
+
   - B1 (Thiamine): 1.5 mg
-  - B12 (Cobalamin): 6 μg* 
+  - B12 (Cobalamin): 6 μg\*
   - B2 (Riboflavin): 1.7 mg
   - B3 (Niacin): 20 mg
   - B5 (Pantothenic Acid): 10 mg
@@ -1919,13 +2109,14 @@ Let me know if you have any questions on Twitter [@DashBarkHuss](https://twitter
   - Biotin: 300 μg
   - Choline: 550 mg
   - Folate: 400 μg
-  - Vitamin A: 5000 IU*
+  - Vitamin A: 5000 IU\*
   - Vitamin C: 60 mg
   - Vitamin D: 400 UI
   - Vitamin E: 20.13 mg
   - Vitamin K: 80 μg
-  
+
   **Minerals**
+
   - Calcium: 1000 mg
   - Chromium: 120 μg
   - Copper: 2 mg
@@ -1941,42 +2132,44 @@ Let me know if you have any questions on Twitter [@DashBarkHuss](https://twitter
   - Zinc: 15 mg
 
   **Carbohydrates**
+
   - Carbs: 300 g
   - Added Sugars: 50 g
   - Fiber: 25 g
 
   **Lipids**
+
   - Fat: 65
   - Saturated Fat: 20 g
   - Cholesterol: 300 mg
 
   **Protein**
+
   - Protein: 50 g
 
+\* μ means micro, μg = micrograms
 
-  \* μ means micro, μg = micrograms
+\* IU means [International Unit](https://en.wikipedia.org/wiki/International_unit)
 
-  \* IU means [International Unit](https://en.wikipedia.org/wiki/International_unit)
-
-  To cross reference for accuracy, here's screenshots of Cronometer
+To cross reference for accuracy, here's screenshots of Cronometer
 
   <img src="log_imgs/dv1_1-23-20.PNG" width= 45%>
   <img src="log_imgs/dv2_1-23-20.PNG" width= 45%>
   <img src="log_imgs/dv3_1-23-20.PNG" width= 45%>
   <img src="log_imgs/dv4_1-23-20.PNG" width= 45%>
 
-  ## Daily Values vs Recommended Dietary Allotment
+## Daily Values vs Recommended Dietary Allotment
 
-  **Daily Values** are on USDA labels. For example, we see above that the DV for **Vitamin C is 60 mg**. So if a food has 30 mg of vitamin C, you'll see *"Vitamin C 50%"* on the label.
+**Daily Values** are on USDA labels. For example, we see above that the DV for **Vitamin C is 60 mg**. So if a food has 30 mg of vitamin C, you'll see _"Vitamin C 50%"_ on the label.
 
-  But Daily Values on labels are not the recommendations for everyone. The USDA has different Recommended Dietary Allowances (RDA) *"for your age, gender and life stage. These recommendations don't change based on your size."*[-Cronometer forum](https://forums.cronometer.com/discussion/1829/what-are-chronometers-daily-mirco-nutrient-targets-based-on)
-  
-  [More info on RDA's](https://www.ncbi.nlm.nih.gov/books/NBK114332/)
+But Daily Values on labels are not the recommendations for everyone. The USDA has different Recommended Dietary Allowances (RDA) _"for your age, gender and life stage. These recommendations don't change based on your size."_[-Cronometer forum](https://forums.cronometer.com/discussion/1829/what-are-chronometers-daily-mirco-nutrient-targets-based-on)
 
-  
+[More info on RDA's](https://www.ncbi.nlm.nih.gov/books/NBK114332/)
 
 ### 01/22/20
+
 - ## React Native
+
   Two days ago I got my app onto a phone. But I noticed that it wasn't user friendly.
 
   The key pad that popped up was for letters. Mine should be for numbers. Adding `keyboardType="numeric"` or `keyboardType="phone-pad"` to the input tag fixed this.
@@ -1989,14 +2182,17 @@ Let me know if you have any questions on Twitter [@DashBarkHuss](https://twitter
   Another issue was that on some phones, the keyboard cuts the bottom buttons off.
 
 ### 01/13/20
+
 - ## React Native
+
   My mom and sister went on weight watchers. I made a weight watchers calculator so they can figure out the points without paying for the app.
-  
-  I still need to style it nicely, and learn how to um *deploy*? *compile*? I don't know the correct term. But I need to put the app on their phones.
+
+  I still need to style it nicely, and learn how to um _deploy_? _compile_? I don't know the correct term. But I need to put the app on their phones.
 
   <img width='200' src = "log_imgs/wwcalc_1-13-20.gif">
 
   Here's the app.js code:
+
   ```javascript
   /**
    * Sample React Native App
@@ -2006,7 +2202,7 @@ Let me know if you have any questions on Twitter [@DashBarkHuss](https://twitter
    * @flow
    */
 
-  import React, { Component } from 'react';
+  import React, { Component } from "react";
 
   import {
     SafeAreaView,
@@ -2017,121 +2213,156 @@ Let me know if you have any questions on Twitter [@DashBarkHuss](https://twitter
     Text,
     StatusBar,
     Button,
-  } from 'react-native';
+  } from "react-native";
 
   class App extends Component {
-
-    constructor(){
-      super()
+    constructor() {
+      super();
       this.state = {
-        cal: '',
-        satFat:'',
-        sugar:'',
-        protein:'',
-        points:''
-      }
+        cal: "",
+        satFat: "",
+        sugar: "",
+        protein: "",
+        points: "",
+      };
     }
 
-    save(text, stateKey){
+    save(text, stateKey) {
       this.state[stateKey] = text;
     }
 
-    calculate(){
-      let error=false;
+    calculate() {
+      let error = false;
 
-      Object.keys(this.state).forEach(key=>{
-          if (this.state[key]=='' && key!='points') error=true;
-          console.log(error, this.state[key]);
-      })
-        
-      if(error) return;
-        const points = (this.state.cal * .0305) 
-        + (this.state.satFat * .275) 
-        + (this.state.sugar * .12) 
-        - (this.state.protein * .098);
-        
+      Object.keys(this.state).forEach((key) => {
+        if (this.state[key] == "" && key != "points") error = true;
+        console.log(error, this.state[key]);
+      });
+
+      if (error) return;
+      const points =
+        this.state.cal * 0.0305 +
+        this.state.satFat * 0.275 +
+        this.state.sugar * 0.12 -
+        this.state.protein * 0.098;
+
       this.setState({
-            points
-      })
+        points,
+      });
     }
-    clear(){
+    clear() {
       this.setState({
-        cal: '',
-        satFat:'',
-        sugar:'',
-        protein:'',
-        points:''
-      })
+        cal: "",
+        satFat: "",
+        sugar: "",
+        protein: "",
+        points: "",
+      });
     }
-        
-        render(){
-          console.log('render', this)
-          return (
-            <View>
-          <Text style={[styles.title]}>Weight Watchers Smart Points Calculator</Text>
+
+    render() {
+      console.log("render", this);
+      return (
+        <View>
+          <Text style={[styles.title]}>
+            Weight Watchers Smart Points Calculator
+          </Text>
           <Text style={[styles.label, styles.push]}>Calories:</Text>
-          <TextInput style = {styles.input} onChangeText={(text)=>this.save(text, 'cal')}>{this.state.cal}</TextInput>
+          <TextInput
+            style={styles.input}
+            onChangeText={(text) => this.save(text, "cal")}
+          >
+            {this.state.cal}
+          </TextInput>
           <Text style={styles.label}>Saturated Fat:</Text>
-          <TextInput style = {styles.input} onChangeText={(text)=>this.save(text, 'satFat')}>{this.state.satFat}</TextInput>
+          <TextInput
+            style={styles.input}
+            onChangeText={(text) => this.save(text, "satFat")}
+          >
+            {this.state.satFat}
+          </TextInput>
           <Text style={styles.label}>Sugar:</Text>
-          <TextInput style = {styles.input} onChangeText={(text)=>this.save(text, 'sugar')}>{this.state.sugar}</TextInput>
+          <TextInput
+            style={styles.input}
+            onChangeText={(text) => this.save(text, "sugar")}
+          >
+            {this.state.sugar}
+          </TextInput>
           <Text style={styles.label}>Protein:</Text>
-          <TextInput style = {styles.input} onChangeText={(text)=>this.save(text, 'protein')}>{this.state.protein}</TextInput>
-          <Button style = {styles.button} onPress= {this.calculate.bind(this)} title="calc"></Button>
-          <Button style = {styles.button} onPress= {this.clear.bind(this)} title="clear"></Button>
+          <TextInput
+            style={styles.input}
+            onChangeText={(text) => this.save(text, "protein")}
+          >
+            {this.state.protein}
+          </TextInput>
+          <Button
+            style={styles.button}
+            onPress={this.calculate.bind(this)}
+            title="calc"
+          ></Button>
+          <Button
+            style={styles.button}
+            onPress={this.clear.bind(this)}
+            title="clear"
+          ></Button>
           <Text style={[styles.label, styles.push]}>Points:</Text>
-          <Text style = {styles.points}>{this.state.points}</Text>
+          <Text style={styles.points}>{this.state.points}</Text>
         </View>
-    );
-      }
-  };
+      );
+    }
+  }
 
   const styles = StyleSheet.create({
-    title:{
-      marginTop:110,
+    title: {
+      marginTop: 110,
       marginHorizontal: 20,
-      fontSize:21,
-      color: 'blue'
+      fontSize: 21,
+      color: "blue",
     },
-    push:{
-      marginTop:30
+    push: {
+      marginTop: 30,
     },
-    label:{
-      color: 'red',
-      borderColor: 'blue',
-      marginHorizontal: 90,
-
-    },
-    input:{
-      color: 'red',
-      borderColor: 'blue',
-      borderWidth:1,
+    label: {
+      color: "red",
+      borderColor: "blue",
       marginHorizontal: 90,
     },
-    points:{
-      color: 'red',
-
-      marginHorizontal: 90
+    input: {
+      color: "red",
+      borderColor: "blue",
+      borderWidth: 1,
+      marginHorizontal: 90,
     },
-    button:{
-      marginTop:90,
-      color: 'red',
-      borderColor: 'blue',
-      borderWidth:1
-    }
+    points: {
+      color: "red",
+
+      marginHorizontal: 90,
+    },
+    button: {
+      marginTop: 90,
+      color: "red",
+      borderColor: "blue",
+      borderWidth: 1,
+    },
   });
 
   export default App;
   ```
+
 ### 01/12/20
+
 - ## Bot
+
   My bots been up and it's used no dyno hours. I'm not sure how this is possible. It might be becaus eI have it up as a worker now. But I thought I had it up that way before and the hours were still going down.
-  
+
 ### 01/11/20
+
 - ## Shell Scripting
+
   Yesterday, I wanted to get a boolean.
 
-  I tried 
+  I tried
+
   ```bash
   echo [ u == u ]
   >> [ u == u ]
@@ -2140,31 +2371,36 @@ Let me know if you have any questions on Twitter [@DashBarkHuss](https://twitter
   It just returned the statement back to me. What's going on?
 
 ### 01/09/20
+
 - ## Shell Scripting
 
   To set an env variable in the terminal:
+
   ```bash
   export var=value
-  echo $var 
+  echo $var
   >> value
   ```
-  -*from [UNIX: Set Environment Variable](https://www.cyberciti.biz/faq/set-environment-variable-unix/)*
+
+  -_from [UNIX: Set Environment Variable](https://www.cyberciti.biz/faq/set-environment-variable-unix/)_
 
   Get A Substring:
+
   ```bash
   STRING="this is a string"
   POS=1
   LEN=3
   echo ${STRING:$POS:$LEN}   # his
   ```
-  -*from [Basic String Operations](https://www.learnshell.org/en/Basic_String_Operations)*
 
-  
+  -_from [Basic String Operations](https://www.learnshell.org/en/Basic_String_Operations)_
+
 ### 01/08/20
+
 I'm on Siesta Key on Vacation, so I've been taking a break from my regular coding, and learning some shell scripting! Let's learn some more!
 
 - ## Shell Scripting
-  
+
   [Heroku CLI Commands](https://devcenter.heroku.com/articles/heroku-cli-commands)
 
   I'm got these commands from [CLI commands for dyno management](https://devcenter.heroku.com/articles/dynos#cli-commands-for-dyno-management):
@@ -2185,29 +2421,37 @@ I'm on Siesta Key on Vacation, so I've been taking a break from my regular codin
 ### 01/07/20
 
 - ## Shell Scripting
+
   ## 1st Tutorial
+
   I wanted to write a bash script in unix so I followed this tutorial: [How to make a simple bash script (Mac)](https://www.hastac.org/blogs/joe-cutajar/2015/04/21/how-make-simple-bash-script-mac)
 
   ## Terms
-  I googled the difference between the terms: *terminal*, *bash*, *command line*, *console*, and *shell*. I use these terms interchangeably, which is probably incorrect.
+
+  I googled the difference between the terms: _terminal_, _bash_, _command line_, _console_, and _shell_. I use these terms interchangeably, which is probably incorrect.
+
   ## 2nd Tutorial
-  Next, I looked at this   tutorial: [Quick guide to writing a bash script on the Mac/Linux command-line](http://omgenomics.com/writing-bash-script/). This one showed how to add variables to your script. The shebang line didn't work for me. I changed it to the shebang in the other tutorial above. 
-  
-  This second tutorial left out steps.  Like that you have to exit out of nano or add the variable in to the script. So, if you're new to command line, this second tutorial might be confusing.
+
+  Next, I looked at this tutorial: [Quick guide to writing a bash script on the Mac/Linux command-line](http://omgenomics.com/writing-bash-script/). This one showed how to add variables to your script. The shebang line didn't work for me. I changed it to the shebang in the other tutorial above.
+
+  This second tutorial left out steps. Like that you have to exit out of nano or add the variable in to the script. So, if you're new to command line, this second tutorial might be confusing.
 
   ## Open A File in VSC From Terminal
 
   First, make sure you set up VSC to work with the coomand line:
-  >Correct way is to open Visual Studio Code and press `Ctrl+Shift+P` then type `install shell command`. At some point you should see an option come up that lets you install shell command, click it. Then open a new terminal window and type `code`.
 
-  -*From [How To Open Visual Studio Code Using Terminal](https://askubuntu.com/questions/852076/how-to-open-visual-studio-code-using-terminal)*
+  > Correct way is to open Visual Studio Code and press `Ctrl+Shift+P` then type `install shell command`. At some point you should see an option come up that lets you install shell command, click it. Then open a new terminal window and type `code`.
 
-  Then type in Terminal: 
+  -_From [How To Open Visual Studio Code Using Terminal](https://askubuntu.com/questions/852076/how-to-open-visual-studio-code-using-terminal)_
+
+  Then type in Terminal:
+
   ```bash
   code myscript
   ```
 
   ## You Are Dreaming Script
+
   In my [lucid dream club meetups](https://www.meetup.com/Active-Dreaming-Group/), I like to make my computer tallk to people after I leave the room and make it tell them they are dreaming. I was doing this manually in the command line. Now, I wrote a script that I can use.
 
   ```bash
@@ -2216,26 +2460,25 @@ I'm on Siesta Key on Vacation, so I've been taking a break from my regular codin
   FIRSTNAME=${1?Error:no first name given}
   LASTNAME=${2?Error:no last name given}
 
-  sleep 17; say "Hello?"; 
-  sleep 6; say "Hello"; 
-  sleep 2; say "Hello, $FIRSTNAME."; 
-  sleep 2; say "I have a message for you."; 
-  sleep 1; say "Yes, You. $FIRSTNAME $LASTNAME"; 
+  sleep 17; say "Hello?";
+  sleep 6; say "Hello";
+  sleep 2; say "Hello, $FIRSTNAME.";
+  sleep 2; say "I have a message for you.";
+  sleep 1; say "Yes, You. $FIRSTNAME $LASTNAME";
   sleep 1; say "The message is this: You are dreaming, $FIRSTNAME. WAKE UP!"
   ```
-  
+
   To call the function, you run this is the command line from the directory the script is in:
 
   ```bash
   code Shlomo Karbal
   ```
 
-
-
 ### 01/04/20
 
 - ## React Native
-  I'm trying to figure out how to change the black underlay to another color. 
+
+  I'm trying to figure out how to change the black underlay to another color.
 
   <img width=600 src="log_imgs/rnopac_1-4-20.GIF">
 
@@ -2244,29 +2487,30 @@ I'm on Siesta Key on Vacation, so I've been taking a break from my regular codin
   [@adescode](https://twitter.com/adescode) on twitter helped me. Together we found this to be the answer:
 
   ```html
-  <TouchableHighlight
-          underlayColor='blue'>
+  <TouchableHighlight underlayColor="blue"></TouchableHighlight>
   ```
-  Add `underlayColor='<somecolor>'` to the `TouchableHighlight` tag.
 
+  Add `underlayColor='<somecolor>'` to the `TouchableHighlight` tag.
 
 ### 01/03/20
 
 - ## React Native
-  I followed the instructions under the "***React Native CLI Quickstart***" tab on the page [Getting Started](https://facebook.github.io/react-native/docs/getting-started). This way, I can use modules that have native code. You can't with Expo.
+
+  I followed the instructions under the "**_React Native CLI Quickstart_**" tab on the page [Getting Started](https://facebook.github.io/react-native/docs/getting-started). This way, I can use modules that have native code. You can't with Expo.
 
   ## Linear Gradient
+
   Now I followed the instructions from the docs for [react-native-linear-gradient](https://www.npmjs.com/package/react-native-linear-gradient):
 
-  >Add it to your project
+  > Add it to your project
   >
-  >First, install it with `npm install react-native-linear-gradient --save`
+  > First, install it with `npm install react-native-linear-gradient --save`
   >
-  >Then you can try to link the project automatically:
+  > Then you can try to link the project automatically:
   >
-  >`$ react-native link react-native-linear-gradient`
+  > `$ react-native link react-native-linear-gradient`
 
-  I had to add `npx` to the second command: `npx react-native link react-native-linear-gradient` 
+  I had to add `npx` to the second command: `npx react-native link react-native-linear-gradient`
 
   This still gave me an error: something about `BVLinearGradient`. So I had to cd into `ios` and run `pod install`. That got rid of the error.
 
@@ -2276,10 +2520,10 @@ I'm on Siesta Key on Vacation, so I've been taking a break from my regular codin
 
   <img width="200" src="log_imgs/app_1-3-20.PNG">
 
-
 ### 1/2/20
 
 - ## React Native
+
   I'm having trouble. When I run `npm run ios` I got this:
 
   ```
@@ -2292,45 +2536,48 @@ I'm on Siesta Key on Vacation, so I've been taking a break from my regular codin
 
   ```
   No bundle URL present.
-  
+
   Make sure you're running a packager server or have included a .jsbundle file in your application bundle.
   ```
+
   From [No Bundle URL Present](https://forums.raywenderlich.com/t/no-bundle-url-present/63018/9):
 
-  >Before the step you’re asking about, you should have this code in the file:
+  > Before the step you’re asking about, you should have this code in the file:
   >
-  >export default class App extends >`Component<{}> { 
-     // A bunch of stuff
-  }`
+  > export default class App extends >`Component<{}> { // A bunch of stuff }`
   >
-  >Change the first line, so essentially you have:
+  > Change the first line, so essentially you have:
   >
-  >`class SearchPage extends Component<{}> {
-  >  // A bunch of stuff
-  >}`
+  > `class SearchPage extends Component<{}> { // A bunch of stuff }`
 
-  So I changed 
+  So I changed
+
   ```javascript
-  export default class App extends Component 
+  export default class App extends Component
   ```
+
   To
+
   ```javascript
   class SearchPage extends Component
   ```
+
   Which gave me another error but then when I changed it back it somehow worked now. I don't know how that happened.
 
   ## Linking
+
   From the docs for [react-native-linear-gradient](https://www.npmjs.com/package/react-native-linear-gradient):
 
-  >Add it to your project
+  > Add it to your project
   >
-  >First, install it with `npm install react-native-linear-gradient --save`
+  > First, install it with `npm install react-native-linear-gradient --save`
   >
-  >Then you can try to link the project automatically:
+  > Then you can try to link the project automatically:
   >
-  >`$ react-native link react-native-linear-gradient`
+  > `$ react-native link react-native-linear-gradient`
 
   This doesn't work for me. I get:
+
   ```bash
   bash: react-native: command not found
   ```
@@ -2339,14 +2586,14 @@ I'm on Siesta Key on Vacation, so I've been taking a break from my regular codin
 
   How can you link with Expo?
 
-  >You can't. It states this very clearly in [the docs](https://docs.expo.io/versions/latest/introduction/faq#what-is-the-difference-between-expo-and):
+  > You can't. It states this very clearly in [the docs](https://docs.expo.io/versions/latest/introduction/faq#what-is-the-difference-between-expo-and):
   >
-  >>But no native modules…
-  >>
-  >>The most limiting thing about Expo is that you can’t add in your own native modules without detaching and using ExpoKit. Continue reading the next question for a full explanation.
+  > > But no native modules…
+  > >
+  > > The most limiting thing about Expo is that you can’t add in your own native modules without detaching and using ExpoKit. Continue reading the next question for a full explanation.
   >
-  >If you want to use anything that requires `react-native link`, then you need to [detach](https://docs.expo.io/versions/latest/expokit/detach) your project and then develop it [with or without ExpoKit](https://docs.expo.io/versions/latest/guides/expokit.html). You will lose certain features and integrations (off the top of my head, I think Push Notifications via Expo is one of them) when doing so, but that is the trade-off Expo provides as an all-in-one package. When detaching, you lose those features.
-  
-  *-from [react native link using expo?](https://stackoverflow.com/questions/44977693/react-native-link-using-expo)*
+  > If you want to use anything that requires `react-native link`, then you need to [detach](https://docs.expo.io/versions/latest/expokit/detach) your project and then develop it [with or without ExpoKit](https://docs.expo.io/versions/latest/guides/expokit.html). You will lose certain features and integrations (off the top of my head, I think Push Notifications via Expo is one of them) when doing so, but that is the trade-off Expo provides as an all-in-one package. When detaching, you lose those features.
+
+  _-from [react native link using expo?](https://stackoverflow.com/questions/44977693/react-native-link-using-expo)_
 
   So I guess I have to look into that!
