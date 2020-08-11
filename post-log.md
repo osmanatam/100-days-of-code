@@ -16,7 +16,7 @@ I have been working on my startup, which I'm calling **Project WT**. It's still 
 
 I'm coding the app in Mongo, Express, React, and Node. This week I brushed up on Express skills and cleaned up some of my messy Express code. As my code gets bigger, it becomes more important to keep it organized.
 
-I watch some these two linked in Learning tutorials:
+I watch some of these two LinkedIn Learning tutorials:
 
 - [Building A Website with Node and Express](https://www.linkedin.com/learning/building-a-website-with-node-js-and-express-js-3/)
 - [Advanced Express](https://www.linkedin.com/learning/advanced-express)
@@ -1420,7 +1420,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
