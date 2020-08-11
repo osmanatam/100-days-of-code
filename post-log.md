@@ -37,7 +37,7 @@ And the second thing I did was I decided to discount a lot of their feedback. To
 
 ### The Real Call
 
-I was still pretty nervous. But when I did the first real cal, of course it was just fine! No, I didn't woo them with my charisma- but I also didn't insult them either. I got the information I needed. It was polite. And everyone left with their day not any worse.
+I was still pretty nervous. But when I did the first real call, of course it was just fine! No, I didn't woo them with my charisma- but I also didn't insult them either. I got the information I needed. It was polite. And everyone left with their day not any worse.
 
 ### How I Managed My Feedback Overwhelm
 
@@ -1420,7 +1420,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
