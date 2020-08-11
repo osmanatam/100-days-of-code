@@ -2,6 +2,58 @@
 
 I completed my 365 days of code. But I'm going to continue to add to this log when I want to save notes.
 
+<h3 id="update-8-10-20"></h3>
+
+### Startup Update
+
+8-10-20
+
+<hr>
+
+I have been working on my startup, which I'm calling **Project WT**. It's still a secret. A clue fo context- it's sort of like a marketplace.
+
+### Code
+
+I'm coding the app in Mongo, Express, React, and Node. This week I brushed up on Express skills and cleaned up some of my messy Express code. As my code gets bigger, it becomes more important to keep it organized.
+
+I watch some these two linked in Learning tutorials:
+
+- [Building A Website with Node and Express](https://www.linkedin.com/learning/building-a-website-with-node-js-and-express-js-3/)
+- [Advanced Express](https://www.linkedin.com/learning/advanced-express)
+
+### Marketing
+
+We (my spouse, sister, and I) did some market research in the form of a survey last week. This week we are doing follow ups by phone. The goal was to find out if our potential customers thought our solution would be helpful, and find out what blind spots we are missing.
+
+I really struggled with the mock call we did. I'm supposed to lead the calls since I know the most about the project. My sister and spouse gave me a lot of feedback during the mock call. It was just _way_ too much feedback.
+
+I couldn't juggle all of their advice- _be super friendly so they leave thinking "what a nice person!", don't say it that way, do it this way, have a script but don't sound like your reading from it_ etc. It was extra hard since it was a mock call and it was like acting- not real!
+
+It all made me so nervous for the real calls.
+
+So to ease my nerves, I decided they should not be on the call with me- I originally planned they would be silent but listening in. After the stressful mock call, this would make me way too self conscious.
+
+And the second thing I did was I decided to discount a lot of their feedback. Too many pointers, and I'm going to freeze trying to achieve everything; And ultimately achieve nothing.
+
+### The Real Call
+
+I was still pretty nervous. But when I did the first real cal, of course it was just fine! No, I didn't woo them with my charisma- but I also didn't insult them either. I got the information I needed. It was polite. And everyone left with their day not any worse.
+
+### How I Managed My Feedback Overwhelm
+
+So while the feedback had a negative effect on me, I still think it's always important for your team to give you feedback.
+
+It's NOT your teams' job to censor their feedback.
+Instead, it's _your_ responsibility to manage yourself when that feed back is overwhelming.
+
+The ways I managed my feedback-overwhelm were:
+
+- Disregard the least important feedback
+- Recognized that not all the feedback you got is correct or important
+- Only focus on the most important feedback
+- Be ok with doing a _medium_ job, you don't have to do a perfect job
+- Set boundaries- I decided to do the call alone to reduce my nerves
+
 <h3 id="update-8-1-20"></h3>
 
 ### Startup Update
@@ -1368,7 +1420,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
