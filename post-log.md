@@ -2,6 +2,135 @@
 
 I completed my 365 days of code. But I'm going to continue to add to this log when I want to save notes.
 
+<h3 id="update-8-21-20"></h3>
+
+### Startup Update
+
+8/21/20
+
+The last few days I had family visit. I let myself enjoy time with family. Family is a priority. I found time to code throughout the day. But my focus was being present with family. It was the right thing to do, for me and my family.
+
+### Market Research
+
+<hr>
+
+We redid our survey. We took the questions we were going to ask in the phone call follow ups, and put them in the survey instead. Many people didn't want to talk on the phone.
+
+The survey focuses on two things:
+
+1. Customer satisfaction with their current product.
+2. Presenting our unique solution and seeing if they would like it.
+
+We continued to cold Twitter DM the survey to people who fit our customer profile. Our response rate is above average. At least according to my mom! But for real, my MIL says that 8% is the average response rate. I think we're right around there.
+
+### I Haven't Said What The Business Is
+
+<hr>
+
+Not publicly- but if you DM me I might tell you.
+
+I really want to say what the startups is on my blog here. I think it would be helpful to readers.
+
+But at the same time, their are benefits to keeping it quite.
+
+1. I don't want to get a false sense of accomplishment from talking about my endeavor before it's done.
+2. Business defensibility
+
+### **Business Defensibility / Competitive Moat**:
+
+My friend [Joseph Prosnitz](https://www.linkedin.com/in/josephprosnitz/) told me about this idea.
+
+> The term “competitive moat” (popularized by Warren Buffett as an “economic moat”), refers to a business' ability to maintain competitive advantages in order to protect its long-term profits and market share from competing firms.
+
+-[Kristin Luck](https://www.linkedin.com/pulse/defensibility-how-determine-your-competitive-moat-kristin-luck/)
+
+So when Mr. Wonderful on Shark Tank asks:
+
+**_"What's going to stop some other company from copying your idea and putting you out of business?"_**
+
+Mr. Wonderful is asking: _What is your business defensibility?_
+
+Business defensibility can come from patents or a good brand for example.
+
+I believe our business defensibility will be our brand (TBD). But right now we have no brand. So I worry about talking about the idea publicly with no business defensibility.
+
+I'm curious what you guys and gals think. Would you like for me to finally talk about the business idea on here? And do you think my concern is warranted?
+
+### Code Notes:
+
+<hr>
+
+As my code gets bigger I keep needing to organize it more.
+
+I started adding testing units.
+
+I added ESLint. Here's some resources I used for Eslint.
+
+- [Setting up ESLint on VS Code with Airbnb JavaScript Style Guide](https://travishorn.com/setting-up-eslint-on-vs-code-with-airbnb-javascript-style-guide-6eb78a535ba6)
+
+- [Integrating Prettier + ESLint + Airbnb Style Guide in VSCode](https://blog.echobind.com/integrating-prettier-eslint-airbnb-style-guide-in-vscode-47f07b5d7d6a)
+
+- [Configuration File](https://prettier.io/docs/en/configuration.html)
+
+More notes on Eslint. It's always been a pain for me to add!
+
+<hr>
+
+To get rid of **_'File is a CommonJS module; it may be converted to an ES6 module'_** warning:
+
+CONTROL SHIFT P -> Open Settings (JSON)
+
+Add:
+
+```json
+  "javascript.suggestionActions.enabled": false,
+  "typescript.suggestionActions.enabled": false
+```
+
+<hr>
+
+Keep getting this error: **"ESLint: Failed to load config "airbnb" to extend from."**
+
+Tried this
+[ESLint not working in VS CODE?](https://dev.to/pixari/eslint-not-working-in-vs-code-5g4d):
+
+CONTROL SHIFT P -> Open Settings (JSON)
+
+> Add:
+>
+> ```json
+> "eslint.validate":[
+>    {
+>        "language":"vue",
+>        "autoFix":true
+>    },
+>    {
+>        "language":"html",
+>        "autoFix":true
+>    },
+>    {
+>        "language":"javascript",
+>        "autoFix":true
+>    },
+>    {
+>        "language":"typescript",
+>        "autoFix":true
+>    }
+> ]
+> ```
+>
+> Restart VSCode and enjoy.
+
+I don't think this worked ^
+
+I moved the eslint stuff to the folders in backend, but I don't think it made a difference.
+
+<h3>**FIXED!**</h3>
+
+I finally fixed the error: **"ESLint: Failed to load config "airbnb" to extend from."**
+
+I didn't have `eslint-config-airbnb`, I had `eslint-config-airbnb-base`. So I change my `eslintrc.json` package to have `"extends": ["airbnb-base", "prettier"]` instead of `"extends": ["airbnb", "prettier"]`
+
 <h3 id="update-8-10-20"></h3>
 
 ### Startup Update
@@ -1420,7 +1549,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
