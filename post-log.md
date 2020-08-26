@@ -2,6 +2,129 @@
 
 I completed my 365 days of code. But I'm going to continue to add to this log when I want to save notes.
 
+<h3 id="update-8-25-20"></h3>
+
+### Startup Update
+
+8/25/20
+
+I'm reading about SOLID code principles and good code architecture.
+
+## Routes vs Services
+
+When coding the backend on Node and Express, I wanted to know what should be in the **services code** vs what should be in the **routes code**.
+
+"Business logic" should be in services- but what constitutes _business logic_?
+
+Do mongoose calls to the database constitute business logic? Or should those be in the routes?
+
+This tutorial made it more clear how code should be separated among routes and services: [Node.js Service Layer vs Routes vs Controller](https://softwareontheroad.com/ideal-nodejs-project-structure/#architecture)
+
+## SOLID
+
+This article brought me to the concept of SOLID code principles.
+
+Steven Lott recommends learning in this order instead of mnemonically (ILODS vs SOLID):
+
+1. [Interface Segregation Principle](#Interface-Segregation-Principle)
+2. [Liskov Substitution Principle](#Liskov-Substitution-Principle)
+3. [Open/Closed Principle](#Open-Closed-Principle)
+4. [Dependency Inversion Principle](#Dependency-Inversion-Principle)
+5. [Single Responsibility Principle](#Single-Responsibility-Principle)
+
+I didn't watch all of these because I found it at the end of my research but heres a [video series on SOLID.](https://www.youtube.com/playlist?list=PLZlA0Gpn_vH9kocFX7R7BAe_CvvOCO_p9)
+
+**Interface segregation principle**
+
+<h2 id="Interface-Segregation-Principle"></h2>
+
+I kept seeing the word "client." But not how I'm used to the word being used- the client vs the server. What did they mean when they said client?
+
+> A client is something that is asking/requesting something from another class.
+
+-Source: [Interface segregation principle](https://codepen.io/allanpope/post/interface-segregation-principle)
+
+By the way, this-> [Interface segregation principle](https://codepen.io/allanpope/post/interface-segregation-principle)- was the best explananation of **Interface segregation principle**. Thanks [@allanpweb](https://twitter.com/allanpweb). Interface segregation principle is one of the SOLID coding principles.
+
+Still not sure what a client is in this context. It's a class that uses information from another class? Oh- is it just any part of a code that uses a class? Or is it an object that uses another class? What were the clients in the example they gave?
+
+> No client should be forced to depend on methods it does not use.
+
+I think `electricCar` and `motorCar` were the clients of the `Car` in [this](https://codepen.io/allanpope/post/interface-segregation-principle) example. They were forced to depend on methods they both didn't need.
+
+`electricCar` didn't need
+
+- `combustionEngine`
+- `fuelTank`
+
+`motorCar` didn't need
+
+- `rechargableBattery`
+- `electricMotor`
+- `kilowatts`
+
+So these two instances were the clients of `Car`.
+
+Ok got it.
+
+<h2 id="Liskov-Substitution-Principle"></h2>
+
+**The Liskov Substitution Principle:** Subtypes must be substitutable for their base types.
+
+> Objects created from our FastVehicle aren’t completely substitutable for objects created from our base Vehicle constructor. Our FastVehicle violates the Liskov Substitution Principle!
+
+-Source: [SOLID JavaScript: The Liskov Substitution Principle](http://aspiringcraftsman.com/2011/12/31/solid-javascript-the-liskov-substitution-principle/)
+
+Mitigating LSP Violations
+
+- Contracts
+  - Executable specifications
+    - The contract for how a particular library is intended to be used is contained in a suite of automated tests.
+  - Error checking
+    - Error checking directly in the code itself in the form of preconditions, post conditions and invariant checks. Known as **Design By Contract**.
+
+> Always use Test-Driven Development to guide the design of your own code
+>
+> Optionally use Design By Contract techniques when designing reusable libraries
+
+- Favor object composition over class inheritance
+  - Composition
+  - Inheritance
+
+[Video on Composition vs Ineritance](https://www.youtube.com/watch?v=fbpXQ0e8Mp8&)
+
+[Inheritance vs. Composition in JavaScript](https://medium.com/javascript-in-plain-english/inheritance-is-a-vs-composition-has-a-in-javascript-98fb96dfa0e6#:~:text=Using%20the%20Composition%20pattern%2C%20you,that%20they%20don't%20use.)
+
+> The polymorphism is a core concept of an object-oriented paradigm that provides a way to perform a single action in different forms. It provides an ability to call the same method on different JavaScript objects. As JavaScript is not a type-safe language, we can pass any type of data members with the methods.
+
+-Source: [JavaScript Polymorphism](https://www.javatpoint.com/javascript-oops-polymorphism#:~:text=The%20polymorphism%20is%20a%20core,data%20members%20with%20the%20methods.)
+
+<h2 id="#Open-Closed-Principle"></h2>
+
+**Open/Closed Principle:**
+
+> Open-Closed Principle means our JavaScript modules should be open to extension, but closed to modification.
+>
+> Meaning that if someone wants to extend our module’s behavior, they won’t need to modify existing code if they don’t want to.
+>
+> There’s a very easy rule of thumb you can follow here. If I have to open the JS file your module and make a modification in order to extend it, you’ve failed the open closed principle.
+
+-Source: [The 5 SOLID JavaScript](https://thefullstack.xyz/solid-javascript)
+
+<h2 id="#Dependency-Inversion-Principle"></h2>
+
+**Dependency Inversion Principle**
+
+1. High-level modules should not depend on low-level modules. Both should depend on abstractions (e.g. interfaces).
+2. Abstractions should not depend on details. Details (concrete implementations) should depend on abstractions.
+
+Good example in this video: [Video Dependency Inversion Principle](https://www.youtube.com/watch?v=9oHY5TllWaU)
+
+<h2 id="#Single-Responsibility-Principle"></h2>
+
+**Single Responsibility Principle**
+Good video on [Single Responsibility Principle](https://www.youtube.com/watch?v=UQqY3_6Epbg)
+
 <h3 id="update-8-21-20"></h3>
 
 ### Startup Update
@@ -1555,7 +1678,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
