@@ -63,21 +63,21 @@ I'm playing it intuitively for now. I will go on streaks of doing. Then streaks 
 - When you've learned for a while, if you're trying to get more details but it becomes **increasingly difficult to find solid answers** or **there isn't an agreed upon "right" way**- make! Pick one way or make something up. Later, you will have more context that will lead you to the "right" answer.
 - Let your _doing_ guide your learning needs. Don't stick to someone elses recommended learning path. They aren't building what you're building.
 
-I just brain stormed these. What do you think are some good principles for balancing _learning_ with _doing_?? Or how would you better articulate what I'm trying to say? [@DashBarkHuss](https://twitter.com/DashBarkHuss)
+I just brain stormed these. What do you think are some good principles for balancing _learning_ with _doing_?? Or how would you better articulate what I'm trying to say? Let me know [@DashBarkHuss](https://twitter.com/DashBarkHuss)
 
 ## Revealing The Business
 
 <hr>
 
-Last week I spoke about how I don't know when I should reveal the business. Thank you to those who reached out to me and talked it through. I still, am not sure.
+Last week I spoke about how I'm unsure when I should reveal the business. Thank you to those who reached out to me and to give me your thoughts. I still, am not sure. (As I said, I will tell anyone the idea in DM)
 
-As I said before, what's my business moat? What's to keep someone with more money from hearing my idea, seeing my market research, and copying my idea?
+As I said before, what's my business moat? What's to keep someone with more money from seeing my market research and copying my idea?
 
-But as someone who loves the idea of building in public, I really really want to share everything. And I think there could be benefits to me any my business ass well. Like building reputations, trust, and networking.
+But as someone who loves the idea of building in public, I really really want to share everything. I think it helps others. And I think it benefits me and my business. I'd be building reputations, trust, and networking.
 
-I think once I get closer to a working product I will start talking about it. Then my moat is a little bigger.
+I think once I get closer to a working product I will start talking about it. Then my moat is a little bigger. But I'm still curious what people think about this. Share with me [@DashBarkHuss](https://twitter.com/DashBarkHuss)
 
-## Notes & Resources
+## Code Notes & Resources
 
 Resources:
 
@@ -1813,7 +1813,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
