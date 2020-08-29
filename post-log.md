@@ -2,6 +2,141 @@
 
 I completed my 365 days of code. But I'm going to continue to add to this log when I want to save notes.
 
+<h3 id="update-8-28-20"></h3>
+
+## Startup Update - 8/29/20
+
+8/29/20
+
+I continued working on my startup.
+
+_Testing the web scraper:_
+
+This past week (or so) my spouse and I:
+
+- Business:
+
+  - Spoke with accountants for tax advice
+  - Spoke with a payment processing company
+  - Researched payment processing
+  - continued market research by sending out surveys on Twitter DM
+  - Opened a business bank account
+
+Our LLC was approved on Monday! This will help us proceed with some of our business tasks.
+
+- Code:
+
+  - implemented unit tests
+  - cleaned up a bunch of my code
+  - learned about SOLID principles and node architecture
+  - Worked on part of the app that scrapes online stores for product info. I used Test Driven Development for the first time.
+
+<img width = "350" src="log_imgs/testing_scraper-8-28-20.gif"/>
+
+## Learning vs Doing
+
+<hr>
+
+From the beginning, I've been telling myself to build. Don't worry about the "right way" to code. But as the code base gets bigger, it necessitates more organization. Otherwise, the messy, large code base becomes unmanageable.
+
+To help; I've been implementing unit tests. Thinking about good code architecture. Learning about SOLID principles. AKA doing things the "right" way.
+
+Coding with some structure, really helps my brain from exploding.
+
+## What's the Correct Balance?
+
+However, I struggle with knowing the right amount of the "right" way. _(Oh wow, that's like "right"-ception.)_ Basically, I can try to learn the correct way to code. But, there's always more to learn. More to perfect. Thus, this prevents me from doing. I get sucked into a learning purgatory. So when is learning about the "right" way no longer beneficial?
+
+On the other hand, if I just code without learning the right way, I run into issues later.
+
+I'm playing it intuitively for now. I will go on streaks of doing. Then streaks of learning. Each one feeds the next. When I coded something incorrectly it gives me context. So when I go off and learn the right way, I understand the consequences from experience.
+
+## Principles
+
+**When to _learn_ and when to _do_**, _unfinished_ principles:
+
+- Play it by ear. Go with the flow.
+- If you have enough information to make, make.
+- If it's clear the way you're making something is causing issues, go learn the right way.
+- When you're making and you understand the context of what you are doing and continuing the wrong way will cause issues, go learn the right way. You've got enough context.
+- When you've learned enough to correct your mistake, make.
+- When you've learned for a while, if you're trying to get more details but it becomes **increasingly difficult to find solid answers** or **there isn't an agreed upon "right" way**- make! Pick one way or make something up. Later, you will have more context that will lead you to the "right" answer.
+- Let your _doing_ guide your learning needs. Don't stick to someone elses recommended learning path. They aren't building what you're building.
+
+I just brain stormed these. What do you think are some good principles for balancing _learning_ with _doing_?? Or how would you better articulate what I'm trying to say? [@DashBarkHuss](https://twitter.com/DashBarkHuss)
+
+## Revealing The Business
+
+<hr>
+
+Last week I spoke about how I don't know when I should reveal the business. Thank you to those who reached out to me and talked it through. I still, am not sure.
+
+As I said before, what's my business moat? What's to keep someone with more money from hearing my idea, seeing my market research, and copying my idea?
+
+But as someone who loves the idea of building in public, I really really want to share everything. And I think there could be benefits to me any my business ass well. Like building reputations, trust, and networking.
+
+I think once I get closer to a working product I will start talking about it. Then my moat is a little bigger.
+
+## Notes & Resources
+
+Resources:
+
+- [Node.js: Testing and Code Quality](https://www.linkedin.com/learning/node-js-testing-and-code-quality/)
+
+- [Node Service-oriented Architecture](https://www.codementor.io/@evanbechtol/node-service-oriented-architecture-12vjt9zs9i)
+
+- [Bulletproof node.js project architecture](https://dev.to/santypk4/bulletproof-node-js-project-architecture-4epf)
+
+## 3-Layer Architecture
+
+1. Controllers receive incoming client requests, and they leverage services
+2. Services contain all business logic, and can also make calls to the data access layer
+3. The data access layer interacts with the database by performing queries
+4. Results are passed back up to the service layer.
+5. The service layer can then hand everything back to the controller
+6. 6.The controller can then respond to the client!
+
+```javascript
+// services/PostService.js
+
+const MongooseService = require("./MongooseService"); // Data Access Layer
+const PostModel = require("../models/post"); // Database Model
+
+class PostService {
+  /**
+   * @description Create an instance of PostService
+   */
+  constructor() {
+    // Create instance of Data Access layer using our desired model
+    this.MongooseServiceInstance = new MongooseService(PostModel);
+  }
+  /**
+   * @description Attempt to create a post with the provided object
+   * @param postToCreate {object} Object containing all required fields to
+   * create post
+   * @returns {Promise<{success: boolean, error: *}|{success: boolean, body: *}>}
+   */
+  async create(postToCreate) {
+    try {
+      const result = await this.MongooseServiceInstance.create(postToCreate);
+      return { success: true, body: result };
+    } catch (err) {
+      return { success: false, error: err };
+    }
+  }
+}
+
+module.exports = PostService;
+```
+
+[Bare Express](https://github.com/evanbechtol/bare-express/)
+
+Featured Teachers:
+
+- Evan Bechtol [@evan_bechtol](https://twitter.com/evan_bechtol)
+- Sam Quinn [@SantyPK4](https://twitter.com/SantyPK4)
+- Jon Peck [@FluxSauce](https://twitter.com/FluxSauce)
+
 <h3 id="update-8-25-20"></h3>
 
 ### Startup Update
@@ -1678,7 +1813,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
