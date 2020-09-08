@@ -1,6 +1,122 @@
 # Post #100DaysOfCode Log - Dashiell Bark-Huss
 
-I completed my 365 days of code. But I'm going to continue to add to this log when I want to save notes.
+I completed my 365 days of code in 2019. But I'm going to continue to add to this log when I want to save notes.
+
+<h3 id="update-8-29-20"></h3>
+
+## Startup Update - 9/8/20
+
+9/8/20
+
+### Business
+
+We plan on launching beta in October. We're going to start doing social media this month. Once we do, I'll start talking about the nature of the startup, which I've kept secret until now.
+
+### Code
+
+Did a lot of database work and set up logging with the winston module.
+
+### Can I Finish Beta By October?
+
+I honestly don't know if I'll be able to finish by October.
+
+- I have never built a complete app
+- Less than 2 years ago I started 100DaysOfCode as a newbie.
+- I'm building this whole thing myself!
+
+But I'm going to do my best attempt.
+
+### Messy Notes On
+
+<hr>
+
+- logging
+- MongoDb relationships
+- MongoDb embedded documents
+
+The test file for my web scraper logs the data for each product scraped. That means the price, product name, currency, and images for a dress from amazon, a pot from etsy, a supplement from Kion, headphones from eBay, etc..
+
+Those logs help me remember which products return an empty value- something I might want to address later. But it's not very important. The scraper isn't necessarily for the app to work, it just increases usability.
+
+So having all those logs is distracting. Yet I don't want to delete them, since rewriting them in the future when I want them would be a pain.
+
+How do I manage this? I remember some article talking about loggers. Would a logger be some program that helps you log more or less information?
+
+> You might want to turn off logging if you're in a development environment vs a production environment. Or even if you're just testing locally on your machine or VM, if you've got a ton of logging for debug purposes or otherwise, that can really clutter up your console and you might want to just test with logging disabled for a bit...
+>
+> ...Popular Node logging frameworks like Winston and Bunyan allow for log levels, easy toggling logs on and off based on environment, and sometimes (in the case of Winston) support for custom log levels that you as a developer can define.
+
+-Source: [Should you use a logging framework or console.log() in Node?](https://www.coreycleary.me/should-you-use-a-logging-framework-or-console-log-in-node/)
+
+LinkedIn Learning [Why and what should I log?](https://www.linkedin.com/learning/node-js-debugging-and-performance-tuning/why-and-what-should-i-log)
+
+[Operational errors vs. programmer errors](https://www.joyent.com/node-js/production/design/errors):
+
+> People use the term “errors” to talk about both operational and programmer errors, but they’re really quite different. Operational errors are error conditions that all correct programs must deal with, and as long as they’re dealt with, they don’t necessarily indicate a bug or even a serious problem.....
+>
+> By contrast, programmer errors are bugs. They’re cases where you made a mistake, maybe by forgetting to validate user input, mistyping a variable name, or something like that. By definition there’s no way to handle those. If there were, you would have just used the error handling code in place of the code that caused the error!
+>
+> This distinction is very important: operational errors are part of the normal operation of a program. Programmer errors are bugs.
+
+[pm2 starts node app correctly , but I am not able to access the app in browser:](https://github.com/Unitech/pm2/issues/2555)
+
+> To run npm start with pm2:
+>
+> ```bash
+> $ pm2 start npm -- start
+> ```
+
+[MongoDB One-to-Many Relationship tutorial with Mongoose examples](https://bezkoder.com/mongoose-one-to-many-relationship/)
+
+[nodejs-mongoose-one-to-many-relationship](https://github.com/bezkoder/nodejs-mongoose-one-to-many-relationship/blob/master/src/server.js):
+
+```javascript
+const createTutorial = function (tutorial) {
+  return db.Tutorial.create(tutorial).then((docTutorial) => {
+    console.log("\n>> Created Tutorial:\n", docTutorial);
+    return docTutorial;
+  });
+};
+
+const createImage = function (tutorialId, image) {
+  return db.Image.create(image).then((docImage) => {
+    console.log("\n>> Created Image:\n", docImage);
+    return db.Tutorial.findByIdAndUpdate(
+      tutorialId,
+      {
+        $push: {
+          images: {
+            _id: docImage._id,
+            url: docImage.url,
+            caption: docImage.caption,
+          },
+        },
+      },
+      { new: true, useFindAndModify: false }
+    );
+  });
+};
+```
+
+[Embedded sub documents vs Document references ](https://stackoverflow.com/questions/37537493/how-to-create-an-embedded-document-that-follows-a-model-with-mongoose#answer-37538971):
+
+> Your usage implies an embedded sub document inside the model which only requires a schema definition for the sub document. This will store both schema's in a single document in a single collection in MongoDB...
+> If you want to keep the two models then you would need to use a reference in your Post schema instead.
+
+[Unique Deeply Embedded Mongoose Documents](https://github.com/DashBarkHuss/unique-deeply-embedded-mongoose)
+
+[Add a deeply embedded document conditionally if unique field value](https://stackoverflow.com/questions/63797613/add-a-deeply-embedded-document-conditionally-if-unique-field-value)
+
+## Featured Teachers:
+
+- Corey Cleary [@ccleary00](https://twitter.com/ccleary00)
+- Jon Peck [@FluxSauce](https://twitter.com/FluxSauce)
+- An unnamed author at [@joyent](https://twitter.com/joyent)
+
+Not featured in this log, but helped me this week:
+
+- [@burkeholland](https://twitter.com/burkeholland)
+- [@thisiskp\_](https://twitter.com/burkeholland)
 
 <h3 id="update-8-29-20"></h3>
 
@@ -1813,7 +1929,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
