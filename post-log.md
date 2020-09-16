@@ -2,35 +2,33 @@
 
 I completed my 365 days of code in 2019. But I'm going to continue to add to this log when I want to save notes.
 
-<h3 id="update-9-15-20"></h3>
+<h3 id="update-9-16-20"></h3>
 
-## Startup Update - 9/15/20
+## My Startup - Tuesday, 9/16/20
 
-9/15/20
+Up until this point, I've been updating you on my new startup in vague terms. But I've kept hidden the exact idea.
 
-## My Secret Startup Project
-
-I've been updating you all on my new startup in vague terms. But I have not yet revealed the exact idea.
-
-This week we started posting on social. So I can finally talk about it!
+This week, we started posting on social. So I can finally talk about the startup.
 
 Here it is:
 
-## Introducing WishTender
+## WishTender
 
 WishTender is a safe and flexible wishlist app for public personalities.
 
-Currently, there are gift registry apps for the average person. However, for public figures with doting fans, these wishlists aren't ideal.
+Currently, there are gift registry apps for the average person. However, for public figures with doting fans, these wishlists miss the mark.
 
 Most wishlist apps reveal the wisher's address. Which is not something an internet celebrity wants their fans to know. Even if the wishlist hides the address, there are ways the gifter could find the address.
 
 We've done a lot of market research with OnlyFans models. If you don't know what OnlyFans is, it's like patreon but too sexy for work. (Hmm TSFW sounds better than NSFW.)
 
-Fans want to buy them gifts. But the models are underwhelmed with the current wishlists. From unsafe wishlists, to slow orders, to lack of product options.
+Fans want to buy them gifts. But the models are underwhelmed with the current wishlists- unsafe wishlists, slow orders, lack of gift options.
 
 We're addressing it all and making the premier wishlist app.
 
 ## What I'm up to with the business
+
+<hr>
 
 ### Social Media
 
@@ -39,7 +37,7 @@ I have a Gen Z-er working on the social media content. She created some content 
 <img src="log_imgs/lindsay_9-15-20.png" width= 200>
 <img src="log_imgs/notebook_9-15-20.png" width= 200>
 
-Most of our customers are Gen Z and Millennial ladies. Which means I get to enjoy the content as well. Mean Girls is my favorite movie, and I loved this reference. Nice job Gen Z content creator!
+Most of our customers are Gen Z and Millennial ladies. Mean Girls is my favorite movie, and I loved this reference. Nice job Gen Z content creator!
 
 ## Landing Page/Email Signup
 
@@ -59,16 +57,36 @@ I used:
 - Hosting: **Netlify** free
 - Business Email: **Zoho** free
 - Email Marketing: **MailerLite** free
+
   - For the beta signup I used [Cuppa's](https://www.getcuppa.io/) beta signup as a model. I liked what [KP](https://twitter.com/thisiskp_) did:
     <img src="log_imgs/cuppa_email_sign_up_flow.png" width = 400>
+
+    WishTender:
+
+    <img src="log_imgs/email_flow_9-16-20.png" width = 400>
 
 ## BackEnd Coding
 
 I continued to code the backend in Node.js, mongoose, and express. I'm writing a lot of tests, which I never really did in the past.
 
-## Twitch Time?
+## Build In Public?
 
-Now that you all know what the startup is, would any of you be interested in watching me code it live? Let me know in the comments on twitter or linkedin for this post.
+**Would you like me to share my journey building WishTender?**
+
+If so what topics are most valuable?
+
+- Coding?
+- Marketing?
+- What do people want to know from me?
+
+And what medium would people like?
+
+- Twitter threads?
+- This Blog?
+- Youtube videos?
+- etc
+
+I'd love to hear your thoughts in the comments on Twitter or LinkedIn. Or feel free to dm me.
 
 <hr>
 
@@ -2034,7 +2052,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
