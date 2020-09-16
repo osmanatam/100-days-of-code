@@ -2,13 +2,111 @@
 
 I completed my 365 days of code in 2019. But I'm going to continue to add to this log when I want to save notes.
 
-<!-- <h3 id="update--29-20"></h3>
+<h3 id="update-9-15-20"></h3>
 
-## Startup Update - 9/8/20
+## Startup Update - 9/15/20
 
-9/8/20 -->
+9/15/20
+
+## My Secret Startup Project
+
+I've been updating you all on my new startup in vague terms. But I have not yet revealed the exact idea.
+
+This week we started posting on social. So I can finally talk about it!
+
+Here it is:
+
+## Introducing WishTender
+
+WishTender is a safe and flexible wishlist app for public personalities.
+
+Currently, there are gift registry apps for the average person. However, for public figures with doting fans, these wishlists aren't ideal.
+
+Most wishlist apps reveal the wisher's address. Which is not something an internet celebrity wants their fans to know. Even if the wishlist hides the address, there are ways the gifter could find the address.
+
+We've done a lot of market research with OnlyFans models. If you don't know what OnlyFans is, it's like patreon but too sexy for work. (Hmm TSFW sounds better than NSFW.)
+
+Fans want to buy them gifts. But the models are underwhelmed with the current wishlists. From unsafe wishlists, to slow orders, to lack of product options.
+
+We're addressing it all and making the premier wishlist app.
+
+## What I'm up to with the business
+
+### Social Media
+
+I have a Gen Z-er working on the social media content. She created some content that had me laughing. I want our brand to be really light and fun. After all, it's gifts!
+
+<img src="log_imgs/lindsay_9-15-20.png" width= 200>
+<img src="log_imgs/notebook_9-15-20.png" width= 200>
+
+Most of our customers are Gen Z and Millennial ladies. Which means I get to enjoy the content as well. Mean Girls is my favorite movie, and I loved this reference. Nice job Gen Z content creator!
+
+## Landing Page/Email Signup
+
+<img src="log_imgs/landingPage_9-15-20.gif" width= 400>
+
+I now have a landing page with a beta user sign up.
+
+I used:
+
+- Design:
+
+  - Tech: **React**
+  - Photos/Icons: **Freepik** \$11.99
+  - Logo: **BrandCrowd** \$15
+  - **Adobe Creative Cloud** \$56.30 (was already paying)
+
+- Hosting: **Netlify** free
+- Business Email: **Zoho** free
+- Email Marketing: **MailerLite** free
+  - For the beta signup I used [Cuppa's](https://www.getcuppa.io/) beta signup as a model. I liked what [KP](https://twitter.com/thisiskp_) did:
+    <img src="log_imgs/cuppa_email_sign_up_flow.png" width = 400>
+
+## BackEnd Coding
+
+I continued to code the backend in Node.js, mongoose, and express. I'm writing a lot of tests, which I never really did in the past.
+
+## Twitch Time?
+
+Now that you all know what the startup is, would any of you be interested in watching me code it live? Let me know in the comments on twitter or linkedin for this post.
+
+<hr>
+
+## Messy Coding Notes/Resources
+
+## The Data Access Layer- What is it in Node.js?
+
+I kept reading about the _data access layer_ ([here](https://dev.to/santypk4/bulletproof-node-js-project-architecture-4epf#dont-put-your-business-logic-inside-the-controllers) and [here](https://github.com/evanbechtol/blog-posts/blob/master/NodeJS/Service-based%20Architecture.md#3-layer-architecture-sparkling_heart)) but didn't know what that meant. In one article it was called a "[MongooseService](https://github.com/evanbechtol/bare-express/blob/master/services/MongooseService.js)" which took a model as a parameter. I didn't understand the point of that. It seemed like a pointless shell around a model that does all the same things the model does. Later I found this:
+
+> Models are the Data Access Layer
+
+[source](https://stackoverflow.com/questions/41875617/building-enterprise-app-with-node-express#answer-42145421)
+
+Hmmm... so the model itself is the data access layer. I don't know what that "MongooseService" was about...
+
+The service layer should not _"Directly interact with the database"_([src](https://github.com/evanbechtol/blog-posts/blob/master/NodeJS/Service-based%20Architecture.md#service-layer-factory)) but what does that mean? Is using a model the same as directly interacting with the database? Or is the model an intermediary? I don't know.
+
+I think the model is the intermediary, but I'm not sure. I'm just going to move on and assume it's fine to use the Model in the service layers since I see that all the time like [here](https://dev.to/santypk4/bulletproof-node-js-project-architecture-4epf#dont-put-your-business-logic-inside-the-controllers):
+
+> ```javascript
+> import UserModel from '../models/user';
+> import CompanyModel from '../models/company';
+>
+>  export default class UserService {
+>
+>   async Signup(user) {
+>      const userRecord = await UserM
+> ```
+
+## Featured Teachers
+
+- KP [@thisiskp\_](https://twitter.com/burkeholland)
+- Evan Bechtol [@evan_bechtol](https://twitter.com/evan_bechtol)
+- Sam Quinn [@SantyPK4](https://twitter.com/SantyPK4)
 
 <h3 id="update-9-8-20"></h3>
+
+<hr>
 
 ## Startup Update - 9/8/20
 
@@ -1936,7 +2034,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
