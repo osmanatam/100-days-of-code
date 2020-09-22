@@ -2,6 +2,440 @@
 
 I completed my 365 days of code in 2019. But I'm going to continue to add to this log when I want to save notes.
 
+<h3 id="update-9-22-20"></h3>
+
+## My Startup - Tuesday, 9/22/20
+
+Last update, I [revealed](#wishtender-description) my startup: WishTender, a wishlist site for public personalities.
+
+<img src='log_imgs/cto_9-22-20.gif' >
+
+This week I continued to work on the backend. I learned a lot about error handling. And we started social media!
+
+## WishTender Timeline
+
+I was wondering how long I'd been working on WishTender. Here are some dates:
+
+- **6-21-20:** My sister and I start talking about the idea
+- **7-3-20:** I made a folder called "gift_registry_business_idea"
+- **7-8-20:** Started [making a demo](#prototype) based off of blueprint registry
+- **7-10-20:** Showed the demo to my sister and spouse. Which got them to want to participate.
+- **7-13-20:** Started building the react frontend.
+- **7-20-20:** Bought Wishtender.com domain.
+- **7-21-20:** Started building the node.js backend
+- **7-31-20:** Started sending out market research surveys
+- **9-15-20:** Deployed a landing page to collect beta users
+- **9-16-20:** Started promoting on social media
+
+## Meeting with a Lawyer
+
+This week a lawyer friend gave us some advice on protecting ourselves as an LLC and creating a _terms and agreements_. She suggested taking from different sites that are similar to WishTender. Other resources warn this is copyright infringement. But my entrepreneur neighbor, Moishe, said not to worry- change it after you get a cease and assist.
+
+<img src='log_imgs/lawyermeeting-9-22-20.png' width=500>
+
+_Telemeeting with lawyer and rebbetzin Laura Elkayam in the conference bed_
+
+## Social Media
+
+We started doing social media last week. 52 followers on twitter. We tweeted and pinned my email up so people can ask me questions and make suggestions. One potential user responded. She's been emailing lots of great input. She was one of the people we surveyed last month.
+
+## Code Notes And Non-Code
+
+There are two more non-code related sections in this update:
+
+- **[Doubting Myself](#doubts-9-22-20)**
+
+- **[Talking to Entrepreneur Neighbor Moishie](#moishie-9-22-20)**
+
+They are mixed in with code notes below.
+
+## Error Handling
+
+Why do we handle errors? Why not just fix the actual problem? I'm confused.
+
+So if something goes wrong in my app, I have this error handler
+
+```javascript
+// error handling function
+app.use((err, req, res, next) => {
+  if (res.headersSent) {
+    return next(err);
+  }
+  console.err(err);
+  return res.status(500).render("500", {
+    title: "500",
+  });
+});
+```
+
+But I'm confused, why should I be planning for errors to happen. Why not just fix the code before they happen? I think this has to do with errors vs bugs.
+
+[Operational errors vs. programmer errors](https://www.joyent.com/node-js/production/design/errors):
+
+> People use the term “errors” to talk about both operational and programmer errors, but they’re really quite different. Operational errors are error conditions that all correct programs must deal with, and as long as they’re dealt with, they don’t necessarily indicate a bug or even a serious problem.....
+>
+> By contrast, programmer errors are bugs. They’re cases where you made a mistake, maybe by forgetting to validate user input, mistyping a variable name, or something like that. By definition there’s no way to handle those. If there were, you would have just used the error handling code in place of the code that caused the error!
+>
+> This distinction is very important: operational errors are part of the normal operation of a program. Programmer errors are bugs.
+
+Operational Errors:
+
+- failed to connect to server
+- failed to resolve hostname
+- invalid user input
+- request timeout
+- server returned a 500 response
+- socket hang-up
+- system is out of memory
+- out of memory or too many open files
+- system’s configuration (e.g., no route to a remote host)
+- remote service (e.g., a 500 error, failure to connect)
+
+Programming Errors aka Bugs:
+
+- forgetting to validate user input
+- mistyping a variable name
+- tried to read property of “undefined”
+- called an asynchronous function without a callback
+- passed a “string” where an object was expected
+- passed an object where an IP address string was expected
+
+Failure to handle an operational error is itself a programmer error.
+
+## How do you change a database later?
+
+I'm super nervous about making any decisions with the database. Because what happens if we want to change something? Like a add a new type of user?
+
+## Database Schema Migration
+
+I found out these are called [migrations](https://softwareontheroad.com/database-migration-node-mongo/#:~:text=Database%20Schema%20Migration%20is%20the,existing%20data%20for%20new%20requirements.).
+
+> Database Schema Migration is the process of updating a Collection Schema and/or adapting the existing data for new requirements.
+
+What if I start with one type of user that has `name`, `password`, and `email`. Regular user fields. But because all users are wishlist creators, the `user` schema also has `wishlists`. What happens 2 months from MVP, when I want to add users who are gifters? They would have `name`, `password`, and `email` but they wouldn't need `wishlist`. And they may need another field that wishers wouldn't need. Like `giftsPurchased`. I think I would want to change the schema. But could that be an issue?
+
+I guess migrations can help with this.
+
+## Error Handling Again
+
+> I log EVERYTHING but not everything is printed in the output log 😉
+>
+> I strongly believe that you need to log when an action is about to be performed, when the action has been performed, the result and the error if happened.
+
+[-source: softwareontheroad](https://softwareontheroad.com/error-handling-nodejs/)
+
+Log:
+
+- when as action is about to be performed
+- when the action has been performed
+- the result and the error if happened
+
+What exactly is an action? What is one unit of action? Maybe like an api call.
+
+> forward your errors all to the same central location in your server.
+
+> Don’t obfuscate your errors, be honest, let your users know why the request fail, so they can perform another action, or try something different.
+>
+> A good error message will be like:
+>
+> _The user search engine doesn’t work for now but you can still view your profile._
+
+[-source: smashingmagazine](https://www.smashingmagazine.com/2020/08/error-handling-nodejs-error-classes/)
+
+> For example, a JavaScript developer may decide to throw in a number instead of an error object instance, like so:
+>
+> ```javascript
+> // bad
+> throw "Whoops :)";
+>
+> // good
+> throw new Error("Whoops :)");
+> ```
+>
+> You might not see the problem in throwing other data types, but doing so will result in a harder time debugging because you won’t get a **stack trace** and other properties that the Error object exposes which are needed for debugging.
+
+[-source: smashingmagazine](https://www.smashingmagazine.com/2020/08/error-handling-nodejs-error-classes/)
+
+### TRANSFORMING ERROR TO STRING- Dont!
+
+> ```javascript
+> reject("Template not found. Error: ", +err);
+> ```
+>
+> This approach has a lot of downsides because when the concatenation was done, the developer implicitly runs toString on the error object returned. This way he loses any extra information returned by the error(say goodbye to stack trace). So what the developer has right now is just a string that is not useful when debugging.
+>
+> A better way is to keep the error as it is or wrap it in another error that you’ve created and attached the thrown error from the databaseGet call as a property to it.
+
+[-source: smashingmagazine](https://www.smashingmagazine.com/2020/08/error-handling-nodejs-error-classes/)
+
+> Errors are thrown by the engine, and exceptions are thrown by the developer.
+
+[-source: rollbar](https://rollbar.com/guides/javascript-throwing-exceptions/)
+
+> The important here is not to handle the errors from the underlying layers but to throw it to the controller layer.
+
+[-source: softwareontheroad](https://softwareontheroad.com/error-handling-nodejs/)
+
+> ```javascript
+> import Logger from "../logger";
+> import UserService from "../services/user";
+>
+> export default (app) => {
+>   app.get("/user/search-location", (req, res, next) => {
+>     try {
+>       const { lat, lng } = req.query;
+>       Logger.silly("Invoking user service to search by location");
+>       const users = UserService.SearchUserByLocation(lat, lng);
+>       return res.json(users).status(200);
+>     } catch (e) {
+>       Logger.warn("We fail!");
+>       return next(e);
+>     }
+>   });
+> };
+> ```
+>
+> The controller layer just passes it to the next express >middleware, our centralized error handler.
+>
+> ```javascript
+> import Logger from "../logger";
+> export default (err, req, res, next) => {
+>   Logger.error("Error %o", err);
+>   return res.json(err).status(err.httpStatusCode || 500);
+> };
+> ```
+
+[-source: softwareontheroad](https://softwareontheroad.com/error-handling-nodejs/)
+
+How do we know what next passes the error too?
+
+I'm assuming that this centralized error handler is used in an app.use() call in the server file?
+
+OK, so I think I have a better picture now of how I need to handle these errors!
+
+> In this pattern, we would start our application with an `ApplicationError` class this way we know all errors in our applications that we explicitly throw are going to inherit from it. So we would start off with the following error classes:
+
+[-source: smashingmagazine](https://www.smashingmagazine.com/2020/08/error-handling-nodejs-error-classes/)
+
+That's smart, so if you see an `applicationError`, you know it came from an error you coded and not from some other middleware... middleware? Sometimes I say words and I don't know if they're the right ones. I'm not really sure what else throws errors. I think mongoose throws errors for example when there's problems with database queries. And is mongoose a middleware? Oh if we pass req or res to it then yes. But...we don't pass req or res to it, but we do pass information we got from req or res to it. Hmm so I think it's not a middleware.
+
+<h2 id="doubts-9-22-20">
+
+## I think I **can't**... I think I **can**
+
+Yesterday, I felt so lost with all this error handling stuff. I was like, _"what am I getting myself into?! I can't code this freaking app! I know nothing! Only a seasoned developer could build this app!"_
+
+24 hours later and I feel like I can code the next step.
+
+Let that be a lesson to me: When I'm looking out into a very intimidating pile of information, I've always been able to find my next steps. This feeling happens over and over again:
+
+1. _Oh no, I can't do it!_
+2. Study the subject 24 hours
+3. _Oh wait, I know enough to take a step!_
+
+No reason to catastrophize the situation when I haven't even put in a good 24 hours!
+
+Even though I still experience this feeling, it has lessened in intensity. Overtime, I've learned to expect this pattern. So I don't freak out as much in the face of the unknown. However, with time I challenge myself more and more, so the unknown is more intimidating and challenging.
+
+## Social
+
+It is so exciting to see people interacting with the social media account!
+
+## More Error Handling
+
+I copied this from a tutorial.
+
+```javascript
+module.exports = (err, req, res, next) => {
+  if (res.headersSent) {
+    return next(err);
+  }
+  logger.log("Error:", err);
+  return res.status(500).render("500", {
+    title: "500",
+  });
+};
+```
+
+Where does `next(err)` go when this is the last middleware in my app.js file?
+
+> If you pass an error to next() and you do not handle it in a custom error handler, it will be handled by the built-in error handler; the error will be written to the client with the stack trace. The stack trace is not included in the production environment.
+
+[-source: expressjs](https://expressjs.com/en/guide/error-handling.html)
+
+This is the default error handler in express. That page writes in more detail about why you need `if (res.headersSent) {return next(err);}` in your error handler.
+
+## When to throw an exception?
+
+**I posted this on [stackoverflow](https://stackoverflow.com/questions/63970242/node-js-when-updating-a-document-failed-is-best-to-throw-an-exception-or-return):**
+
+I have an `updateDocument` method in a class for a service layer in a node.js, express, mongoose application. I'm wondering what is the best practice for handing cases where the update method didn't update a document, for example if the wrong id is passed in.
+
+**Version 1: If the update wasn't successful, return an object with `success: false`:**
+
+```javascript
+  async updateDocument(id, updates) {
+    const output = await this.DocumentModel.updateOne({ _id: id }, updates);
+
+    let message = 'Something went wrong';
+    let success = false;
+    let updatedItem = null;
+    if (output.nModified) {
+      message = 'Successfully updated document.';
+      success = true;
+      updatedItem = await this.getDocument(id);
+    }
+
+    return { message, success, updatedItem};
+  }
+```
+
+**Version 2: If the update wasn't successful, throw an error:**
+
+```javascript
+  async updateDocument(id, updates) {
+    const output = await this.DocumentModel.updateOne({ _id: id }, updates);
+
+    let updatedItem;
+
+    if (output.nModified) {
+      updatedItem = await this.getDocument(id);
+    } else{
+      throw new Error("The document wasn't updated")
+    }
+
+    return updatedItem;
+  }
+```
+
+Do you always throw an exception when the input, such as a bad id, isn't correct? Or could you return information about the update being a success or not? As newbie node.js developer, I'm not sure I am grasping the full picture enough to recognize problems with either method.
+
+I asked this on [stackoverflow](https://stackoverflow.com/questions/63970242/node-js-when-updating-a-document-failed-is-best-to-throw-an-exception-or-return).
+
+## [**When to throw an exception?**](https://stackoverflow.com/questions/77127/when-to-throw-an-exception/77361#77361)
+
+> Every function asks a question. If the input it is given makes that question a fallacy, then throw an exception. This line is harder to draw with functions that return void, but the bottom line is: if the function's assumptions about its inputs are violated, it should throw an exception instead of returning normally.
+
+## [**Should a retrieval method return 'null' or throw an exception when it can't produce the return value?**](https://stackoverflow.com/questions/175532/should-a-retrieval-method-return-null-or-throw-an-exception-when-it-cant-prod#:~:text=Only%20throw%20an%20exception%20if,is%20a%20matter%20of%20preference.&text=As%20a%20general%20rule%2C%20if,then%20go%20with%20the%20exception.)
+
+**Answer 1:**
+
+> Whatever you do, make sure you document it. I think this point is more important than exactly which approach is "best".
+
+**Answer 2:**
+
+> If you are always expecting to find a value then throw the exception if it is missing. The exception would mean that there was a problem.
+>
+> If the value can be missing or present and both are valid for the application logic then return a null.
+>
+> More important: What do you do other places in the code? Consistency is important.
+
+## **Where should exceptions be handled?**
+
+**Answer 1: in the layer of code that can actually do something about the error**
+
+> Exceptions should be handled in the layer of code that can actually do something about the error.
+>
+> The "log and rethrow" pattern is often considered an antipattern (for exactly the reason you mentioned, leads to a lot of duplicate code and doesn't really help you do anything practical.)
+>
+> The point of an exception is that it is "not expected". If the layer of code you are working in can't do something reasonable to continue successful processing when the error happens, just let it bubble up.
+>
+> If the layer of code you are working in can do something to continue when the error happens, that is the spot to handle the error. (And returning a "failed" http response code counts as a way to "continue processing". You are saving the program from crashing.)
+
+[-source: softwareengineering.stackexchange](https://softwareengineering.stackexchange.com/questions/399883/node-js-error-handling-through-each-layer)
+
+**Answer 2: Handle errors centrally, not within a middleware**
+
+> Without one dedicated object for error handling, greater are the chances of important errors hiding under the radar due to improper handling. The error handler object is responsible for making the error visible, for example by writing to a well-formatted logger, sending events to some monitoring product like Sentry, Rollbar, or Raygun. Most web frameworks, like Express, provide an error handling middleware mechanism. A typical error handling flow might be: Some module throws an error -> API router catches the error -> it propagates the error to the middleware (e.g. Express, KOA) who is responsible for catching errors -> a centralized error handler is called -> the middleware is being told whether this error is an untrusted error (not operational) so it can restart the app gracefully. Note that it’s a common, yet wrong, practice to handle errors within Express middleware – doing so will not cover errors that are thrown in non-web interfaces.
+
+[-source; Handle errors centrally, not within a middleware](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/errorhandling/centralizedhandling.md)
+
+- More: [**Best Practice Node.js: Error Handling**](https://github.com/goldbergyoni/nodebestpractices#2-error-handling-practices)
+
+**Answer 3: In the controllers**
+
+> You can finally handle your errors in your controller classes.
+
+[-an answer to my stack overflow question](https://stackoverflow.com/questions/63970242/node-js-when-updating-a-document-failed-is-best-to-throw-an-exception-or-return#answer-63990007)
+
+So it seems like these #1 & #3 disagree with #2. #1 says to handle it right away if you can. So for me it would be in the service layer or in the controller. But the #2 says handle it centrally, like in the server file. I went with #2.
+
+## My decision: throw the error in a custom error class
+
+I combined a few methods people suggested. I am throwing the error, but I'm not "log and rethrow"-ing, as the answer above warned against. Instead, I put the error in a custom error with more information and throw that. It is logged and handled centrally.
+
+So first in my service layer this is how an error is thrown:
+
+```javascript
+async addUser(user) {
+   let newUser;
+   try {
+      newUser = await this.UserModel.create(user);
+   } catch (err) {
+      throw new ApplicationError( // custom error
+         {
+            user, // params that are useful
+            err, //original error
+         },
+        `Unable to create user: ${err.name}: ${err.message}` // error message
+      );
+   }
+   return newUser;
+}
+```
+
+`ApplicationError` is a custom error class that takes an info object and a message. You could put other helpful information in your custom error class, even maybe what EJS template to use! So you could really handle the error creatively depending on how you structure your custom error class. I don't know if that's "normal", maybe it's not SOLID to include the EJS template, but I think it's an interesting concept to explore. You could think about other ways that might be more SOLID to dynamically react to errors.
+
+This is the `handleError` file for now, but I will probably change it up to work with the custom error to create a more informative page. :
+
+```javascript
+const logger = require("./logger");
+
+module.exports = (err, req, res, next) => {
+  if (res.headersSent) {
+    return next(err);
+  }
+
+  logger.log("Error:", err);
+  return res.status(500).render("500", {
+    title: "500",
+  });
+};
+```
+
+Then I add that function to my server file as the last middleware:
+
+```javascript
+app.use(handleError);
+```
+
+**In conclusion**, it seems like there's a bit of disagreement on how to handle errors though it seems more people think you should throw the error and probably handle it centrally. Find a way that works for you, be consistent, and document it.
+
+### Loaders?
+
+What is a [loader](https://github.com/santiq/bulletproof-nodejs/blob/9c1cd2af3ccd812fd36085d1f9aa8f8f9351bd4b/src/loaders/express.ts)?
+
+> Loaders are transformations that are applied on a resource file of your app. They are functions (running in node. js) that take the source of a resource file as the parameter and return the new source.
+
+[source](https://callmenick.com/dev/cooking-with-webpack-2-loaders/#:~:text=Loaders%20are%20transformations%20that%20are,and%20return%20the%20new%20source.)
+
+Sounds unrelated to what I need to know right now.
+
+<h2 id="moishie-9-22-20">
+
+## I Ran Into My CBD Entrepreneur Neighbor, Moishe
+
+Moishe said not to be afraid of failure. He said fail fast. It's better than failing slow. Go fast, and don't be afraid to fail. But also don't make terrible decisions! Like Elon Musk says, there are type 1 and type 2 decisions: decisions that are consequential and irreversible and decisions that can be made fast and are reversible.
+
+### I posted another question: [**How to deal with Parent and Child mongoose schemas that have cyclic dependencies?**](https://stackoverflow.com/questions/64001899/how-to-deal-with-parent-and-child-mongoose-schemas-that-have-cyclic-dependencies)
+
+## Featured Teachers
+
+- Kelvin O. Omereshone [@Dominus_Kelvin](https://twitter.com/Dominus_Kelvin)
+- Sam Quinn [@SantyPK4](https://twitter.com/santypk4)
+- Yoni Goldberg [@goldbergyoni](https://twitter.com/goldbergyoni)
+- Helge Drews [@helgedrews](https://twitter.com/helgedrews)
+
 <h3 id="update-9-16-20"></h3>
 
 ## My Startup - Wednesday, 9/16/20
@@ -11,6 +445,8 @@ Up until this point, I've been updating you on my new startup in vague terms. Bu
 This week, we started posting on social. So I can finally talk about the startup.
 
 Here it is:
+
+<h2 id="wishtender-description">
 
 ## WishTender
 
@@ -1785,6 +2221,8 @@ Although for deep learning and other general-purpose GPU stuff I don’t know if
 [avatarify](https://github.com/alievk/avatarify)
 -remember to restart the terminal after installing miniconda before running `bash scripts/install_mac.sh`
 
+<h2 id = "prototype">
+
 ### Making A Demo Page for A Digital Business Idea
 
 5/27/20-5/29/20
@@ -2053,7 +2491,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
