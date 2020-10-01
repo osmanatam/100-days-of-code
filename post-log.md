@@ -2,6 +2,307 @@
 
 I completed my 365 days of code in 2019. But I'm going to continue to add to this log when I want to save notes.
 
+<h3 id="update-9-30-20"></h3>
+
+## Wednesday, 9/30/20
+
+## September Progress
+
+Last month I wrote where I was at the end of August.
+
+Journal entry from 9/1/20:
+
+> **9/1/20**
+>
+> Today WishTender has a front end with a home page, a menu that doesn’t have links, a profile page component, an add wish page component. None of it is linked to the backend except for a page that isn’t real that’s adds wishes and the scraper. The front end is not organized and isn’t SOLID. No tests.
+>
+> The backend is more organized and has tests. There are wish services and you can scrape a product for info. There’s authentication but not social. Users have no connection to the wishes. No way to add credit card info. No logger. No templates.
+>
+> We don’t know if we’re going with stripe or what. The survey said PayPal looks like a no go.
+>
+> I have to add logging to the back end. Learn best practices for react, unit tests, and state management and update. It’s not SOlID
+
+### **Then vs Today**:
+
+- **"There are wish services"**- Today, I have models _and_ services for users, wishlists, wishlist items, and aliases.
+
+- **"We don’t know if we’re going with stripe"**- We decided to start with stripe.
+
+- **"I have to add logging to the back end"**- I added winston logging.
+
+- I also have a around **90 tests** and started adding to the **user routes.** Some are unit tests but some are more integration/functional.
+- I set up **landing page** and collecting beta user emails on **mailerlite**. We have 10 subrscibers! (well, 2 of them are me...)
+
+- My team launched **social media** and made a **_terms and conditions_** draft.
+
+It doesn't seem like I got that much farther, even though I worked so much. I think I spent a lot of time learning about nodejs architecture and mongodb.
+
+## **Tracking Progress**
+
+I want to move faster.
+
+So I'm going to keep track of what I get done every day to keep me accountable:
+
+**Yesterday for WishTender:**
+
+- I added a logout route.
+- I fixed my debugger which wasn’t working with dotenv
+- I watched the LinkedIn chapter of a tutorial on sessions
+- I looked at my sessions on robo3t
+- I posted a question and answer on stack Overflow
+- Started trying to understand how to authorize users to change their resources: their wishlists, their profiles, etc. while keeping them from updating others' resources.
+
+### **How to only allow a user to update _their own_ resources?**
+
+I was wondering how to prevent users from updating other user's resources. I thought this was called authorization, vs authentication where a user logs in. But tt looks like it's called _access control_.
+
+I found this question: **[Allow users to only update and delete their own object](https://stackoverflow.com/questions/28042870/node-js-api-allow-users-to-only-update-and-delete-their-own-object)**
+
+Which led me to these two articles:
+
+- [Restful API's](http://scottksmith.com/blog/2014/05/29/beer-locker-building-a-restful-api-with-node-passport/)
+- [Access Control in Node.JS](https://medium.com/teamzerolabs/rbac-vs-abac-in-node-js-backend-321a426faae2)
+
+I also found a [Guide to node.js authentication](https://softwareontheroad.com/nodejs-jwt-authentication-oauth/) from Software On The Road, one of my favorite sites about Node.js architecture.
+
+## Featured Teachers
+
+- Sam Quinn [@SantyPK4](https://twitter.com/santypk4)
+
+<h3 id="update-9-29-20"></h3>
+
+<hr>
+
+## Tuesday, 9/29/20
+
+## Node.js VSCode Debugger Missing Env Variables
+
+My debugger wasn't getting access to my `.env` environment variables. These hold my database uri's. So I would get this error when trying to run the debugger:
+
+```bash
+MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+```
+
+I fixed it by adding this to my `launch.json` file in my `.vscode` workspace folder. I added two values to the configurations object:
+
+```json
+"env": { "PORT": "4000" },
+"envFile": "${workspaceFolder}/backend/.env"
+```
+
+<h3 id="update-9-26-20"></h3>
+
+## Saturday, 9/26/20
+
+### **Silly Logging vs Verbose**
+
+> silly logging is typically used to log EVERYTHING (Each function call, action, variable, extra information, whatever), whereas verbose logging is closer to debug logging, providing a logged pseudo-trace through functions and logs of certain critical variables.
+
+[-source: winston github](https://github.com/bithavoc/express-winston/issues/155)
+
+<h3 id="update-9-23-20"></h3>
+
+<hr>
+
+## Wednesday, 9/23/20
+
+Code next steps:
+
+- UserService
+  - Email confirmation
+  - change password
+- auth social login
+- routes
+
+Let's get the routes in order today.
+
+## [**When to throw an exception?**](https://stackoverflow.com/questions/77127/when-to-throw-an-exception)
+
+Now that I'm moving into the routes I'm still thinking about when to throw exceptions, now as it pertains to the routes. Like when user logs in and the password is incorrect. Is that exceptional?
+
+There were a lot of different nuanced opinions. This was the top answer.
+
+> My personal guideline is: an exception is thrown when a fundamental assumption of the current code block is found to be false.
+>
+> Example 1: say I have a function which is supposed to examine an arbitrary class and return true if that class inherits from List<>. This function asks the question, "Is this object a descendant of List?" This function should never throw an exception, because there are no gray areas in its operation - every single class either does or does not inherit from List<>, so the answer is always "yes" or "no".
+>
+> Example 2: say I have another function which examines a List<> and returns true if its length is more than 50, and false if the length is less. This function asks the question, "Does this list have more than 50 items?" But this question makes an assumption - it assumes that the object it is given is a list. If I hand it a NULL, then that assumption is false. In that case, if the function returns either true or false, then it is breaking its own rules. The function cannot return anything and claim that it answered the question correctly. So it doesn't return - it throws an exception.
+>
+> This is comparable to the "loaded question" logical fallacy. Every function asks a question. If the input it is given makes that question a fallacy, then throw an exception. This line is harder to draw with functions that return void, but the bottom line is: if the function's assumptions about its inputs are violated, it should throw an exception instead of returning normally.
+>
+> The other side of this equation is: if you find your functions throwing exceptions frequently, then you probably need to refine their assumptions.
+
+Since logging is asks the question, _do you have the credentials?_ I believe this makes sense to abstain from throwing an error when the password is wrong. Because you can answer that question, "No". However you might throw an error if null was passed in as the password.
+
+## **Should it error? Put the function in the form of a question to find out.**
+
+But some functions don't ask clear questions. Like what about `updateUser`? This is a command.
+
+For my `updateUser`, I return the updated user. I throw an error if the user can't be updated for some reason. What is the question here? _Can you update user?_ or _What does the user look like after we update it?_
+
+Well in my case, it seems like the question is the latter. Because we return the updated user. Now, if we can't update the user, we can't answer that question. So I must throw an error.
+
+So I suppose **to figure out the question your function asks, look at not just the name and usage of the function, but also what it returns.**
+
+## Others were more exception-averse
+
+> I think you should only throw an exception when there's nothing you can do to get out of your current state. For example if you are allocating memory and there isn't any to allocate.
+
+> Because they're things that will happen normally. Exceptions are not control flow mechanisms.
+
+But that doesn't seem to be a common principle. Many people disagreed in the comments. They thought exceptions are control flow mechanisms.
+
+My intuition is that throwing exceptions to a central location will help with debugging. Especially, if you use a custom error. But it depends on what your question is asking.
+
+With so many people disagreeing, it's almost like it doesn't really matter
+
+Most important:
+
+- Be consistent with some principle for the way your app handles exceptions
+- Document it
+
+## [**Better Express Routing for Node.js**](https://caffeinecoding.com/better-express-routing-for-nodejs/)
+
+> **Route configs** are responsible for initializing and associating routes with controllers.
+
+Huh? What are route configs?
+
+> Controllers are responsible for taking the inputs from the route and invoking the appropriate actions to execute.
+
+Huh? I though controllers _were_ routes?
+
+Ah I [see](https://github.com/kelyvin/express-env-example):
+
+**Routes/Route Configs:**
+
+```javascript
+let router = express.Router();
+
+router.get("/", homeController.index);
+router.get("/info", homeController.info);
+```
+
+**Controllers:**
+
+```javascript
+function index(req, res) {
+  res.render("home/index", {
+    title: "Home",
+  });
+}
+
+function info(req, res) {
+  res.render("home/info", {
+    title: "More info",
+  });
+}
+```
+
+I lumped them together in my head.
+
+## Service layer vs microservice?
+
+> ...a service can holds two purposes:
+>
+> Operate as a micro-service - perform some CRUD (create, read, update, delete) against some data or database
+>
+> Orchestrate several micro-services - combine and interact with different micro-services to perform some sort of business logic or complex situation
+
+-[source: caffeinecoding](https://caffeinecoding.com/better-express-routing-for-nodejs/)
+
+Huh? I thought microservices and service layers had nothing to do with one another.
+
+> Each service has its own unique and well-defined role, **runs in its own process**, and communicates via HTTP APIs or messaging. Each microservice **can be deployed, upgraded, scaled, and restarted independently** of all the sibling services in the application.
+
+-[source: nodesource](https://nodesource.com/blog/microservices-in-nodejs)
+
+So this^ is what I thought a microservice was: a mini app that **"runs in its own process"**.
+
+It looks like this [caffeinecoding](https://caffeinecoding.com/better-express-routing-for-nodejs/) might be uses the term "mircro-service" to mean something else.
+
+## Featured Teachers
+
+- Kelvin Nguyen [@kelyvinN](https://twitter.com/kelyvinN)
+- Liz Parody [@lizparody23](https://twitter.com/lizparody23)
+
+<h3 id="update-9-22-20"></h3>
+
+<hr>
+
+## Tuesday, 9/22/20
+
+## **Partnerships**
+
+Shlo, my team member and best friend, saw an up-and-coming OnlyFans competitor called Poststar.
+
+Shlo suggested:
+
+> "Let’s contact them and offer a referral percentage if they promote our site!"
+
+I thought: _hmm a partnership is a great idea. But I know nothing about partnerships. However, my cousin has experience with partnerships. Let’s contact him._
+
+## Consultation about Partnerships
+
+My cousin had a lot of experience with partnerships at his startup. He taught us a lot and pointed us in a better direction.
+
+## **My Cousin's Advice On Partnerships**
+
+> Good partnerships are hard to find, but when you do find them they are amazing for your business.
+
+_-something my cousin sort of said_
+
+## **1. Cast a wide net**
+
+WishTender shouldn't only focus on Poststars. Reach out to many companies you can partner with: OnlyFans and all their competitors.
+
+## **2. Start Small**
+
+In addition to companies, reach out to potential users you can partner with. Partnering with users may mean getting them to be beta users or offering them a referral percentage for getting more users to sign on. If users pay for your software, it can mean giving them a free subscription.
+
+These early users can help you make partnerships with big companies. It shows the big players that real people want this and use it.
+
+As an example, my cousin said he and his team got beta users for their startup by first contacting people they knew. After some people they knew signed on, they went to everyone else and said, **_look so-and-so uses our product._**
+
+## **3. Empathize with their motivations**
+
+Send companies an email with **a few bullet points** on WishTender, how it can make them money, and a **30-60 second video** demo. Not longer than 60 seconds, or they'll lose attention.
+
+Empathize with their motivation:
+
+> • _When models share amazon wishlists, you're losing out on \$1,000,000 extra a year you could make by having a white label wishlist._
+
+That's pretty motivating.
+
+Put in some work to figure out how much money what you might be able to bring them.
+
+We can do a similar email to the users, as well.
+
+## **4. Think Bigger**
+
+Instead of offering companies a percentage of what they make on their referrals to WishTender, offer them the ability to have a wishlist on their site using our tech. Charge them some amount to use it per month. Ex: 50k a month. Or combine some sort of referral with a charge.
+
+I asked:
+
+> "How would we do that? We are a web app with our own site. Now you're saying to make a software for other companies?"
+
+He said it could be done even with just an iframe. But whatever you decide, you can tell them; if they want it built, it will cost \$X to make. Have them cover the expense of building it. You don't have to figure out how to build it first.
+
+These companies have budgets put aside for stuff like this, and you can often charge more than you think. The idea isn't to take advantage of these budgets, but to give them something better for more. Think about big win/wins!
+
+## **5. Cast a Net Early**
+
+Partnerships take long. You could contact a company today. But if they have a huge project going on, they may not be ready to partner with you for three months.
+
+You don't need a finished product to contact companies about partnerships. Just a video demo. So contact them early, even if your product isn't ready.
+
+## **6. Don't Fear Getting Your Idea Stolen**
+
+Don't be afraid that by emailing companies your idea, they will implement it behind your back. Good ideas are cheap. Execution is what counts. If these companies steal your idea, they were probably just going to implement it already.
+
+This fear will stop you from being aggressive about partnerships. Cast your net early and wide. Don't let fear stop you.
+
+<hr>
+
 <h3 id="update-9-22-20"></h3>
 
 ## My Startup - Tuesday, 9/22/20
@@ -2493,7 +2794,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
