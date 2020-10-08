@@ -2,6 +2,359 @@
 
 I completed my 365 days of code in 2019. But I'm going to continue to add to this log when I want to save notes.
 
+<h3 id="update-10-7-20"></h3>
+
+## Wednesday/Thursday, 10/7/20
+
+## Daily [WishTender](#update-9-16-20) Update
+
+**Today's Progress:**
+
+- I moved today so limited progress, but I spent Wednesday to Thursday morning reviewing SOLID principles.
+
+SOLID code principles help keep code maintainable and scalable. When I did smaller projects that wasn't important. But WishTender is a full production app. So I'm prioritizing it's maintainability.
+
+## Code Notes On SOLID:
+
+It's not necessary or ideal to learn them in SOLID order. Here's the order of my notes:
+
+1. Dependency Inversion Principle
+2. Interface Segregation Principle
+   - Composition vs Inheritance
+3. Liskov Substitution Principle
+4. Open–closed Principle
+5. Single Responsibility Principle
+
+## Dependency Inversion Principle
+
+High-level modules (modules, functions, classes closer to view layer) should not depend on low-level modules (modules like a 3rd party API like Stripe). Both should depend on abstractions (e.g. interfaces).
+
+No!:
+
+STORE---->STRIPE
+
+YES!:
+
+STORE---->PAYMENT PROCESSOR<----STRIPE
+
+```javascript
+const store = new Store(new StripePaymentProcessor("Dash"));
+store.purchaseBike(2);
+
+const store2 = new Store(new PayPalPaymentProcessor("Dash"));
+store.purchaseBike(1);
+```
+
+This way if you change to paypal you just send in a different payment processor object- a `PayPalPaymentProcessor`. You don't have to change the (`Store`) to interact with paypal now, which would lead to way too much refactoring.
+
+### [**Video**](https://www.youtube.com/watch?v=9oHY5TllWaU)
+
+## Interface Segregation Principle
+
+Interface means 'class' essentially. In other languages an interface is a class like object. But interfaces don't exist in javascript.
+
+Break out your interfaces or large classes into smaller components or smaller interfaces so subclasses don't extend from classes that have methods that they don't use.
+
+```javascript
+
+class Entity {
+  constructor(name, attackDamage, health) {
+    this.name =name
+    this.attackDamage = attackDamage;
+  }
+  move(){...//bla bla bla}
+  attack(){...//bla bla bla}
+}
+
+class Rock extends Entity {
+  ...//bla bla bla
+  move(){return null} //rocks don't move
+}
+class Character extends Entity {} //characters do move
+```
+
+`Rock`s don't move, but they inherit from `Entity` with has the `move()` method.
+Refactor this do use composition.
+
+```javascript
+class Entity {
+  constructor(name) {
+    this.name = name;
+  }
+  // no more move() or attack()
+}
+
+const mover = {
+  move() {
+    console.log(`${this.name} moved`);
+  },
+};
+
+class Character extends Entity {
+  constructor(name, attackDamage, health) {
+    super(name);
+    this.attackDamage = attackDamage;
+  }
+}
+
+Object.assign(Character.prototype, mover);
+```
+
+Now we can add the `move()` function to only classes that move.
+
+### [**Video**](https://www.youtube.com/watch?v=JVWZR23B_iE&t=380s)
+
+## Composition vs Inheritance
+
+When classes inherit you're describing 1. what objects are and 2. how they're related. But it doesn't always make sense.
+
+```javascript
+class Monster {
+...
+}
+class FlyingMonster extends Monster{
+...
+  fly(){...
+...
+}
+class SwimmingMonster extends Monster {
+...
+  swim(){...
+...
+}
+class SwimmingFlyingMonster extends FlyingMonster or SwimmingMonster?????{
+...
+
+```
+
+`SwimmingFlyingMonster` inherit from `SwimmingMonster` or `FlyingMonster`?
+
+With composition you're describing what an object can do.
+
+```javascript
+function swimmer({ name }) {
+  return {
+    swim: () => console.log(`${name} swam`),
+  };
+}
+
+function swimmingMonsterCreator(name) {
+  const monster = { name: name };
+  return {
+    ...monster,
+    ...swimmer(monster),
+  };
+}
+```
+
+Now you can compose a monster by adding the functionality it needs.
+
+### [**Video**](https://www.youtube.com/watch?v=nnwD5Lwwqdo)
+
+## Liskov Substitution Principle
+
+> if S is a subtype of T, then objects of type T may be replaced with objects of type S
+
+In other words, if you have a function that excepts an instance class like `Animal`, every single subclass of that class (`Dog`, `Turtle`) must be able to able to enter that function and work properly.
+
+```javascript
+function procreate(animal){...}
+
+procreate(new Animal()) //...fine
+procreate(new Dog()) //...fine
+procreate(new NeuteredDog()) //...this wont work!
+```
+
+You might refactor this by making another subclass- `FertileAnimal`- and making the function-`procreate` accept an instance of that new subclass and it's subclasses:
+
+```javascript
+class FertileAnimal extends Animal{...}
+class Dog extends FertileAnimal{...}
+
+function procreate(FertileAnimal){...}
+
+procreate(new FertileAnimal())
+procreate(new Dog())
+```
+
+Or you might change this from inheritance to composition.
+
+```javascript
+const procreator = {
+  procreate() {
+    console.log(`${this.name} procreated`);
+  },
+};
+class Dog extends Animal {
+  constructor(name, barkSound) {
+    super(name);
+    this.barkSound = barkSound;
+  }
+}
+
+Object.assign(Dog.prototype, procreator);
+```
+
+### [**Video**](https://www.youtube.com/watch?v=dJQMqNOC4Pc)
+
+## Open–closed Principle
+
+> "software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification";
+
+This means if you have an entity, meaning...like... a function, you shouldn't have to 'open' up and 'modify' the function to accommodate new circumstances. But you should be able to extend the function.. meaning...like... pass in new kinds of arguments.
+
+### Print Quiz Example
+
+```javascript
+function printQuiz(questions){
+  questions.forEach(question=>{
+
+  if(question.type == 'multiply choice'){
+    question.options.forEach(()=>{
+      console.log(`${index+1}. ${option}`)
+  }
+  else if(question.type == 'shortAnswer'){
+    console.log('Answer__________')
+  }
+  else if(question.type == 'shortAnswer'){
+    console.log('Answer___')
+  }
+}
+
+```
+
+Switch statements or bunch of if statements are often a sign you are violating the open/closed principle.
+
+Here we have a function that **_isn't_** closed for modification. Because if we have to accommodate a new type of question, let's say a true or false question, now we have to go in and add another else if statement.
+
+```javascript
+function printQuiz(questions){
+
+  ... // all the other code from above
+
+  else if(question.type == 'trueOrFalse'){
+    console.log('True or False')
+  }
+}
+```
+
+Refactor this by breaking out the types of questions into classes or functions.
+
+```javascript
+class MultipleChoiceQuestion {
+  constructor(description, option) {
+    this.description = description;
+    this.options = options;
+  }
+  printQuestionChoices() {
+    this.options.forEach(() => {
+      console.log(`${index + 1}. ${option}`);
+    });
+  }
+}
+class TrueOrFalseQuestion {...//more code}
+class ShortAnswerQuestion {...//more code}
+
+const questions = [
+  new ShortAnswerQuestion("What does SOLID mean?"),
+  new MultipleChoiceQuestion("Which SOLID principle is best?")
+]
+
+function printQuiz(questions) {
+  questions.forEach((questions) => {
+    console.log(questions.description);
+    question.printQuestionChoices();
+    console.log("");
+  });
+}
+```
+
+Now you can always extend `printQuiz()` by adding a new class of question without modifying the `printQuiz()` function itself.
+
+The Open/Closed principle says you should add new code instead of modifying code. However, this isn't always true. Don't avoid modifying code all the time.
+
+### [**Video**](https://www.youtube.com/watch?v=-ptMtJAdj40)
+
+## Single Responsibility Principle
+
+All of your classes, modules, function should have one single responsibility: One reason to be changed.
+
+```javascript
+
+class CalorieTracker {
+  construct(...//bla bla bla){
+    ...//bla bla bla
+  }
+  trackCalories(...//bla bla bla){
+    ...//bla bla bla
+  }
+  logCalories(...//bla bla bla){
+    ...//bla bla bla
+  }
+}
+
+```
+
+This `CalorieTracker` class has two reasons to be changed; 1. If you need to change the way calories are tracked or 2. If you need to change the way you log calories.
+
+Logging calories isn't directly related to tracking calories. So it's better to move it out.
+
+```javascript
+function logCalories(someParameter){
+    ...//bla bla bla
+  }
+
+class CalorieTracker {
+  construct(...//bla bla bla){
+    ...//bla bla bla
+  }
+  trackCalories(...//bla bla bla){
+    ...//bla bla bla
+    logCalories(this.blablabla){
+  }
+}
+
+```
+
+Now you only change `CalorieTracker` if you need to change how you track calories. If you need to change how you log calories you change `logCalories`.
+
+### [**Video**](https://www.youtube.com/watch?v=UQqY3_6Epbg)
+
+## Featured Teachers
+
+- Web Dev Simplified [@DevSimplified](https://twitter.com/DevSimplified)
+
+<h3 id="update-10-6-20"></h3>
+
+## Tuesday, 10/6/20
+
+## Daily [WishTender](#update-9-16-20) Update
+
+**Today's Progress:**
+
+- Implemented nodemailer
+- reviewed SOLID
+
+## Code Resources:
+
+[NodeJs file Structure](https://stackoverflow.com/questions/5178334/folder-structure-for-a-node-js-project#answer-5193206)
+
+<h3 id="update-10-5-20"></h3>
+
+## Monday, 10/5/20
+
+## Daily [WishTender](#update-9-16-20) Update
+
+**Today's Progress:**
+
+- Updated WishlistModel to have owner
+- Added to wishlist routes
+- Updated WishlistItemModel to have owner
+- Added to wishlistItem routes
+- Finished addingItemToUser integration test
+
+**Total Tests Passed:** 118
+
 <h3 id="update-10-4-20"></h3>
 
 ## Sunday, 10/4/20
@@ -2907,7 +3260,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
