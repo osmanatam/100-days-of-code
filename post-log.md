@@ -2,6 +2,138 @@
 
 I completed my 365 days of code in 2019. But I'm going to continue to add to this log when I want to save notes.
 
+<h3 id="update-10-13-20"></h3>
+
+## Tuesday, 10/13/20
+
+## Daily [WishTender](#update-9-16-20) Update
+
+**Today's Progress:**
+
+- Learning more about stripe
+- Started Order model
+
+<img src="log_imgs/stripe_10-13-20.png">
+
+I can't wait to have actual payments in here!
+
+## Whiteboard
+
+I couldn't wrap my head around the stripe integration. What should my next step be?
+
+Thinking throw drawing helped. I drew out the shopping flow. This helped me see my next move; make an order model.
+
+<img src="log_imgs/whiteboard_10-13-20.png">
+
+## I asked on twitter:
+
+> **One of my fears as a new developer is that I’ll code something that works but isn’t scalable or optimal and fixing it later (especially after it’s in production) will be much harder than coding it perfectly today.**
+>
+> **Is this fear warranted?**
+
+## Answers
+
+These answers really reminded me to stop trying to be so perfect. Too many times people have told me to move faster: Fail fast. I'm saving these as a reminder:
+
+1.  Joey Doughty [@ImprovementGeek](https://twitter.com/ImprovementGeek):
+
+    > Perfect code is expensive.
+    >
+    > Refactors are part of the process.
+    >
+    > We just have to do our best and move on.
+
+2.  Ant Pace [@pacea87](https://twitter.com/pacea87):
+
+    > I think it's better to get something working (minimal viable product) that people can use ASAP. Fail fast, learn fast.
+    >
+    > That being said, yes, technical debt is a real thing. But it's usually worth it, especially early on
+
+3.  _SAMY DINDANE_ [@SamyDindane](https://twitter.com/SamyDindane):
+    > At some point, you're going to get used to pushing code that isn't optimal, let alone perfect.
+    > The most important thing is to isolate that code + acknowledge that it's not optimal.
+
+## Code Resources
+
+[How To Use Stripe Connect to build market places](https://adamjstevenson.com/stripe/2017/10/20/building-a-marketplace-using-stripe-connect-examples.html)
+
+[Build a market place in 5 min](https://www.youtube.com/watch?v=w1EHoKOSAH0)
+
+## Featured Teachers:
+
+- [Adam Stevenson](https://www.linkedin.com/in/adamjstevenson/)
+- Romain Huet [@romainhuet](https://twitter.com/romainhuet)
+- Joey Doughty [@ImprovementGeek](https://twitter.com/ImprovementGeek)
+- Ant Pace [@pacea87](https://twitter.com/pacea87)
+- _SAMY DINDANE_ [@SamyDindane](https://twitter.com/SamyDindane)
+
+<h3 id="update-10-12-20"></h3>
+
+## Monday, 10/12/20
+
+## Daily [WishTender](#update-9-16-20) Update
+
+I took off the weekend to work on a side project you can find [here](https://github.com/DashBarkHuss/third_party_threshold/blob/main/README.md). It's an interactive javascript map that shows the effect of voting for a third party by state. I made this because people always say a 3rd party vote is a wasted vote. But I wasn't sure if that was true. I scraped the web and collected data into a google sheet using google sheets api. It was cool to edit google sheets using node Js. Then I used a library that turned the data into an interactive map.
+
+**Today's Progress:**
+
+- Added a test for email (very involved!)
+- Started looking at stripe integration
+
+## Code Resources:
+
+[TESTING SMTP/Email](https://nodemailer.com/smtp/testing/)
+
+[Mailtrap to test emails](https://dev.to/kwabenberko/test-emails-in-your-nodeexpress-apps-using-mailtrapio-b32)
+
+## Featured Teachers:
+
+- Kwabena Bio Berko [@KwabenaBerko](https://twitter.com/KwabenaBerko)
+
+<h3 id="update-10-9-20"></h3>
+
+## Thursday, 10/9/20
+
+## Daily [WishTender](#update-9-16-20) Update
+
+**Today's Progress:**
+
+```
+if (!user.confirmed) {
+  logger.log('silly', `User account not confirmed.`);
+  return done(null, false, { message: `User account not confirmed.` });
+}
+```
+
+<h3 id="update-10-8-20"></h3>
+
+## Thursday, 10/8/20
+
+## Daily [WishTender](#update-9-16-20) Update
+
+**Today's Progress:**
+
+- made an Email, ThankYouEmail, and ConfirmationEmail class
+- made email Token model
+- figured out how to debug while running a mocha test- very useful. Next I got to learn how to run nodemon and mocha at the same time.
+- added Token model to user service and passed test
+- Created an HTML email with the team to send to beta users
+  <img src="log_imgs/email_10-8-20.png" width="400">
+
+  I just stole the HTML from another email and changed it a bit.
+
+**Tests Passed:** 119
+
+Now since I added the token, looks like some of my tests broke. I think if they were really unit tests the wouldn't break, but they're more like smaller integration tests.
+
+## Code resources:
+
+[TESTING SMTP/Email](https://nodemailer.com/smtp/testing/)
+
+[flow to confirm email address](https://stackoverflow.com/questions/39092822/how-to-do-confirm-email-address-with-express-node#answer-39093058)
+
+[code to confirm email address](https://stackoverflow.com/questions/39092822/how-to-do-confirm-email-address-with-express-node#answer-63608741)
+
 <h3 id="update-10-7-20"></h3>
 
 ## Wednesday/Thursday, 10/7/20
@@ -3260,7 +3392,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
