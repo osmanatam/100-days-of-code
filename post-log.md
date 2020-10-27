@@ -2,8 +2,509 @@
 
 I completed my 365 days of code in 2019. But I'm going to continue to add to this log when I want to save notes.
 
-<!--
+<hr>
+
+<h3 id="update-10-22-20"></h3>
+
+## Thursday-Tuesday, 10/22-27/20
+
+## [WishTender](#update-9-16-20) Update
+
+I haven't pushed this blog to remote in about since Tuesday, 10/13/20. But I have a few entries in here since then.
+
+I didn't think anyone was reading. But I got a message asking for my next post. So here's an update.
+
+## Stripe Integration
+
+I've been working on integrating Stripe. Stripe is a payment processing platform which you can integrate with using their API.
+
+WishTender is technically a marketplace. Wishers post what they want-> Tenders send gift funds _(or wish tender?)_ to the wisher so the wisher can buy the item. For this to work, I need to be able to collect money from the tenders, and send money to the wishers. Stripe has 'connected' accounts for this.
+
+A wisher creates a connected account with Stripe through WishTender. For the connected account, Stripe collects bank account information etc from the wisher. Now when a tender tends a wish _-aka: sponsors a gift-_ WishTender collects the money, takes a fee, and sends the rest of the funds to the wisher's connected Stripe account.
+
+I'm really enjoying working with Stripe's API. They have 24 hour chat support which is awesome, although sometimes the support doesn't get things correct. Stripe also has great tools for testing.
+
+<img src="log_imgs/stripe_test_data_10-27-20.png">
+
+## Stripe Fees
+
+I've been trying to understand exactly what fees I'll be charged by Stripe. On top of Stripes normal processing fee (2.9% +.30 cents), Stripe charges a fee for connected accounts (.25% + 25 cents + \$2 monthly fee), currency conversion (1%), and transferring funds to an international connected account (1%).
+
+Some of the details are confusing. I had to talk to Stripe support about the details. For example, you get charged for the \$2 monthly fee only if the user was active that month- but it's not by calendar month. So I got the details on when exactly those fees go through. If you're interested in the details let me know and I can share them.
+
+The reason I wanted all the fee details was to be able the pass the Stripe fees on to the tender.
+
+I made this fees function to calculate the fees for me.
+
+```javascript
+/**
+ * Creates Fees object
+ * @param {Int} giftPriceTotal price in pennies ($1 would be 100)
+ * @param {Number} appFee percent of app takes of gift price (10% would be 10)
+ * @param {Boolean} accountFeeDue Is the $2.00 account fee due?
+ * @param {Boolean} internationalPresentment Is was the currency presented by stripe in a currency other than US?
+ * @param {Boolean} internationalDestination Is the wisher an account outside the US?
+ *
+ * @returns {Object} fees object, fees in pennies most
+ * important: this.stripeTotalFee & this.appFee
+ */
+function Fees(
+  giftPriceTotal,
+  appFee,
+  accountFeeDue = false,
+  internationalPresentment = false,
+  internationalDestination = false
+) {
+  const roundToPenny = (pennies) => parseInt(pennies.toFixed());
+  this.accountFeeDue = accountFeeDue ? 200 : 0;
+  this.currencyConversionPrct = internationalPresentment ? 0.01 : 0;
+  this.internationalTransferPrct = internationalDestination ? 0.01 : 0;
+  this.appFee = roundToPenny(giftPriceTotal * appFee * 0.01);
+  this.charge = roundToPenny(
+    (giftPriceTotal + this.accountFeeDue + this.appFee + 55) /
+      (1 -
+        (0.0315 + this.currencyConversionPrct + this.internationalTransferPrct))
+  );
+  this.stripeTotalFee = roundToPenny(
+    this.charge *
+      (0.0315 + this.internationalTransferPrct + this.currencyConversionPrct) +
+      55 +
+      this.accountFeeDue
+  );
+  this.stripeFee = roundToPenny(this.charge * 0.029 + 30);
+  this.stripeConnectedFee = roundToPenny(this.charge * 0.0025 + 25);
+  this.internationalTransferFee = roundToPenny(
+    this.charge * this.internationalTransferPrct
+  );
+  this.currencyConversionFee = roundToPenny(
+    this.charge * this.currencyConversionPrct
+  );
+  this.stripeFeesBalanced =
+    this.stripeFee +
+      this.stripeConnectedFee +
+      this.accountFeeDue +
+      this.currencyConversionFee +
+      this.internationalTransferFee ==
+    this.stripeTotalFee;
+  this.wishersTender = giftPriceTotal;
+  this.total = this.wishersTender + this.stripeTotalFee + this.appFee;
+  this.balanced = this.total == this.charge;
+  if (!this.balanced || !this.stripeFeesBalanced)
+    // this error handler is just to make sure I wrote this function correctly while testing the function with different values.
+    throw new Error(`fees aren't balanced, refactor this function`);
+  return this;
+}
+```
+
+## Exchange Rates
+
+I want to present my international tenders with wish prices in their currency. For example, if I have a wisher in Canada with a CAD$100 purse on their wishlist, I want a British tender to see the purse in GBP in stead of CAD. Today, C$100 is worth 58.22 GBP. So, today the British tender should pay 58.22 GBP for the purse. Stripe then converts the 58.22 GBP to C\$100 and puts it in the Canadian wisher's connected account.
+
+But exchange rates change all the time. So I have to figure the exchange rate at the time the tender is browsing the wishers list.
+
+Stripe doesn't provide you with their exchange rates so I will try using the free plan of [Open Exchange Rates](https://openexchangerates.org/) API to get exchange rates.
+
+## Let Me Know If You Want More
+
+Let me know if you want more info, code samples, tutorials etc. about what I talked about today. Also, my WishTender repo is private, but I would consider sharing more of it if it would help. My Twitter DM's are always open if you have any questions. I can also meet over video chat.
+
+## Messy Notes:
+
+## Sales Tax
+
+**State sales taxes:** Am I supposed to add sales tax? Is there anything in the stripe API for this?
+
+**My CBD Entrepreneur Neighbor's Answer:** It's not clear what the online sales tax requirements are. Don't worry about it until you start making a good amount of money.
+
+## Node Archetecture and 3rd party apis
+
+[Use a layer for third party services Node](https://blog.logrocket.com/the-perfect-architecture-flow-for-your-next-node-js-project/#rule8useanotherlayerforthirdpartyservicescall)
+
+[Use a Pub/Sub layer too](https://dev.to/santypk4/bulletproof-node-js-project-architecture-4epf#use-a-pubsub-layer-too)
+
+I used to really like stripe support. But they have been getting things wrong lately.
+
+## Using MongoDB in Tests
+
+I'm been using mongoose to add documents to the database before running mocha tests. My mongoose schemas are all tied together. It isn't very modular like unit test should be.
+
+For example, if I need to run tests on a Wishlist document, I have to create a User and an Alias too. This is because a Wishlist will fail validations if it isn't provided an existing Alias. And Alias will fail validation if it isn't provided an existing User. So I must create all of them to make a Wishlist: User->Alias->Wishlist.
+
+This is to make sure that every document has an owner and doesn't get lost in the database.
+
+But it isn't very test friendly.
+
+Then I saw this code where mongoose is not being use, just MongoDb. Could I get around the mongoose schema validations by using MongoDb to create test data instead of Mongoose with this?
+
+```javascript
+const { MongoClient } = require("mongodb");
+
+describe("insert", () => {
+  let connection;
+  let db;
+
+  beforeAll(async () => {
+    connection = await MongoClient.connect(global.__MONGO_URI__, {
+      useNewUrlParser: true,
+    });
+    db = await connection.db(global.__MONGO_DB_NAME__);
+  });
+
+  afterAll(async () => {
+    await connection.close();
+    await db.close();
+  });
+
+  it("should insert a doc into collection", async () => {
+    const users = db.collection("users");
+
+    const mockUser = { _id: "some-user-id", name: "John" };
+    await users.insertOne(mockUser);
+
+    const insertedUser = await users.findOne({ _id: "some-user-id" });
+    expect(insertedUser).toEqual(mockUser);
+  });
+});
+```
+
+Source: [Use jest-mongodb Preset](https://jestjs.io/docs/en/mongodb)
+
+## Seeded MongoDb in Mocha Test
+
+I was able to add mongoDb documents without mongoose. Now I can add test data without having to worry about mongoose validations!
+
+```javascript
+it("should tell if didGetOrderLast30Days", async () => {
+  db = await connection.db("test");
+  const orders = db.collection("orders");
+
+  const userId = mongoose.Types.ObjectId("5f9480a69c4fcdc78d55397d");
+  const userId2 = mongoose.Types.ObjectId("5f9480a69c4fcdc78d553971");
+  const mockOrder1 = {
+    user: userId,
+    createdAt: new Date(Date.now() - 29 * 24 * 60 * 60 * 1000),
+  };
+
+  const mockOrder2 = {
+    user: userId2,
+    createdAt: new Date(Date.now() - 31 * 24 * 60 * 60 * 1000),
+  };
+
+  await orders.insertOne(mockOrder1);
+  await orders.insertOne(mockOrder2);
+
+  const didGetOrderRecently = await orderService.didGetOrderLast30Days(userId);
+  const didNotGetOrderRecently = await orderService.didGetOrderLast30Days(
+    userId2
+  );
+
+  didGetOrderRecently.should.be.equal(true);
+  didNotGetOrderRecently.should.be.equal(false);
+});
+```
+
+[Accounting.js for formatting money](http://openexchangerates.github.io/accounting.js/#demo)
+
+> All of Stripe's currency conversions occur at approximately 2% _[1% for US accounts]_ above the daily mid-market rate, which you can view on any up-to-date online conversion calculator for example this one here: https://openexchangerates.org/
+
+-Stripe support chat
+
+<hr>
+
+<h3 id="update-10-21-20"></h3>
+
+## Wednesday, 10/21/20
+
+## Daily [WishTender](#update-9-16-20) Update
+
+**Today's Progress:**
+
+- More stripe docs and talked to support: international charges, taxes
+- Worked with the stripe api to test currency conversion and transferring funds to other countries,
+
+[Legal Implications of a Chargeback on No-Refund Policy](https://smallbusiness.chron.com/legal-implications-chargeback-norefund-policy-37144.html#:~:text=You%20can't%20institute%20a,effect%20when%20the%20transaction%20occurred.)
+
+## [Stripe Pricing](https://stripe.com/connect/pricing):
+
+> Fees by country are listed below for Express and Custom accounts. If **currency conversion** is required, an additional fee will apply: 1% for US accounts and 2% for non-US accounts. If **transferring funds to other countries**, an additional 1% cross-border transfer fee will apply.
+
+> The fee applies on transfers to international payout recipients. Notably, it does not apply to direct charges or charges with the “`on_behalf_of`” parameter set.
+
+### **Currency Conversion**: +1%
+
+> A currency conversion occurs if the presentment currency differs from the settlement currency.
+>
+> The presentment currency is the currency that’s used for charges. The settlement currency is the currency that you can receive payouts in, depending on the charge type and applicable currency conversion.
+
+source: [Connect: Working with multiple currencies](https://stripe.com/docs/connect/currencies)
+
+### **Transferring Funds to Other Countries**: +1%
+
+> Cross-border payouts enable you to pay sellers, freelancers, content creators, and service providers in their local currencies. You can transfer funds to connected accounts in other countries with your existing platform account and charge configuration.
+>
+> Cross-border payouts only work with the [recipient service agreement](https://stripe.com/docs/connect/service-agreement-types#recipient).
+
+source: [Cross border payouts](https://stripe.com/docs/connect/cross-border-payouts)
+
+> Transfers to recipient accounts take an extra 24 hours to become available in the connected account’s balance.
+> ...
+>
+> ```javascript
+> const account = await stripe.accounts.create({
+>   country: "SG",
+>   type: "custom",
+>   capabilities: {
+>     transfers: {
+>       requested: true,
+>     },
+>   },
+>   tos_acceptance: {
+>     service_agreement: "recipient",
+>   },
+> });
+> ```
+
+source: [service agreement types](https://stripe.com/docs/connect/service-agreement-types#recipient)
+
+> If you know the country and capabilities for your connected account, you can provide that information when you create the account. Connect Onboarding then collects the requirements for those capabilities
+> ...
+>
+> ```javascript
+> const account = await stripe.accounts.create({
+>   country: "US",
+>   type: "express",
+>   capabilities: {
+>     card_payments: {
+>       requested: true,
+>     },
+>     transfers: {
+>       requested: true,
+>     },
+>   },
+> });
+> ```
+
+source[create an express account](https://stripe.com/docs/connect/express-accounts#create-account)
+
+**Since the country is specified we could identify if a 1% charge needs to be added.**
+
+[Onboarding express accounts outside of your platforms country](https://stripe.com/docs/connect/express-accounts#onboarding-express-accounts-outside-of-your-platforms-country)
+
+## [Stripe supported currencies](https://stripe.com/docs/currencies):
+
+> If the charge currency differs from the customer’s credit card currency, the customer may be charged a foreign exchange fee by their credit card company.
+
+## [Stripe best practices fruad](https://stripe.com/docs/connect/best-practices#fraud)
+
+## [Stripe Tax Reporting](https://stripe.com/docs/connect/required-verification-information-taxes#us-1099-misc-tax-reporting)
+
+## [Stripe checkout demo](https://checkout.stripe.dev/)
+
+<hr>
+
+<h3 id="update-10-20-20"></h3>
+
+## Tuesday, 10/20/20
+
+## Daily [WishTender](#update-9-16-20) Update
+
+**Today's Progress:**
+
+- Created a Stripe destination charge flow in a separate project folder That calculates stripe fees except international charges
+
+[Working with multiple currencies](https://stripe.com/docs/connect/currencies)
+
+> Another way to avoid currency conversions when performing separate charges and transfers is to use the on_behalf_of parameter.
+
+## [Charge Types](https://stripe.com/docs/connect/charges#types) update
+
+Yesterday I thought I couldn't do destination charges, but now I see I can. I thought destination charges put the entire payment in to the wishers account. But that's only under some settings. [Here](https://stripe.com/docs/connect/destination-charges#transfer-amount) is how to specify the transfer amount and keep your app fee, instead of transferring the entire amount and taking an app fee after.
+
+<hr>
+
+<h3 id="update-10-19-20"></h3>
+
+## Monday, 10/19/20
+
+## Daily [WishTender](#update-9-16-20) Update
+
+**Today's Progress:**
+
+- More stripe integration
+- making a fee calculatator- a lot of math and then had to use dinero.js for calculating money
+
+## [Charge Types](https://stripe.com/docs/connect/charges#types)
+
+Yesterday, I thought I was going to use Destination Charges. But now I realized I should use Separate charges and transfers. _(Update: Not True- see next day's entry)_
+
+I played with the API and made test destination charges. But I didn't like them for WishTender. Destination charges put the entire payment in to the wishers account. Then subtract fees out of it. _(Update: Not always true- destination charges can be set up differently. See next day's entry.)_
+
+<img src = "log_imgs/destination_10-18-20.svg">
+
+While, I could make that work, I think it's messy and confusing to the wisher. I just want the price of the gift to go into the wishers account. In my market research, wishers didn't want to see the fees on their side.
+
+<img src = "log_imgs/charges_transfers_10-18-20.svg">
+
+## [Stripe Rounding Rules](https://support.stripe.com/questions/rounding-rules-for-stripe-fees):
+
+> Stripe rounds the Stripe fee to the nearest unit (e.g., cents). For example, if the fee is 0.025, Stripe will round up to 0.03. If the fee is 0.024, Stripe will round down to 0.02.
+
+### [Why don’t my numbers add up in Javascript?](https://floating-point-gui.de/)
+
+> So you’ve written some absurdly simple code, say for example:
+>
+>     0.1 + 0.2
+>
+> and got a really unexpected result:
+>
+>     0.30000000000000004
+
+[Basic Answers](https://floating-point-gui.de/basic/):
+
+> Because internally, computers use a format (binary floating-point) that cannot accurately represent a number like 0.1, 0.2 or 0.3 at all.
+>
+> When the code is compiled or interpreted, your “0.1” is already rounded to the nearest number in that format, which results in a small rounding error even before the calculation happens.
+>
+> ...Decimal numbers cannot accurately represent a number like 1/3, so you have to round to something like 0.33 - and you don’t expect 0.33 + 0.33 + 0.33 to add up to 1, either - do you?
+
+[Exact Types](https://floating-point-gui.de/formats/exact/)
+[Floating-point cheat sheet for JavaScript](https://floating-point-gui.de/languages/javascript/)
+
+[Precise Financial Calculation in JavaScript. What Are the Gotchas?](https://stackoverflow.com/questions/2876536/precise-financial-calculation-in-javascript-what-are-the-gotchas)
+
+> You should probably scale your decimal values by 100, and represent all the monetary values in whole cents. This is to avoid problems with floating-point logic and arithmetic. There is no decimal data type in JavaScript - the only numeric data type is floating-point. Therefore it is generally recommended to handle money as 2550 cents instead of 25.50 dollars.
+
+<hr>
+
+<h3 id="update-10-18-20"></h3>
+
+## Sunday, 10/18/20
+
+## Daily [WishTender](#update-9-16-20) Update
+
+**Today's Progress:**
+
+- More stripe integration docs
+- Tested the strip API in a new practice project
+
+## More Stripe notes
+
+For a market place, I want to follow the [Collect Then Transfer guide](https://stripe.com/docs/connect/collect-then-transfer-guide)
+
+I'm not sure about [US tax reporting](https://stripe.com/docs/connect/account-capabilities#tax-reporting). I talked to the stripe chat support and they helped me a bit.
+
+**Bold** means I'm using it:
+
+### Connected Accounts
+
+- Standard
+- **Express**
+- Custom
+
+### Specific Guides
+
+- **Collect payments then pay out** [guide](https://stripe.com/docs/connect/collect-then-transfer-guide)
+  - <img src = "log_imgs/collect_then_payout_10-18-20.svg">
+  - For marketplaces where the money goas through the platform. Collect from user A. Payout to User B.
+  - <img src = "log_imgs/collect_then_transfer_10-18-20.svg">
+- Enable your users to accept payments [guide](https://stripe.com/docs/connect/enable-payment-acceptance-guide)
+  - <img src = "log_imgs/enable_accep_payments_10-18-20.svg">
+  - Looks like this is also for marketplaces. But the payments go through the user instead of the platform?
+  - <img src = "log_imgs/direct_charges_10-18-20.svg">
+- Pay out money [guide](https://stripe.com/docs/connect/add-and-pay-out-guide)
+  - <img src = "log_imgs/payout_10-18-20.svg">
+  - Taking money from your platforms bank account, adding it to stripe, then payout connected accounts.
+
+### [Charge Types](https://stripe.com/docs/connect/charges#types)
+
+- Direct charges
+  - Customers directly transact with your user, often unaware of your platform's existence
+  - A single user is involved in the transaction
+  - <img src = "log_imgs/direct_charges2_10-18-20.svg">
+- **Destination charges**
+  - Customers transact with your platform for products or services provided by your user
+  - A single user is involved in the transaction
+  - <img src = "log_imgs/destination_10-18-20.svg">
+- Separate charges and transfers
+
+  Any one of these instances:
+
+  - Multiple users are involved in the transaction
+  - A specific user isn't known at the time of charge (like: which Lyft driver is coming?)
+  - Transfer can't be made at the time of charge
+  - <img src = "log_imgs/charges_transfers_10-18-20.svg">
+
+<img src = "log_imgs/stripe_10-18-20.png">
+<hr>
+
+<h3 id="update-10-17-20"></h3>
+
+## Saturday, 10/17/20
+
+## Daily [WishTender](#update-9-16-20) Update
+
+**Today's Progress:**
+
+- Stripe integration docs
+
+## Stripe notes
+
+## Documentation
+
+If you are just using stripe to get payments, it looks pretty easy. Academind shows you how to do this in their shopping cart Node.js videos. But there are less videos on connected accounts. So for those I had to go to the documentation.
+
+The stripe documentation looked intimidating but it's actually really great. Don't be intimidated by it. Just sit down and start reading. It will start making sense if you give it some time. And take advantage of the 24/7 support if you need.
+
+## Connected Accounts
+
+Connected accounts allow you to pay out customers, useful for marketplaces. Lyft uses stripe connected accounts to pay out their drivers.
+
+For [connected accounts](https://stripe.com/docs/connect) there are 3 types. I want **Express** or **Custom**. **Standard** is cheaper but it is more difficult for the wisher to use. It would allow tenders to interact with wishers about disputes. I don't want that because crazed fans might make up disputes to try to interact with the wisher.
+
+With standard the [bank statement](https://stripe.com/docs/connect/statement-descriptors) would have the wishers information. I want to protect the privacy of the wisher. I only want the platforms name on the bank statement- WishTender.
+
+With express or custom, I can [transfer](https://stripe.com/docs/connect/account-capabilities#transfers) funds. This makes WishTender the middle man.
+
+<hr>
+
+<h3 id="update-10-16-20"></h3>
+
+## Friday, 10/16/20
+
+## Daily [WishTender](#update-9-16-20) Update
+
+**Today's Progress:**
+
+- Fixed Tests: **133 passing**
+- Cart Service and tests
+- Helper for seeding the database during test
+- Set up debugger for recursive tests
+
+**Total Tests Passed**: 135
+
+<hr>
+<h3 id="update-10-15-20"></h3>
+
+## Thursday, 10/15/20
+
+## Daily [WishTender](#update-9-16-20) Update
+
+**Today's Progress:**
+
+- Cart Model/Test
+
+[Video on seeding mongo db](https://www.youtube.com/watch?v=V30Rpqi6kYE)
+
+[CSRF protection](https://youtu.be/waAqEjjssxU?t=339)
+
+[Express validation](https://www.youtube.com/watch?v=js5hI2moBY4)
+
+1. [Session store shopping cart](https://www.youtube.com/watch?v=g32awc4HrLA)
+2. [Cart Model](https://www.youtube.com/watch?v=_pVKGCzbMwg)
+
 <h3 id="update-10-14-20"></h3>
+
+<hr>
 
 ## Wednesday, 10/14/20
 
@@ -13,9 +514,11 @@ I completed my 365 days of code in 2019. But I'm going to continue to add to thi
 
 - Order Model
 - Order Service
-- Order Tests -->
+- Order Tests
 
 <h3 id="update-10-13-20"></h3>
+
+<hr>
 
 ## Tuesday, 10/13/20
 
@@ -83,6 +586,8 @@ These answers really reminded me to stop trying to be so perfect. Too many times
 
 <h3 id="update-10-12-20"></h3>
 
+<hr>
+
 ## Monday, 10/12/20
 
 ## Daily [WishTender](#update-9-16-20) Update
@@ -104,20 +609,26 @@ I took off the weekend to work on a side project you can find [here](https://git
 
 - Kwabena Bio Berko [@KwabenaBerko](https://twitter.com/KwabenaBerko)
 
+<hr>
+
 <h3 id="update-10-9-20"></h3>
 
-## Thursday, 10/9/20
+## Friday, 10/9/20
 
 ## Daily [WishTender](#update-9-16-20) Update
 
 **Today's Progress:**
 
 ```
+
 if (!user.confirmed) {
-  logger.log('silly', `User account not confirmed.`);
-  return done(null, false, { message: `User account not confirmed.` });
+logger.log('silly', `User account not confirmed.`);
+return done(null, false, { message: `User account not confirmed.` });
 }
+
 ```
+
+<hr >
 
 <h3 id="update-10-8-20"></h3>
 
@@ -149,6 +660,8 @@ Now since I added the token, looks like some of my tests broke. I think if they 
 [code to confirm email address](https://stackoverflow.com/questions/39092822/how-to-do-confirm-email-address-with-express-node#answer-63608741)
 
 <h3 id="update-10-7-20"></h3>
+
+<hr>
 
 ## Wednesday/Thursday, 10/7/20
 
@@ -485,6 +998,8 @@ Now you only change `CalorieTracker` if you need to change how you track calorie
 
 [NodeJs file Structure](https://stackoverflow.com/questions/5178334/folder-structure-for-a-node-js-project#answer-5193206)
 
+<hr>
+
 <h3 id="update-10-5-20"></h3>
 
 ## Monday, 10/5/20
@@ -502,6 +1017,8 @@ Now you only change `CalorieTracker` if you need to change how you track calorie
 **Total Tests Passed:** 118
 
 <h3 id="update-10-4-20"></h3>
+
+<hr>
 
 ## Sunday, 10/4/20
 
@@ -530,6 +1047,8 @@ So my project will calculate if your vote has a greater effect on that %5 popula
 
 [mongoose populate video](https://www.youtube.com/watch?v=3p0wmR973Fw)
 
+<hr>
+
 <h3 id="update-10-3-20"></h3>
 
 ## Saturday, 10/3/20
@@ -542,6 +1061,8 @@ So my project will calculate if your vote has a greater effect on that %5 popula
 - Finished alias routes and integration tests for adding an alias to a user
 
 **Total Tests Passed:** 106
+
+<hr>
 
 <h3 id="update-10-2-20"></h3>
 
@@ -580,6 +1101,8 @@ I learned this from [5harath](https://twitter.com/5harath) who shared [@JamesCle
 ## Code Resources:
 
 [How to implement server-side rendering in your React app in three simple steps](https://www.freecodecamp.org/news/server-side-rendering-your-react-app-in-three-simple-steps-7a82b95db82e/)
+
+<hr>
 
 <h3 id="update-10-1-20"></h3>
 
@@ -3406,7 +3929,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
