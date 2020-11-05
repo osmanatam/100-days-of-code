@@ -4,6 +4,386 @@ I completed my 365 days of code in 2019. But I'm going to continue to add to thi
 
 <hr>
 
+<h3 id="update-11-5-20"></h3>
+
+## Thursday, 11/5/20
+
+## [WishTender](#update-9-16-20) notes:
+
+## Chat With Deskpass Founder, Sam Rosen
+
+I got in touch with the founder of [Deskpass](https://twitter.com/deskpasshq), [Sam Rosen](https://twitter.com/sammyrosen). Our moms are long time friends.
+
+It was great to just hear his thoughts and get encouragement. I was nervous reaching out, but I'm glad I did. Sam was extremely generous and helpful.
+
+## Sam's Advice:
+
+## Be Persistance
+
+Sam said that the biggest determinant in being a successful entrepreneur is _persistance_. There will be times when it's hard. Times when it's easy. Persist through it all.
+
+## Be Obvious In Your Messaging
+
+Sam said when he looked at WishTender's site and the twitter, it took a while for him to realized the main use case is for sex workers/cam girls/OnlyFans.
+
+<img src = "log_imgs/wishtender_twitter_11-5-20.png">
+
+The only mention here of sex workers is "SW Friendly". Most people don't know what SW friendly stands means. And we also only added that in or bio recently and have no mention of it on our site.
+
+The average person doesn't take the time to understand your product. So be obvious.
+
+Since WishTender has a very good product market fit with sex workers, we should go after that niche. Which was my plan. Still I thought we could leave it more open ended. But as Sam put it, most businesses have a digestion problem not a starvation problem- they try to do everything instead of focusing on what works.
+
+I haven't been obvious about the sex work connection because I thought it would turn some people away. Maybe even offend my Twitter followers, which I probably shouldn't worry about but I do. But I think Sam is right.
+
+**_Sam’s biggest suggestion: Focus on the sex worker niche. Be more obvious about that intended use case. Call it a wishlist site for OnlyFans/sex workers._**
+
+## Trust Symbols
+
+WishTender gives wishers the gift money directly. It's up to wishers to then purchase the gift.
+
+But how does this make the gifters feel? Might they worry that the wisher won't spend it on the intended gift?
+
+Anytime you want someone to pay, you need to validate them. Show there is trust. No one wants to feel like they might be scammed.
+
+I need to include validation to the gifter that they're getting what they want though trust symbols. Trust symbols could be a rating system on wishers profile, for example. Or display how many times the wishers sent "thank you" messages.
+
+I'm trying to think of a way to do this that feels like it fits in on WishTender. Requiring ratings for a wisher doesn't feel right. Maybe I'm wrong, but it doesn't feel like it's a gift if you get rated on how you receive it.
+
+Could there be an _optional_ page for wishers to post "thank you" pictures from previous gifts? Or an optional display of ratings? This might be something to market research.
+
+## Use Cameo's Messaging System As A Template
+
+Sam says Cameo does a great job of managing communication between celebrities and fans.
+
+If I was buying a Cameo from my favorite entrepreneur Gary Vee, I would make up all sorts of problems with my order and excuses to keep talking to him. (I love you Gary!) So cameo only let's you write a certain number of characters and messages to prevent fan girls like me from crazed nonsense.
+
+I'm going to have similar concerns with WishTender, so Cameo's messaging system is a great model to follow.
+
+## Featured Teachers:
+
+- Sam Rosen [@sammyrosen](https://twitter.com/sammyrosen) CEO and founder of [Deskpass](https://twitter.com/deskpasshq)
+
+<hr>
+
+<h3 id="update-11-3-20"></h3>
+
+## Wednesday, 11/3/20
+
+## [WishTender](#update-9-16-20) notes:
+
+## Doh! Dynamic Objects In The Database Don't work
+
+I watched this tutorial a few weeks ago about making cart object for shopping. I thought I was so smart for improving the cart by making it dynamic; Instead of setting `cart.totalPrice` to the total price, I set it to a getter function.
+
+```javascript
+// example before:
+this.totalPrice = items.reduce(
+      (a, item) => aliasCart.items[item].item.price * aliasCart.items[item].qty + a,
+      0
+    );
+// example after:
+this.totalPrice = get totalPrice() {
+          const keys = Object.keys(this.items);
+          const total = keys.reduce((a, c) => this.items[c].item.price * this.items[c].qty + a, 0);
+          return total;
+        },
+```
+
+The first one is static. If the result of `this.totalPrice` is 4 then it will stay 4 even if we change the price of an item. In the second example, `this.totalPrice` is dynamic. It will change based on the prices and quantities.
+
+But since we store the cart in a session, it gets stringified. So it loses its dynamic functions and becomes a static object. So this was no help. I changed it back to a static function.
+
+<hr>
+
+<h3 id="update-11-1-20"></h3>
+
+## Sunday, 11/1/20
+
+## [WishTender](#update-9-16-20) update:
+
+I've been working on internationalization and finishing up stripe integration.
+
+## Currency Helper
+
+I made a Currency Helper that integrates with an exchange rate api interface. Here's the [gist](https://gist.github.com/DashBarkHuss/dc0263cb208a474a5e4fee451f8d2173). Here's the code:
+
+```javascript
+var axios = require("axios");
+const countryData = require("country-data");
+const fx = require("money");
+
+/**
+ * Currency helper
+ * @constructor
+ * @param {Object} exchangeRateInterface an api interface for an exchange rate api site
+ */
+function CurrencyHelper(exchangeRateInterface) {
+  this.exchangeRateInterface = exchangeRateInterface;
+  this.countryData = countryData;
+  this.fx = fx;
+
+  /**
+   * Gets the exchange rate for a currency from an api
+   * @param {String} from the starting currency
+   * @param {String} to the ending currency
+   * @returns {Number} the exchange rate to multiply the starting price
+   */
+  this.getExchangeRate = async function getExchangeRate(from, to) {
+    const exchangeRate = await this.exchangeRateInterface.getExchangeRate(
+      from,
+      to
+    );
+
+    return exchangeRate;
+  };
+
+  /**
+   * Gets the exchange rates for a currencies from an api
+   * @param {String} [baseCurrency='USD'] optional. default 'USD'.
+   * @returns {Number} the exchange rate to multiply the starting price
+   */
+  this.getAllExchangeRates = async function getAllExchangeRates(
+    baseCurrency = "USD"
+  ) {
+    const exchangeRate = await this.exchangeRateInterface.getAllExchangeRates(
+      baseCurrency
+    );
+    return exchangeRate;
+  };
+
+  /**
+   * Get rates and update this.rates
+   * @param {String} [baseCurrency='USD'] optional. default 'USD'.
+   * @returns {Boolean} object with updated and rates
+   */
+  this.getAndUpdateRates = async function getAndUpdateRates(
+    baseCurrency = "USD"
+  ) {
+    const rates = await this.getAllExchangeRates(baseCurrency);
+    this.rates = rates;
+    return this.rates;
+  };
+
+  /**
+   * Convert smallest unit of currency to the proper decimals
+   * @param {Number} smallestUnit the amount of the smallest unit of currency (ex: USD- amount of pennies)
+   * @param {String} currency the 3 letter code for the currency. ex: 'USD'
+   */
+  this.smallestUnitToStandard = function smallestUnitToStandard(
+    smallestUnit,
+    currency
+  ) {
+    const { currencies } = this.countryData;
+    const multiplier = 10 ** -currencies[currency].decimals;
+    return smallestUnit * multiplier;
+  };
+
+  /**
+   * Convert smallest unit of currency to the formatted price
+   * @param {Number} smallestUnit the amount of the smallest unit of currency (ex: USD- amount of pennies)
+   * @param {String} languageCode ex: en-US
+   * @param {String} currency the 3 letter code for the currency. ex: 'USD'
+   */
+  this.smallestUnitToFormatted = function smallestUnitToFormatted(
+    smallestUnit,
+    languageCode,
+    currency
+  ) {
+    const standard = this.smallestUnitToStandard(smallestUnit, currency);
+    const formatted = this.formatCurrency(standard, languageCode, currency);
+    return formatted;
+  };
+
+  /**
+   * Convert currency to the smallest unit
+   * @param {*} price
+   * @param {String} currency the 3 letter code for the currency. ex: 'USD'
+   */
+  this.priceToSmallestUnit = function priceToSmallestUnit(price, currency) {
+    const { currencies } = this.countryData;
+    const multiplier = 10 ** currencies[currency].decimals;
+    return fx(price)._v * multiplier;
+  };
+
+  /**
+   * Gives the price in the correct currency formatting
+   * @param {*} price
+   * @param {String} languageCode ex: en-US
+   * @param {String} currency ex: USD
+   *
+   * @returns {String} formatted price
+   */
+  this.formatCurrency = function formatCurrency(price, languageCode, currency) {
+    return new Intl.NumberFormat(languageCode, {
+      style: "currency",
+      currency,
+    }).format(price);
+  };
+
+  /**
+   * Convert a price to another currency
+   * @param {Number} price
+   * @param {String} from the starting currency
+   * @param {String} to the desired currency
+   */
+  this.convert = function convert(price, from, to) {
+    this.fx.rates = this.rates;
+    return this.fx(price).from(from).to(to);
+  };
+}
+
+//______________________________________
+
+class ExchangeRateApiInterface {
+  /**
+   * api.exchangeratesapi.io API interface
+   * @constructor
+   */
+  constructor() {
+    this.baseURI = "https://api.exchangeratesapi.io";
+  }
+  /**
+   * Gets the exchange rate for a currency from api.exchangeratesapi.io
+   * @param {String} from the starting currency
+   * @param {String} to the ending currency
+   * @returns {Number} the exchange rate to multiply the starting price
+   */
+  async getExchangeRate(from, to) {
+    const exchangeRate = await axios
+      .get(`${this.baseURI}/latest?base=${from}&symbols=${to}`)
+      .then((x) => {
+        return x.data.rates[to];
+      })
+      .catch((response) => {
+        throw new Error("Error: " + response.response.data.error);
+      });
+    return exchangeRate;
+  }
+
+  /**
+   * Gets the exchange rates for a currencies from api.exchangeratesapi.io
+   * @param {String} baseCurrency
+   * @returns {Number} the exchange rate to multiply the starting price
+   */
+  async getAllExchangeRates(baseCurrency) {
+    const exchangeRate = await axios
+      .get(`${this.baseURI}/latest?base=${baseCurrency}`)
+      .then((x) => {
+        return x.data.rates;
+      })
+      .catch((response) => {
+        throw new Error("Error: " + response.response.data.error);
+      });
+    return exchangeRate;
+  }
+}
+//______________________________________
+
+(async () => {
+  //example uses
+  const api = new ExchangeRateApiInterface();
+  const currency = new CurrencyHelper(api);
+
+  currency.smallestUnitToFormatted(999, "en-US", "USD"); //> $9.99
+
+  await currency.getAllExchangeRates("USD"); //> {"CAD":1.3297999658,"HKD":7.7539750385,"ISK":140.5368439049,"PHP":48.4142588477,"DKK":6.3657035391," ...
+
+  await currency.getExchangeRate("USD", "GBP"); //> 0.7711403659
+
+  // update this.rates to use in convert()
+  await currency.getAndUpdateRates("USD");
+
+  const converted = currency.convert(9000, "USD", "GBP");
+  const formatted = currency.formatCurrency(converted, "en-UK", "GBP"); // £6,940.26
+})();
+```
+
+This Currency Helper helps me:
+
+- Convert prices between currencies
+- Update the exchange rates used because they change frequently
+- Format currency
+- Get the prices in smallest unit for each currency. Stripe takes prices in pennies.
+
+I used the [facade pattern](https://www.youtube.com/watch?v=fHPa5xzbpaA) to have the Currency Helper interact with an exchange rate API but not rely on it. This way, if I find that the exchange rate API that I'm using only updates exchange rates once a day, I can easily change out to different exchange rate API that updates every second. Usually these frequently updating apis are expensive. So the facade patterns helps me use the free API while I wait to afford the better one.
+
+## Sinon
+
+I answered my own question on stack over flow:
+
+[How to use Sinon to overide mongo validations in tests](https://stackoverflow.com/questions/64639340/testing-a-mongoose-schema-that-has-a-validation-which-depends-on-another-schema/64640454#64640454)
+
+I just had to add
+
+```javascript
+sinon.stub(Object.getPrototypeOf(Wishlist), "findOne").callsFake(() => "mock");
+```
+
+to my test.
+
+This way, when `WishlistItem` tries to validate that the parent `Wishlist` exists by calling `Wishlist.findOne`, instead `() => 'mock'` is called in place of `findOne`. SKipping the validation that will fail unless we create a wishlist.
+
+<hr>
+
+<h3 id="update-10-28-20"></h3>
+
+## Wed, 10/28/20
+
+## [WishTender](#update-9-16-20) messy notes:
+
+## Exchange Rates API
+
+Api for exchange rates: [https://api.exchangeratesapi.io/latest?base=USD](https://api.exchangeratesapi.io/latest?base=USD)
+
+## [Currency Formatting in ES6 Javascript](https://www.samanthaming.com/tidbits/30-how-to-format-currency-in-es6/):
+
+```javascript
+new Intl.NumberFormat(
+  "en-UK", // locale
+  { style: "currency", currency: "GBP" }
+).format("9000");
+// returns-> "£9,000.00"
+```
+
+```javascript
+(73.57).toLocaleString("de-DE", { style: "currency", currency: "EUR" }); // German: 73,57 €
+```
+
+Not sure what's the difference.
+
+The locale is meant up of a [language code](https://www.w3schools.com/tags/ref_language_codes.asp) and [country code](https://www.w3schools.com/tags/ref_country_codes.asp).
+
+## [Internationalization (i18n)](https://www.freecodecamp.org/news/how-to-get-started-with-internationalization-in-javascript-c09a0d2cd834/)
+
+> Internationalization (i18n) involves adding support for different languages and countries in your app. The number 18 stands for the number of letters between the first ‘i’ and the last ‘n’.
+
+-[source](https://www.freecodecamp.org/news/how-to-get-started-with-internationalization-in-javascript-c09a0d2cd834/)
+
+## [Detect location and local timezone of users in JavaScript](https://blog.logrocket.com/detect-location-and-local-timezone-of-users-in-javascript-3d9523c011b9/):
+
+```javascript
+fetch("https://extreme-ip-lookup.com/json/")
+  .then((res) => res.json())
+  .then((response) => {
+    console.log("Country: ", response.country);
+  })
+  .catch((data, status) => {
+    console.log("Request failed");
+  });
+```
+
+> This works by making a request to the https://extreme-ip-lookup.com/json/ URL from the user’s browser, so that their location is detected. This resource provides country, city, time zone, longitude, and latitude among other things.
+
+## Featured Teachers:
+
+- Samantha Ming [@samantha_ming](https://twitter.com/samantha_ming)
+- Christian Nwamba [@codebeast](https://twitter.com/codebeast)
+
+## [WishTender](#update-9-16-20) Update
+
+<hr>
+
 <h3 id="update-10-27-20"></h3>
 
 ## Thursday-Tuesday, 10/22-27/20
@@ -3929,7 +4309,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
