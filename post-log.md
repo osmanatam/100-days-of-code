@@ -18,7 +18,7 @@ It was great to just hear his thoughts and get encouragement. I was nervous reac
 
 ## Sam's Advice:
 
-## Be Persistance
+## Be Persistent
 
 Sam said that the biggest determinant in being a successful entrepreneur is _persistance_. There will be times when it's hard. Times when it's easy. Persist through it all.
 
