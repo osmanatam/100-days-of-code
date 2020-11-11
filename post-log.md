@@ -4,6 +4,133 @@ I completed my 365 days of code in 2019. But I'm going to continue to add to thi
 
 <hr>
 
+<h3 id="update-11-11-20"></h3>
+
+## Wednesday 11/11/20
+
+## [WishTender](#update-9-16-20) notes:
+
+## Crop and Send User Images to the Server
+
+I made a sample project that shows how to crop and upload an image to your server in React and express.js. I'm using this to allow users to upload profile and banner images.
+
+## Demo Video
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/_CZtTBHZn0o/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+
+## Code
+
+- ### [React Frontend code](https://github.com/DashBarkHuss/react-dropzone-sample)
+
+- ### [Express.js Node.js Backend code](https://github.com/DashBarkHuss/express_post_image)
+
+<hr>
+
+<h3 id="update-11-10-20"></h3>
+
+## Monday 11/10/20
+
+## [WishTender](#update-9-16-20) notes:
+
+<hr>
+
+## Utility Functions
+
+> Put both functions in an external JavaScript file called utils.js within the same directory as the component. Since the functions will be exported as modules, you need to prepend it with the export keyword. utils.js will look like this:
+
+-[source](https://www.pluralsight.com/guides/importing-utility-functions-in-reactjs)
+
+[File Structure for React Applications Created with create-react-app](https://www.pluralsight.com/guides/file-structure-react-applications-created-create-react-app)
+
+<h3 id="update-11-8-20"></h3>
+
+## Sunday 11/8/20
+
+## [WishTender](#update-9-16-20) notes:
+
+After an api post request comes pas successful, you can use redirect to go to a new page.
+
+A use case for this: After my users fill out the sign up form, the `onSubmit` function for that form sends a post request to my api. If th request returns a successful response, I want to redirect the user to a form to get their profile and wishlist information. I don't want to redirect them when they click submit because the sign up might not be successful, for example if someone else has the same email.
+
+> `<Redirect>`
+>
+> Rendering a `<Redirect>` will navigate to a new location. The new location will override the current location in the history stack, like server-side redirects (HTTP 3xx) do.
+>
+> ```html
+> <Route exact path="/">
+>   {loggedIn ? <Redirect to="/dashboard" /> : ><PublicHomePage />}
+> </Route>
+> ```
+>
+> [React Router Docs: Redirect](https://reactrouter.com/web/api/Redirect)
+
+<hr>
+
+<h3 id="update-11-7-20"></h3>
+
+## Saturday 11/7/20
+
+## [WishTender](#update-9-16-20) notes:
+
+> **Aakash**: You should never enable cors.
+>
+> **Shubham**: I wouldn't agree with your comment completely, you need to enable cors when you need to serve data to a frontend that is on a different domain, however, I would agree that you might want to put a filter on domains that you trust
+
+-[source](https://stackoverflow.com/questions/44365577/proxy-in-package-json-not-affecting-fetch-request)
+
+## Adding a Proxy when using webpack
+
+> To tell the development server to proxy any unknown requests to your API server in development, add a proxy field to your package.json, for example:
+>
+> `"proxy": "http://localhost:4000",`
+>
+> **This way, when you `fetch('/api/todos')` in development, the development server will recognize that it’s not a static asset, and will proxy your request to http://localhost:4000/api/todos**
+
+-[source](https://create-react-app.dev/docs/proxying-api-requests-in-development/)
+
+I was wondering why adding a proxy to my `package.json` file in the frontend didn't redirect fetch request to my backend server. [I found this answer](https://stackoverflow.com/questions/48291950/proxy-not-working-for-react-and-node). It was because I have webpack set up (I didn't know I did? I think it comes with create-react-app).
+[Webpack](https://webpack.js.org/configuration/dev-server/#devserver-proxy)
+
+<hr>
+
+<h3 id="update-11-6-20"></h3>
+
+## Friday 11/6/20
+
+## [WishTender](#update-9-16-20) notes:
+
+## Resources on React
+
+[React Forms Form Hook](https://www.youtube.com/watch?v=bU_eq8qyjic)
+
+[React Docs React Context](https://reactjs.org/docs/context.html)
+
+[useContext() + useReducer() = Magic?](https://www.youtube.com/watch?v=R_7XRX7nLsw)
+
+[Good Explanation](https://youtu.be/CVpUuw9XSjY?t=101) on what problem redux and React Context solves.
+
+<hr>
+
+<h3 id="update-11-5-20-2"></h3>
+
+## Thursday part two, 11/5/20
+
+## [WishTender](#update-9-16-20) notes:
+
+There's an extension for VSCode called [VS Code ES7 React/Redux/React-Native/JS snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets). It's like autocomplete for React snippets. Like Emmet for React.
+
+[React & Express Starter Pack For Full Stack Development](https://www.youtube.com/watch?v=v0t42xBIYIs)
+
+## Put CSS in Component Folder
+
+<img src= "log_imgs/css_react_10-5-20.png">
+
+I like this file structure for React. Put the css for each component in the component file. My css right now is in one place and so crazy messy.
+
+## How to run The react server and the Express Node Server At the Same time: [**Video**](https://youtu.be/v0t42xBIYIs?t=1322)
+
+<hr>
+
 <h3 id="update-11-5-20"></h3>
 
 ## Thursday, 11/5/20
@@ -4309,7 +4436,7 @@ $newLink = "<script defer src='".$jsLink."/".$jsFiles[0]."' type=\"text/javascri
 ?>
 ```
 
-#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+#### Premium Cache Plugin \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
 
 If this workaround doesn't suite you, WP Fastest Cache _Premium_ can do this at the click of a button. However, [Online Media Masters recommends](https://onlinemediamasters.com/wp-fastest-cache-settings/) WP Rocket if you are going to pay for premium.
 
