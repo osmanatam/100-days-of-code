@@ -56,7 +56,7 @@ I'm not consuming news, nor making any additional plans to hang out besides Shab
 
 I'm watching very little media. Only an occasional show at the end of the day with my spouse- while I code.
 
-I take breaks to work out, cook and eat meals, and take walks.
+I take breaks to work out, cook and eat meals, and take walks with my spouse.
 
 <hr>
 
