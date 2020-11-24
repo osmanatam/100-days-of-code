@@ -42,7 +42,7 @@ This profile component is on this github:
 
 The companion backend: [Backend](https://github.com/DashBarkHuss/backend-for-react-components/tree/b15aa911c981e26d79abc06364f50387090ecd1b)
 
-Oh there might be a clickable overlay on the profile photo that errors- I forgot to delete it. So yeah this isn't toally cleaned up yet.
+Oh there might be a clickable overlay on the profile photo that errors- I forgot to delete it. So yeah this isn't totally cleaned up yet.
 
 ## Focusing: Launch by Xmas?
 
