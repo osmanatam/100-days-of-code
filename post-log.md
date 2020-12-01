@@ -4,6 +4,98 @@ I completed my 365 days of code in 2019. But I'm going to continue to add to thi
 
 <hr>
 
+<h3 id="update-11-30-20"></h3>
+
+## Monday 11/30/20
+
+## [WishTender](#update-9-16-20) Reflections:
+
+<hr>
+
+## Asking Lots of Questions
+
+I've been asking for help more often. Particularly on forums. I realized that if I have a problem, asking it might help others who have the same question. So it's my responsibility to ask the question.
+
+Most of my questions go on StackOverflow, Youtube comments, the comments on StackOverflow answers, and chat groups. The only active dev chat I'm on is the 100daysofcode slack. I'd like to find more. Some facebook groups have been helpful too.
+
+You can see some of the questions I've been asking [here](https://stackoverflow.com/users/5004011/dashiell-rose-bark-huss?tab=questions&sort=newest). Sometimes they don't get answered- not even a comment. Who knows why. Maybe the question isn't clear.
+
+## Be Bold And Ask Questions
+
+Sometimes is seems like only stupid or annoying people ask questions. So we avoid asking questions to avoid being seen as stupid or annoying. But I think **bold people ask questions**. So I'm going to be more bold.
+
+Bold and persistent. Who cares if someone thinks I'm stupid? As my Shakespeare acting teacher always said, "Welcome to my process, fuck you very much."
+
+## What I Do When I Run Into A Wall
+
+### **CORS Cookies and Sessions Oh my**
+
+I recently found I had a problem where my app creates a new session for every request coming from the frontend, even though all the requests are coming from one browser. That should just be one session!
+
+I've been investigating this problem and I believe it has something to do with either cors, cookies, or sessions. Concepts I don't a lot about.
+
+### **Stoicism When Facing My Own Incompetence**
+
+When I run into a wall like this- where I have no clue where else to turn, I spend sometime learning about the concepts that I believe will help me get closer to the answer.
+
+These roadblocks used to get me down. I'd think, _"Who the hell do I think I am to try to make a full app?"_ But then I'd solve my problem 24 hours later and feel confident again.
+
+So I've learned not to let these setbacks get to me because I turn them around quickly. I'm pretty confident I will figure my problem out in the next day. And if it takes me a week to understand the concepts I need to learn, that's ok too.
+
+## Why Don't I Just Hire a Dude in India To Build My App?
+
+My entrepreneur friend asked me this question the other day. He said I could pay someone $200 bucks to make my whole app. I don't know if that's exactly true, but there's truth to it. I could outsource this project.
+
+Outside from the horror stories I've heard of outsourcing full applications for cheap, there are other reasons I want to build WishTender myself.
+
+### **The Value of Doing It Myself**
+
+I really want to understand how building an app works before I pay someone to do it. Learning software engineering will put me in a better position in the future. I'll know what to look for when hiring people. I'll know how to talk and think about tech products. And I can prototype WishTender features or completely knew project ideas.
+
+Software engineering is no doubt a beneficial skill to add to my talent stack. And since I enjoy it and am good at learning it, why not lean into that skill? While I want to launch WishTender before Christmas, it's not the end of the world if I don't.
+
+### **Don't Fail Faster Than You Need to**
+
+People say fail fast. But WishTender is also a learning experience, so there's no need to go faster than necessary.
+
+If I pay someone 10k to build WishTender -_the cheapest real life figure I've come across_- and WishTender fails, what am I left with? A small learning experience about outsourcing that cost me $10k.
+
+There's such a thing as failing unnecessarily fast. If I build WishTender myself and it fails- I learned how to build an app and I'm in a much better position to pivot.
+
+<hr>
+
+<h3 id="update-11-29-20"></h3>
+
+## Sunday 11/29/20
+
+## [WishTender](#update-9-16-20) Update:
+
+<hr>
+
+[PUT vs PATCH](https://stackoverflow.com/questions/24241893/should-i-use-patch-or-put-in-my-rest-api#answer-37922328)
+
+<hr>
+
+<h3 id="update-11-24-20"></h3>
+
+## Tuesday 11/24/20
+
+## [WishTender](#update-9-16-20) Update:
+
+<hr>
+
+[Designing URI for current logged in user in REST applications](https://stackoverflow.com/questions/36520372/designing-uri-for-current-logged-in-user-in-rest-applications)
+
+> - With symbolic link
+>
+>   This solution has a symbolic link for the ID of the user.
+>
+>   Example:
+>
+>   - Confluence REST API: GET /user/current
+
+<hr>
+
 <h3 id="update-11-23-20"></h3>
 
 ## Monday 11/23/20
