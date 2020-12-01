@@ -6,7 +6,7 @@ I completed my 365 days of code in 2019. But I'm going to continue to add to thi
 
 <h3 id="update-11-30-20"></h3>
 
-## Monday 11/30/20
+## Monday 11/30/20 - Tuesday 12/1/20
 
 ## [WishTender](#update-9-16-20) Reflections:
 
@@ -14,15 +14,21 @@ I completed my 365 days of code in 2019. But I'm going to continue to add to thi
 
 ## Asking Lots of Questions
 
-I've been asking for help more often. Particularly on forums. I realized that if I have a problem, asking it might help others who have the same question. So it's my responsibility to ask the question.
+I recently heard someone talk about the "_myth of individualism_": The myth that we can and should do everything by ourselves.
+
+This is something I'm guilty of. I believe it holds me back.
+
+In response, I've been asking for help more often. Particularly on forums.
+
+Outside of personal gains, there's another reason to ask questions. I realized that if I have a problem, asking it might help others who have the same question. So it's my responsibility to ask the question.
 
 Most of my questions go on StackOverflow, Youtube comments, the comments on StackOverflow answers, and chat groups. The only active dev chat I'm on is the 100daysofcode slack. I'd like to find more. Some facebook groups have been helpful too.
 
-You can see some of the questions I've been asking [here](https://stackoverflow.com/users/5004011/dashiell-rose-bark-huss?tab=questions&sort=newest). Sometimes they don't get answered- not even a comment. Who knows why. Maybe the question isn't clear.
+You can see some of the questions I've been asking [here](https://stackoverflow.com/users/5004011/dashiell-rose-bark-huss?tab=questions&sort=newest).
 
 ## Be Bold And Ask Questions
 
-Sometimes is seems like only stupid or annoying people ask questions. So we avoid asking questions to avoid being seen as stupid or annoying. But I think **bold people ask questions**. So I'm going to be more bold.
+Sometimes we believe only stupid or annoying people ask questions. Stupid because they can't figure out answer. Or annoying because they refuse to. So we avoid asking questions to avoid being seen as stupid or annoying. But I think **bold people ask questions**. So I'm going to be more bold.
 
 Bold and persistent. Who cares if someone thinks I'm stupid? As my Shakespeare acting teacher always said, "Welcome to my process, fuck you very much."
 
@@ -36,7 +42,7 @@ I've been investigating this problem and I believe it has something to do with e
 
 ### **Stoicism When Facing My Own Incompetence**
 
-When I run into a wall like this- where I have no clue where else to turn, I spend sometime learning about the concepts that I believe will help me get closer to the answer.
+When I run into a wall like this- where I have no clue where else to turn, I spend some time learning about the concepts that I believe will help me get closer to the answer.
 
 These roadblocks used to get me down. I'd think, _"Who the hell do I think I am to try to make a full app?"_ But then I'd solve my problem 24 hours later and feel confident again.
 
@@ -54,13 +60,15 @@ I really want to understand how building an app works before I pay someone to do
 
 Software engineering is no doubt a beneficial skill to add to my talent stack. And since I enjoy it and am good at learning it, why not lean into that skill? While I want to launch WishTender before Christmas, it's not the end of the world if I don't.
 
+Not only is it better for me, but I believe it's better for the health and longevity of WishTender and it's future customers if this app is built on a solid foundation.
+
 ### **Don't Fail Faster Than You Need to**
 
 People say fail fast. But WishTender is also a learning experience, so there's no need to go faster than necessary.
 
-If I pay someone 10k to build WishTender -_the cheapest real life figure I've come across_- and WishTender fails, what am I left with? A small learning experience about outsourcing that cost me $10k.
+If I pay someone 10k to build WishTender -_the cheapest real life figure I've come across_- and WishTender fails, what am I left with? A small learning experience about outsourcing that cost me $10k?
 
-There's such a thing as failing unnecessarily fast. If I build WishTender myself and it fails- I learned how to build an app and I'm in a much better position to pivot.
+There's such a thing as failing unnecessarily fast. If I build WishTender myself and it fails- I learned how to build an app and I'm in a much better position to pivot and ultimately serve my customers better.
 
 <hr>
 
