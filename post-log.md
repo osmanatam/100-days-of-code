@@ -4,6 +4,55 @@ I completed my 365 days of code in 2019. But I'm going to continue to add to thi
 
 <hr>
 
+<h3 id="update-12-14-20"></h3>
+
+## Tuesdasy 12/14/20
+
+## [WishTender](#update-9-16-20) Reflections:
+
+<hr>
+<img src = "log_imgs/wt_demo_12-14-20.gif">
+
+## Christmas Deadline Not Met
+
+At this point I'm not going to finish building beta by Christmas. But that's ok. I hope people aren't too disappointed. I didn't make any promises, but I had been hoping to get WishTender out before Christmas so people could get their Christmas Gifts.
+
+## This is Hard But I Don't Care.
+
+I keep running into problems I don't understand. But I keep figuring them out. Faster and faster. That makes me calmer every time I run into a problem the next time. So I have been really calm and confident lately.
+
+### **Long Term Projects Build Confidence**
+
+[Omara @omarakhaddaj](https://twitter.com/omarakhaddaj) once said to me, _You develop self-confidence by overcoming challenges and creating small wins_.
+
+Working on a big project like WishTender gave me many opportunities for small wins. It doesn't matter how long it takes me, I am committed to finishing.
+
+With other projects, I was not committed to finish. So when I ran into a wall, I would just start a new project. That's not terribly bad; all of those other projects were just for learning. But moving from project to project doesn't build the confidence of a long term project.
+
+WishTender is for real. So I must finish it. This forces me to see the problems through to the end. I must conquer every challenge no matter what. Overtime, this has built a lot of confidence and calm in me. It's a powerful feeling. All it took was patience and persistence.
+
+## Confidence Cycle
+
+The confidence itself brings about more wins. In my past it wasn't my skills that held me back, but my confidence. It took me a while to realize I don't need to rely on my skills and knowledge; It's necessary to make attempts at projects outside of my skill level.
+
+### **You're Not Ready** is the default
+
+In the past I thought, _"I'm not ready"_ far too often. Now I see things differently. Not being ready is the _default_. If you're not ready, you're ready.
+
+Maybe thinking about it too much is the problem. Feeling unskilled is almost egotistical; it's too much focus on the self. It shouldn't be about about me me me. It's about what can I do to make this happen? You are a conduit. As Tim Gunn says, "Make it work, designers!"
+
+Because I see things differently, I don't shy away anymore from projects outside my skill level. Which leads to more wins and more confidence.
+
+## When To Hire?
+
+I wonder when will be the right time to start hiring people to work on WishTender with me? Is it when WishTender starts making money?
+
+A few people have reached out to me asking to work for free. But I turned them away because I didn't think it would benefit me or them at the time, since I was also learning how to do every thing on my own. I do feel like I'm getting closer to a point where I could work with other people, but I would need some guidance.
+
+**Thanks for reading! Let me know if there's anything else you're interested in hearing about next update.**
+
+<hr>
+
 <h3 id="update-11-30-20"></h3>
 
 ## Monday 11/30/20 - Tuesday 12/1/20
