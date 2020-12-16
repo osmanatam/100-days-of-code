@@ -4,9 +4,9 @@ I completed my 365 days of code in 2019. But I'm going to continue to add to thi
 
 <hr>
 
-<h3 id="update-12-14-20"></h3>
+<h3 id="update-12-15-20"></h3>
 
-## Tuesdasy 12/14/20
+## Tuesdasy 12/15/20
 
 ## [WishTender](#update-9-16-20) Reflections:
 
