@@ -17,6 +17,8 @@ I completed my 365 days of code in 2019. But I'm going to continue to add to thi
 
 At this point I'm not going to finish building beta by Christmas. But that's ok. I hope people aren't too disappointed. I didn't make any promises, but I had been hoping to get WishTender out before Christmas so people could get their Christmas Gifts.
 
+But things are going well. As you can see, a lot of the wishlist is functional. Backend and frontend connected. And it's pretty! But still more work do to. Especially with the frontend of stripe, internationalization, login, logout, sign up, managing purchased gifts, and connecting it all to the backend.
+
 ## This is Hard But I Don't Care.
 
 I keep running into problems I don't understand. But I keep figuring them out. Faster and faster. That makes me calmer every time I run into a problem the next time. So I have been really calm and confident lately.
