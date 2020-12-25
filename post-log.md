@@ -23,7 +23,7 @@ I started a sample project to share my solution. Right now it just determines th
 
 ## [My Sample Internationalization Project](https://github.com/DashBarkHuss/currency_localization_react_express)
 
-<img src="log_imgs/cookies_12-24-20.gif">
+[<img src="log_imgs/cookies_12-24-20.gif">](https://github.com/DashBarkHuss/currency_localization_react_express)
 
 <hr>
 
