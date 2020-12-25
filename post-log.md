@@ -3,10 +3,33 @@
 I completed my 365 days of code in 2019. But I'm going to continue to add to this log when I want to save notes.
 
 <hr>
+<h3 id="update-12-24-20"></h3>
+
+## Wednesday 12/24/20
+
+## [WishTender](#update-9-16-20) Reflections:
+
+<hr>
+
+## Internationalization for Currency
+
+I'm starting to implement the currency internationalization for my app. There will be a lot of different currency's used by wishers and gifters.
+
+My signed up beta users are Canadian, British, or American.
+
+I didn't find a lot of information on internationalization especially for currency. I found a bit for language which, though cumbersome, seems more straight forward.
+
+I started a sample project to share my solution. Right now it just determines the preferred locale and sets it on the cookie.
+
+## [My Sample Internationalization Project](https://github.com/DashBarkHuss/currency_localization_react_express)
+
+<img src="log_imgs/cookies_12-24-20.gif">
+
+<hr>
 
 <h3 id="update-12-15-20"></h3>
 
-## Tuesdasy 12/15/20
+## Tuesday 12/15/20
 
 ## [WishTender](#update-9-16-20) Reflections:
 
