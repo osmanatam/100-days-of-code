@@ -19,7 +19,7 @@ My signed up beta users are Canadian, British, or American.
 
 I didn't find a lot of information on internationalization especially for currency. I found a bit for language which, though cumbersome, seems more straight forward.
 
-I started a sample project to share my solution. Right now it just determines the preferred locale and sets it on the cookie.
+I started a sample project to share my solution. Right now it just determines the preferred locale and sets it on the cookie. More to come.
 
 ## [My Sample Internationalization Project](https://github.com/DashBarkHuss/currency_localization_react_express)
 
