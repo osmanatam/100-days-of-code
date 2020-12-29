@@ -3,6 +3,210 @@
 I completed my 365 days of code in 2019. But I'm going to continue to add to this log when I want to save notes.
 
 <hr>
+<h3 id="update-12-27-20"></h3>
+
+## Sunday 12/27/20 - Tuesday 12/29/20
+
+## [WishTender](#update-9-16-20) Code Notes:
+
+<hr>
+
+I posted a question on stackoverflow: [When to ask the client their preferred currency if no country code in `accept-language` header?](https://stackoverflow.com/questions/65452367/when-to-ask-the-client-their-preferred-currency-if-no-country-code-in-accept-la)
+
+Eventually, I answered the question myself based on a conversation I had on twitter. I might go back and update my answer, because I've realized more since I posted that answer.
+
+## False Assumptions in Questions
+
+People weren't giving me a straight answer. I think my question is confusing. I made a lot of assumptions that aren't true.
+
+This is one of the difficulties that pop up with self-teaching. It's really hard to form a good question because you have so many holes in your knowledge. And you also possibly have some bad assumptions about the solution.
+
+Ultimately, I had to talk out the issue with [@AndyPalmer](https://twitter.com/AndyPalmer) on twitter to fully understand my blind spots. I don't know Andy personally. Andy is just a nice guy who answered my tweet and then answered all the questions I threw at him.
+
+**Here were my main misconceptions:**
+
+- My definition of the term "middleware" was incorrect
+- I thought cookies need to always be set on the backend in some "middleware magic". They do not. They can be set using specific route requests and on the front end.
+- I was misunderstanding the jobs of the frontend, backend, and middleware.
+
+### **What I thought middleware meant**
+
+I had heard middleware described as any function that gets passed the request. Like in express where you pass `(req,res,next)`.
+
+But I'm now hearing that middleware are these same functions, but only when every request goes through them- what I was calling "general middleware". This is like when you put `app.use(somefunction)` in the server page of your express app. Every request goes through it. If there's a function that is only hit on some specific routes, that can't be middleware according to this definition.
+
+I think this second definition makes sense. Because in this second definition, the backend is separate from the middleware. All request go through the middleware. Then the backend deals with the aftermath.
+
+### **Cookies don't need to be set on the backend**
+
+I thought cookies need to always be set on the backend because the only other experience I had with cookies was using express-session where the cookie is set in the backend middleware. It was just an assumption I made based on how I'd seen cookies used before.
+
+### **Backend, Frontend, Middleware**
+
+Middlewares are for infrastructure concerns. The backend and frontend are where application/business logic go.
+
+> The "application" is the code that's concerned with solving your particular problem, as opposed to more generic concerns.
+>
+> So, if you're building a shop, things to do with currency, shopping carts, payments etc (even if you use libraries) are your application.
+>
+> If you were building a physical shop instead of a website, you'd still have to handle those things.
+>
+> Things like HTTP requests, cookies, sessions, databases etc., are infrastructure; they're only important because you're building it online.
+>
+> Having a separation between your application and your infrastructure means your application contains all your business rules (the why), while your infrastructure contains most of the how.
+>
+> So, multi-currency to support international customers is a why, parsing the locale is a how
+
+<hr>
+
+## Conversation With [@AndyPalmer](https://twitter.com/AndyPalmer):
+
+<hr>
+
+**Dashie:** Anyone able to help me? Seems like an issue may people would have solved but I'm confused about what to do here.
+
+https://stackoverflow.com/questions/65452367/when-to-ask-the-client-their-preferred-currency-if-no-country-code-in-accept-la
+
+#codenewbie #DEVCommunity #CodeNewbies
+
+#HelpMeCode
+
+**Andy:** You'll get a few different answers.
+Using locale to guess country is quite clever, and saves a GeoIP call, but I'd use that as a hint and get the user to select their country/currency themselves.
+
+E.g. I'm en_GB locale, with an Australian IP, a US keyboard, and Dvorak layout.
+
+Thinking about why I'd recommend that, I guess my principle is it's ok to use middleware to expose things we know (such as the locale), but business/user decisions should happen in the application.
+
+**Dashie:** lol I'm worried about clients like you! jk. Your suggestion is what I want to do. But how do you implement it? since cookies generally aren't set in a specific "/cookies" route, but rather any request. If it was a "/cookies" route, I'd send a res telling the client what I need.
+
+**Andy:** The absence of a cookie is information. So if no country/currency cookie is set, you still need to ask the user. The application can query whether the cookie is set and decide how to proceed.
+
+Fairly easy with JS, but might need a template that gets rendered by backend for NoJS
+
+In both the backend conditional rendering, and the client side JS, it's the application making the decision about what no country/currency means, not the middleware (which should mainly be concerned with the HTTP infrastructure)
+
+<hr>
+
+## Side thread about what "application" means here. This thread started the next day.
+
+**Dashie:**
+when you say "application" here does that mean either the frontend or backend but just not the middleware.
+
+**Andy:** Yes. The "application" is the code that's concerned with solving your particular problem, as opposed to more generic concerns.<br>
+So, if you're building a shop, things to do with currency, shopping carts, payments etc (even if you use libraries) are your application.
+
+If you were building a physical shop instead of a website, you'd still have to handle those things.
+
+Things like HTTP requests, cookies, sessions, databases etc., are infrastructure; they're only important because you're building it online.
+
+Having a separation between your application and your infrastructure means your application contains all your business rules (the why), while your infrastructure contains most of the how.
+
+So, multi-currency to support international customers is a why, parsing the locale is a how
+
+There are always subtleties, and this is a good example where you could make a case that multi-currency is infrastructure or locales are application.<br>
+But, if you use the "building for real life" heuristic, if someone came into the shop, you'd ask them what currency they wanted
+
+But you probably wouldn't ask them what country they were from, because while that might give you a hint as to the currency they'll choose, the ultimate choice is the currency they want to use, not the currency of their country of origin.
+
+Therefore, currency choice belongs in your application code (it's a first class domain object), but locale doesn't (it's a supporting role)
+
+We're getting a bit away from your original question now though. Have you read anything about Domain-Driven Design (DDD)?
+
+<hr>
+
+## Original thread continued
+
+**Dashie:** Oh right, so if no currency is set, the frontend can ask the user. But it would have to be at some appropriate time, to give time for the backend to try to set the cookie first. Maybe there's some way for the frontend to listen to incoming cookies and see if countryCode is null.
+
+**Andy:** Are you trying to avoid setting any state from the client?
+
+If not, then in a JS-on environment, I'd use something like fetch to "/choose_currency?country=US&currency=USD"<br>
+In a JS-off enviroment, I'd use Post-Redirect-Get
+
+**Dashie:** Hmm I'm not sure I understand. In your example, the country is already known. But I'm looking to figure out the step before that. How do I trigger the app to ask the client for the country code/currency if the backend cannot detect it from the accept language headers.
+
+**Andy:** If the cookie isn't set, you render something to the client that allows it to be set; this can be either of the solutions mentioned.<br>
+You don't set the cookie in middleware because it's an application/business logic concern, not an infrastructure concern
+
+So, you can use the accept-language headers to provide a hint to the client (e.g. it looks like you're in the US, would you like to use USD?) but the decision still comes from the client
+
+**Dashie:** Oh I hadn't heard that it shouldn't be set on the server. A lot of info I read said to have the server to set it from the set-cookie headers. There's a way to access the client's language and country prefs from the client? I was doing this from the request headers on the server.
+
+**Andy:** You (usually) set it on the server. But you (usually) do it as part of an explicit client request, not by middleware magic.
+
+E.g. currency choice is a user choice, so is set by the user.
+OTOH, which load balanced server you are using might be set by middleware (infrastructure)
+
+**Dashie:** OK so are you saying do something like a make a specific route "/getlocale" request to the server to get the language headers, then send the country code back to the client, then handle that response by popping up a dialogue ex, if "US" then 'Would you like to use "USD"?'
+
+**Andy:** Not quite. You can use middleware to annotate the request with what you know (e.g. locale)<br>
+You also know that a currency has either been chosen or not (by the cookie)<br>
+If it hasn't, then you render something that enables the user to make their choice (e.g. a form or a modal)
+
+Submitting that form sets the cookie, and next time through, the render doesn't happen because the cookie is set.<br>
+The route should be something meaningful to the application (e.g. choose_currency), not the implementation (e.g. NOT set_cookie)
+
+Think of observing the client requests in the network pane of the browser. It's going to be a lot easier to work out what's happening if you see:<br>
+choose_currency<br>
+login<br>
+add_to_cart
+
+Than if you see:<br>
+set_cookie<br>
+set_cookie<br>
+set_cookie<br>
+
+**Andy:** So, say you're using handlebars, your server-side template might be:
+
+```html
+{{!currency}}
+<form>
+  <select name="currency">
+    {{currencies_ordered_by_locale_logic}}
+    <option ...>{{/currencies_ordered...}</option>
+  </select>
+</form>
+{{/currency}}
+```
+
+which only renders if currency isn't set
+
+**Dashie:** Ok so like this?- a route '/choose_currency' where a middleware detects the locale , then the server sees if the there's a currency cookie. If no, the response triggers the client to render a modal to ask the user for their pref currency based on locale hints
+
+**Andy:** A middleware gets hit on every request, which is why they're for infrastructure things. Use middleware to annotate a request with infrastructure things that the application doesn't need to do.<br>
+E.g. a middleware to extract country and language from the accept-language headers
+
+The server-side template might live in your layout, so it gets rendered for every page until the client makes a decision
+
+You _could_ use middleware to annotate the request with the selected currency, but it feels a bit application-specific.
+
+Generally, you'd probably store the currency (and other user data) in a session store, and the cookie would identify the session.
+
+Then the session store middleware would retrieve and annotate the request with the user data.
+That's the usual compromise; the middleware only knows about session state, it's not making business decisions.
+
+Your application asks for request.session.currency
+
+See [npm: express-session](https://www.npmjs.com/package/express-session)
+
+**Dashie:** oh, I've been using the term middleware wrong- to mean any function in the app that gets passed the request. I used the term 'general middleware' to more specifically describe a middleware that gets hit on every request. So my apologies if I said anything confusing here
+
+**Andy:** Express doesn't particularly help with its documentation; the distinction is much clearer in, for example, Ruby with Rack.
+
+If you think of it in terms of a block diagram, it looks something like:
+
+Web server -> middleware -> application
+
+Middleware is for doing extra processing (for example, automatically decoding JSON in the body of a POST), but ideally it shouldn't know anything about the application.
+
+Similarly, the app shouldn't care about how the JSON got there, it should just do application things with it.
+
+So, extracting locale is a good use of middleware because it isolates your app from knowing how it got the locale. But setting a currency cookie is a bad use of middleware because it means your infrastructure knows about application logic (no separation of concerns)
+
+And although your application code has the same "shape" as a middleware, it's in a different conceptual area, so it would probably be better called a controller (as in Model-View-Controller)
+
+<hr>
 <h3 id="update-12-24-20"></h3>
 
 ## Wednesday 12/24/20
