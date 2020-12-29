@@ -59,7 +59,7 @@ Middlewares are for infrastructure concerns. The backend and frontend are where 
 
 <hr>
 
-## Conversation With [@AndyPalmer](https://twitter.com/AndyPalmer):
+## Twitter Conversation With [@AndyPalmer](https://twitter.com/AndyPalmer):
 
 <hr>
 
