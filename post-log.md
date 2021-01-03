@@ -6,11 +6,13 @@ You can see my new 2021 updates [here](https://github.com/DashBarkHuss/100-days-
 
 <h3 id="update-12-29-20"></h3>
 
-## Tuesday 12/29/20 - Friday 1-1-21
+## Tuesday 12/29/20 - Friday 1/1/21
 
 ## [WishTender](#update-9-16-20) Code Notes/Resources:
 
 <hr>
+
+Here are some resources on debugging and optimizing react. I'm experiencing too many re-renders so I need to fix that.
 
 [How to identify and resolve wasted renders in React](https://www.freecodecamp.org/news/how-to-identify-and-resolve-wasted-renders-in-react-cc4b1e910d10/)
 -Nayeem Reza
