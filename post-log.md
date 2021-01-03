@@ -3,6 +3,231 @@
 I completed my 365 days of code in 2019. But I'm going to continue to add to this log when I want to save notes.
 
 <hr>
+<h3 id="update-1-3-20"></h3>
+
+## Sunday 1-3-20
+
+## [WishTender](#update-9-16-20) Code Notes:
+
+<hr>
+
+My app was re-rendering too many times. React doesn't have a solution to figuring out what caused a component to update. There are some notes in the last log entry for some clues to how to do this- profiler, memo, react dev tools. I didn't find that any were very good. For example, memo only showed you what props caused a re-render but not state changes.
+
+So I built my own function to figure out when props or state changed. It doesn't show you when a parent rerender caused a component to rerender but you can figure it out if you use the debugging function in the parent and see that the parent re-rendered.
+
+## My own react debugging function
+
+This tells you if a component rendered and if the state or props changed.
+
+It helped me figure out why I had so many re-renders. It could be more DRY.
+
+```javascript
+import { useEffect, useRef } from "react";
+import _ from "lodash";
+/**
+ * tracks component renders
+ * @param {String} component component name ex: App.name
+ * @param {Object} props
+ * @param {Object} state
+ */
+export default function useTraceUpdate(component, props, state) {
+  const prevP = useRef(props);
+  const prevS = useRef(state);
+  let render = useRef(0);
+  useEffect(() => {
+    render.current++;
+    console.log(component, "rendered ", render.current, " times");
+    if (props) {
+      const changedProps = Object.entries(props).reduce((ps, [k, v]) => {
+        if (prevP.current[k] !== v) {
+          ps[k] = [prevP.current[k], v];
+        }
+        return ps;
+      }, {});
+      if (Object.keys(changedProps).length > 0) {
+        const displayText = Object.entries(changedProps).map((s) =>
+          typeof s[1][0] === "object" && typeof s[1][1] === "object"
+            ? `${s[0]} object changed, content of object ${
+                _.isEqual(s[1][0], s[1][1]) ? "didn't" : "did"
+              }  change ${
+                !_.isEqual(s[1][0], s[1][1])
+                  ? `from ${s[1][0]} to ${s[1][1]}`
+                  : ""
+              }`
+            : `${s[0]} changed from ${s[1][0]} \nto ${s[1][1]}`
+        );
+        console.log(
+          "r:" + render.current + " info: " + component + " changed props:",
+          displayText.join("\n")
+        );
+      }
+    }
+    prevP.current = props;
+    if (state) {
+      const changedState = Object.entries(state).reduce((ps, [k, v]) => {
+        if (prevS.current[k] !== v) {
+          ps[k] = [prevS.current[k], v];
+        }
+        return ps;
+      }, {});
+      if (Object.keys(changedState).length > 0) {
+        const displayText = Object.entries(changedState).map((s) =>
+          typeof s[1][0] === "object" && typeof s[1][1] === "object"
+            ? `${s[0]} object changed, content of object ${
+                _.isEqual(s[1][0], s[1][1]) ? "didn't" : "did"
+              } change ${
+                !_.isEqual(s[1][0], s[1][1])
+                  ? `from ${s[1][0]} to ${s[1][1]}`
+                  : ""
+              }`
+            : `${s[0]} changed from ${s[1][0]} \nto ${s[1][1]}`
+        );
+        console.log(
+          "r:" + render.current + " " + component + " changed state:",
+          displayText.join("\n")
+        );
+      }
+    }
+    if (render.current === 1) {
+      console.log("r:" + render.current + ": initial render");
+    }
+    prevS.current = state;
+  });
+}
+```
+
+How to use `useTraceUpdate`:
+
+```javascript
+function WishlistPage(props) {
+  const [alias, setAlias] = useState(null);
+  const [wishlist, setWishlist] = useState(null);
+  const [refreshWishlist, setRefreshWishlist] = useState(null);
+  const currentUser = useContext(UserContext);
+
+  const states = {
+    alias,
+    wishlist,
+    refreshWishlist,
+    currentUser,
+  };
+
+  useTraceUpdate(WishlistPage.name, props, states);
+
+  return <div>... blablabla</div>;
+}
+
+export default WishlistPage;
+```
+
+<hr>
+<h3 id="update-12-29-20"></h3>
+
+## Tuesday 12/29/20 - Friday 1-1-20
+
+## [WishTender](#update-9-16-20) Code Notes/Resources:
+
+<hr>
+
+[How to identify and resolve wasted renders in React](https://www.freecodecamp.org/news/how-to-identify-and-resolve-wasted-renders-in-react-cc4b1e910d10/)
+-Nayeem Reza
+
+> Whenever there is a change in data, React uses the component functions to re-render the UI, but only virtually
+> Building a React app where the differentiating algorithm fails to reconcile effectively, causing the entire app to be rendered repeatedly which is actually causing wasted renders and that can result in a frustratingly slow experience.
+
+[React Wasted Renders](https://www.youtube.com/watch?v=bsud8E13Q1c)
+
+[Learning React Developer Tools Chrome Extension](https://www.youtube.com/watch?v=t2nDXhXgn9Y)
+
+[How to use the React Profiler to find and fix Performance Problems](https://www.youtube.com/watch?v=00RoZflFE34)
+
+[Run Code in React Before Render](https://daveceddia.com/react-before-render/#:~:text=React%20does%20not%20wait%20to%20render.&text=Components%20that%20render%20async%20data,before%20the%20data%20is%20ready.):
+
+> React does not wait to render. Ever.
+>
+> React will gladly kick off an asynchronous data fetch in the background, but then it will immediately proceed with rendering – whether the data has loaded or not. (and you can be almost certain that it will not have loaded yet)
+
+[What are Pure Components in React](https://medium.com/technofunnel/working-with-react-pure-components-166ded26ae48)
+
+> Pure Components in React are the components which do not re-renders when the value of state and props has been updated with the same values.
+>
+> ...If the previous state and props data is the same as the next props or state, the component is not Re-rendered.
+>
+> Note: The State and Props are Shallow Compared
+>
+> ..._Use Pure Components, in the case when the props and state changes are made to primitive type variable, state and props changes to reference variable may lead to incorrect results and inconsistent rendering_
+>
+> How Can We Resolve the Shallow Comparison Problem? The simple answer is to work with immutable data...We can resolve this by creating a new instance of the state variable if it represents the reference type.
+
+[Mayank Gupta @mayank](https://twitter.com/mayank)
+
+> Q: How to signal to React that a functional component is "pure", as an equivalent of React.PureComponent for component classes?
+>
+> A:
+>
+> ```javascript
+> const C = React.memo((props) => {
+>   return <var>{props.n}</var>;
+> });
+> ```
+>
+> [source](https://stackoverflow.com/questions/43470659/declare-a-functional-component-as-pure)
+
+prevent inline styles from causing re-renders. style objects are objects and so reference types.
+
+```javascript
+const PureComponent = React.memo(Component)
+...
+const mainStyle = React.userMemo(()=>({backgroundColor: 'red'}))
+...
+return(<PureComponent style = {mainStyle}>)
+```
+
+[source](https://www.youtube.com/watch?v=eT00GGYHSSQ)
+
+[React Class features vs. Hooks equivalents](https://medium.com/soluto-engineering/react-class-features-vs-hooks-equivalents-745368dafdb3):
+
+## Comparing with the previous state\props
+
+```javascript
+const Counter = (props) => {
+  const [count, setCount] = useState(0);
+
+  const prevCountRef = useRef();
+  useEffect(() => {
+    prevCountRef.current = count;
+  });
+  const prevCount = prevCountRef.current;
+
+  return (
+    <h1>
+      Now: {count}, before: {prevCount}
+    </h1>
+  );
+};
+```
+
+## ShouldComponentUpdate
+
+```javascript
+//Class
+shouldComponentUpdate(nextProps) {
+    return nextProps.count !== this.props.count
+}
+
+//memo
+import React, { memo } from 'react';
+
+const MyComponent = memo(
+    _MyComponent,
+    // Notice condition is inversed from shouldComponentUpdate
+    (prevProps, nextProps) => nextProps.count === prevProps.count
+)
+```
+
+[How to debug unnecessary rerenders in React](https://brycedooley.com/debug-react-rerenders/)
+
+<hr>
 <h3 id="update-12-27-20"></h3>
 
 ## Sunday 12/27/20 - Tuesday 12/29/20
