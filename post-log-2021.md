@@ -3,6 +3,77 @@
 I completed my 365 days of code in 2019. I logged my progress everyday. I continued to add to my [2020 log](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md). This is my 2021 log.
 
 <hr>
+<h3 id="update-1-28-21"></h3>
+
+## Thursday 1-28-21
+
+## [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Code Notes:
+
+<hr>
+
+I've been confused about app architecture when your app gets complex.
+
+**It's easy when the routes map simply to a resource.**
+
+For example, **adding a product to a shop.**
+
+In this case you might have a
+
+- `Product.Model.js`- a mongoose model. This is your resource.
+- `ProductService.js`- a service that interacts with that model.
+- `product.js`- a router that directs the express app based on different routes like `GET /product/213`. The routes tells the app which service to use and what the response should be.
+
+Thats simple.
+
+**But what about something not so straight forward?**
+
+**For example, what route, service, and resource do we use when a client checks out?** There isn't one clear resource here. When a client checks out we are interacting with many resources and services.
+
+These might be:
+
+- The `Order.Model.js`, a mongoose model that stores order information such as cart items, time purchased, and currency conversions.
+- The shop owner's account `Owner.Model.js` because we might want to track their earnings on their account.
+- 3rd party API's, like Stripe for payment processing.
+- An email service- `Email.Service.js`- to send a reciept to the buyer and a notification to the shop owner.
+
+and on and on...
+
+In this case should we make a `checkout.js` route that maps `POST /checkout` to a `CheckoutService.js`?
+
+`CheckoutService.js` could then interacts with many services and resources like
+
+- `StripeService.js`
+- `OrderService.js`
+- `OwnerService.js`
+- `EmailService.js`
+
+Is this how it should be done?
+
+**A little more simply, what about when we're just creating a resources on a third party?** For example a Stripe Connect account. Stripe Connect accounts: when you use Stripe as a marketplace, your platform has an account with Stripe and your users- like shop owners- have their own accounts called Connect accounts, connected to your platform account.
+
+Your users need to create these Connect account. What route do you use? What service do you use?
+
+It's not as simple as `blogRoute.js`--> `BlogService.js` -->`Blog.Model.js`. You don't house the resource on your site, the connect account object is housed on Stripe.
+
+You might also create a model, `StripeAccountInfo.Model.js` to house some information about the account that is pertinent to your app- like currency, if the user paid their monthly fees to cover the Stripe Connect fees, and Stripe account number. But now, you have a resource on your site _and_ a resource on stripe that need to be interacted with. How will this look like in your app architecture?
+
+## Help Me!
+
+These are some things I've been confused by. I rarely see any information on these more complex circumstances. **If any one has any resources, answers, is willing to talk it out over the phone, or even clues to what I should google I'd love to hear from you.**
+
+Twitter: [@DashBarkHuss](https://twitter.com/DashBarkHuss)
+
+LinkedIn: [in/dashbh/](https://www.linkedin.com/in/dashbh/)
+
+<hr>
+<h3 id="update-1-21-21"></h3>
+
+## Thursday 1-21-21
+
+I reviewed circuit basics [Lesson 1 - Voltage, Current, Resistance (Engineering Circuit Analysis)
+](https://www.youtube.com/watch?v=OGa_b26eK2c) - really nice explanation of circuit basics.
+
+<hr>
 <h3 id="update-1-15-21"></h3>
 
 ## Friday 1-15-21
