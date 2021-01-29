@@ -3,6 +3,148 @@
 I completed my 365 days of code in 2019. I logged my progress everyday. I continued to add to my [2020 log](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md). This is my 2021 log.
 
 <hr>
+<h3 id="update-1-29-21"></h3>
+
+## Friday 1/29/21 - Thursday 1-28-21
+
+<hr>
+
+After my [question](#update-1-28-21) yesterday I got a lot of helpful responses.
+
+## [Theo Khayat](https://www.linkedin.com/in/theokhayat/) on LinkedIn
+
+> You're looking for some all-or-nothing processing(checkout AWS step functions - am not recommending specifically AWS, just as an example of chaining multiple backend events) as this allows your frontend to request a single endpoint, and subsequently know if ALL the backend events succeeded or not, in a single status code. Hope that helps and best wishes :)
+
+Theo introduced me to the term **all-or-nothing processing**. I googled **all-or-nothing processing** which lead me additional useful terms like **batch** and **bulk** requests. It lead me to better worded questions than my own like "How do I perform different actions on resources of different types in one request?"
+
+Sometimes when I'm stuck it's because I don't know the correct terms or questions to ask. Reaching out for help can introduced me to terms and well-worded questions that will get me on track.
+
+## [Ryan Lynch @joyofui](https://twitter.com/joyofui) on Twitter
+
+> My answer to your question, which I'd sum up as "What do I do when an endpoint doesn't map to REST", would be : not everything has to be RESTful in your API. REST and is just one way of slicing things up. Maybe think of some endpoints as REST, some as just RPC's like "doCheckout"
+
+Me:
+
+> Yes, you phrased my question better than I did. A lot of my questions lately have surrounded this idea- that you do not alway have to follow REST. As a newbie it's been a bit confusing trying to understand when to break a convention. Thanks for bringing RCP to attention.
+>
+> I should say when and how to break convention
+>
+> _[This part was in a DM in a related conversation:]_ When I was more of a newbie there usually was one best way. But it seems as you progress to more advanced things there are less best practices. But it's interesting to see how other developers think through the problem
+
+[Ryan Lynch @joyofui](https://twitter.com/joyofui):
+
+> A rule of thumb is, if you are creating either more work or more mental overhead to build or understand the code, think about changing conventions or breaking them all together. Not all problems are generic and have generic solutions, so don't be bound to generic answers!
+
+This last remark by Ryan hits on a problem I see with myself and other newbies- fear of breaking convention. Often times it isn't even clear to a newbie when something is a flexible convention, and when it is a serious rule that you should never break.
+
+I looked into other forms of API's after Ryan suggested RPC.
+
+Video: [Nate Barbettini – API Throwdown: RPC vs REST vs GraphQL, Iterate 2018](https://www.youtube.com/watch?v=IvsANO0qZEg)
+
+In this video Nate illustrates why you might break a convention for another API convention that fits your use case. It may be more important for one project that the API is highly flexible and documented, REST is great here. But I'm building a private API so I may value low chattiness over flexibility.
+
+## [Helge Drews @helgedrews](https://twitter.com/helgedrews) on Twitter:
+
+> I think what you're searching for is a CheckoutController and not CheckoutService. Simply said, you inject all your Services into it and the Controller orchestrates all the business logic, handles Errors and so on. Put it behind the POST /checkout route. :)
+
+My Response:
+
+> Thanks helge, I had a checkout route (the equivalent of a controller?) but it was getting big and I though it was considered a best practice to leave fat business logic out of the controller and move it to a service, so I also made a service. Not sure if that makes sense
+
+Before I sent that last response, **Helge** sent me a DM to elaborate:
+
+> Here I've got some more infos to the answer in your twitter thread about how to organize your app architecture.
+>
+> in the root file app.js you can do something like this:
+>
+> ```javascript
+> const checkoutController = new >CheckoutController({
+>    emailService,
+>    orderRepository,
+>    paypalService,
+>    productRepository,
+>    shopConfigRepository,
+>    shoppingCartRepository,
+>    stripeService
+> });
+> // ...
+> app.use('/checkout/', >checkoutController.router);
+>
+> CheckoutController looks like this:
+> export default class >CheckoutController {
+>    constructor({
+>        emailService,
+>        orderRepository,
+>        paypalService,
+>        productRepository,
+>        shopConfigRepository,
+>        shoppingCartRepository,
+>        stripeService
+>    }) {
+>        // Routes
+>        this.router = new Router();
+>        http://this.router.post('/prepare', async (req, res, next) => this.prepare(req, res, next));
+>        http://this.router.post('/complete', async (req, res, next) => this.complete(req, res, next));
+>
+>        // Repo
+>        this.orderRepository = orderRepository;
+>        this.productRepository = productRepository;
+>        this.shoppingCartRepository = shoppingCartRepository;
+>        this.shopConfigRepository = shopConfigRepository;
+>
+>        // Service
+>        this.emailService = emailService;
+>        this.paypalService = paypalService;
+>        this.stripeService = stripeService;
+>    }
+>
+> // the implementation of the methods >behind the routes and a lot  of other >helper methods
+> ```
+
+Helge used the terms "repository" and "controller" which introduced me to the **Repository-Service pattern**.
+
+## [John Zhao](https://www.linkedin.com/in/john-zhao-3136647b/) on LinkedIn:
+
+> one endpoint can interact with many services and models. that's the entire point of the backend - to glue all the different pieces together.
+>
+> the vast majority of backend code in the real world is never as simple as one route -> one service -> one model. taking your example of getting a product from a database, in the real world, you'll probably want to call one endpoint to get the product info, product upsells and product reviews that are stored in different models.
+>
+> just google node ecommerce projects on github and you'll find plenty of examples to guide you
+
+Many tutorials simplify projects so we rarely see these more complex real world backends. Finding more complex examples is important.
+
+It seems obvious, but I hadn't thought to search for the term "ecommerce", I kept searching for "shop". That small suggestion was helpful.
+
+### Thanks to everyone who helped!
+
+<hr>
+
+## Random/Messy Notes and Resources
+
+As I was reading guidance from the helpful people above, I did some googling and note taking:
+
+https://apihandyman.io/api-design-tips-and-tricks-getting-creating-updating-or-deleting-multiple-resources-in-one-api-call/
+
+> What if I want to do DELETE /resources/ID1 and PATCH /another-resources/ID2 at the same time?
+>
+> This is really nasty and definitely not REST, but it can be useful for backend for frontend or experience API for example.
+>
+> To do that we’ll need to POST data on a specific endpoint which could something like /batch, /bulk or even / and we will have to add a uri and replace the id value by something provided by the consumer:
+> Actions number 1 is DELETE /resources/ID1 and its result will be identified in the 207 response by the id ACTION1.
+>
+> To see a complete example you should take a look at Facebook’s Graph API batch endpoint documentation. Note that this batch endpoint match request/response based on index and does far more than just processing a bunch of request.
+
+https://www.codementor.io/blog/batch-endpoints-6olbjay1hd
+
+> Google has implemented a complicated but flexible batch endpoint. Instead of having an endpoint that accepts multiple resources, there's an endpoint that accepts multiple requests. These are essentially "meta" HTTP requests, where the main request contains different sub-requests.
+
+[Nate Barbettini – API Throwdown: RPC vs REST vs GraphQL, Iterate 2018](https://www.youtube.com/watch?v=IvsANO0qZEg)
+
+[Best Practices for Building API Integrations](https://blog.bearer.sh/api-integration-best-practices/)
+
+> The difference between an API and an integration is that an API integration is how your application connects to an API.
+
+<hr>
 <h3 id="update-1-28-21"></h3>
 
 ## Thursday 1-28-21
