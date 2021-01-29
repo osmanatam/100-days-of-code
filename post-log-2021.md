@@ -5,7 +5,11 @@ I completed my 365 days of code in 2019. I logged my progress everyday. I contin
 <hr>
 <h3 id="update-1-29-21"></h3>
 
-## Friday 1/29/21 - Thursday 1-28-21
+## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Journey
+
+## Answers to My App Architecture [Question](#update-1-28-21)
+
+### Friday 1/29/21 - Thursday 1-28-21
 
 <hr>
 
