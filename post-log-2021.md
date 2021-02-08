@@ -25,7 +25,7 @@ I'm at a point though where the excitement of starting the project is wearing of
 
 But I can't just rely on "persistence". I've found that forceful modes like persistence and discipline don't work as well as intrinsic motivation, even for people like me who have seemingly endless amounts of willpower. We can try to "discipline" ourselves to the finish line but we often pay the price- usually our health will suffer from the hormonal effects of extreme discipline.
 
-So I need a tactic- beyond will power- to get through this hump. What got me excited in the first place? That excited is what I need back.
+So I need a tactic- beyond willpower- to get through this hump. What got me excited in the first place? That excited is what I need back.
 
 Seeing myself as the founder of a profitable company.
 
