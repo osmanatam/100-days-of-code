@@ -11,7 +11,7 @@ I completed my 365 days of code in 2019. I logged my progress everyday. I contin
 
 ## Most People Can't Get Through The Hardest Part Of A Goal
 
-It's been 7 months and 2 weeks since WishTender was an idea. 6 months and 4 weeks since I made a demo of the app. 6 months and 3 weeks since I started coding the frontend.
+It's been 7 months and 2 weeks since WishTender was an idea. 6 months and 4 weeks since I made a demo of the app. 6 months and 3 weeks since I started coding the app.
 
 When I started my spouse asked me when I'd be done. I said by the end of October. That was 3 months ago.
 
