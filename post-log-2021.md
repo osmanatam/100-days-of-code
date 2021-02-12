@@ -31,7 +31,7 @@ But, as a newly self taught developer who has never worked with other developers
 
      As a single developer I can work on the front and back end at the same time. I often approach tasks without separating these out. For example, if I work on the checkout front end, I will also be messing with the checkout backend at the same time; making tweaks to the API as I figure out what I need from the backend. I would imagine that I would need to separate tasks up when I work with others. Collaboration probably requires more planning, like having the backend already figured out, knowing which API calls will take place on each page, and knowing what data will need to come in and out of the API before telling someone to build a front end page.
 
-   [Kenneth Wade](https://www.linkedin.com/in/kenneth-wade/), DevOps manger and founder of Kenjico, suggested a good first step: try coding my app on two different computers. It will help me get an idea of how to use git as a collaborator.
+   [Kenneth Wade](https://www.linkedin.com/in/kenneth-wade/), DevOps manger and founder of Kenjyco, suggested a good first step: try coding my app on two different computers. It will help me get an idea of how to use git as a collaborator.
 
 2. **Security:** How do I keep from exposing too much information about the app with freelancers/new employees who I know little about?
 
