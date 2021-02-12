@@ -3,7 +3,63 @@
 I completed my 365 days of code in 2019. I logged my progress everyday. I continued to add to my [2020 log](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md). This is my 2021 log.
 
 <hr>
-<h3 id="update-1-29-21"></h3>
+<h3 id="update-2-11-21"></h3>
+
+## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Sunday 2/11/21
+
+<hr>
+
+## Outsourcing Development Work
+
+It's been 213 days since I started coding WishTender, my unfinished bootstrapped product. I've learned a lot about building an application.
+
+Now, I'm starting to consider something both intimidating and exciting: coding with other people.
+
+I've always envisioned myself transitioning out of coding WishTender, as lots of founders do. It would be powerful to learn how to delegate tasks and manage people.
+
+First, I would like to start small. I'd like to get experience delegating some of the coding to other developers.
+
+But- as a newly self taught developer who has never never worked with other developers- I have a lot of questions and gaps in my knowledge.
+
+1. **Logistics:** What does working with other people look like?
+
+   - **How do I go about using git?**
+
+     I've only ever used git as a single person. If I could see what it looks like for people to collaborate on github that would be so helpful.
+
+   - **How do I separate out tasks?**
+
+     As a single developer I can work on the front and back end at the same time. I often approach tasks without separating these out. For example, if I work on the checkout front end, I will also be messing with the checkout backend at the same time; making tweaks to the API as I figure out what I need from the backend. I would imagine that I would need to separate tasks up when I work with others. Collaboration probably requires more planning, like having the backend already figured out, knowing which API calls will take place on each page and what data will need to come in and out of the API before telling someone to build a front end page.
+
+   [Kenneth Wade](https://www.linkedin.com/in/kenneth-wade/), DevOps manger and founder of Kenjico, suggested a good first step: try coding my app on two different computers. It will help me get an idea of how to use git as a collaborator.
+
+2. **Security:** How do I keep from exposing too much information about the app with freelancers/new employees who I know little about?
+
+   - I wouldn't want just anyone to have access to api keys, customers info, or passwords to relavent accounts- like my stripe platform account. Yet it feels like sometimes I will need to give collaborators access to these.
+
+3. **Money**: How do I afford to work with others as a bootstrapped business?
+   - I probably won't be taking on employees right away. But what about freelancers or interns? Or starting out by finding a friend or mentor to pair program on my app? When do I transition to hiring full time employees and what does that transition look like?
+
+If you have any suggestions about how I can learn more about outsourcing, managing, collaborating let me know on Twitter or Linked in!
+
+## Bootstrapping as Developer
+
+Here's a video about [bootstrapping as a developer](https://tekin.co.uk/2013/10/bootstrapping-as-a-developer) by Tekin Süleyman [@tekin](https://twitter.com/tekin).
+
+It's rare to find developers who are bootstrapping a product. More commonly, founders are non-devs raising funds or trying to find a technical co-founder. Sometimes in combination with using no-code tools to prototype. But being a developer gives me both unique advantages and disadvantages to consider. And certainly different goals from vc raisers. So I am looking to expose myself to the experience of developer bootstrappers to understand the bootstrapping path.
+
+Even in Tekin's talk, one of the first things he mentions is that bootstrappers should have one goal: to turn a profit. While conversely, funded ventures are going to aim for growth. A bootstrapped app would not want 100k users on launch day. They wouldn't have the means to support this traffic. Bootstrappers want steady growth that their profit can support. So my goal is profit. But funded businesses have or will try to get money to support growth, so their goal is growth. Growth shows investors that the business is viable. This is just one of the many ways these two frameworks might think differently.
+
+It was also nice to see Tekin talk about his slow and steady growth. His first commit was June 2009. He launched in May 2012. A month later he had his first paying customer. VC funded projects might move a lot faster. I thought I was moving at a snails pace compared to what I saw. For example and speaking of fast, I think I saw the founder of Fast talk about how Fast was just an idea a year ago. I've been working daily on WishTender since June\*. I am no where near the pace that Fast moved. But my journey is going to look different than a funded venture.
+
+Exposing myself to different bootstrappers journeys will be beneficial.
+
+Tekin goes into his journey as a bootstrapper and how and why his business failed and it's a great watch.
+
+\*_Possibly an exaggeration. I believe I took off on Yom Kipper, and maybe some other special occasions or at least decreased the amount of work I did._
+
+<hr>
+<h3 id="update-2-7-21"></h3>
 
 ## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Sunday 2/7/21
 
