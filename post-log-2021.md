@@ -11,7 +11,7 @@ I completed my 365 days of code in 2019. I logged my progress everyday. I contin
 
 ## Outsourcing Development Work
 
-It's been 213 days since I started coding WishTender, my unfinished bootstrapped product. I've learned a lot about building an application.
+It's been 213 days since I started coding [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20), my unfinished bootstrapped product. I've learned a lot about building an application.
 
 Now, I'm starting to consider something both intimidating and exciting: coding with other people.
 
@@ -19,17 +19,17 @@ I've always envisioned myself transitioning out of coding WishTender, as lots of
 
 First, I would like to start small. I'd like to get experience delegating some of the coding to other developers.
 
-But- as a newly self taught developer who has never never worked with other developers- I have a lot of questions and gaps in my knowledge.
+But, as a newly self taught developer who has never worked with other developers, I have a lot of questions and gaps in my knowledge.
 
 1. **Logistics:** What does working with other people look like?
 
    - **How do I go about using git?**
 
-     I've only ever used git as a single person. If I could see what it looks like for people to collaborate on github that would be so helpful.
+     I've only ever used git as a single person. If I could see what it looks like for people to collaborate on github that would be helpful.
 
    - **How do I separate out tasks?**
 
-     As a single developer I can work on the front and back end at the same time. I often approach tasks without separating these out. For example, if I work on the checkout front end, I will also be messing with the checkout backend at the same time; making tweaks to the API as I figure out what I need from the backend. I would imagine that I would need to separate tasks up when I work with others. Collaboration probably requires more planning, like having the backend already figured out, knowing which API calls will take place on each page and what data will need to come in and out of the API before telling someone to build a front end page.
+     As a single developer I can work on the front and back end at the same time. I often approach tasks without separating these out. For example, if I work on the checkout front end, I will also be messing with the checkout backend at the same time; making tweaks to the API as I figure out what I need from the backend. I would imagine that I would need to separate tasks up when I work with others. Collaboration probably requires more planning, like having the backend already figured out, knowing which API calls will take place on each page, and knowing what data will need to come in and out of the API before telling someone to build a front end page.
 
    [Kenneth Wade](https://www.linkedin.com/in/kenneth-wade/), DevOps manger and founder of Kenjico, suggested a good first step: try coding my app on two different computers. It will help me get an idea of how to use git as a collaborator.
 
@@ -38,7 +38,7 @@ But- as a newly self taught developer who has never never worked with other deve
    - I wouldn't want just anyone to have access to api keys, customers info, or passwords to relavent accounts- like my stripe platform account. Yet it feels like sometimes I will need to give collaborators access to these.
 
 3. **Money**: How do I afford to work with others as a bootstrapped business?
-   - I probably won't be taking on employees right away. But what about freelancers or interns? Or starting out by finding a friend or mentor to pair program on my app? When do I transition to hiring full time employees and what does that transition look like?
+   - I probably won't be taking on employees right away. But what about freelancers or interns? Or starting out by finding a friend or mentor to pair program on my app? When do I transition to hiring fulltime employees and what does that transition look like?
 
 If you have any suggestions about how I can learn more about outsourcing, managing, collaborating let me know on Twitter or Linked in!
 
@@ -46,7 +46,7 @@ If you have any suggestions about how I can learn more about outsourcing, managi
 
 Here's a video about [bootstrapping as a developer](https://tekin.co.uk/2013/10/bootstrapping-as-a-developer) by Tekin Süleyman [@tekin](https://twitter.com/tekin).
 
-It's rare to find developers who are bootstrapping a product. More commonly, founders are non-devs raising funds or trying to find a technical co-founder. Sometimes in combination with using no-code tools to prototype. But being a developer gives me both unique advantages and disadvantages to consider. And certainly different goals from vc raisers. So I am looking to expose myself to the experience of developer bootstrappers to understand the bootstrapping path.
+It's rare to find developers who are bootstrapping a product. More commonly, founders are non-devs raising funds or trying to find a technical co-founder. Sometimes in combination with using no-code tools to prototype. But being a developer gives me both unique advantages and disadvantages to consider. And certainly different goals from vc raisers.
 
 Even in Tekin's talk, one of the first things he mentions is that bootstrappers should have one goal: to turn a profit. While conversely, funded ventures are going to aim for growth. A bootstrapped app would not want 100k users on launch day. They wouldn't have the means to support this traffic. Bootstrappers want steady growth that their profit can support. So my goal is profit. But funded businesses have or will try to get money to support growth, so their goal is growth. Growth shows investors that the business is viable. This is just one of the many ways these two frameworks might think differently.
 
