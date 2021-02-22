@@ -1,6 +1,6 @@
 # Post #100DaysOfCode Log - Dashiell Bark-Huss
 
-I completed my 365 days of code in 2019. I continued to add to this log when I wanted to save notes in 2020.
+I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Day 1-100](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r1-log.md), [Day 101-200](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r2-log.md), [Day 101-200](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r2-log.md), [Day 201-365](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r3-log.md). I continued to add to this log when I wanted to save notes in 2020.
 
 You can see my new 2021 updates [here](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log-2021.md)
 

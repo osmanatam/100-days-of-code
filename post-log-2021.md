@@ -1,11 +1,77 @@
 # Post #100DaysOfCode Log - Dashiell Bark-Huss
 
-I completed my 365 days of code in 2019. I logged my progress everyday. I continued to add to my [2020 log](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md). This is my 2021 log.
+I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Day 1-100](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r1-log.md), [Day 101-200](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r2-log.md), [Day 101-200](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r2-log.md), [Day 201-365](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r3-log.md). After I completed the challenge, I continued to log in my [2020 coding log](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md). This is my 2021 coding log.
+
+<hr>
+<h3 id="update-2-21-21"></h3>
+
+## Dream Phone/Electronics- Sunday 2/21/21
+
+<hr>
+
+I mostly have been posting about [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) on here. But, in addition to WishTender, I've also been spending my time brushing up on my electronics in order to finish my [dream lab](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#lab-explanation).
+
+## What is the Dream Lab/Dream Phone?
+
+_From Log Entry on 04/05/20_
+
+> I'm currently building a lucid dream lab the[that] will induce lucid dreams and enable a user to communicate from a lucid dream to the outside world. I started this project in 2012. But it's been an on and off adventure.
+>
+> After participating in a [lucid dream study at Northwestern](https://www.vice.com/stories/real-time-communication-with-lucid-dreamers/), I was inspired to revisit the project and add some features that Northwestern had.
+
+My goal is to Tweet from a dream by connecting the dream phone to the Twitter API.
+
+Here's [more explanation on how the device works](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#050420), and how I got it to send a text (while awake but can theoretically also work while asleep).
+
+  <img src="log_imgs/eyes_messaging_5-4-20.gif" width= 100%>
+
+  <img src="log_imgs/mesage _sent_5-4-20.gif" width= 100%>
+
+## Latest Road Block In the Dream Phone
+
+The latest problem I had with the dream phone was that the device has some electronic noise from the wall plug that interfered with the electrode signals. [Forum post here](https://forum.allaboutcircuits.com/threads/electrical-noise-when-using-wall-outlet.175975/)
+
+Since adding a wall plug adapter,
+<img src="log_imgs/dreamphone_issue1_2-21-21.jpg" width= 170%>
+
+I now get a fuzzy eye movement signals from the electrodes
+<img src="log_imgs/dreamphone_issue3_2-21-21.jpg" width= 100%>
+
+instead of a clear readable eye movement signals.
+<img src="log_imgs/dreamphone_issue2_2-21-21.jpg" width= 100%>
+
+The reason I added the AC power adapter was in order to power the red led strip. The led strip provides the light needed to induce lucid dreams.
+
+## Solutions
+
+I think the best solution is to switch from a 12V AC adapter to a battery back to both reduce 1. the noise and 2. the danger of physically being hooked up to AC power.
+
+But I'm not totally sure. So I've been brushing up on electronics basics- current, volts, resistance, Ohms law, Kerckhoff's voltage and current Laws, working with components, etc.
+
+## Notes and Resources
+
+Now that I've filled you in, I just wanted to use this space to save some notes and resources.
+
+### Resources
+
+- [**Video:** LEDs in Series and Parallel](https://www.youtube.com/watch?v=mKCAxwjfs0I)
+
+- [How Led strips are wired](https://www.waveformlighting.com/home-residential/connecting-led-strips-in-series-vs-parallel)- go to last section.
+
+- [Calculations for Parellel vs Series LED's](https://www.circuitspecialists.com/blog/how-to-determine-resistor-value-for-led-lighting/)
+
+- [Engineering Circuit Analysis](https://www.youtube.com/watch?v=OGa_b26eK2c&list=PLnVYEpTNGNtUSjEEYf01D-q4ExTO960sG)- I bought the series but the first few videos are available on Youtube. Those first few videos were actually my favorite videos in the series. Most of the later videos I paid for just went over problems and solutions.
+
+- Tinkercad
+
+  [Tinkercad](https://www.tinkercad.com/) has a virtual circuit maker. It allows you to create virtual circuits. You can use virtual power supplies, virtual components, and even even test it all with a virtual multimeter. Great for practicing basic electronics without expensive components.
+
+   <img src="log_imgs/tinkercad_2-21-21.png" width= 100%>
 
 <hr>
 <h3 id="update-2-11-21"></h3>
 
-## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Sunday 2/11/21
+## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Thursday 2/11/21
 
 <hr>
 
