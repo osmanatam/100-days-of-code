@@ -49,7 +49,7 @@ The reason I added the AC power adapter was in order to power the red led strip.
 
 I think the best solution is to switch from a 12V AC adapter to a battery pack to both reduce 1. the noise and 2. the danger of physically being hooked up to AC power.
 
-But I'm not totally sure. So I've been brushing up on electronics basics- current, volts, resistance, Ohms law, Kerckhoff's voltage and current Laws, working with components, etc.
+But I'm not totally sure. So I've been brushing up on electronics basics- current, volts, resistance, Ohms law, Kerckhoff's voltage and current laws, working with components, etc.
 
 ## Notes and Resources
 
