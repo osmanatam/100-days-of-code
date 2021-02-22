@@ -67,7 +67,7 @@ Now that I've filled you in, I just wanted to use this space to save some notes 
 
 - Tinkercad
 
-  [Tinkercad](https://www.tinkercad.com/) has a virtual circuit maker. It allows you to create virtual circuits. You can use virtual power supplies, virtual components, and even even test it all with a virtual multimeter. Great for practicing basic electronics without expensive components.
+  [Tinkercad](https://www.tinkercad.com/) has a virtual circuit maker. It allows you to create virtual circuits. You can use virtual power supplies, virtual components, and even test it all with a virtual multimeter. Great for practicing basic electronics without expensive components.
 
    <img src="log_imgs/tinkercad_2-21-21.png" width= 100%>
 
