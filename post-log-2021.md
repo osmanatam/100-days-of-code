@@ -32,13 +32,13 @@ Here's [more explanation on how the device works](https://github.com/DashBarkHus
 The latest problem I had with the dream phone was that the device has some electronic noise from the wall plug that interfered with the electrode signals. [Forum post here](https://forum.allaboutcircuits.com/threads/electrical-noise-when-using-wall-outlet.175975/)
 
 Since adding a wall plug adapter,
-<img src="log_imgs/dreamphone_issue1_2-21-21.jpg" width= 170%>
+<img src="log_imgs/dreamphone_issue1_2-21-21.jpg" width= "500px">
 
 I now get a fuzzy eye movement signals from the electrodes
-<img src="log_imgs/dreamphone_issue3_2-21-21.jpg" width= 100%>
+<img src="log_imgs/dreamphone_issue3_2-21-21.jpg" width= "500px">
 
 instead of a clear readable eye movement signals.
-<img src="log_imgs/dreamphone_issue2_2-21-21.jpg" width= 100%>
+<img src="log_imgs/dreamphone_issue2_2-21-21.jpg" width= "500px">
 
 The reason I added the AC power adapter was in order to power the red led strip. The led strip provides the light needed to induce lucid dreams.
 
