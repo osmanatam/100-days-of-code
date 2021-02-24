@@ -3,6 +3,518 @@
 I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Day 1-100](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r1-log.md), [Day 101-200](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r2-log.md), [Day 201-365](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r3-log.md). After I completed the challenge, I continued to log in my [2020 coding log](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md). This is my 2021 coding log.
 
 <hr>
+<h3 id="update-2-23-21"></h3>
+
+## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Tuesday/Wednesday 2/24/21
+
+<hr>
+Todays Post:
+
+- [Cross-border payouts](#cbp-2-23-21)
+- [Questions I Posted Online](#q-2-23-21)
+  - [**_Answered:_** Email Confirmation links must be GET, but not safe?](#getsafe-2-23-21)
+  - [**_Unanswered:_** Mongoose strange behavior, Able to recreate but not sure why.](#mongo-2-23-21)
+
+<hr>
+
+I'm saving some information here about Stripe cross border payouts and default currencies.
+
+<h2 id="cbp-2-23-21"></h2>
+
+## Cross-border payouts
+
+Cross-border payouts enable platforms in the U.S. to pay out to connected accounts in the following countries [Source](https://stripe.com/docs/connect/cross-border-payouts)
+
+**Note:** In the post below I did a lot of unnecessary work to find what looks more easily available in [Country Specs](https://stripe.com/docs/api/country_specs), a Stripe resource.
+
+Supported Countries (non-US):
+
+```javascript
+const supportedPayoutCountries = [
+  { name: "Australia", code: "AU" },
+  { name: "Austria", code: "AT" },
+  { name: "Belgium", code: "BE" },
+  { name: "Bulgaria", code: "BG" },
+  { name: "Canada", code: "CA" },
+  { name: "Cyprus", code: "CY" },
+  { name: "Czech Republic", code: "CZ" },
+  { name: "Denmark", code: "DK" },
+  { name: "Estonia", code: "EE" },
+  { name: "Finland", code: "FI" },
+  { name: "France", code: "FR" },
+  { name: "Germany", code: "DE" },
+  { name: "Greece", code: "GR" },
+  { name: "Hong Kong", code: "HK" },
+  { name: "Ireland", code: "IE" },
+  { name: "Italy", code: "IT" },
+  { name: "Latvia", code: "LV" },
+  { name: "Lithuania", code: "LT" },
+  { name: "Luxembourg", code: "LU" },
+  { name: "Malta", code: "MT" },
+  { name: "Netherlands", code: "NL" },
+  { name: "New Zealand", code: "NZ" },
+  { name: "Norway", code: "NO" },
+  { name: "Poland", code: "PL" },
+  { name: "Portugal", code: "PT" },
+  { name: "Romania", code: "RO" },
+  { name: "Singapore", code: "SG" },
+  { name: "Slovakia", code: "SK" },
+  { name: "Slovenia", code: "SI" },
+  { name: "Spain", code: "ES" },
+  { name: "Sweden", code: "SE" },
+  { name: "Switzerland", code: "CH" },
+  { name: "United Kingdom", code: "GB" },
+];
+```
+
+To get this list I put the below code in the devtools console of [this](https://stripe.com/docs/connect/cross-border-payouts) stripe page in order to get the countries:
+
+```javascript
+arr = [];
+for (i = 1; i < 34; i++) {
+  arr.push(
+    document.querySelector(
+      "#content > section.availability > ul > li:nth-child(" +
+        i +
+        ") > span:nth-child(2)"
+    ).innerText
+  );
+}
+```
+
+Then to get the country codes (of non-US countries) from the names, I had to use the `country-data` library;
+
+```javascript
+const countryData = require("country-data");
+
+const countries = [
+  "Australia",
+  "Austria",
+  "Belgium",
+  "Bulgaria",
+  "Canada",
+  "Cyprus",
+  "Czech Republic",
+  "Denmark",
+  "Estonia",
+  "Finland",
+  "France",
+  "Germany",
+  "Greece",
+  "Hong Kong",
+  "Ireland",
+  "Italy",
+  "Latvia",
+  "Lithuania",
+  "Luxembourg",
+  "Malta",
+  "Netherlands",
+  "New Zealand",
+  "Norway",
+  "Poland",
+  "Portugal",
+  "Romania",
+  "Singapore",
+  "Slovakia",
+  "Slovenia",
+  "Spain",
+  "Sweden",
+  "Switzerland",
+  "United Kingdom",
+];
+
+countries.forEach((coun) => {
+  const code = countryData.countries.all.find((c) => c.name == coun).alpha2;
+  const obj = { name: coun, code: code };
+  console.log(obj);
+});
+```
+
+### Script to get default currencies
+
+I ran a script to get the default currencies (of the supported non-US countries).
+
+I later found out about a stripe resource that may have helped me: [Country Specs](https://stripe.com/docs/api/country_specs). Since I didn't no about country specs, I did extra work to get the default currency- creating stripe accounts for each country and logging the default currency.
+
+Here is that script I used to get the default currencies. Using [Country Specs](https://stripe.com/docs/api/country_specs) would have been more efficient:
+
+```javascript
+const stripe = require("stripe")(process.env.STRIPE_SECRET_TEST_KEY);
+
+const createAccountInfo = (country) => {
+  const info = {
+    country,
+    type: "express",
+
+    //
+    capabilities: {
+      transfers: {
+        requested: true,
+      },
+    },
+  };
+
+  if (country !== "US") {
+    info.tos_acceptance = {
+      service_agreement: "recipient",
+    };
+  }
+  return info;
+};
+
+const delay = (millis) =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => resolve(), millis);
+  });
+
+const createAccount = async (country) => {
+  const info = createAccountInfo(country);
+  try {
+    const account = await stripe.accounts.create(info);
+
+    const object = {};
+    object[country] = account.default_currency;
+    console.log(object);
+    await stripe.accounts.del(account.id);
+  } catch (error) {
+    console.log(error.message, " ", country);
+  }
+};
+
+const supportedPayoutCountries = [
+  "AU",
+  "AT",
+  "BE",
+  "BG",
+  "CA",
+  "CY",
+  "CZ",
+  "DK",
+  "EE",
+  "FI",
+  "FR",
+  "DE",
+  "GR",
+  "HK",
+  "IE",
+  "IT",
+  "LV",
+  "LT",
+  "LU",
+  "MT",
+  "NL",
+  "NZ",
+  "NO",
+  "PL",
+  "PT",
+  "RO",
+  "SG",
+  "SK",
+  "SI",
+  "ES",
+  "SE",
+  "CH",
+  "GB",
+];
+
+supportedPayoutCountries.forEach((country, i) => {
+  setTimeout(() => {
+    createAccount(country);
+  }, i * 1000);
+});
+```
+
+```javascript
+//results of the script turned into an array for convenience. Non-US countries, remember to add US
+const defaultCurrencies = [
+  {
+    AU: "aud",
+  },
+  {
+    AT: "eur",
+  },
+  {
+    BE: "eur",
+  },
+  {
+    BG: "bgn",
+  },
+  {
+    CA: "cad",
+  },
+  {
+    CY: "eur",
+  },
+  {
+    CZ: "eur",
+  },
+  {
+    DK: "dkk",
+  },
+  {
+    EE: "eur",
+  },
+  {
+    FI: "eur",
+  },
+  {
+    FR: "eur",
+  },
+  {
+    DE: "eur",
+  },
+  {
+    GR: "eur",
+  },
+  {
+    HK: "hkd",
+  },
+  {
+    IE: "eur",
+  },
+  {
+    IT: "eur",
+  },
+  {
+    LV: "eur",
+  },
+  {
+    LT: "eur",
+  },
+  {
+    LU: "eur",
+  },
+  {
+    MT: "eur",
+  },
+  {
+    NL: "eur",
+  },
+  {
+    NZ: "nzd",
+  },
+  {
+    NO: "nok",
+  },
+  {
+    PL: "pln",
+  },
+  {
+    PT: "eur",
+  },
+  {
+    RO: "ron",
+  },
+  {
+    SG: "sgd",
+  },
+  {
+    SK: "eur",
+  },
+  {
+    SI: "eur",
+  },
+  {
+    ES: "eur",
+  },
+  {
+    SE: "sek",
+  },
+  {
+    CH: "eur",
+  },
+  {
+    GB: "gbp",
+  },
+  // US
+  // {
+  //   US: "usd",
+  // },
+];
+```
+
+<hr>
+<h2 id="q-2-23-21"></h2>
+
+## Questions I Posted Online:
+
+<h2 id="getsafe-2-23-21"></h2>
+
+## **_Answered:_** Email Confirmation links must be GET, but not safe?
+
+I asked on StackExchange:
+
+_[Email Confirmation links must be GET, but not safe](https://softwareengineering.stackexchange.com/questions/422507/email-confirmation-links-must-be-get-but-not-safe)_:
+
+> When a user signs up to a web app, they often get a confirmation email. This email will contain a link. Once the user clicks the link, the app confirms the user's account as correctly associated with said email, perhaps by changing a `confirmed` field on the `user` document from `false` to `true`.
+>
+> My question:
+>
+> 1. The endpoint changes data (ei: `user.confirmed` from `false` to `true`) so this action isn't [safe](https://developer.mozilla.org/en-US/docs/Glossary/safe)\*.
+> 2. The link is a GET request.
+>
+> **Don't these two facts violate HTTP standards?** GET requests are [supposed to be safe](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET). So `PATCH` seems more appropriate for changing the `confirmed` field. However, there is no way to make a link in an email a `PATCH` request.
+>
+> How do software engineers handle this inconsistency? Is it just a violation that's accepted? Or is there a correct way to implement this so that we don't violate HTTP standards.
+>
+> \*An HTTP method is safe if it doesn't alter the state of the server. [source](https://developer.mozilla.org/en-US/docs/Glossary/safe)
+
+From the comments it seemed like a lot of people never considered this issue.
+
+Some people disagreed on whether is should be considered safe or not to change the confirmed field. They said it's safe if the user isn't knowingly making this change.
+
+These arguments all seemed "lawyer-y"- not getting to heart of the problem. People just focused on the semantics in question, and disregarded why these standard exist. You can change the definitions of words all you want but the software doesn't care. I'm not against breaking rules, but it seemed many lacked understanding of the purpose of the rule. You should understand the rule before you consciously decide to go against it.
+
+The answer I selected focused on the why- why it's recommended to only use safe actions with GET. And then gave a solution that addressed these concerns.
+
+<h2 id="mongo-2-23-21"></h2>
+
+## **_Unanswered:_** Mongoose strange behavior, Able to recreate but not sure why.
+
+This next question I asked on Stackoverflow. There were no answers. I isolated the problem into a small bit of code and put it in a repo so you can easily recreate the problem.
+
+[Mongoose expiration not setting- expiration not showing in getIndexes](https://stackoverflow.com/questions/66326780/mongoose-expiration-not-setting-expiration-not-showing-in-getindexes):
+
+> I have a document that has an expiration set for 2 minutes.
+>
+> ```javascript
+> const docSchema = new mongoose.Schema({
+>   createdAt: { type: Date, default: Date.now },
+>   expireAt: { type: Date, default: Date.now, index: { expires: "2m" } },
+> });
+>
+> const Doc = mongoose.model("Doc", docSchema);
+> ```
+>
+> When a `Doc` is created (ie. `const doc = await Doc.create({});`), I would expect it to have the expiration set. However, sometimes it's setting- but sometimes it's not.
+>
+> I check if there's an expiration on the `Doc` by running `db.docs.getIndexes()` in a Mongo shell. The result will either show the expiration information:
+>
+> ```json
+> [
+>        ...{// some other object},
+>
+>        // expiration info--->
+>        {
+>                "v" : 2,
+>                "key" : {
+>                        "expireAt" : 1
+>                },
+>                "name" : "expireAt_1",
+>                "ns" : "expireDocument.docs",
+>                "expireAfterSeconds" : 120,
+>                "background" : true
+>        }
+> ]
+> ```
+>
+> Or it will leave it out. I'm guessing it leaves it out when it didn't apply the expiration to the documents.
+>
+> It seems sort of random when it gets set and when it doesn't. However, I was able to figure out a consistent situation where it is set and where it isn't so the problem can be recreated. Though, I have no clue what separates these situations besides the order they are in.
+>
+> # To recreate:
+>
+> 1. Download the small repo [here](https://gist.github.com/DashBarkHuss/9cb761248e1f6141aa6089f3fb84007d). You can also see the `server.js` code below.
+> 2. Open the folder in VScode.
+> 3. **CTR**+**\`** to open terminal. Run `npm i`
+> 4. Click the debugger icon. At the top left play `Expire Document` debugger.
+> 5. After the script creates a `Doc` the debugger pauses on `line 15`. While paused, open a new terminal.
+> 6. Run `mongo` and then `use expireDocument` to navigate to the correct database.
+>
+> 7. Run `db.docs.getIndexes()` to see the indexes. You will see the second object contains info about the expire information for `docs as expected.
+>
+> ```json
+> [
+>   {
+>     "v": 2,
+>     "key": {
+>       "_id": 1
+>     },
+>     "name": "_id_",
+>     "ns": "expireDocument.docs"
+>   },
+>   // second object-->
+>   {
+>     "v": 2,
+>     "key": {
+>       "expireAt": 1
+>     },
+>     "name": "expireAt_1",
+>     "ns": "expireDocument.docs",
+>     "expireAfterSeconds": 120,
+>     "background": true
+>   }
+> ]
+> ```
+>
+> 8. run `db.docs.drop()` to drop the collection
+> 9. Unpause the debugger.
+> 10. Again, after the script creates another `Doc`, the debugger will pause on `line 22`. While it's paused run `db.docs.getIndexes()` again. For some reason, this time there won't be any second object that indicates there is expireAt information.
+>
+> ```json
+> [
+>   {
+>     "v": 2,
+>     "key": {
+>       "_id": 1
+>     },
+>     "name": "_id_",
+>     "ns": "expireDocument.docs"
+>   }
+> ]
+> ```
+>
+> ## Why?
+>
+> Why am I not getting consistent expirations set?
+>
+> ## `server.js` Code
+>
+> ```javascript
+> const mongoose = require("mongoose");
+>
+> const docSchema = new mongoose.Schema({
+>   createdAt: { type: Date, default: Date.now },
+>   expireAt: { type: Date, default: Date.now, index: { expires: "2m" } },
+> });
+>
+> const Doc = mongoose.model("Doc", docSchema);
+>
+> const run = async function () {
+>   // make document
+>   const doc1 = await Doc.create({});
+>
+>   debugger;
+>   // While paused:
+>   // 1. run db.docs.getIndexes() in mongo shell and there will be a second object with "key":{ "expireAt":1}
+>   // 2. then run db.docs.drop() to drop the documents
+>   // 3. unpause script
+>
+>   // make 2nd document
+>   const doc2 = await Doc.create({});
+>   debugger; // run db.docs.getIndexes() in mongo shell and if you dropped in step #2 when script was pause at line 14, there will be no second object with "key":{ "expireAt":1}
+> };
+> mongoose
+>   .connect("mongodb://localhost/expireDocument", {
+>     useNewUrlParser: true,
+>     useUnifiedTopology: true,
+>     useFindAndModify: true,
+>   })
+>   .then(() => console.log("Successfully connect to MongoDB.\n"))
+>   .catch((err) => console.error("Connection error", err));
+>
+> run();
+> ```
+
+<hr>
+
+Notes:
+
+From: [How to remove TTL form MongoDB collection?](https://stackoverflow.com/questions/28356610/how-to-remove-ttl-form-mongodb-collection):
+
+> Use `db.adInfos.getIndexes()` to see the indexes on the collection.
+
+<hr>
 <h3 id="update-2-21-21"></h3>
 
 ## Dream Phone/Electronics- Sunday 2/21/21
