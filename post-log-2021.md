@@ -3,6 +3,90 @@
 I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Day 1-100](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r1-log.md), [Day 101-200](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r2-log.md), [Day 201-365](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r3-log.md). After I completed the challenge, I continued to log in my [2020 coding log](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md). This is my 2021 coding log.
 
 <hr>
+<h3 id="update-3-1-21"></h3>
+
+## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Monday 3/1/21
+
+<hr>
+
+I posted on Twitter:
+
+<img src="log_imgs/twitter_3-1-21.png" alt="post reads:Any developers ever outsourced some dev work on their personal project?
+As a self taught developer, I’m looking for some guidance on outsourcing." ></img>
+
+I got a response from "Nomad"
+
+<img src="log_imgs/twitter2_3-1-21.png" alt="post reads:Only outsourced paid work. For personal project I ask for participation. Need help?" ></img>
+
+[Nomad @darrownet](https://twitter.com/darrownet)
+
+"Nomad" offered to zoom call with me.
+
+"Nomad" was a really cool. His real name is [Matt Schiffman](https://www.linkedin.com/in/darrownet/https://www.linkedin.com/in/darrownet/). He's a self taught programmer with an impressive resume, an entrepreneur, and a fellow Arduino enthusiast. A great teacher too.
+
+I'm grateful that I'm able to shout "Help me!" into the world and get a response. This is the useful side of social media- real community.
+
+I wondered why he was so eager to help? It turns out he had an interest in my dream phone because one of his friends was paralyzed in childhood. The same technology used for the dream phone, could be used to help paralyzed patients communicate.
+
+I almost didn't post a recent update of my dream phone. Part of me thought, "No one cares- it's not finished!" But because I did share, Matt knew what I was up to and wanted to support my growth. The lesson: don't shy away from self promotion. People want to help you and you can help them. This is how community works.
+
+## Notes on our call:
+
+## How do you separate out tasks when coding with someone else?
+
+As a self taught solo developer, I work on the frontend and backend at the same time. When I'm working on the frontend, I might realize that it would be helpful if certain data was available to this view. Then I'll go in the API add the data. Then continue working on the front end. I do this a lot!
+
+Clearly, this won't work when working with a team. I can't, at every twist and turn, assign new micro tasks to the front and back end devs.
+
+### Solution: Start with the data
+
+Matt said that you first start with what data you want. What data do you want the API to feed to the front end?
+
+If you think in terms of the data- the meeting point of the front and back end- you can then build outwards the backend and frontend.
+
+### Fixtures
+
+You can create **fixtures** (aka **dumb data**, **contracts**). A fixture is sort of like a stub, or mock, in testing. But it's to mock up what the API will send to the front end. I'm guessing it can also be what your frontend will send to your backend.
+
+## Git
+
+This is what branching might look like when working with people:
+
+**Production**->**Dev**->**feature**->**WB1**(Working Branch)-&-**WB2**
+
+Your contractors/employees will create [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests). Which you can review and decide to merge or not.
+
+Learn more about this type of flow by checking out Gitflow:
+
+## [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow#:~:text=Gitflow%20Workflow%20is%20a%20Git,designed%20around%20the%20project%20release.)
+
+> Gitflow Workflow is a Git workflow that helps with continuous software development and implementing DevOps practices. It was first published and made popular by Vincent Driessen at nvie. The Gitflow Workflow defines a strict branching model designed around the project release. This provides a robust framework for managing larger projects.
+
+## [Omniplan](https://www.omnigroup.com/video/set/omniplan-for-mac-basics/introducing-omniplan-2/)
+
+It's important to learn project management as an entrepreneur. You will eventually progress to less coding and more managing.
+
+> OmniPlan gives you the power to manage complex projects, coordinate teams, and continuously improve your processes.
+
+They have free [tutorials on project planning](https://www.omnigroup.com/video/omniplan/#project-planning-101). You can get a 2-week trial to try out Omniplan. Using Omniplan is a good way to learn about project planning. Afterwards, you can apply what you learned to general project planning, without strictly using Omniplan.
+
+## MongoDB [Compass](https://www.mongodb.com/products/compass)
+
+Compass is a GUI for working with MongoDB.
+
+## [Atlas](https://www.mongodb.com/cloud/atlas)
+
+> The most innovative cloud database service on the market, with unmatched data distribution and mobility across AWS, Azure, and Google Cloud, built-in automation for resource and workload optimization, and so much more.
+
+## [S3](https://aws.amazon.com/s3/)
+
+For storing user content/images.
+
+> Amazon S3
+>
+> Object storage built to store and retrieve any amount of data from anywhere
+
+<hr>
 <h3 id="update-2-23-21"></h3>
 
 ## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Tuesday/Wednesday 2/24/21
@@ -522,6 +606,8 @@ From: [How to remove TTL form MongoDB collection?](https://stackoverflow.com/que
 <hr>
 
 I mostly have been posting about [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) on here. But, in addition to WishTender, I've also been spending my time brushing up on my electronics in order to finish my [dream lab](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#lab-explanation).
+
+<h3 id="#dream-phone-2-21-21"></h3>
 
 ## What is the Dream Lab/Dream Phone?
 
