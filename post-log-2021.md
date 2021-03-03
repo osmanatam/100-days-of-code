@@ -23,7 +23,7 @@ Todays Post:
 
 <hr>
 
-<h2 id ="#gh-3-2-21" ></h2>
+<h2 id ="gh-3-2-21" ></h2>
 
 I posted on Twitter:
 
@@ -40,7 +40,7 @@ I got a response from "Nomad"
 
 "Nomad" was a really cool. His real name is [Matt Schiffman](https://www.linkedin.com/in/darrownet/https://www.linkedin.com/in/darrownet/). He's a self taught programmer with an impressive resume, an entrepreneur, and a fellow Arduino enthusiast. A great teacher too.
 
-<h2 id ="#c-3-2-21" ></h2>
+<h2 id ="c-3-2-21" ></h2>
 
 I'm grateful that I'm able to shout "Help me!" into the world and get a response. This is the useful side of social media- real community.
 
@@ -48,11 +48,11 @@ I wondered why he was so eager to help? It turns out he had an interest in my dr
 
 I almost didn't post a recent update of my dream phone. Part of me thought, "No one cares- it's not finished!" But because I did share, Matt knew what I was up to and wanted to support my growth. The lesson: don't shy away from self promotion. People want to help you and you can help them. This is how community works.
 
-<h2 id ="#n-3-2-21" ></h2>
+<h2 id ="n-3-2-21" ></h2>
 
 ## Notes on our call:
 
-<h2 id ="#sot-3-2-21" ></h2>
+<h2 id ="sot-3-2-21" ></h2>
 
 ## How do you separate out tasks when coding with someone else?
 
@@ -70,7 +70,7 @@ If you think in terms of the data- the meeting point of the front and back end- 
 
 You can create **fixtures** (aka **dumb data**, **contracts**). A fixture is sort of like a stub, or mock, in testing. But it's to mock up what the API will send to the front end. I'm guessing it can also be what your frontend will send to your backend.
 
-<h2 id ="#git-3-2-21" ></h2>
+<h2 id ="git-3-2-21" ></h2>
 
 ## Git
 
@@ -82,13 +82,13 @@ Your contractors/employees will create [pull request](https://docs.github.com/en
 
 Learn more about this type of flow by checking out Gitflow:
 
-<h2 id ="#gitf-3-2-21" ></h2>
+<h2 id ="gitf-3-2-21" ></h2>
 
 ## [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow#:~:text=Gitflow%20Workflow%20is%20a%20Git,designed%20around%20the%20project%20release.)
 
 > Gitflow Workflow is a Git workflow that helps with continuous software development and implementing DevOps practices. It was first published and made popular by Vincent Driessen at nvie. The Gitflow Workflow defines a strict branching model designed around the project release. This provides a robust framework for managing larger projects.
 
-<h2 id ="#pm-3-2-21" ></h2>
+<h2 id ="pm-3-2-21" ></h2>
 
 ## [Omniplan](https://www.omnigroup.com/video/set/omniplan-for-mac-basics/introducing-omniplan-2/)
 
@@ -98,7 +98,7 @@ It's important to learn project management as an entrepreneur. You will eventual
 
 They have free [tutorials on project planning](https://www.omnigroup.com/video/omniplan/#project-planning-101). You can get a 2-week trial to try out Omniplan. Using Omniplan is a good way to learn about project planning. Afterwards, you can apply what you learned to general project planning, without strictly using Omniplan.
 
-<h2 id ="#tools-3-2-21" ></h2>
+<h2 id ="tools-3-2-21" ></h2>
 
 ## MongoDB [Compass](https://www.mongodb.com/products/compass)
 
