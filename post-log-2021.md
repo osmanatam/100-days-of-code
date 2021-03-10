@@ -3,6 +3,60 @@
 I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Day 1-100](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r1-log.md), [Day 101-200](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r2-log.md), [Day 201-365](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r3-log.md). After I completed the challenge, I continued to log in my [2020 coding log](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md). This is my 2021 coding log.
 
 <hr>
+<h3 id="update-3-9-21"></h3>
+
+## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Tuesday 3/3/21
+
+<hr>
+Todays Post:
+
+- [Be a quitter: Outsourcing](#quit-3-9-21)
+  - [Practice With Outsourcing](#practice-3-9-21)
+  - [Securing my repo](#repo-3-9-21)
+- [Resources](#res-3-9-21)
+
+<hr>
+<h4 id="quit-3-9-21"></h4>
+
+## Be a quitter: Outsourcing
+
+I'm going to take a big leap and outsource some parts of my project. It's very scary and exciting. I've never coded with anyone. But I've always felt like a real entrepreneur should know how to outsource. And reading the book The Entrepreneur Roller Coaster by Darren Hardy is giving me extra inspiration. He highly stresses outsourcing. "Be a quitter"- quit as many parts of your business as you can. Get people better than you to do those tasks.
+
+I want to see what outsourcing some bits of my code will do.
+
+<h4 id="practice-3-9-21"></h4>
+
+### Practice With Outsourcing
+
+To prepare, I created a WishTender Organization on github and created a github account called FakeEmployee. I am acting as my own employee, making commits to my repo under the FakeEmployee account.
+
+I also did som micro outsourcing. I hired a machine learning guy on Fiverr. $5 to talk about the feasibility of a project. The project had nothing to do with WishTender- it was an app for lucid dream research on behalf of Karen Konkoly & Northwestern. I don't know if I will pursue the project, but I wanted to try out Fiverr anyways. It was a useful introduction to outsourcing.
+
+<h4 id="repo-3-9-21"></h4>
+
+### Securing my repo
+
+I'm kind of surprised how much access Github gives this FakeEmployee account. They can just push straight to master if they want. I believe you can prevent this by [creating a branch protection rule](https://docs.github.com/en/github/administering-a-repository/managing-a-branch-protection-rule#creating-a-branch-protection-rule) for the master branch. But it's **not free** unless I make my repo public:
+
+> Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and **private repositories with GitHub Pro**..."
+
+So I either pay for github, make my repo public, or trust that freelancers won't push to master.
+
+Does anyone know if I'm correct about this? Do I have to pay or make my repo public? Which would you do?
+
+<h4 id="res-3-9-21"></h4>
+
+## Resources
+
+[article: use github professionally](https://petabridge.com/blog/use-github-professionally/)
+
+[video: use github professionally](https://www.youtube.com/watch?v=8UguQzmswC4/)
+
+[video: GIT Workflow - Georgia Tech - Software Development Process](https://www.youtube.com/watch?v=3a2x1iJFJWc)
+
+[The gitflow workflow - in less than 5 mins.](https://www.youtube.com/watch?v=1SXpE08hvGs)
+
+<hr>
 <h3 id="update-3-2-21"></h3>
 
 ## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Tuesday 3/2/21
