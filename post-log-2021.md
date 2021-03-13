@@ -1,6 +1,85 @@
-# Post #100DaysOfCode Log - Dashiell Bark-Huss
+# Post #100DaysOfCode Log - Dashiell Bark-Huss test change19
 
 I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Day 1-100](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r1-log.md), [Day 101-200](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r2-log.md), [Day 201-365](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r3-log.md). After I completed the challenge, I continued to log in my [2020 coding log](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md). This is my 2021 coding log.
+
+<hr>
+<h3 id="update-3-13-21"></h3>
+
+## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Saturday 3/13/21
+
+<hr>
+Todays Post:
+
+- Why I'm making my repo public
+- [Security by obscurity](#secbyob-3-13-21)
+  - Build In Public
+- [What About Competition?](#quora-3-13-21)
+- [Loss Aversion & Conculsion](#con-3-13-21)
+
+<hr>
+
+Features on Github that make collaboration easy are limited to paid accounts. You can get around paying, if you keep your repository public.
+
+WishTender is a private repo. Now that I'm looking to work with other devs, I need access to these colab features. So I decided to revisit opening the repo.
+
+<h4 id = "secbyob-3-13-21">
+
+## Security by obscurity
+
+I originally made my WishTender repository private because I was afraid of insecurity. _"The more people know about your project's backend, the easier people can hack into it."_ I struggled with.
+
+It's really important for me to participate in **#BuildInPublic**. Both selfishly and altruistically. **#BuildInPublic** is my way of giving value to the community at every point of my journey. Sometimes it can feel like you have nothing to give, but you can always share you're journey and what you're building. That is the altruistic side of **#BuildInPublic**. Selfishly, it's also given me many opportunities I wouldn't have had if I built and learned in private.
+
+I posted my dilemma back in September. Something Brennan Hitchcock [@k0ode](https://twitter.com/k0ode) said always stuck with me:
+
+> Security by obscurity should never be your primary line of defense.
+
+<img src="log_imgs/securtiy_3-13-21.png" alt = "twitter post by Brennan Hitchcock @k0ode reads: 'Security by obscurity should never be your primary line of defense.' as a quote tweet. Original tweet by Dashiell Bark-Huss @DashBarkHuss reads 'How do you balance #BuildInPublic, #LearnInPublic with keeping your site secure?
+The more people know about your project's backend, the easier people can hack into it. 
+Especially curious what you two think: @thisiskp_ @swyx 
+#HelpMeCode'">
+
+Brennan continued:
+
+> Furthermore by having security by obscurity included in your cyber-defense plan it becomes a crutch and a blind spot.
+
+Brennan encouraged me to "Build in public!"
+
+Even though he made a good point, I figured I was too novice to rely on anything but security by obscurity. So I continued to keep my repo private. I've learned a lot since September and now have a fuller understanding of what security involves. I feel more confident that I can post my code and build strong security before I launch.
+
+<h4 id = "quora-3-13-21">
+
+## What About Competition?
+
+I also found this question and answer on Quora useful:
+
+### **Is it a bad idea to use Open GitHub as your startup's repo?**
+
+[**Quora** Answer by Aravind Ravi-Sulekha:](https://www.quora.com/Is-it-a-bad-idea-to-use-Open-GitHub-as-your-startups-repo)
+
+> Generally, no.
+>
+> The only exception to this rule is if a large part of the value of your startup comes from some proprietary or otherwise non-obvious algorithm expressed in your source code. For the vast majority of technology products, this is not the case — value usually comes from a clever user interface or other features that are straightforward to implement once it’s seen in action.
+>
+> If a competitor with their own product wants to copy a feature you invented, it is almost certainly easier and cheaper for them to implement it independently than to figure out how to adapt your code to their architecture. Making software components work together when they weren’t designed to is extremely hard.
+>
+> That leaves competitors willing to build their startup entirely on your code. It isn’t clear why someone would want to do that — they can’t compete with you by doing exactly what you’re doing. You start with an enormous advantage, having the team which wrote the original code and therefore the ability to move much faster. As long as you don’t accept outside contributions to your project, you can stop publishing code changes at any time.
+>
+> My startup, Scrollback, uses an open GitHub repository for almost all its code. The only exception is a plugin that implements a learning algorithm for organizing threads of discussion — something which is not straightforward to implement even after you’ve seen it work.
+
+<h4 id = "con-3-13-21">
+
+## Loss Aversion & Conculsion
+
+I'm going to take what feels like a more courageous and abundant mindset and make my repo open.
+
+Keeping it closed was base on fear of loss. Not hope of gain. I was exhibiting loss aversion. Loss aversion is the tendency to prefer avoiding loss to acquiring equivalent gains.
+
+I fear being hacked, I fear someone coming in and copying everything WishTender is doing.
+
+But what if instead I focused on what I gain by making it open? I'll help others who are looking to build. Maybe I'll get more help from experienced onlookers. Maybe it will bring more attention to my work and WishTender, bringing me more opportunities.
+
+Because of this, I will be making my repo public. What do you all think? What are the positives and negatives of making a startup repo public? Is it something that should only be temporary? Am I making a huge mistake? Let me know [@DashBarkHuss](https://twitter.com/DashBarkHuss)
 
 <hr>
 <h3 id="update-3-9-21"></h3>
