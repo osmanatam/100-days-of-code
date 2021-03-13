@@ -74,7 +74,7 @@ I also found this question and answer on Quora useful:
 
 I'm going to take what feels like a more courageous and abundant mindset and make my repo open.
 
-Keeping it closed was base on fear of loss. Not hope of gain. I was exhibiting loss aversion. Loss aversion is the tendency to prefer avoiding loss to acquiring equivalent gains.
+Keeping it closed was based on my fear of loss. Not hope of gain. I was exhibiting loss aversion. Loss aversion is the tendency to prefer avoiding loss to acquiring equivalent gains.
 
 I fear being hacked, I fear someone coming in and copying everything WishTender is doing.
 
