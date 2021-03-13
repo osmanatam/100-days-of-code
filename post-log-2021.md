@@ -8,13 +8,14 @@ I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Da
 ## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Saturday 3/13/21
 
 <hr>
-Todays Post:
+
+## Todays Post:
 
 - Why I'm making my repo public
 - [Security by obscurity](#secbyob-3-13-21)
   - Build In Public
 - [What About Competition?](#quora-3-13-21)
-- [Loss Aversion & Conculsion](#con-3-13-21)
+- [Loss Aversion & Conclusion](#con-3-13-21)
 
 <hr>
 
@@ -69,7 +70,7 @@ I also found this question and answer on Quora useful:
 
 <h4 id = "con-3-13-21">
 
-## Loss Aversion & Conculsion
+## Loss Aversion & Conclusion
 
 I'm going to take what feels like a more courageous and abundant mindset and make my repo open.
 
