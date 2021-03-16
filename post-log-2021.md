@@ -3,6 +3,58 @@
 I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Day 1-100](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r1-log.md), [Day 101-200](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r2-log.md), [Day 201-365](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r3-log.md). After I completed the challenge, I continued to log in my [2020 coding log](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md). This is my 2021 coding log.
 
 <hr>
+<h3 id="update-3-16-21"></h3>
+
+## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Saturday 3/16/21
+
+<hr>
+
+## Setting up git configurations and Github credentials in the terminal.
+
+### Configurations
+
+To set your email and username as the author.
+
+```bash
+$ git config --global user.email "secondaccount@gmail.com"
+$ git config --global user.name "SecondAccount"
+```
+
+To show the config lists
+
+```bash
+# global settings
+$ git config --list --global
+
+# local settings
+$ git config --list
+```
+
+To delete some property from the config. There is no such configuration as `user.username` so I deleted it after accidentally adding it.
+
+```bash
+# delete user.username from global settings
+$ git config --unset --global user.username
+```
+
+### Credentials
+
+If you change the configurations, the **author** will be set to the new account. But you will still be **pushing** to github through the first github account. So if your want to also switch git hub accounts:
+
+    $ git credential-osxkeychain erase
+    host=github.com
+    protocol=https
+    [Press Return]
+
+The terminal is going to ask for new credentials when you push.
+
+If that doesn't work also try:
+
+```
+git config credential.username 'SecondAccount'
+```
+
+<hr>
 <h3 id="update-3-13-21"></h3>
 
 ## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Saturday 3/13/21
