@@ -21,7 +21,7 @@ I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Da
 - Simulating Working With A Freelancer
 - Mistakes I Discovered when Assigning Tasks
 - Resources & Notes
-
+- Takeaways
 <hr>
 
 ## Hiring Freelancers
