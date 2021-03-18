@@ -3,9 +3,160 @@
 I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Day 1-100](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r1-log.md), [Day 101-200](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r2-log.md), [Day 201-365](https://github.com/DashBarkHuss/100-days-of-code/blob/master/r3-log.md). After I completed the challenge, I continued to log in my [2020 coding log](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md). This is my 2021 coding log.
 
 <hr>
+<h3 id="update-3-17-21"></h3>
+
+## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update
+
+#### Wed/Thurs 3/17-3/18/21
+
+<hr>
+
+## Todays Post:
+
+- Hiring Freelancers
+  - My questions about assigning tasks:
+    - isolating?
+    - creative licence?
+    - communication?
+- Simulating Working With A Freelancer
+- Mistakes I Discovered when Assigning Tasks
+- Resources & Notes
+
+<hr>
+
+## Hiring Freelancers
+
+I want to experiment with outsourcing parts of WishTender. But I have no clue what it looks like to work on a team.
+
+I'm wondering:
+
+- **How do I isolate tasks** for freelancers or team members into manageable tasks?
+- **How much creative licence** do I give freelancers? Do I give them a highly specific tasks that define not only _what_ should be done but _how_? Or do I give them general goals where they can take some creative licence in UI, UX, and code design?
+- **How do I communicate the task** to them effectively? What do I need to provide them with in order to accomplish that task?
+
+## Simulating Working With A Freelancer
+
+To prepare for outsourcing I've been practicing working as my own employee using gitflow and github.
+
+<img src ="log_imgs/working_with_employee_3-17-21.png" width = "500"/>
+
+This gave me some insight on **how assigning tasks can go wrong**.
+
+## Mistakes I Discovered when Assigning Tasks
+
+#### **1. Assign the task to the wrong person.**
+
+I had a bug in my app. I thought it orginated in the frontend. So I assigned it to **FakeEmployee**, my alter ego. **FakeEmployee** is a frontend dev. But **FakeEmployee** realized the bug was in the backend. So fake employee had to go back to me and tell me to fix the bug. **How do I outsource a bug if I don't know where it originated and who is capable of fixing it?**
+
+#### **2. Misunderstand the effort of the task**
+
+I assigned **FakeEmployee** a simple task; create tabs in my menu with material UI that underline when on the respective page.
+
+I created a design on Photoshop to give to **FakeEmployee**.
+
+<img src="log_imgs/wishtracker-wishlist-icon-nav-3-17-21.png"/>
+
+I thought this would be an easy task for **FakeEmployee**. But it was more complex and involving restructuring a my app. FakeEmployee had to [post on stackoverflow](https://stackoverflow.com/questions/66540381/how-to-set-a-navlink-to-active-conditionally-on-dynamic-links) for help. And the issue was even too complex for anyone there to solve. So while FakeEmployee got help from stackoverflow, ultimately FakeEmployee had to post the correct solution herself.
+
+If I was working with a real freelancer, I might have underestimated the time and effort of the task. So I might have offered too little money.
+
+In addition to paying my freelancer appropriately, if I knew the complexity of the task, maybe I would have decided against the highlighting tabs. Perhaps the highlighting of the tabs is a diminishing return for the effort needed to implement them at this stage. I might have gone with a simpler task, like tabs that don't highlight.
+
+## Research on working with a team
+
+I wanted to get a better idea of how to manage freelancers and a team. Here's some of the resources I consumed.
+
+### [DevOps: article with video](https://www.altexsoft.com/blog/engineering/devops-principles-practices-and-devops-engineer-role/)
+
+This video explained what a DevOps team is, what problem it solves, and what building software in devops looks like.
+
+<img src="log_imgs/What-DevOps-looks-like_3-17-21.jpg"/>
+
+#### [Video: A Project Manager's Guide to DevOps](https://www.youtube.com/watch?v=XSoQptH8HCA) by [@beyond20](www.twitter.com/@beyond20)
+
+### I know what development is. What is operations?
+
+- [video: What DOES an IT OPERATIONS MANAGER do??](https://www.youtube.com/watch?v=J_yY-fn6sKM)
+- [video: Developer vs Operations](https://www.youtube.com/watch?v=OJW409Dkpvg)
+
+### [video: What is an API Contract?](https://www.youtube.com/watch?v=-qM__ozdHCU)
+
+- Open API
+
+#### [video: How Web Developers work together in a Company](https://www.youtube.com/watch?v=fIo10_MthQ4)
+
+### [Video: What do front end developers _actually_ do?](https://www.youtube.com/watch?v=MCy5zXmlrfc)
+
+This really helped me understand what teamwork looks like working with a product manager, designer, and frontend dev. Only I didn't see how the backend developers fit in.
+
+### [Video: How software engineers work in teams](https://www.youtube.com/watch?v=DYLSkySSF0I)
+
+This video by TechLead [@techleadhd](https://twitter.com/techleadhd) showed how workflows between team members can flow multiple ways. For example, instead of always following the product manager's lead, programmers can consult the pm on the best approach. He also spoke about consistency in design and holistic design. Something I _half_ implemented with Material UI themes. Sometimes I use Material UI theming, sometimes I when did not. I may need to work on keeping my UI consistent. When I make a Photoshop mockups, I may need to refer to Material UI docs to make sure I'm making something that can be implemented using the theme. I can also design a mockup and ask for feedback from the developer. Maybe they will notice that the design unnecessarily veers off from the theme and can make suggestions to improve the mockups.
+
+#### [How To Build A Software Development Team](https://www.youtube.com/watch?v=0MZLO-B-q7E)
+
+#### [Video: 10 Tips for Working on a Dev Team](https://www.youtube.com/watch?v=yVXwFairWKs)
+
+#### [Video: Guide to Working with Outsourced Developers](https://www.youtube.com/watch?v=RMCiG_waZ1U)
+
+### Forum Post
+
+[How does a front-end developer work with a back-end developer?](https://www.quora.com/How-does-a-front-end-developer-work-with-a-back-end-developer)
+
+Answer:
+
+> For me, the best approach is to:
+>
+> 1.  Have the front-end developers provide a “wish list” of APIs they want - and provide documentation of the desired behaviors.
+>
+> 2.  Have the back-end developer review the desired APIs. If some appear to be difficult to implement or are likely to be slow, the back-end dev should see if other alternatives are acceptable to the front-end dev.
+>
+> 3.  Both teams implement their code to the agreed APIs. (Note: I sometimes have the back-end team implement “stub” versions of the APIs, that return test data to allow the the actual interaction to be tested before the full implementation is complete.
+>
+> 4.  ** ITERATE AS REQUIRED TO MAKE IT BETTER** - this is the most important step. Occasionally, the teams will be happy with the initial designs and implementations. Most often, one or both of the sides of the APIs will want changes - plan on a few revisions after the initial implementation is finished.
+>
+> Note: this approach means that developers will be asked to change code that works and meets the (original) requirements. This is something that developers need to learn to accept. I generally assume that people requesting a change to requirements have a good reason for the request. Much of this arises from the fact that in implementing and/or using an API, developers learn a lot they didn’t know when coming up with the initial requirements.
+
+[Video: How To Create Your First Wireframe ](https://www.youtube.com/watch?v=KdfO_e0yK-g)
+
+### [Video: Contract First API Design with OpenAPI V3 - Darrel Miller](https://www.youtube.com/watch?v=GtTiIY51kK0) [@darrel_miller](www.twitter.com/darren_miller)
+
+> We use API description langauges in order to define a contract.
+
+> **Contract before code** ...but scenarios, use cases and other API design work still come first.
+
+In Open API and JSON schema the contract is an open world system.
+
+**Open World System:** You define what is possible but we don't tell you everything that is potential possible.
+
+Example your API description could leave out 500 responses.
+
+<img src = "log_imgs/api_3-18-21.png" width="600"/>
+<img src = "log_imgs/api2_3-18-21.png" width="600"/>
+<img src = "log_imgs/api3_3-18-21.png" width="600"/>
+
+Resources can be grouped by tags.
+
+<img src = "log_imgs/api4_3-18-21.png" width="600"/>
+
+You don't need to include everything in your contract descriptions. You have other places to document. Changing stuff in your contract can create breaking changes.
+
+<img src = "log_imgs/api5_3-18-21.png" width="600"/>
+
+There are tools that allow you to use mock servers with your API contract so client developers don't have to wait for a server implementation to complete.
+
+My question: Is there a way to generate React routes from a contract?
+
+## Takeaways From Resources
+
+**Documenting**. Documenting the API, tasks that are complete or need to be completed, using git to document changes. All of this helps with communication.
+
+**Cross-collaboration and bi-directional workflow**: Different roles (designers, developers, operations) can communicate constraints within the system to help everything come together. There can be a lot of back and forth between these roles instead of just a top down flow.
+
+<hr>
 <h3 id="update-3-16-21"></h3>
 
-## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Saturday 3/16/21
+## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update - Tuesday 3/16/21
 
 <hr>
 
