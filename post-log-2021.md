@@ -4,6 +4,62 @@ I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Da
 
 <hr>
 
+<h3 id="update-3-20-21"></h3>
+
+## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update
+
+#### Saturday 3/20/21
+
+<hr>
+
+Today I'm feeling insecure and unsure. I thought I should post my thoughts to share the reality of my process. The following is the ramblings of highly confused person who just had a talk with a fiverr seller:
+
+I just had gut wrenching meeting with a freelancer who suggested we start from scratch on Wishtender. He said there is going to be so many problems when I deploy Wishtender with react that it's better to just use django and html and css and start from scratch. And that django is more scalable. But I've been working on WishTender for like 7 months! So the idea of starting from scratch hurts my soul. I thought I could build a more complete app in order to learn about development while also aiming to launch a business.
+
+Part of me thinks he's right. It's what everyone's been telling me all along. Go faster. Make an MVP. But I'm so confused, why does react even exist if it's neither good for mvp's nor scalable?
+
+I can't even imagine that all that work I did with figuring out how to integrate with Stripe and calculating the fees and conversions, integrating with the exchange rate api, etc- that it will be easier from scratch. That's not part of the expertise of a Django developer.
+
+I think I'm so stuck on the sunk costs though. This guy says it would take a month to complete from scratch in django. That's still faster than it might take to complete in MERN. But it feels like I would lose those 7 months of work. What was it all for. That's a sunk cost though. That's a bad reason to avoid switching. But there are other good reasons not to switch. 1. He doesn't know the whole picture of what I've done so far or what the project entails. 2. It's easy to create a react native app from react. 3. If I switched to django I feel I would need to rely fully on him then, since I don't know django. Am I just clenching on to the identity of a developer? I want to own a business. I don't even care about being a developer.
+
+I don't know if I'm looking for reassurance that my way is right or looking for proof that I should change paths and go with the django mvp. But I should just be looking for truth. And the truth is probably gray.
+
+Is this guy leading me astray or am I way off? Is it flawed to go with MERN? Am I overvaluing what I've done or is he underestimating what I've done? Is it worth making an MVP for an app that is almost finished? Is it worth putting $100-$1000 into an MVP for an idea that hasn't been validated?
+
+My fear is that this suggestion to start from scratch- it maybe comes from a misunderstanding of what I've already done. And what goes into this project. My fear is that it will be a detour that will take longer. He didn't look at the entire app. He didn't even think I had an api. He had little information. But is it true that it will be difficult to deploy? Is it true that it will be difficult to work on with other people?
+
+He said that it will be difficult to continue this project since I may have implemented things differently than him. But that confuses me. Isn't that just part of being a developer, you have to work with the code you're handed?
+
+Maybe I'm seeking out the wrong person. Maybe he isn't an expert in taking over an existing project. He is an expert is starting projects from scratch, so he suggested starting the project from scratch. I need to calm down. Not over value one person's opinion. But don't under value it as well.
+
+What is his expertise? He probably isn't used to taking over a project, pair programing. People come to him with blank canvases. So he wants a blank canvas. Where can I find people who work on canvases that have already been painted? Maybe if they suggested to start over I would feel more reassured.
+
+What does a $1 MVP look like?
+
+Is it possible to make an MVP for very cheap and continue working on Wishtender code?
+
+Do I have to do a $1000 MVP? Is that worth it if I haven't validated?
+
+Is a month + $1000 worth it? Is that really an MVP?
+
+Is it still possible to move faster on WishTender with react?
+
+I feel like my WishTender code is neither an MVP nor a perfect app. It's in a weird in between and it's causing me confusion.
+
+I just need more clarity. This is just one guy. But is his point valid? Is it valid at all? It's true he doesn't have the full picture. But is there some truth to what he is saying? How can I find that truth?
+
+I think I need to talk to some people and find out. Especially my mentor, because he's seen my code. I believe there may be truth to what he is saying. But I'm not sure the best route.
+
+The more I think about it thought the more I think his advice was short sighted. He didn't look at my code. He didn't hear my requirements. I remember my mentor looked at my code, and was surprised that it was as good as it was. So maybe the fiverr guy doesn't know that my code is more complete than he would expect.
+
+The fiverr guy also called me "sir" at one point in our chat before I went on video- which shows a pattern of miscalculation! If he thought I was a man, what other false assumptions is he making?
+
+I'll have to think a bit more.
+
+This whole thing is a distraction from what I was trying to do- just outsource a portion of the app. Should I scratch that idea? Should I continue regardless?
+
+<hr>
+
 <h3 id="update-3-18-21"></h3>
 
 ## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update
