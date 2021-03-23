@@ -48,7 +48,7 @@ But also:
   [@some1else](https://twitter.com/@some1else)
 - Marco Rivadeneyra
   [@marcorivm](https://twitter.com/@marcorivm)
-- Nat Sharpe [Nat Sharpe](https://twitter.com/@nat_sharpe_)
+- Nat Sharpe [@nat*sharpe*](https://twitter.com/@nat_sharpe_)
 - Eric Howey [@erchwy](https://twitter.com/@erchwy)
 - keyboard keelan [@keyboardkeelan](https://twitter.com/@keyboardkeelan)
 - SpeakingSoftware Show / Philip
