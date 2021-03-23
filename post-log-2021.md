@@ -4,6 +4,61 @@ I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Da
 
 <hr>
 
+<h3 id="update-3-23-21"></h3>
+
+## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update
+
+#### Tuesday 3/23/21
+
+After I posted about my challenging experience with the freelancer, everyone on Twitter pretty unanimously thought suggested that the freelancer was incorrect. Not only can react scale, but I shouldn't even care about scaling at this point.
+
+The freelancer said he would still work on the react app with me, even thought I didn't want to take his suggestion of starting from scratch. But I told him I was going a different direction. I realized that, though he meant well, his goals were not aligned with mine and we wouldn't be a good fit. His personality was too pushy for me. He made assumptions without asking enough questions. This might work for some, but it's not optimal for collaborating with me.
+
+There are an abundance of freelancers. So if I don't feel right with one, there are many many more.
+
+## Trust
+
+Trust is important in collaborations.
+
+**There are two ways to work with someone you trust:**
+
+1. Build trust up slowly with a new acquaintance
+2. Work with someone you already trust
+
+If a new acquaintance loses your trust within the first few minutes, it's unlikely they will be able to grow it in the long run. In this situation, trust your gut!
+
+**Thanks to the many people who helped bring me clarity:**
+
+Namely:
+
+- Matt Schiffman [@darrownet](https://twitter.com/@darrownet)
+- Adam Waselnuk[@AWaselnuk](https://twitter.com/@AWaselnuk)
+
+Who spoke with me on zoom.
+
+But also:
+
+- Helge Drews [@helgedrews](https://twitter.com/@helgedrews)
+- Andrew [@BrisaDotIO](https://twitter.com/@BrisaDotIO)
+- Khawar Jatoi [@khawar_jatoi](https://twitter.com/@khawar_jatoi)
+- Marco [@Wridgeu](https://twitter.com/@Wridgeu)
+- Shakima F. [@Mostdefkima3ff](https://twitter.com/@Mostdefkima3ff)
+- Tejveer Singh[@stevegremory](https://twitter.com/@stevegremory)
+- Srđan Prodanović
+  [@some1else](https://twitter.com/@some1else)
+- Marco Rivadeneyra
+  [@marcorivm](https://twitter.com/@marcorivm)
+- Nat Sharpe [Nat Sharpe](https://twitter.com/@nat_sharpe_)
+- Eric Howey [@erchwy](https://twitter.com/@erchwy)
+- keyboard keelan [@keyboardkeelan](https://twitter.com/@keyboardkeelan)
+- SpeakingSoftware Show / Philip
+  [@SpeakingSoftwa1](https://twitter.com/@SpeakingSoftwa1)
+- William J. Ghelfi [@trumbitta](https://twitter.com/@trumbitta)
+- Brandy Wine [@winebrandy48](https://twitter.com/@winebrandy48)
+- Sammy Rosen [@sammyrose](https://twitter.com/sammyrosen)
+<hr>
+<hr>
+
 <h3 id="update-3-20-21"></h3>
 
 ## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update
