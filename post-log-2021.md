@@ -4,6 +4,57 @@ I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Da
 
 <hr>
 
+<h3 id="update-4-6-21"></h3>
+
+## [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) and [Dream Phone](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#lab-explanation) Update (from journal)
+
+#### Tuesday 4/6/21
+
+<hr>
+
+### A quick and messy update from my nighttime journal:
+
+4/5/21
+
+This is a journal entry that I’m going to move to my log.
+
+I haven’t updated my log. I’ve been very busy. So I’m going to take my journal time to give an update.
+
+WishTender: Shakima and Adam, my friends on twitter, inspired me to pick a launch date. Shakima because she picked a launch date for her project, and Adam because he basically dared me to. I picked April 20th because it was 30 days away at the time. But it’s gone faster than I thought. I’ve been attacking the validations, and deploying the front and back end, and also working with Nat Sharpe who volunteered to help. Deploying is kind of complicated. There’s not as much information on it as there is other subjects. You encounter problems with CORS, browser defaults, cookies, ssl, DNS, and react build problems. Remote servers are so much more finicky than localhost. Having a launch date has made me reduce my decision making time. I don’t look for the best option to a problem. I just look for an option and go. April 20th is coming sooner than expected. So will I actually hit that date? I don’t know. This week the internet at my airbnb drastically slowed down and I will be traveling for 3 days this week. It might put a dent in my plans. But I’m going to try my best. I might be able to do it if I stop wasting time on small decisions. Either way, having this goal has helped shift my perspective which has been useful. Before I was focused on the details of my app. I would over estimate the importance of certain features like making the app work in every country possible. Now I’m more focused on quickly shipping because I created a deadline. So I prioritize the important features. I accept that the app can be improved and scaled after launch and it doesn’t have to be perfect. If it has to be scaled, that’s a good problem to have and I will find people willing to help. People will want to help if they know the app is valuable. I have been trying to ship an MVP but It’s taken me 8 months. I believe I created something bigger than an MVP unknowingly. It’s neither good or bad. I did more than I had to, but I learned a lot about software. The one thing I do want to make sure, is that the app is secure for my users to use. I wonder how do you balance that with fast shipping? Because you wouldn’t want to put your users at risk just you have to validate a business quickly. I’ll figure it out.
+
+Btw, all of my WishTender code is public on github. You’ll have to search it because I’m on my phone journal.
+
+Dream phone:
+
+The dream phone is my device that allows me to communicate from a lucid dream. The Dream Phone SD version lets me save notes from a lucid dream to a text file. This might sound super weird and sci-fi but it’s totally a real thing and not really that complicated. I posted the code for my dream phone sd, but didn’t post a lot of explanation. I hope to in the future. It’s also on my github so you can search and find it.
+
+The dream phone SD card version is done but I didn’t set it up yet or test it because I’ve been rushing to finish WishTender.
+
+News fast:
+In order to help me focus, I’ve been on an intense news fast. I won't get in to all the details of why this is so great, (it's a lot), but it’s one of the best things I’ve done. I have a raised HRV (an indicator of low stress) which I believe is related. I love this article on quitting the news by David Cain https://www.raptitude.com/2016/12/five-things-you-notice-when-you-quit-the-news/
+
+A lot of people say watch the news to stay informed but 'The news isn’t interested in creating an accurate sample. They select for what’s 1) unusual, 2) awful, and 3) probably going to be popular. So the idea that you can get a meaningful sense of the “state of the world” by watching the news is absurd.'
+
+<h3 id="update-3-23-21-dp"></h3>
+
+## [Dream Phone](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#lab-explanation) Update
+
+#### Tuesday 3/23/21
+
+<hr>
+
+  <img src="log_imgs/eyes_messaging_5-4-20.gif" width= 100%>
+
+## Electrical Noise Fixed
+
+Last time I posted about the dream phone, the device had a problem where it picked up electronic noise from the wall plug. This noise interfered with the electrode signals. Forum [post](https://forum.allaboutcircuits.com/threads/electrical-noise-when-using-wall-outlet.175975/).
+
+I fixed this issue by switching from AC power to battery power.
+
+I thought switching from AC to battery pack would require math and a bunch of resistors. But the LED strip has resistors built in. So it was a lot easier than I thought.
+
+<hr>
+
 <h3 id="update-3-23-21"></h3>
 
 ## Building [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update
