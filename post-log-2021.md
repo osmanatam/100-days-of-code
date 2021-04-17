@@ -31,7 +31,7 @@ Todays Post:
 
 Journal entry where I talk about
 
-- Estimating durations of to complete the app
+- Estimating duration to complete the app
 - What's needed for an MVP
 - Where do I get my passion for WishTender?
   > <h4 id="est1-4-17-21"></h4>
@@ -103,7 +103,7 @@ _-Adam, twitter DM_
 
 ## How minimal to make a beta/mvp product?
 
-Armando brought it to my attention that this question is a fallacy. I assumed that mvp and beta were the same. 278 days into coding wishtender and never considered that mvp and beta might be different ideas!
+Armando brought it to my attention that this question is a fallacy. I assumed that mvp and beta were the same. 278 days into coding wishtender and I never considered that mvp and beta might be different ideas!
 
 #### Armando:
 
@@ -120,7 +120,7 @@ _-Armando, twitter DM_
 
 In Armando's definition, an MVP is an app you test internally, while beta has added security and features so that it can be tested by actual users.
 
-After this discussin, I found many definitions of MVP that differed from Armando's, but it was clear that beta was not the same as an MVP.
+After this discussion, I found many definitions of MVP that differed from Armando's, but it was clear that beta was not the same as an MVP.
 
 #### Journal Entry 4/17/20:
 
