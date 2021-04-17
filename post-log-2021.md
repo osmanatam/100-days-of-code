@@ -4,6 +4,178 @@ I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Da
 
 <hr>
 
+<h3 id="update-4-17-21"></h3>
+
+## [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update
+
+#### Saturday 4/17/21
+
+<hr>
+
+Todays Post:
+
+- [Journal Reflections: 4/11](#journal1-4-17-21)
+  - [Difficulty estimating completion](#est1-4-17-21)
+  - [My passion for WishTender](#pass-4-17-21)
+- [Armando helps with my biggest challenges](#arm-4-17-21)
+  - [Estimating how long things take](#est2-4-17-21)
+  - [How minimal to make a beta/mvp product](#mvp-4-17-21)
+  - [Security & Finishing](#sec-4-17-21)
+  - [Managing People](#man-4-17-21)
+- [New Launch Date](#lau-4-17-21)
+<hr>
+
+<h4 id="journal1-4-17-21"></h4>
+
+## Journal Entry 4/11/21
+
+Journal entry where I talk about
+
+- Estimating durations of to complete the app
+- What's needed for an MVP
+- Where do I get my passion for WishTender?
+  > <h4 id="est1-4-17-21"></h4>
+  > How do you know how long things take?
+  >
+  > I don’t know if I will launch wishtender on the 20th. How do people figure out how long this takes? Deploying took long. How would I know how long it was going to take? I didn’t know about how complex cors gets when you deploy. There’s so many things I underestimated the complexity of. So how do mvps normally work? Even the bare minimum mvp still needs backend validations etc. And without tests things get hard to fix so it seems like you need tests too. And so on. What do you not need in an mvp?? Maybe it depends on the project.
+  >
+  > <h4 id="pass-4-17-21"></h4>
+  >
+  > ## Why I'm Building WishTender
+  >
+  > I think my project could turn into a real profitable business. I didn’t follow my passion. I just looked to bring people value in a topic that is sort of fun for me. I love clothes and gifts and fun products. I think I like sex workers because they don’t give a damn about their reputation which is cool to me. But I don’t know many too well. And I’m not super sexual myself. But I like cool women who are hot and confident and dress cool or pretty so I may find some of them working on wishtender.
+  >
+  > I’m not passionate about sex workers I just think I’ll find them and their gifts fun so the business will be full of color for me. My passion is lucid dreaming and I hope projects like wishtender will help me get rich so I can fund lucid dream projects.
+  >
+  > I also am passionate about entrepreneurship. So I like the challenge of building something useful for people. Elon musk funded space x. But he started with eBay(wait was it eBay or PayPal?)- fun but not as cool as outer space. But it gave him the money to build space x. That’s how I see what I’m doing. Wishtender is my eBay (wishtender or whatever project I succeed at). Lucid dreaming is my passion.
+  >
+  > I think some people maybe are surprised I was starting a business catered to sex workers. But I don’t care. I don’t have any natural inclination to judge them like other people do. I just have goals. I will do what I need to do to achieve them. Being non judgmental is my strength. When judgements get in the way of your own goals- that’s no good! Because I respect sex workers, I can build a business for them, help them, and fund lucid dreaming advances. Well, if all goes well. My respect for them has nothing to do with liking porn. I think porn is bad for health with some caveats. But I think it’s not my business to judge what commerce people partake in. I’m supportive of people enjoying their lives. I’m supportive of entrepreneurs like sex workers making money on their own terms. When I was keto I couldn’t care less how many carbs other people ate, I always wanted them to enjoy their food the way they like. Not the way I like.
+  >
+  > Not everyone you help in life has to be exactly like you. In fact, people just like you probably don’t need your help. The market is over saturated with productivity products. Why? Because entrepreneurs love productivity and build products for themselves. If you build for people dissimilar from you, you will find bigger market gaps. If you find these people fun or interesting, helping them will be an enjoyable time.
+  >
+  > So I hope that explains a bit about my perspective on Wishtender and where my mind is at.
+
+<h4 id="arm-4-17-21"></h4>
+
+## Twitter with Armando [@Corlaez](https://twitter.com/Corlaez)
+
+Armando, who has been helping me, asked about WishTender:
+<img src ="log_imgs/armando_4-17-21.png" alt="twitter direct message from reads: And how do you feel it is going
+what is the biggest challenge or risk right now?">
+I thought about it overnight before I got back to him.
+
+## My Questions:
+
+> Here are some things on my mind.
+>
+> 1. One intangible problem I have I’m having **trouble knowing how long things will take**. For example, when I deployed, I deployed for the first time ever. So I had no clue how complicated cors would be and how much more complex a live environment is. **I estimate when I’ll be done with a task but I’m always wrong.**
+> 2. A more solvable problem I have is That I **need to make sure the app is secure**, I think I need to protect against csrf attacks. I just need to go through what else I need to do for security
+> 3. But I’m also just **not done with a lot of the app yet**. I’m still going through the backend validations. And the front end has some very messy unfinished pages.
+> 4. Amidst all of this people have been volunteering to pr, and I’m unsure **how to go about communicating and managing them**.
+> 5. I’m unsure of **how minimal to make a beta product.** I hear of mvps, but like I don’t know what can be left out. For example, security takes a while to implement, but it seems necessary even for an mvp.
+
+_-Dash, twitter DM to Armando_
+
+## Armando's (and Adam's) Advice:
+
+<hr>
+
+<h4 id="est2-4-17-21"></h4>
+
+## Estimating how long things take
+
+Armando said that this is just something you learn with time.
+
+Adam Waselnuk [@AWaselnuk](https://twitter.com/AWaselnuk) also advised me:
+
+> Software time estimation is so hard I've personally written it off as an exercise in futility. You'll get slightly better with experience but it will always elude you. The reason is twofold:
+>
+> 1.  Software systems are complicated
+> 2.  You are creating something new every single time you build. (usually)
+>
+> If you created WishTender 10 times back to back, yeah you would get better at estimating. But would you create the same thing 10 times? No you would build dream phones and other marvellous wonders.
+>
+> Just make sure you focus on important stuff every day and you'll ship soon!
+
+_-Adam, twitter DM_
+
+<h4 id="mvp-4-17-21"></h4>
+
+## How minimal to make a beta/mvp product?
+
+Armando brought it to my attention that this question is a fallacy. I assumed that mvp and beta were the same. 278 days into coding wishtender and never considered that mvp and beta might be different ideas!
+
+#### Armando:
+
+> MVP and beta is not exactly the same to me. I would leave out a lot out of an MVP (most of the product and a lot of security) everything that is not core, every convenience would be out.
+> Beta has more convenience and more security involved yes.
+>
+> The idea behind MVP, in my experience, is that you want to build something that works and can be tested. Even if it is lacking features. And then grow it iteratively until you reach a beta status. However, every step of the way, the app should be working as expected.
+>
+> ...You do want to get to users soon, but landing a buggy app may cost you their trust.
+>
+> Hence the point of having an mvp that you can validate it works\* and then sprinkle some security a convinience feature or two and start getting user feedback
+
+_-Armando, twitter DM_
+
+In Armando's definition, an MVP is an app you test internally, while beta has added security and features so that it can be tested by actual users.
+
+After this discussin, I found many definitions of MVP that differed from Armando's, but it was clear that beta was not the same as an MVP.
+
+#### Journal Entry 4/17/20:
+
+> Armando...made me realize I’m not making an MVP: MVP and beta are not the same. Which is why I had some confusion about MVP’s. Armando described MVP’s as a insecure app you test internally, and beta as a secure app you have users test. Some others said you could also say an MVP is a mini product that tests a hypothesis- like drop box made a video describing the product they wanted to make and in response got a bunch of signups. I thought this was called a demo. But I guess a demo + feedback = mvp.
+
+_-From my journal 4/17/20_
+
+If demo + feedback = mvp, then I have already made MVP's.
+
+> If this is the case I already have done an mvp in part- I did market research and got signups. I have posted screenshots along the way and saw interest. My landing page describes the product as well, sort of a demo, and people were excited about the product. So maybe my business is more validated than I thought.
+
+_-From my journal 4/17/20_
+
+<h4 id="sec-4-17-21"></h4>
+
+## Security & Finishing
+
+Armando said to focus on a stable app before approaching security.
+
+> All in all what I was trying to say is that IMO the page bugs should have a higher priority than security. I wouldn't bother with security and beta until I achieve some stability on the app
+
+_-Armando, twitter DM_
+
+<h4 id="man-4-17-21"></h4>
+
+## Managing People
+
+Armando suggested using the issues tab on github to help communicate with volunteers.
+
+> I think a good idea to go about volunteers is to use the issues tab in github. There you can document what needs to be done and where, what you know and what you don't of each challenge you have.
+> Volunteers can then skim through it and discuss the topic with you or others and eventually somebody will offer to solve that issue themselves.
+> All that async documentation/communication is really useful IMO.
+
+_-Armando, twitter DM_
+
+I took Armondo's suggestion and I found the issues tab useful to keep track of what I need to do and what I've tried.
+
+<img width= "400" src = "log_imgs/issues_4-17-21.jpg_large" alt="issues tab on wishtender github">
+
+<hr>
+
+<h4 id="lau-4-17-21"></h4>
+
+## New Launch Date
+
+As I mentioned, estimating the time needed to complete each step of the app has been challenging. So, I'm not finishing in time for an April 20th launch.
+
+> I need to pick a new launch day. When I miss a launch day I get slow- not lazy- but I start focusing on details, the best way to code a feature, learning how things work. A slower, knowledge seeking, perfectionism mode. When I had a launch date I worked faster. I will pick another launch date, may 15. It is 28 days away. Last time I picked a date 30 days away. Hopefully this date is realistic. I didn’t account for the complexity of deploying the front and backend- cors, cookies behaving differently, browser differences.
+>
+> I will focus first on stability, and worry about security after. A suggestion made by Armando Corleaz.
+
+_-From my journal 4/17/20_
+
+<hr>
+
 <h3 id="update-4-6-21"></h3>
 
 ## [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) and [Dream Phone](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#lab-explanation) Update (from journal)
