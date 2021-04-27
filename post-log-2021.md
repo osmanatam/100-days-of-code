@@ -4,6 +4,32 @@ I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Da
 
 <hr>
 
+<h3 id="update-4-18-21"></h3>
+
+## [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Notes
+
+#### Sunday 4/18/21
+
+<hr>
+
+## Notes on debugging Safari Mobile
+
+Debug safari mobile on [mac](https://www.kenst.com/2019/03/how-to-debug-problems-on-mobile-safari/)
+
+If still issues [try:](https://developer.apple.com/forums/thread/123530)
+
+> You have to turn on the bluetooth and personal hotspot. Connect both using the bluetooh 'Connect to Network' and you can see your iPhone on the 'Develop' tab...
+>
+> For me personal hot spot over USB cable worked.
+>
+> Sometimes I have to disable WiFi on my phone as well.
+
+Then connect to localhost from safari [mobile](https://ebaytech.berlin/testing-web-applications-running-on-localhost-with-an-iphone-7db6258b8f2)
+
+If there's CORS involved in the app, make sure to add your domain to the origin for the cookies. Which is probably the same as the IP found in the article above, also found with `req.get("referer")`
+
+<hr>
+
 <h3 id="update-4-17-21"></h3>
 
 ## [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Update
