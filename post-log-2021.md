@@ -18,7 +18,7 @@ Todays Post:
   - [Repo/issues](#repo-5-10-21)
   - [Visual Updates](#visual-5-10-21)
 - [Learning while preparing vs in the moment](#journal1-5-10-21)
-- [Trusting others advice too much]#journal2-5-10-21)
+- [Trusting others advice too much](#journal2-5-10-21)
 <hr>
 
 <h4 id="upd-5-10-21"></h4>
