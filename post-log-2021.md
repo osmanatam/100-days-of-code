@@ -4,7 +4,82 @@ I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Da
 
 <hr>
 
+<h3 id="update-5-10-21"></h3>
+
+## [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Reflections
+
+#### Monday 5/10/21
+
+<hr>
+
+Todays Post:
+
+- [WishTender Updates](#upd-5-10-21)
+  - [Repo/issues](#repo-5-10-21)
+  - [Visual Updates](#visual-5-10-21)
+- [Learning while preparing vs in the moment](#journal1-5-10-21)
+- [Trusting others advice too much]#journal2-5-10-21)
+<hr>
+
+<h4 id="upd-5-10-21"></h4>
+<h4 id="repo-5-10-21"></h4>
+
+I've been working hard on WishTender. You can see my progress in the issues tabs of the [frontend](https://github.com/WishTender/frontend) and [backend](https://github.com/WishTender/backend) repos.
+
+<h4 id="visual-5-10-21"></h4>
+
+## Some pretty WishTender progress
+
+### Opening a gift
+
+<img width= "400" src="log_imgs/confetti_5-10-21.gif" />
+
+### Log in
+
+<img width= "200" src="log_imgs/login_m_5-10-21.png" />
+<img width= "400"src="log_imgs/login_l_5-10-21.png" />
+
+### Sign Up
+
+<img width= "200" src="log_imgs/wt_signup_xs_5-10-21.png" />
+<img width= "250" src="log_imgs/wt_signup_s_5-10-21.png" />
+<img width= "400" src="log_imgs/wt_signup_m_5-10-21.png" />
+
+<h4 id="journal1-5-10-21"></h4>
+
+## Journal Entry 5/4/21
+
+In this journal entry I explore the balance between "learning in preparation" vs "learning when necessary".
+
+> 5/4/21 am
+>
+> I might have spent too much time learning when building WishTender, instead of doing. But it’s really hard to say. For example, did I spend too much time learning about error handling? Today it feels like yes. Because I can see now that it’s very easy to add error handling or change error handling later. And you don’t really understand how errors should be handled until later on in the app process. Meaning: you learn their importance by experience . However, is this accurate? Maybe I’m blinded by my current knowledge. It’s easy to think “oh it’s easy to add error handling” because I know about it. But maybe had I never learned by reading about error handling I would have never fully grasped it through experience alone. I wouldn’t be here thinking “this is easy why did I spend so much time on it?” I would be thinking “I wish I knew more about error handling” you can’t know the importance of a concept before you learn it. And it’s even difficult to look back and know the importance in hindsight.
+>
+> I’m often worried that there are somethings I need to learn now because they will be complicated to correct later. How often is that the case? It seems rarely. But the next question is, if you build something incorrectly how much will you have to learn to correct it? And will that happen at a inconvenient time, for example after the product is launched.
+>
+> Ex: I worry about database changes. I believe referred to as migrations. I have never done a database migration. Well I did in rails. But that’s like built in. Also that was very long ago. So if I need to change the database, well now I’m dealing with real customer data that has to be transformed. And I will need to learn how and then do it without destroying data
+
+<h4 id="journal2-5-10-21"></h4>
+
+## Journal Entry 5/10/21
+
+In this journal entry I explore how I over estimate other peoples expertise and underestimate mine. And how that is a disservice to both myself and the people i'm putting up on a pedestal.
+
+> 5/10/21
+>
+> Building wishtender I learned:
+>
+> I trusted people who I viewed as more experienced than me too much. Example, one of my friends has a successful business. He asked me months ago why I don’t just hire a person from India to build wishtender. At the time I had this intuition that it both sounded a bad idea and impossible. How will you hire someone in India to build an app for $500? Will Indian devs actually do that? And if they do will it be good? But I didn’t ask my friend these questions. I shoved these intuitions away and I just assumed he knew what he was talking about- that it _was_ possible and an ok idea to hire an Indian dev to build an application for $500. I invented other reasons why I wouldn’t do it - “I want to learn myself”. I trusted my friend even to the point that I believed maybe I was making a mistake by not outsourcing for cheap. But the real reason I didn't outsource was because of my intuition deep down that this was a bad or impossible idea. It turns out my friend didn’t know what he was talking about. Experience in hiring a dev to build your Wordpress e-commerce site does not give you experience in hiring devs to build an application. This became apparent recently. Fast forward to a few months later I talk to my friend again about how long it’s taking me to build wishtender- longer than I expected. My friend says I should hire his dev because his dev is the best he’s used and can do anything. So I finally contact his dev. But his dev has terrible communication skills and I never even get to find out if he can program in react or node because he never answers my direct questions. I talked to my friend and asked what was up with his dev? My friend said his dev was not great at communication. As we talked it became clear to me that his dev was great for his purposes but not for mine. It also became clear that my friend didn’t know there was a difference between building a Wordpress site and developing an application. And I now doubt his dev would be able to work on wishtender because he did not have the right skills.
+>
+> So it turns out my intuitions were correct. But I was too embarrassed to acknowledge them. I should have confronted my skepticism immediately and asked my friend more questions so I could learn that his advice was not appropriate for me. Even though I didn’t act on his advice, and instead continued to build wishtender myself, by not confronting my skepticism I left doubt in my mind.
+>
+> I don’t fault my friend for his overly confident advice, he didn’t know that it wasn’t applicable to me. I do fault myself for not speaking up. I could have helped myself by voicing my skepticism. It would have helped my friend too by teaching him the difference between applications and Wordpress e-commerce sites. This knowledge could have helped him one day too, maybe if he decides to pursue a software project. It was my responsibility to teach him what I knew about software. But by downplaying my expertise I was unhelpful to both of us.
+>
+> When someone talks to you they don’t just want you too believe everything they say, they want value from you. And value can be in the form of sharing your doubt.
+
 <h3 id="update-4-18-21"></h3>
+
+<hr>
 
 ## [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Notes
 
