@@ -4,6 +4,108 @@ I did a "365 days of code challenge" in 2019. I logged my progress everyday: [Da
 
 <hr>
 
+<h3 id="update-6-14-21"></h3>
+
+## [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20)
+
+#### Monday 6/14/21
+
+- [Using Github projects](#proj-6-14-21)
+- [It's taking me a year to launch. Am I doing everything wrong?](#fast-6-14-21)
+- [Security vs. Shipping fast](#sec-6-14-21)
+
+<hr>
+
+It's been over a month since I last posted, but I have been working hard.
+
+<h4 id="proj-6-14-21"></h4>
+
+## Using Github Projects
+
+I started tracking my progress on a github project: [Wishtender to launch](https://github.com/orgs/WishTender/projects/1).
+
+Github projects helps me prioritize which tasks to attack next and helps me track my progress.
+
+Since I started using Github projects on May 14, here's the to-do's I tackled:
+
+1. limit failed login attempts
+1. rate limit app
+1. make sure sessions delete after logout
+1. session secret needs to be moved to env file
+1. add Delete account view
+1. add change-email views
+1. migrate changes necessary for react-hook-form 7
+1. add Change-password views
+1. add Reset password route
+1. add change email route
+1. add soft delete user end point
+1. add hardDelete in userService
+1. Add progress bar to change handle
+1. Prompt to add wishes
+1. Edit information missing way to edit aliasName
+1. Price should populate with ".00" or work when no ".00"
+1. Price doesn't show after login
+1. update wish photo not working
+1. wish stays in cart after deleted or updated from wishlist
+1. image gone after delete wish
+1. Forward to SetUp after logging in with an account that hasn't created a wishlist
+1. Should render "Your cart is empty"
+1. reply button visible when already replied
+1. Currency dialog needs to be styled
+1. edit gift had wrong background image
+1. remove currency = "USD"
+1. style styleddialog mobile
+1. Currency selection in app bar
+1. rates api cache
+1. ratesapi.io shut down
+1. Currency dialog
+1. style "add-to-cart"
+1. Style activate button
+1. style connect success page
+1. Style "successful order" page
+
+Script to get to-do's
+
+```
+// run in browser console
+const itemsArray = document.querySelector("#column-cards-14322832").children
+[...itemsArray].map(i=>i.children[1].children[0].children[0].children[2].innerText).forEach(p=>console.log(p))
+```
+
+<h4 id="fast-6-14-21"></h4>
+
+## It's taking me a year to launch. Am I doing everything wrong?
+
+This question has been on my mind. I posted on indie hackers:
+
+[It's taking me a year to launch. Am I doing everything wrong?](https://www.indiehackers.com/post/its-taking-me-a-year-to-launch-am-i-doing-everything-wrong-89b77ed26c)
+
+The answers clarified a lot. I now see I over estimated the level of quality people mean when they say "build an mvp". Hearing real examples of buggy, hacky, insecurely launched apps helped.
+
+I also started reading The Lean Startup to better understand mvps and The Mom Test to understand my customers.
+
+I've switched my focus to security and away from some of the other issues in my app. Once I establish minimum security to protect my users real identities, I will launch with one user and slowly add more. "Big reveal" launches are not helpful for a solo founder, and they really warped my perception of what launching should look like.
+
+<h4 id="sec-6-14-21"></h4>
+
+## Security vs. Shipping fast
+
+Still, I was confused about the suggestion by several indie hackers to skip security. So I posted:
+
+[Shipping Faster vs Security](https://www.indiehackers.com/post/shipping-faster-vs-security-61dac32411)
+
+I learned the blatant suggestion to skip security is short sighted. Posts on the indie hackers about getting hacked are evidence of this.
+
+In my case, security is a necessity. You need to risk assess for your use case. For instance, my app needs to protect the identities of the users. Therefore, preventing injections is important. On the other hand, I don’t need to prevent DOS attacks until they appear. One DOS attack isn’t going to harm me or my customers. However, if you had an app that needs to run 24/7 because it monitors emergency situations, you would need to do everything to prevent DOS. One DOS attack could cost you a customer, or worse, a life.
+
+### Alternative to security:
+
+*You could also build your app so that if it got hacked, it wouldn’t matter. For example, when my user gets a notification on my app, instead of my app emailing the user, it *could* email me. Then I could open my paper notebook, find their email, and manually email the user their notification. Thanks to my manual solution, I don’t need to store sensitive information on a database. If my database gets hacked it wouldn’t matter. My users' emails are not on there.*
+
+This week I will figure out what other security measures are a priority and learn and implement those.
+
+<hr>
+
 <h3 id="update-5-10-21"></h3>
 
 ## [WishTender](https://github.com/DashBarkHuss/100-days-of-code/blob/master/post-log.md#update-9-16-20) Reflections
