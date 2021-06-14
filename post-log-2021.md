@@ -26,6 +26,8 @@ I started tracking my progress on a github project: [Wishtender to launch](https
 
 Github projects helps me prioritize which tasks to attack next and helps me track my progress.
 
+<img src = "log_imgs/proj_6-14-21.png">
+
 Since I started using Github projects on May 14, here's the to-do's I tackled:
 
 1. limit failed login attempts
